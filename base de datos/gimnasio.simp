@@ -1,0 +1,997 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="12.79" multi-file="no" uid="simpf6e13621e4ba4613b1c024f4fee636bf">
+  <meta>
+    <name>gimnasio</name>
+    <authors>Paula Delgado</authors>
+    <description />
+  </meta>
+  <counters models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>23</value>
+      </counter>
+      <counter>
+        <item-type type-id="element-detail" type="Element Detail" />
+        <value>1</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="group" type="Group" />
+        <value>1114</value>
+      </counter>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>50</value>
+      </counter>
+      <counter>
+        <item-type type-id="property" type="Property" />
+        <value>98</value>
+      </counter>
+      <counter>
+        <item-type type-id="erd-entity" type="Entity" />
+        <value>49</value>
+      </counter>
+      <counter>
+        <item-type type-id="erd-relationship" type="Relationship" />
+        <value>47</value>
+      </counter>
+      <counter>
+        <item-type type-id="element-detail" type="Element Detail" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="comment-connector" type="Comment Connector" />
+        <value>3</value>
+      </counter>
+      <counter>
+        <item-type type-id="generalization" type="Generalization" />
+        <value>9</value>
+      </counter>
+      <counter>
+        <item-type type-id="comment" type="Comment" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="data-type" type="Data Type" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="relationship" type="Association" />
+        <value>12</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>157</value>
+      </counter>
+    </fields>
+  </counters>
+  <alias-groups />
+  <management uid="md-3fe733b760bc4f45b1c8ad561a596228" name="" task-id-sequence="0">
+    <working-schedule uid="ws-06b06ec870d341d6b3b7eadc5e5a478c" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+    <persons>
+      <person id="">
+        <first-name>Paula</first-name>
+        <last-name>Delgado</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-8f0fe9af4ddf416ca1aa5a3e22d56ed9" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Paula</first-name>
+        <last-name>Delgado</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-5669ee08cbc24197859ef4d9addcc441" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Paula</first-name>
+        <last-name>Delgado</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-dcb206332b694672a79217aae097fe9d" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Paula</first-name>
+        <last-name>Delgado</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-6845c6bc85e9440f975b2f9a9e504d94" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Paula</first-name>
+        <last-name>Delgado</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-2f4362badaf048639975d4e532797a88" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Paula</first-name>
+        <last-name>Delgado</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-e54759e6b67d485eaa97c193253addc8" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Paula</first-name>
+        <last-name>Delgado</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-4145cd7d6b904918866a2c4a20f5cf74" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Paula</first-name>
+        <last-name>Delgado</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-593e28af46e4433fae7d2cea2df1c3b0" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Paula</first-name>
+        <last-name>Delgado</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-08f3527acbbb45c7b031822ac57c29de" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <type id="intnombreSerieDeEjercicio : varchar (50) descripcionSerieDeEjercicio : varchar (300) ejercicios (Entity)----------------------------+ idEjercicio : intnombreEjercicio : varchar(50)# idTipoRutina : intidParteDelCuerpo : int" tid="" name="intnombreSerieDeEjercicio : varchar (50) descripcionSerieDeEjercicio : varchar (300) ejercicios (Entity)----------------------------+ idEjercicio : intnombreEjercicio : varchar(50)# idTipoRutina : intidParteDelCuerpo : int" description="" />
+      <type id="int NOT NULL" tid="" name="int NOT NULL" description="" />
+      <type id="Char(50) NOT NULL" tid="" name="Char(50) NOT NULL" description="" />
+      <type id="Char(100) NOT NULL" tid="" name="Char(100) NOT NULL" description="" />
+      <type id="Char(300) NOT NULL" tid="" name="Char(300) NOT NULL" description="" />
+      <type id="Class:7b4ec2ae360e4b73b860d7419d27820a" tid="" name="instructores" description="" class-ref="7b4ec2ae360e4b73b860d7419d27820a" />
+      <type id="date NOT NULL" tid="" name="date NOT NULL" description="" />
+      <type id="Char(200) NOT NULL" tid="" name="Char(200) NOT NULL" description="" />
+      <type id="float NOT NULL" tid="" name="float NOT NULL" description="" />
+      <type id="DateTime NOT NULL" tid="" name="DateTime NOT NULL" description="" />
+      <type id="Char(10) NOT NULL" tid="" name="Char(10) NOT NULL" description="" />
+      <type id="Char(35) NOT NULL" tid="" name="Char(35) NOT NULL" description="" />
+      <type id="Boolean NOT NULL" tid="" name="Boolean NOT NULL" description="" />
+      <type id="int" tid="" name="int" description="" />
+      <type id="varchar" tid="" name="varchar" description="" />
+      <type id="varchar(50)" tid="" name="varchar(50)" description="" />
+      <type id="varchar(100)" tid="" name="varchar(100)" description="" />
+      <type id="varchar(300)" tid="" name="varchar(300)" description="" />
+      <type id="date" tid="" name="date" description="" />
+      <type id="float" tid="" name="float" description="" />
+      <type id="varchar(200)" tid="" name="varchar(200)" description="" />
+      <type id="varchar(35)" tid="" name="varchar(35)" description="" />
+      <type id="varchar(20)" tid="" name="varchar(20)" description="" />
+      <type id="varchar(25)" tid="" name="varchar(25)" description="" />
+      <type id="varchar(60)" tid="" name="varchar(60)" description="" />
+      <type id="varchar(10)" tid="" name="varchar(10)" description="" />
+      <type id="Int" tid="" name="Int" description="" />
+      <type id="varchar(50) (varchar(50))" tid="" name="varchar(50) (varchar(50))" description="" />
+      <type id="int(UNIQUE) NOT NULL" tid="" name="int(UNIQUE) NOT NULL" description="" />
+      <type id="char(20) not null" tid="" name="char(20) not null" description="" />
+      <type id="char(25) NOT NULL" tid="" name="char(25) NOT NULL" description="" />
+      <type id="char(60) (UNIQUE) NOT NULL" tid="" name="char(60) (UNIQUE) NOT NULL" description="" />
+      <type id="Class:di518b84a4b65741be803ef2eb2987aaca1900" tid="Class:di518b84a4b65741be803ef2eb2987aaca1900" name="suscripciones" description="" class-ref="di518b84a4b65741be803ef2eb2987aaca1900" />
+      <type id="Class:di29b9677018514fe8b040125a7ccc8aad1900" tid="Class:di29b9677018514fe8b040125a7ccc8aad1900" name="programacion" description="" class-ref="di29b9677018514fe8b040125a7ccc8aad1900" />
+      <type id="integrer" tid="" name="integrer" description="" />
+      <type id="interger" tid="" name="interger" description="" />
+      <type id="Bit" tid="" name="Bit" description="" />
+    </custom-types>
+  </types>
+  <items />
+  <models>
+    <model id="p9c0ab5ccb9fe4069b4dbf4b274e7c618_590013268" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>05/10/2021 09:27:29</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-class" id="pc61db9ae350949e49b9e817c681b9a63_792821092" name="ClassDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" view-location="-63,352" zoom="0.7">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>05/10/2021 09:27:29</creation-date>
+          <change-date>05/25/2021 19:14:41</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="did1b867ac1680485daf5cbf92f4b1266f1900" cid="ENT025" type="class" name="serieDeEjercicios" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:34:43" visibility="undefined">
+            <owned-items>
+              <owned-item ref="518d4a25aabd4bdfb259f49df877bd6d" />
+              <owned-item ref="dbb711e97a994d86a2998395f2f19225" />
+              <owned-item ref="9478815ea28a47909bf662e4d13fec39" />
+            </owned-items>
+            <attributes>
+              <attribute id="ac99ab9ac51534dcb9a4cf19ef161aa45996" cid="PROP033" name="idSerie" creation-date="05/10/2021 10:28:09" property-ref="518d4a25aabd4bdfb259f49df877bd6d" />
+              <attribute id="a804da7ef40b447a6b7c0757cff90bcd8442" cid="PROP034" name="nombreSerieDeEjercicio" creation-date="05/10/2021 10:29:08" property-ref="dbb711e97a994d86a2998395f2f19225" />
+              <attribute id="acc26e276f37c4e5e92692e7cc2e3cb56973" cid="PROP035" name="descripcionSerieDeEjercicio" creation-date="05/10/2021 10:29:25" property-ref="9478815ea28a47909bf662e4d13fec39" />
+            </attributes>
+            <operations>
+              <operation id="o3efd6c690c9e44f59d51b536fef29128533" cid="ELEM095" name="ConsultarSeriesDeEjercicios" creation-date="05/22/2021 16:29:04" type="" type-id="" visibility="public" />
+              <operation id="od6864e06d6c942bb947b1725fcc4aa6f560" cid="ELEM096" name="RegistrarEjercicios" creation-date="05/22/2021 16:29:10" type="" type-id="" visibility="public" />
+              <operation id="odbf028bfbeec4c399f0b3b90b460adbb873" cid="ELEM139" name="RegistrarSeriesDeEjercicio" creation-date="05/25/2021 18:54:52" type="" type-id="" visibility="public" />
+              <operation id="ofd09d3ad50b04e2a87109fac617de816352" cid="ELEM140" name="CargarImagen" creation-date="05/25/2021 18:55:04" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="di518b84a4b65741be803ef2eb2987aaca1900" cid="ENT029" type="class" name="suscripciones" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:41:09" visibility="undefined">
+            <owned-items>
+              <owned-item ref="39e91b8ebcae4ec88b09b4ef2db9702d" />
+              <owned-item ref="b468a0d30ac045e3b838e5ff400e1f95" />
+              <owned-item ref="4cdc80c2920642378f92682dcda26462" />
+              <owned-item ref="80d10510d63b44efa2b44fcc6c1bcd5e" />
+            </owned-items>
+            <attributes>
+              <attribute id="ad5a662572669406aa36564b2034ed240486" cid="PROP044" name="idSuscripcion" creation-date="05/10/2021 10:35:38" property-ref="39e91b8ebcae4ec88b09b4ef2db9702d" />
+              <attribute id="ae5195351bff34746a914945c555ff41676" cid="PROP045" name="valorSuscripcion" creation-date="05/10/2021 10:36:24" property-ref="b468a0d30ac045e3b838e5ff400e1f95" />
+              <attribute id="adec8d921eb7f4ae598348cc394915700826" cid="PROP046" name="fechaSuscripcion" creation-date="05/10/2021 10:36:37" property-ref="4cdc80c2920642378f92682dcda26462" />
+              <attribute id="a31ebed5363214c368bad3738750049d5348" cid="PROP049" name="estadoSuscripcion" creation-date="05/10/2021 10:37:18" property-ref="80d10510d63b44efa2b44fcc6c1bcd5e" />
+            </attributes>
+            <operations>
+              <operation id="o280d1cab8e88426e890b48e43d4e4df4808" cid="ELEM105" name="registrarSuscripcion" creation-date="05/22/2021 16:31:00" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="difee3b6cacb834688a9f5c06eb4b8f8031900" cid="ENT032" type="class" name="clientes" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:51:31" visibility="undefined">
+            <owned-items>
+              <owned-item ref="f56bb6b261ae4c15ab3c222a6e624a2b" />
+              <owned-item ref="59ded3ee1ed540dbb32158e991e99535" />
+              <owned-item ref="43ca060fe221422eafd7e34390f1f0ed" />
+              <owned-item ref="431a11f8d41740d6b1a55253d61fe951" />
+              <owned-item ref="b1b3c2ab499642b6b2350e270092037b" />
+            </owned-items>
+            <attributes>
+              <attribute id="ac9f8b47a84894713b9f84ebe3381402b200" cid="PROP063" name="idCliente" creation-date="05/13/2021 17:53:13" property-ref="f56bb6b261ae4c15ab3c222a6e624a2b" />
+              <attribute id="ae8658abb069a4354bec444858d0329ce24" cid="PROP064" name="nombreCliente" creation-date="05/13/2021 17:53:27" property-ref="59ded3ee1ed540dbb32158e991e99535" />
+              <attribute id="a116eb9f302c143909982da8f7bdbd3c9597" cid="PROP065" name="fechaNacimientoCliente" creation-date="05/13/2021 17:53:47" property-ref="43ca060fe221422eafd7e34390f1f0ed" />
+              <attribute id="af98b33f4bf25416884a6bd2038bfbcd1115" cid="PROP066" name="telefonoCliente" creation-date="05/13/2021 17:54:25" property-ref="431a11f8d41740d6b1a55253d61fe951" />
+              <attribute id="a2fac8fb31cae4f4fa3068c8be421eded287" cid="PROP067" name="estadoCliente" creation-date="05/13/2021 17:54:53" property-ref="b1b3c2ab499642b6b2350e270092037b" />
+            </attributes>
+            <operations>
+              <operation id="oceab95881f9c466385223a48eaa578d7254" cid="ELEM130" name="registrarCliente" creation-date="05/22/2021 16:35:09" type="" type-id="" visibility="public" />
+              <operation id="obcf472f4984f43f1810f133636abb43d685" cid="ELEM131" name="consultarClientes" creation-date="05/22/2021 16:35:15" type="" type-id="" visibility="public" />
+              <operation id="o84eae4dffe1f43eca51d61ac60799e73180" cid="ELEM146" name="actualizarCliente" creation-date="07/19/2021 18:50:32" type="" type-id="" visibility="public" />
+              <operation id="of499619ec2314b9cb1d226a9c77fd2e4790" cid="ELEM147" name="consultarClientesFiltrados" creation-date="07/19/2021 18:50:42" type="" type-id="" visibility="public" />
+              <operation id="o0b16eb70c13e45148070d3d70786deee798" cid="ELEM148" name="cambiarEstadoCliente" creation-date="07/19/2021 18:50:53" type="" type-id="" visibility="public" />
+              <operation id="ob6605b10f326404cb97633d55807859e142" cid="ELEM149" name="borrarCliente" creation-date="07/19/2021 18:51:07" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="f7292329eb994cd78c1f9d1e39b793b9" cid="REL009" type="relationship" name="1" style-class="" change-tracking-state="added" creator="" creation-date="05/25/2021 19:10:20" from="di3eeef1caa5ec42369e9e2c5c0e3eb0421900" to="di29b9677018514fe8b040125a7ccc8aad1900" visibility="package">
+            <relation from="di3eeef1caa5ec42369e9e2c5c0e3eb0421900" to="di29b9677018514fe8b040125a7ccc8aad1900" derived="false">
+              <start-role id="umlar-738006c7-f862-49a4-bc50-1180425a8ee5" name="" navigability="" association-type="aggregation" visibility="private" />
+              <end-role id="umlar-9eeab9cb-a45e-4df2-9f0e-47e44079437a" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di56dd493e0e2a458589738f57e9a7ce7c1900" cid="ENT033" type="class" name="fichaAntropometrica" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:55:25" visibility="undefined">
+            <owned-items>
+              <owned-item ref="dc562a8027264eeb896deb043f7f15cf" />
+              <owned-item ref="3330802dbf5f4f41a2febb23b3989bb9" />
+              <owned-item ref="7fa9045122f84617a99e500737565052" />
+              <owned-item ref="ee76de8b802b4a42b4c0c88218bf34fe" />
+              <owned-item ref="8742b20cd9ee4ffb838852987e172145" />
+            </owned-items>
+            <attributes>
+              <attribute id="ac44f485d1c2d4d368c93f32ade530279398" cid="PROP055" name="idFicha" creation-date="05/13/2021 17:47:28" property-ref="dc562a8027264eeb896deb043f7f15cf" />
+              <attribute id="a5853e4ab074b4ba7b19e458ecb136e6f309" cid="PROP056" name="fechaFicha" creation-date="05/13/2021 17:47:45" property-ref="3330802dbf5f4f41a2febb23b3989bb9" />
+              <attribute id="acebdea76aae74a0ca38a1e5412f64f3b910" cid="PROP057" name="EstaturaCliente" creation-date="05/13/2021 17:47:56" property-ref="7fa9045122f84617a99e500737565052" />
+              <attribute id="abedc8100f0db4386adfadfde7382f4a3295" cid="PROP058" name="pesoCliente" creation-date="05/13/2021 17:48:11" property-ref="ee76de8b802b4a42b4c0c88218bf34fe" />
+              <attribute id="a9353f70e255343219c7ae2f15ea7d4f6773" cid="PROP059" name="descripcionFicha" creation-date="05/13/2021 17:48:29" property-ref="8742b20cd9ee4ffb838852987e172145" />
+            </attributes>
+            <operations>
+              <operation id="of17e4147bbfe43d08d0b8eeb61d1c3a352" cid="ELEM103" name="registrarFichaAntro" creation-date="05/22/2021 16:30:42" type="" type-id="" visibility="public" />
+              <operation id="o54aff94c8ed14bcaa7d776f2b98b82db104" cid="ELEM141" name="registrarFichaMedida" creation-date="05/25/2021 18:57:25" type="" type-id="" visibility="public" />
+              <operation id="offfa60d619014ea596935f27a936356281" cid="ELEM142" name="registrarParteCuerpo" creation-date="05/25/2021 18:57:32" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="716e1c3bb8274ca6baaf41797f60f8ec" cid="REL008" type="relationship" name="1..*" style-class="" change-tracking-state="added" creator="" creation-date="05/25/2021 19:08:29" from="di518b84a4b65741be803ef2eb2987aaca1900" to="dif84e76a6390f4adbbc7a883c6bf19c191900" visibility="package">
+            <relation from="di518b84a4b65741be803ef2eb2987aaca1900" to="dif84e76a6390f4adbbc7a883c6bf19c191900" derived="false">
+              <start-role id="umlar-b9a5cada-7faf-4888-a5d8-7a139568be02" name="" navigability="" association-type="aggregation" visibility="private" />
+              <end-role id="umlar-154f48ff-229d-4aa6-aea4-1b7d462d6464" name="" navigability="" association-type="association" visibility="private" attribute-ref="a117abf904e2f4417ac0bef966f3cb7a8684" />
+            </relation>
+          </item>
+          <item id="e4adb2fa16c841f1851f4dabe398ac56" cid="REL011" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="05/25/2021 19:14:41" from="did1b867ac1680485daf5cbf92f4b1266f1900" to="dif84e76a6390f4adbbc7a883c6bf19c191900" visibility="package">
+            <relation from="did1b867ac1680485daf5cbf92f4b1266f1900" to="dif84e76a6390f4adbbc7a883c6bf19c191900" derived="false">
+              <start-role id="umlar-56b61300-8f3a-463d-ae8d-3a1b4de82ed3" name="" navigability="" association-type="association" visibility="private" />
+              <end-role id="umlar-a706df0b-f6f1-42ba-a1c3-15d05ae84bcc" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="c800a4c34c9b4a82abf706a4fdfd41b2" cid="GNR008" type="generalization" name="1..*" style-class="" change-tracking-state="added" creator="" creation-date="05/25/2021 19:13:56" from="di56dd493e0e2a458589738f57e9a7ce7c1900" to="difee3b6cacb834688a9f5c06eb4b8f8031900" visibility="package" />
+          <item id="di377ffe423dd64fc3b51b5f00df378f261900" cid="ENT036" type="class" name="usuarios" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 09:05:51" visibility="undefined">
+            <owned-items>
+              <owned-item ref="4724441a0a644f10b0055ba090b0d99c" />
+              <owned-item ref="b09c1fc0a93b417691088ad2091e3b89" />
+              <owned-item ref="851fc2f217db41cd9837a79bb4fff92b" />
+              <owned-item ref="d35a7bb166d348ecbdec5417520f8693" />
+            </owned-items>
+            <attributes>
+              <attribute id="ae8c65c6305994809b39a33a718b30725424" cid="PROP069" name="idUsuario" creation-date="05/13/2021 17:56:00" property-ref="4724441a0a644f10b0055ba090b0d99c" />
+              <attribute id="aa81ac51f7bfb4492943194328649308e483" cid="PROP070" name="numeroIdentificacion" creation-date="05/13/2021 17:57:51" property-ref="b09c1fc0a93b417691088ad2091e3b89" />
+              <attribute id="a26c6a66b831d4bd1936d8e0834f4669e468" cid="PROP071" name="contraseñaUsuario" creation-date="05/13/2021 17:58:49" property-ref="851fc2f217db41cd9837a79bb4fff92b" />
+              <attribute id="a4fcd56ec7bd64d1bb3f70b0bd8358c77225" cid="PROP072" name="estadoUsuario" creation-date="05/13/2021 18:00:11" property-ref="d35a7bb166d348ecbdec5417520f8693" />
+            </attributes>
+            <operations>
+              <operation id="o836d1d601bad4d7294ff9773199e66f6218" cid="ELEM128" name="registrarUsuario" creation-date="05/22/2021 16:34:58" type="" type-id="" visibility="public" />
+              <operation id="of88f1bc010344de4ae6e9c7308751932626" cid="ELEM129" name="ConsultarUsuario" creation-date="05/22/2021 16:35:03" type="" type-id="" visibility="public" />
+              <operation id="of24fa5af55534c5daaef7cc4665e86f6138" cid="ELEM132" name="registrarRol" creation-date="05/25/2021 18:47:12" type="" type-id="" visibility="public" />
+              <operation id="of10f51c122b94266b1c3ec4705c2a85c97" cid="ELEM133" name="registrarTipoDocumento" creation-date="05/25/2021 18:47:20" type="" type-id="" visibility="public" />
+              <operation id="o3579ee4f6e394414b55f15630ee9f7c1880" cid="ELEM143" name="validarLoginUsuario" creation-date="07/10/2021 17:05:06" type="" type-id="" visibility="public" />
+              <operation id="o55b879bd08aa493c8cbf753b187dc7bf830" cid="ELEM144" name="cambiaEstadoUsuario" creation-date="07/10/2021 17:05:24" type="" type-id="" visibility="public" />
+              <operation id="oa9b50f728869439c82cf5804bc2ea78a21" cid="ELEM145" name="borrarUsuario" creation-date="07/19/2021 18:46:22" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="6d21583ad52845409d765715fb5d19e9" cid="GNR004" type="generalization" name="1" style-class="" change-tracking-state="added" creator="" creation-date="05/25/2021 19:02:17" from="difee3b6cacb834688a9f5c06eb4b8f8031900" to="di377ffe423dd64fc3b51b5f00df378f261900" visibility="package" />
+          <item id="2fe142d467c545b89c74eec8cb2e6509" cid="ENT001" type="erd-entity" name="serieDeEjercicios" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:34:43">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a81d6a88db22c454fae83ab9d319dd7dd666" cid="ELEM001" name="idSerie" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:35:29" />
+              <attribute uid="ae5b5e21cd9004cca85e9501b6cca5b167" cid="ELEM002" name="nombreSerieDeEjercicio" type="varchar" type-id="varchar" type-size="50" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:35:45" />
+              <attribute uid="a87addb08537a4c5ebd1aedd73c9e3281779" cid="ELEM003" name="descripcionSerieDeEjercicio" type="varchar" type-id="varchar" type-size="300" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:36:32" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="c9be033c766140eaa2ba36be4ebaf7b9" cid="ENT002" type="erd-entity" name="ejercicios" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:37:10">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a0cdc953d7fe049e497b4052a79046056198" cid="ELEM004" name="idEjercicio" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:37:38" />
+              <attribute uid="a85419da310644940a4c05020aef71611209" cid="ELEM005" name="nombreEjercicio" type="varchar(50)" type-id="varchar(50)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:38:06" />
+              <attribute uid="a7d515e4aa02a4b96951475fa0f54e427737" cid="ELEM062" name="idTipoRutina" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:22:09" />
+              <attribute uid="a0ac0484bf3f24e61beeb4e25431ea9db444" cid="ELEM071" name="idParteDelCuerpo" type="int" type-id="int" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:27:56" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="c1ed0fa4c6d44b1298ac494cde7943ce" cid="REL010" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="05/25/2021 19:12:14" from="di377ffe423dd64fc3b51b5f00df378f261900" to="di29b9677018514fe8b040125a7ccc8aad1900" visibility="package">
+            <relation from="di377ffe423dd64fc3b51b5f00df378f261900" to="di29b9677018514fe8b040125a7ccc8aad1900" derived="false">
+              <start-role id="umlar-2902f20b-0952-406e-8727-0940e7211ffe" name="" navigability="" association-type="association" visibility="private" attribute-ref="a4fcd56ec7bd64d1bb3f70b0bd8358c77225" />
+              <end-role id="umlar-adfcc9f6-9232-41fd-9be2-6d7bfb69df9c" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="b304528f6e7047868d593aa3742f55bd" cid="ENT003" type="erd-entity" name="imagenes " style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:38:56">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a56df152293db4e959644e6978c25ac6a629" cid="ELEM006" name="idImagen" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:39:32" />
+              <attribute uid="a4f8ef2c0870b42afb9a017b7d14ee51a648" cid="ELEM007" name="urlImagen" type="varchar(100)" type-id="varchar(100)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:39:59" />
+              <attribute uid="a6f1e803edb524cab83e21f57d5357506346" cid="ELEM008" name="descripcionImagen" type="varchar(300)" type-id="varchar(300)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:40:32" />
+              <attribute uid="a73aaa15f3fbc47f392a42e4ab4511bf4898" cid="ELEM061" name="idEjercicio" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:21:48" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="dif84e76a6390f4adbbc7a883c6bf19c191900" cid="ENT048" type="class" name="metodologia" style-class="" change-tracking-state="added" creator="" creation-date="05/06/2021 18:25:33" visibility="undefined">
+            <owned-items>
+              <owned-item ref="881f85829b6f48329111c33c8ff35bcf" />
+              <owned-item ref="ad5566e2656b4017955c7f40ef434f33" />
+            </owned-items>
+            <attributes>
+              <attribute id="a0536392ee37a4d31987cd917be08319e166" cid="PROP087" name="idMetodologia" creation-date="05/13/2021 18:14:36" property-ref="881f85829b6f48329111c33c8ff35bcf" />
+              <attribute id="a117abf904e2f4417ac0bef966f3cb7a8684" cid="PROP088" name="nombreMEtodologia" creation-date="05/13/2021 18:14:58" property-ref="ad5566e2656b4017955c7f40ef434f33" />
+            </attributes>
+            <operations>
+              <operation id="o8d59c634ef754c7084ef530c37603613408" cid="ELEM156" name="registrarMetodologia" creation-date="07/20/2021 19:58:46" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="7b418ed1253247b8a4a8bab7a66bab78" cid="ENT004" type="erd-entity" name="SuscripcionesEjercicios" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:41:04">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a2b46786752a647d68f7cddc37f23c3b2140" cid="ELEM012" name="idEjercicio" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:44:36" />
+              <attribute uid="ae155403808014a4aa187f8678d0166c5867" cid="ELEM013" name="idSuscripcion" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:44:52" />
+              <attribute uid="a6d4a0297b6e743b6bce60d226670003e107" cid="ELEM014" name="fechaInicio" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:45:11" />
+              <attribute uid="a43e23794ba6b4154a90dfb6b5adab0ad108" cid="ELEM015" name="fechaFin" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:45:34" />
+              <attribute uid="aca338b32cd374cc79fcd115c290d43cf708" cid="ELEM016" name="repeticionEjercicio" type="int" type-id="int" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:46:13" />
+              <attribute uid="a3e962ce985914391a61c7c0ec41f3622347" cid="ELEM017" name="secuenciaEjercicio" type="int" type-id="int" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:46:23" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="08896c266d63455aa71e8c87361bdccf" cid="ENT005" type="erd-entity" name="suscripciones" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:41:09">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a8ece5f4953e440d7bc948642c5f35eee471" cid="ELEM009" name="idSuscripcion" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:41:42" />
+              <attribute uid="a53586c295cfd4b1f8b443bfb3785b1f8506" cid="ELEM010" name="valorSuscripcion" type="float" type-id="float" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:42:07" />
+              <attribute uid="a012f3910806b48a09f6e5502bb985035447" cid="ELEM011" name="fechaSuscripcion" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:42:44" />
+              <attribute uid="a35a2e6f1d6e047d9b89ff208a58fae7d407" cid="ELEM058" name="idCliente" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:20:07" />
+              <attribute uid="a307f9c2148ca42f598e487a8a4a3ddea951" cid="ELEM059" name="idPlan" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:20:20" />
+              <attribute uid="a381d7943c4d7450eaea553bf54e679bb825" cid="ELEM064" name="estadoSuscripcion" type="Boolean" type-id="Uml.Boolean" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:01:58" />
+              <attribute uid="abfbdee7fc3984cd78f8c25274a9c91d8737" cid="ELEM093" name="idMetodologia" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="05/06/2021 18:27:22" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="e731cfba1e8f4b22ae20fb46d45bcc7e" cid="ENT006" type="erd-entity" name="pagos" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:47:46">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a8763bcbefcd84cd7a647bd26e0caa304646" cid="ELEM018" name="idPago" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:48:28" />
+              <attribute uid="abcb0a46e8d8d4cceadb31125fc9c55e7269" cid="ELEM019" name="fechaPago" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:48:46" />
+              <attribute uid="a6b1e93a5e4f64ef0b6c03979eb29889d868" cid="ELEM020" name="valorPago" type="float" type-id="float" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:49:10" />
+              <attribute uid="a5204015e96744817824f3d3c515aea93488" cid="ELEM021" name="descripcionPago" type="varchar(100)" type-id="varchar(100)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:49:24" />
+              <attribute uid="a684d816a79a749f6851095c4264d89cc329" cid="ELEM060" name="idSuscripcion" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:21:17" />
+              <attribute uid="a0fb7dd751c1342c89dca38aa59e22e01156" cid="ELEM090" name="UrlSoportePago" type="varchar(300)" type-id="varchar(300)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="05/06/2021 18:24:22" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="e09b62c71b684c3c946ee0b87233d566" cid="ENT007" type="erd-entity" name="planes" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:49:54">
+            <entity description="" />
+            <attributes>
+              <attribute uid="aab2cfdd4e56044ab9503be4c2dd393ab457" cid="ELEM022" name="idPlan" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:50:30" />
+              <attribute uid="af8fd83f8a0d3411db3650fe49f5110f2641" cid="ELEM023" name="nombrePlan" type="varchar(50)" type-id="varchar(50)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:51:15" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="di3eeef1caa5ec42369e9e2c5c0e3eb0421900" cid="ENT047" type="class" name="asistencias" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 12:12:59" visibility="undefined">
+            <owned-items>
+              <owned-item ref="60280ea4d32a469d8855a9fedd84f577" />
+              <owned-item ref="c0fbc63a1d594809b77e1de9873d733b" />
+            </owned-items>
+            <attributes>
+              <attribute id="a4bdd86f147b245ea8b59044efc83a462502" cid="PROP031" name="idAsistencia" creation-date="05/10/2021 10:23:55" property-ref="60280ea4d32a469d8855a9fedd84f577" />
+              <attribute id="a8a8d361fefb74a7baab3f4b77bd2f96e101" cid="PROP032" name="fechaAsistencia" creation-date="05/10/2021 10:24:14" property-ref="c0fbc63a1d594809b77e1de9873d733b" />
+            </attributes>
+            <operations>
+              <operation id="oc4963ea82ea944ed951916763ed6609f694" cid="ELEM113" name="RegistrarAsistencias" creation-date="05/22/2021 16:32:11" type="" type-id="" visibility="public" />
+              <operation id="od914b6a7832746bda2187ecb0b865c39576" cid="ELEM114" name="ConsultarAsistencias" creation-date="05/22/2021 16:32:16" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="818f4d0b661748a0a4486951198ec70c" cid="ENT008" type="erd-entity" name="clientes" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:51:31">
+            <entity description="" />
+            <attributes>
+              <attribute uid="af32452a1229144a2aa1a72dd7206fcbb328" cid="ELEM024" name="idCliente" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:52:14" />
+              <attribute uid="a69096f74bb9e4e468049f1180f8e1868964" cid="ELEM025" name="nombreCliente" type="varchar(50)" type-id="varchar(50)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:52:33" />
+              <attribute uid="aba973a3b302e48ea84adfa1056abf0e975" cid="ELEM026" name="fechaNacimientoCliente" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:53:03" />
+              <attribute uid="a91920e5182b4447fbe01c7ab9c670d07810" cid="ELEM027" name="telefonoCliente" type="int" type-id="int" type-size="UNIQUE" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:53:36" />
+              <attribute uid="aeb9ed9bc4fbb411daee618e384179291958" cid="ELEM028" name="estadoCliente" type="Boolean" type-id="Uml.Boolean" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:54:12" />
+              <attribute uid="a2739b299a5bc42a191b9d118113ec311216" cid="ELEM056" name="idUsuario" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:19:06" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="60a9d2d6c176468e87cf45e004cb3d9e" cid="ENT009" type="erd-entity" name="fichaAntropometrica" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 08:55:25">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a772107392bc74eecb5166ce104e10333267" cid="ELEM029" name="idFicha" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:55:58" />
+              <attribute uid="a53b82aec3ad14678b929f883aaa7ce17590" cid="ELEM030" name="fechaFicha" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:56:24" />
+              <attribute uid="a7f22c6bc66644eeeb0644b241c2a5472124" cid="ELEM032" name="EstaturaCliente" type="float" type-id="float" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:57:39" />
+              <attribute uid="a12dd3f27ec564154b9e4d4332e1e1f26789" cid="ELEM033" name="pesoCliente" type="float" type-id="float" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:57:57" />
+              <attribute uid="a4cfc850ec90b4634abfa0e96221088fa682" cid="ELEM034" name="descripcionFicha" type="varchar(200)" type-id="varchar(200)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 08:58:41" />
+              <attribute uid="ad7cbb659bf7a4d55831a2869ecc31cf9942" cid="ELEM063" name="idSuscripcion" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:22:42" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="dia2a9704eb5f840509fd4f73aecba57aa1900" cid="ENT046" type="class" name="programacionAsistencia" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 12:12:39" visibility="undefined">
+            <owned-items>
+              <owned-item ref="ca105e9e87ed4e13a62eaa2d81800301" />
+              <owned-item ref="0841db2a45a04c22820ef8bf514c4d54" />
+            </owned-items>
+            <attributes>
+              <attribute id="a1d2aa6a50ecb48c69aa9f0fd8ea27a3f980" cid="PROP022" name="horaIngreso" creation-date="05/10/2021 10:13:45" property-ref="ca105e9e87ed4e13a62eaa2d81800301" />
+              <attribute id="ac5d53bbe6bef46bd9b21815b3de6cea8966" cid="PROP023" name="horaSalida" creation-date="05/10/2021 10:14:23" property-ref="0841db2a45a04c22820ef8bf514c4d54" />
+            </attributes>
+            <operations>
+              <operation id="o28aca827f5ee4bc688d239e30453b3b5836" cid="ELEM118" name="Elegir" creation-date="05/22/2021 16:33:41" type="" type-id="" visibility="public" />
+              <operation id="o4b5c2b11ebd3495294ecffaec4bc10e9802" cid="ELEM119" name="Controlar" creation-date="05/22/2021 16:33:44" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="2a21a480b32a4f3eae14854b85984126" cid="ENT010" type="erd-entity" name="fichaMedidas" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 09:02:25">
+            <entity description="" />
+            <attributes>
+              <attribute uid="aaac8b00f42e04920b9860a951c9c8461969" cid="ELEM037" name="idFicha" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:04:49" />
+              <attribute uid="a3355f9160dd04fb2ae7e861e66aba763206" cid="ELEM038" name="idParteDelCuerpo" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:05:06" />
+              <attribute uid="ad39bff3667f343c3b1b93c3ab594098f679" cid="ELEM039" name="medida" type="float" type-id="float" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:05:31" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="00aebeb49d7244e6930d803649c34f2b" cid="ENT011" type="erd-entity" name="medidasDelCuerpo" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 09:02:42">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a654ed85bc93f4c40b7e95ea8b2d59625181" cid="ELEM035" name="idParteDelCuerpo" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:03:34" />
+              <attribute uid="ada4d75de950647d5bb0e5aa7d24dc66b730" cid="ELEM036" name="nombreParteDelCuerpo" type="varchar(35)" type-id="varchar(35)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:04:01" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="55d743a162a6497387e4a33c8ed91d6c" cid="ENT012" type="erd-entity" name="usuarios" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 09:05:51">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a75894c31ae584c8ba169f911a10123fa968" cid="ELEM040" name="idUsuario" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:06:26" />
+              <attribute uid="ab75d8948eeb74411b5aa089cb928a505307" cid="ELEM042" name="numeroIdentificacion" type="int" type-id="int" type-size="UNIQUE" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:07:41" />
+              <attribute uid="ad67a141f00c5453384b9612d291caeda126" cid="ELEM043" name="contraseñaUsuario" type="varchar(20)" type-id="varchar(20)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:09:47" />
+              <attribute uid="af0aef133ad1246f39a0ff73dc79a0754427" cid="ELEM044" name="estadoUsuario" type="Boolean" type-id="Uml.Boolean" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:10:22" />
+              <attribute uid="abd46aa90871c41aebdbe3cd233b44bc0576" cid="ELEM054" name="idRol" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:17:56" />
+              <attribute uid="a05ad154eae20480ea1fb798e8b1386c939" cid="ELEM055" name="idTipoDocumento" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:18:16" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="05643b296b8f4934812e3bf8e4f9457f" cid="REL005" type="relationship" name="" style-class="" change-tracking-state="added" creator="" creation-date="05/25/2021 19:06:52" from="difee3b6cacb834688a9f5c06eb4b8f8031900" to="di518b84a4b65741be803ef2eb2987aaca1900" visibility="package">
+            <relation from="difee3b6cacb834688a9f5c06eb4b8f8031900" to="di518b84a4b65741be803ef2eb2987aaca1900" derived="false">
+              <start-role id="umlar-43cb0fcc-46ba-4fbe-8538-b4f7e11654e5" name="" navigability="" association-type="composition" visibility="private" />
+              <end-role id="umlar-3cb2b701-bc62-428d-9aae-ab5b6289f93e" name="" navigability="" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="3b79a42947cd43e2a3a8b24f389c6ff0" cid="ENT013" type="erd-entity" name="rol" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 09:11:25">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a5f3ecc42ca59471b96a4f4522c02787a20" cid="ELEM045" name="idRol" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:11:59" />
+              <attribute uid="adb2bb1b5fe434f47976ec16b38c3ed4e247" cid="ELEM046" name="nombreRol" type="varchar(20)" type-id="varchar(20)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:12:12" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="di29b9677018514fe8b040125a7ccc8aad1900" cid="ENT043" type="class" name="programacion" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 12:04:30" visibility="undefined">
+            <owned-items>
+              <owned-item ref="3a984b69e3934e40b6843f05449a52ae" />
+              <owned-item ref="93ebacb0c31442c5a1449c0899deb411" />
+              <owned-item ref="85821e244227490f88c130a0ee701110" />
+            </owned-items>
+            <attributes>
+              <attribute id="a48fec3947e214326a83412652830bce8123" cid="PROP089" name="idProgramacion" creation-date="05/13/2021 18:15:54" property-ref="3a984b69e3934e40b6843f05449a52ae" />
+              <attribute id="a8fb9ead626fe450aa323b9cb73da81a4140" cid="PROP090" name="fechaInicioPro" creation-date="05/13/2021 18:17:41" property-ref="93ebacb0c31442c5a1449c0899deb411" />
+              <attribute id="a26d471108e0647df87bdb1cdc2788a24503" cid="PROP091" name="fechaFinPro" creation-date="05/13/2021 18:17:55" property-ref="85821e244227490f88c130a0ee701110" />
+            </attributes>
+            <operations>
+              <operation id="ob0ff8e8a44ad4ff0be08dc4e7a02b1a3942" cid="ELEM120" name="ControlarProgramacion" creation-date="05/22/2021 16:33:51" type="" type-id="" visibility="public" />
+              <operation id="obd2c428d1d634b9587c7d918980539b2376" cid="ELEM121" name="EscogerHorario" creation-date="05/22/2021 16:34:02" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="f103fc9c83d04aec94dace3c117457e2" cid="ENT014" type="erd-entity" name="tipoIdentificacion" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 09:13:08">
+            <entity description="" />
+            <attributes>
+              <attribute uid="ad33ad9863192486f9fc7309a26674880168" cid="ELEM047" name="idTipoDocumento" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:13:53" />
+              <attribute uid="a3f9fab0b917a4194b006c06a976a2589229" cid="ELEM048" name="nombreDocumento" type="varchar(25)" type-id="varchar(25)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:14:22" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="7b4ec2ae360e4b73b860d7419d27820a" cid="ENT015" type="erd-entity" name="instructores" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 09:15:04">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a7ef1777d5e0b4cfaabac26a44c5ccb65599" cid="ELEM049" name="idInstructor" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:15:42" />
+              <attribute uid="a7e88d933c9a247dcb1034cf555ca8721788" cid="ELEM050" name="nombreInstructor" type="varchar(50)" type-id="varchar(50)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:15:58" />
+              <attribute uid="a79dc87649dc84964bc469d3d26b79d76128" cid="ELEM051" name="telefonoInstructor" type="int" type-id="int" type-size="UNIQUE" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:16:21" />
+              <attribute uid="a054552e3d6f2444e91cef65a6ebd12c671" cid="ELEM052" name="correoInstructor" type="varchar(60)" type-id="varchar(60)" type-size="UNIQUE" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:16:38" />
+              <attribute uid="ae7d30ef811a34e73ba5808ba23eb564c87" cid="ELEM053" name="estadoInstructor" type="Boolean" type-id="Uml.Boolean" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:16:56" />
+              <attribute uid="a4a0dce97013c41b2be8984b8d7b15dca429" cid="ELEM057" name="idUsuario" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 09:19:29" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="63430d042468455eb17cd65a695585aa" cid="ENT016" type="erd-entity" name="Novedad" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 11:02:51">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a29f7cb14743d4b33aefc2c9ba29361e6320" cid="ELEM065" name="idNovedad" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:18:54" />
+              <attribute uid="a9734b8b07629447d8cf52ef557afd9ef749" cid="ELEM066" name="fechaNovedad" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:19:41" />
+              <attribute uid="a6f2d56a777a5443194c1927a74f40029877" cid="ELEM067" name="descripcionNovedad" type="varchar(200)" type-id="varchar(200)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:20:15" />
+              <attribute uid="abbc16bf0733747f79c0d6564eaae3de0366" cid="ELEM068" name="idSuscripcion" type="int" type-id="int" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:21:42" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="390344060a4943af8f84c3267f2811ab" cid="ENT017" type="erd-entity" name="tipoNovedad" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 11:22:07">
+            <entity description="" />
+            <attributes>
+              <attribute uid="ad28dd4d94c1e4e9c82edb8e141706bea569" cid="ELEM069" name="idTipoNov" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:23:49" />
+              <attribute uid="a5efd51166059474ca875ac58ae02e19115" cid="ELEM070" name="nombreNovedad" type="varchar(35)" type-id="varchar(35)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:24:27" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="aadb185f46424222b1da596a41c94562" cid="ENT018" type="erd-entity" name="tipoRutinasEjercicios" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 11:28:41">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a3862debd398c497db05c109b7029f0a6975" cid="ELEM072" name="idEjercicio" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:30:28" />
+              <attribute uid="a80f7ffd21c88468195029447ac159911885" cid="ELEM073" name="idSerie" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 11:30:55" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="2d68507e881743ccbba58f1726612be2" cid="ENT019" type="erd-entity" name="programacion" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 12:04:30">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a7924ac05dc424e708eb9ba9153f3c1b7247" cid="ELEM074" name="idProgramacion" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:05:24" />
+              <attribute uid="af891c574d2b742299b1ddb3432be5e32418" cid="ELEM075" name="fechaInicioPro" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:05:39" />
+              <attribute uid="acd55cfa37c6d4e99a5a8958cdd09f48e638" cid="ELEM076" name="fechaFinPro" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:05:52" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="ee14ed5c52cd45d5a961c92232f70c4e" cid="ENT020" type="erd-entity" name="programacionHorario" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 12:07:09">
+            <entity description="" />
+            <attributes>
+              <attribute uid="a1ce5521e20af42f18e0acdfd651e66d4408" cid="ELEM082" name="idProgramacion" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:11:23" />
+              <attribute uid="aa69c6942f33143f4bb2c7e86dcd611e7530" cid="ELEM083" name="idHorario" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:11:37" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="430fc8a71bc64878b4691e1f6253b03f" cid="GNR006" type="generalization" name="1" style-class="" change-tracking-state="added" creator="" creation-date="05/25/2021 19:03:43" from="diea865a4e76b545bab276914d59dc28a81900" to="di377ffe423dd64fc3b51b5f00df378f261900" visibility="package" />
+          <item id="f36c77f297f14f61be2c64af68362805" cid="ENT021" type="erd-entity" name="horarios" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 12:07:15">
+            <entity description="" />
+            <attributes>
+              <attribute uid="af3c84c35e432410481b21e544f52ff20113" cid="ELEM077" name="idHorario" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:07:57" />
+              <attribute uid="aaa86762e910d4191b282d8b6beb708f9218" cid="ELEM078" name="horaInicioHorario" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:08:57" />
+              <attribute uid="ac828342fd1d54b0db97b1f5474dfa38d151" cid="ELEM079" name="horaFinHorario" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:09:31" />
+              <attribute uid="ac5dbe5fe90e84687aeef9309c0811bef366" cid="ELEM080" name="semanaDiaHorario" type="varchar(10)" type-id="varchar(10)" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:10:34" />
+              <attribute uid="a956b0492ec9a4d93a3c9a18dfe1b17b9675" cid="ELEM081" name="aforoHorario" type="int" type-id="int" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:10:49" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="diea865a4e76b545bab276914d59dc28a81900" cid="ENT039" type="class" name="instructores" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 09:15:04" visibility="undefined">
+            <owned-items>
+              <owned-item ref="c7037e6bd5b846ea9cdaffc57cb26bdf" />
+              <owned-item ref="8cf57f898def4db9bf8e8ceab329f100" />
+              <owned-item ref="763dcaa02efb4f6aa52bafae11f4214f" />
+              <owned-item ref="8de7aeb9519b463bb2d22c7c94a50aca" />
+              <owned-item ref="5170e3902bb143a0aa67eecaa43e6365" />
+            </owned-items>
+            <attributes>
+              <attribute id="a442b18404b0647f29a5aa06e3ad85481575" cid="PROP080" name="idInstructor" creation-date="05/13/2021 18:05:18" property-ref="c7037e6bd5b846ea9cdaffc57cb26bdf" />
+              <attribute id="aed6e8b23812d4fbc9eeb79f0990ca9a5939" cid="PROP081" name="nombreInstructor" creation-date="05/13/2021 18:06:59" property-ref="8cf57f898def4db9bf8e8ceab329f100" />
+              <attribute id="a817b199c414f41b4a0822cc321576df7247" cid="PROP082" name="telefonoInstructor" creation-date="05/13/2021 18:07:26" property-ref="763dcaa02efb4f6aa52bafae11f4214f" />
+              <attribute id="a414f4e240c2f4db396deb3041c453438351" cid="PROP083" name="correoInstructor" creation-date="05/13/2021 18:07:46" property-ref="8de7aeb9519b463bb2d22c7c94a50aca" />
+              <attribute id="a0a58c0d21a8d4c79a358c9a1428a864b892" cid="PROP084" name="estadoInstructor" creation-date="05/13/2021 18:08:17" property-ref="5170e3902bb143a0aa67eecaa43e6365" />
+            </attributes>
+            <operations>
+              <operation id="oeba629aabaf54ccea3ea3ab26d6db113440" cid="ELEM127" name="registrarInstructor" creation-date="05/22/2021 16:34:50" type="" type-id="" visibility="public" />
+              <operation id="o0074b1e8268c4ce3b0ee3b64e75535d8795" cid="ELEM151" name="actualizarInstructor" creation-date="07/19/2021 20:04:39" type="" type-id="" visibility="public" />
+              <operation id="o22eded3f6b6e403a8e86de90d8ef508b30" cid="ELEM152" name="consultarInstructor" creation-date="07/19/2021 20:05:09" type="" type-id="" visibility="public" />
+              <operation id="o7925f774133940f098f732b031dbe867708" cid="ELEM153" name="consultarInstructorFiltrados" creation-date="07/19/2021 20:05:30" type="" type-id="" visibility="public" />
+              <operation id="o9c4185794556448fa62de375159662b7348" cid="ELEM154" name="cambiarEstadoInstructor" creation-date="07/19/2021 20:05:41" type="" type-id="" visibility="public" />
+              <operation id="of0311864ae574f82829c0ef54b5725a7452" cid="ELEM155" name="borrarInstructor" creation-date="07/19/2021 20:05:49" type="" type-id="" visibility="public" />
+            </operations>
+          </item>
+          <item id="abe31bd39a0e44d894d31c25b308f2f5" cid="ENT022" type="erd-entity" name="programacionAsistencia" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 12:12:39">
+            <entity description="" />
+            <attributes>
+              <attribute uid="aeda6bf8888be4378a02e7e364686b7b6660" cid="ELEM086" name="idProgramacion" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:14:54" />
+              <attribute uid="ae50fa62e0ea64c0ebb1667edf3a5f974703" cid="ELEM087" name="idAsistencias" type="int" type-id="int" type-size="" foreign-key="true" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:15:16" />
+              <attribute uid="a1db05343f05b407781e73ea7f766c8e9112" cid="ELEM088" name="horaIngreso" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:15:43" />
+              <attribute uid="ac321f21600ac45b59d73eb8780cc1a25465" cid="ELEM089" name="horaSalida" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:15:51" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="898549c3a0d54a9bb548ce1a79cd2d68" cid="ENT023" type="erd-entity" name="asistencias" style-class="" change-tracking-state="added" creator="" creation-date="03/23/2021 12:12:59">
+            <entity description="" />
+            <attributes>
+              <attribute uid="af7e4aa6cb5bc4f0d8952621048dcaa22246" cid="ELEM084" name="idAsistencia" type="int" type-id="int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:13:51" />
+              <attribute uid="aaa0a0ede84c64d2aab8ab1b0512bf8b9141" cid="ELEM085" name="fechaAsistencia" type="date" type-id="date" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="03/23/2021 12:14:16" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="de6f6a8b47f240eb9132bd7b9a47edf9" cid="ENT024" type="erd-entity" name="metodologia" style-class="" change-tracking-state="added" creator="" creation-date="05/06/2021 18:25:33">
+            <entity description="" />
+            <attributes>
+              <attribute uid="ab904a18265684e6f92075c66c8abfe0411" cid="ELEM091" name="idMetodologia" type="Int" type-id="Int" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" creation-date="05/06/2021 18:26:15" />
+              <attribute uid="a2eb6d0a5526a4b479c2b0265a100f639826" cid="ELEM092" name="nombreMetodologia" type="varchar(50) (varchar(50))" type-id="varchar(50) (varchar(50))" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" creation-date="05/06/2021 18:26:38" />
+            </attributes>
+            <indexes />
+          </item>
+          <item id="85821e244227490f88c130a0ee701110" cid="PROP091" type="property" name="fechaFinPro" style-class="" owner="di29b9677018514fe8b040125a7ccc8aad1900" creator="" creation-date="05/13/2021 18:17:55" visibility="private">
+            <feature />
+            <structural-feature type="date" type-id="date" />
+            <property />
+          </item>
+          <item id="93ebacb0c31442c5a1449c0899deb411" cid="PROP090" type="property" name="fechaInicioPro" style-class="" owner="di29b9677018514fe8b040125a7ccc8aad1900" creator="" creation-date="05/13/2021 18:17:41" visibility="private">
+            <feature />
+            <structural-feature type="date" type-id="date" />
+            <property />
+          </item>
+          <item id="ca105e9e87ed4e13a62eaa2d81800301" cid="PROP022" type="property" name="horaIngreso" style-class="" owner="dia2a9704eb5f840509fd4f73aecba57aa1900" creator="" creation-date="05/10/2021 10:13:45" visibility="public">
+            <feature />
+            <structural-feature type="DateTime NOT NULL" type-id="DateTime NOT NULL" />
+            <property />
+          </item>
+          <item id="0841db2a45a04c22820ef8bf514c4d54" cid="PROP023" type="property" name="horaSalida" style-class="" owner="dia2a9704eb5f840509fd4f73aecba57aa1900" creator="" creation-date="05/10/2021 10:14:23" visibility="public">
+            <feature />
+            <structural-feature type="DateTime NOT NULL" type-id="DateTime NOT NULL" />
+            <property />
+          </item>
+          <item id="60280ea4d32a469d8855a9fedd84f577" cid="PROP031" type="property" name="idAsistencia" style-class="" owner="di3eeef1caa5ec42369e9e2c5c0e3eb0421900" creator="" creation-date="05/10/2021 10:23:55" visibility="private">
+            <feature />
+            <structural-feature type="integrer" type-id="integrer" />
+            <property />
+          </item>
+          <item id="c0fbc63a1d594809b77e1de9873d733b" cid="PROP032" type="property" name="fechaAsistencia" style-class="" owner="di3eeef1caa5ec42369e9e2c5c0e3eb0421900" creator="" creation-date="05/10/2021 10:24:14" visibility="private">
+            <feature />
+            <structural-feature type="date" type-id="date" />
+            <property />
+          </item>
+          <item id="518d4a25aabd4bdfb259f49df877bd6d" cid="PROP033" type="property" name="idSerie" style-class="" owner="did1b867ac1680485daf5cbf92f4b1266f1900" creator="" creation-date="05/10/2021 10:28:09" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="dbb711e97a994d86a2998395f2f19225" cid="PROP034" type="property" name="nombreSerieDeEjercicio" style-class="" owner="did1b867ac1680485daf5cbf92f4b1266f1900" creator="" creation-date="05/10/2021 10:29:08" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="9478815ea28a47909bf662e4d13fec39" cid="PROP035" type="property" name="descripcionSerieDeEjercicio" style-class="" owner="did1b867ac1680485daf5cbf92f4b1266f1900" creator="" creation-date="05/10/2021 10:29:25" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="881f85829b6f48329111c33c8ff35bcf" cid="PROP087" type="property" name="idMetodologia" style-class="" owner="dif84e76a6390f4adbbc7a883c6bf19c191900" creator="" creation-date="05/13/2021 18:14:36" visibility="private">
+            <feature />
+            <structural-feature type="integrer" type-id="integrer" />
+            <property />
+          </item>
+          <item id="ad5566e2656b4017955c7f40ef434f33" cid="PROP088" type="property" name="nombreMEtodologia" style-class="" owner="dif84e76a6390f4adbbc7a883c6bf19c191900" creator="" creation-date="05/13/2021 18:14:58" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="39e91b8ebcae4ec88b09b4ef2db9702d" cid="PROP044" type="property" name="idSuscripcion" style-class="" owner="di518b84a4b65741be803ef2eb2987aaca1900" creator="" creation-date="05/10/2021 10:35:38" visibility="private">
+            <feature />
+            <structural-feature type="interger" type-id="interger" />
+            <property />
+          </item>
+          <item id="b468a0d30ac045e3b838e5ff400e1f95" cid="PROP045" type="property" name="valorSuscripcion" style-class="" owner="di518b84a4b65741be803ef2eb2987aaca1900" creator="" creation-date="05/10/2021 10:36:24" visibility="private">
+            <feature />
+            <structural-feature type="float" type-id="float" />
+            <property />
+          </item>
+          <item id="4cdc80c2920642378f92682dcda26462" cid="PROP046" type="property" name="fechaSuscripcion" style-class="" owner="di518b84a4b65741be803ef2eb2987aaca1900" creator="" creation-date="05/10/2021 10:36:37" visibility="private">
+            <feature />
+            <structural-feature type="date" type-id="date" />
+            <property />
+          </item>
+          <item id="80d10510d63b44efa2b44fcc6c1bcd5e" cid="PROP049" type="property" name="estadoSuscripcion" style-class="" owner="di518b84a4b65741be803ef2eb2987aaca1900" creator="" creation-date="05/10/2021 10:37:18" visibility="private">
+            <feature />
+            <structural-feature type="Bit" type-id="Bit" />
+            <property />
+          </item>
+          <item id="dc562a8027264eeb896deb043f7f15cf" cid="PROP055" type="property" name="idFicha" style-class="" owner="di56dd493e0e2a458589738f57e9a7ce7c1900" creator="" creation-date="05/13/2021 17:47:28" visibility="public">
+            <feature />
+            <structural-feature type="integrer" type-id="integrer" />
+            <property />
+          </item>
+          <item id="3330802dbf5f4f41a2febb23b3989bb9" cid="PROP056" type="property" name="fechaFicha" style-class="" owner="di56dd493e0e2a458589738f57e9a7ce7c1900" creator="" creation-date="05/13/2021 17:47:45" visibility="public">
+            <feature />
+            <structural-feature type="date" type-id="date" />
+            <property />
+          </item>
+          <item id="7fa9045122f84617a99e500737565052" cid="PROP057" type="property" name="EstaturaCliente" style-class="" owner="di56dd493e0e2a458589738f57e9a7ce7c1900" creator="" creation-date="05/13/2021 17:47:56" visibility="public">
+            <feature />
+            <structural-feature type="float" type-id="float" />
+            <property />
+          </item>
+          <item id="ee76de8b802b4a42b4c0c88218bf34fe" cid="PROP058" type="property" name="pesoCliente" style-class="" owner="di56dd493e0e2a458589738f57e9a7ce7c1900" creator="" creation-date="05/13/2021 17:48:11" visibility="public">
+            <feature />
+            <structural-feature type="float" type-id="float" />
+            <property />
+          </item>
+          <item id="8742b20cd9ee4ffb838852987e172145" cid="PROP059" type="property" name="descripcionFicha" style-class="" owner="di56dd493e0e2a458589738f57e9a7ce7c1900" creator="" creation-date="05/13/2021 17:48:29" visibility="public">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="3a984b69e3934e40b6843f05449a52ae" cid="PROP089" type="property" name="idProgramacion" style-class="" owner="di29b9677018514fe8b040125a7ccc8aad1900" creator="" creation-date="05/13/2021 18:15:54" visibility="private">
+            <feature />
+            <structural-feature type="integrer" type-id="integrer" />
+            <property />
+          </item>
+          <item id="f56bb6b261ae4c15ab3c222a6e624a2b" cid="PROP063" type="property" name="idCliente" style-class="" owner="difee3b6cacb834688a9f5c06eb4b8f8031900" creator="" creation-date="05/13/2021 17:53:13" visibility="private">
+            <feature />
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property />
+          </item>
+          <item id="59ded3ee1ed540dbb32158e991e99535" cid="PROP064" type="property" name="nombreCliente" style-class="" owner="difee3b6cacb834688a9f5c06eb4b8f8031900" creator="" creation-date="05/13/2021 17:53:27" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="43ca060fe221422eafd7e34390f1f0ed" cid="PROP065" type="property" name="fechaNacimientoCliente" style-class="" owner="difee3b6cacb834688a9f5c06eb4b8f8031900" creator="" creation-date="05/13/2021 17:53:47" visibility="private">
+            <feature />
+            <structural-feature type="date" type-id="date" />
+            <property />
+          </item>
+          <item id="431a11f8d41740d6b1a55253d61fe951" cid="PROP066" type="property" name="telefonoCliente" style-class="" owner="difee3b6cacb834688a9f5c06eb4b8f8031900" creator="" creation-date="05/13/2021 17:54:25" visibility="private">
+            <feature />
+            <structural-feature type="integrer" type-id="integrer" />
+            <property />
+          </item>
+          <item id="b1b3c2ab499642b6b2350e270092037b" cid="PROP067" type="property" name="estadoCliente" style-class="" owner="difee3b6cacb834688a9f5c06eb4b8f8031900" creator="" creation-date="05/13/2021 17:54:53" visibility="private">
+            <feature />
+            <structural-feature type="Bit" type-id="Bit" />
+            <property />
+          </item>
+          <item id="4724441a0a644f10b0055ba090b0d99c" cid="PROP069" type="property" name="idUsuario" style-class="" owner="di377ffe423dd64fc3b51b5f00df378f261900" creator="" creation-date="05/13/2021 17:56:00" visibility="private">
+            <feature />
+            <structural-feature type="integrer" type-id="integrer" />
+            <property />
+          </item>
+          <item id="b09c1fc0a93b417691088ad2091e3b89" cid="PROP070" type="property" name="numeroIdentificacion" style-class="" owner="di377ffe423dd64fc3b51b5f00df378f261900" creator="" creation-date="05/13/2021 17:57:51" visibility="private">
+            <feature />
+            <structural-feature type="integrer" type-id="integrer" />
+            <property />
+          </item>
+          <item id="851fc2f217db41cd9837a79bb4fff92b" cid="PROP071" type="property" name="contraseñaUsuario" style-class="" owner="di377ffe423dd64fc3b51b5f00df378f261900" creator="" creation-date="05/13/2021 17:58:49" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="d35a7bb166d348ecbdec5417520f8693" cid="PROP072" type="property" name="estadoUsuario" style-class="" owner="di377ffe423dd64fc3b51b5f00df378f261900" creator="" creation-date="05/13/2021 18:00:11" visibility="private">
+            <feature />
+            <structural-feature type="Bit" type-id="Bit" />
+            <property />
+          </item>
+          <item id="c7037e6bd5b846ea9cdaffc57cb26bdf" cid="PROP080" type="property" name="idInstructor" style-class="" owner="diea865a4e76b545bab276914d59dc28a81900" creator="" creation-date="05/13/2021 18:05:18" visibility="private">
+            <feature />
+            <structural-feature type="float" type-id="float" />
+            <property />
+          </item>
+          <item id="8cf57f898def4db9bf8e8ceab329f100" cid="PROP081" type="property" name="nombreInstructor" style-class="" owner="diea865a4e76b545bab276914d59dc28a81900" creator="" creation-date="05/13/2021 18:06:59" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="763dcaa02efb4f6aa52bafae11f4214f" cid="PROP082" type="property" name="telefonoInstructor" style-class="" owner="diea865a4e76b545bab276914d59dc28a81900" creator="" creation-date="05/13/2021 18:07:26" visibility="private">
+            <feature />
+            <structural-feature type="integrer" type-id="integrer" />
+            <property />
+          </item>
+          <item id="8de7aeb9519b463bb2d22c7c94a50aca" cid="PROP083" type="property" name="correoInstructor" style-class="" owner="diea865a4e76b545bab276914d59dc28a81900" creator="" creation-date="05/13/2021 18:07:46" visibility="private">
+            <feature />
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="5170e3902bb143a0aa67eecaa43e6365" cid="PROP084" type="property" name="estadoInstructor" style-class="" owner="diea865a4e76b545bab276914d59dc28a81900" creator="" creation-date="05/13/2021 18:08:17" visibility="private">
+            <feature />
+            <structural-feature type="Bit" type-id="Bit" />
+            <property />
+          </item>
+        </abstract-items>
+        <layer id="fbf4a76e32c04ef79df9f33351aa80b5" name="Default" visible="true" enabled="true" locked="false">
+          <item id="did1b867ac1680485daf5cbf92f4b1266f1900" iid="ebd68c2fb3f04b30870dd62f1a94847a" creation-date="03/23/2021 08:34:43" order-index="0" type="entity">
+            <layout ax="58.5" ay="591.5" awidth="373" aheight="198" x="58.5" y="591.5" width="373" height="198" rotation-center="-30.5,0" />
+            <class />
+          </item>
+          <item id="di518b84a4b65741be803ef2eb2987aaca1900" iid="343c2ba3f98548188e08d5c44ab80b55" creation-date="03/23/2021 08:41:09" order-index="7" type="entity">
+            <layout ax="542" ay="909" awidth="332" aheight="156" x="542" y="909" width="140" height="156" rotation-center="0,58.5" />
+            <class />
+          </item>
+          <item id="difee3b6cacb834688a9f5c06eb4b8f8031900" iid="014f60c956c74d7d9a7929d7b9f70c6a" creation-date="03/23/2021 08:51:31" order-index="13" type="entity">
+            <layout ax="1094" ay="871" awidth="270" aheight="274" x="1094" y="871" width="140" height="160" />
+            <class />
+          </item>
+          <item id="di56dd493e0e2a458589738f57e9a7ce7c1900" iid="821b149cc92b4beaa388cff64cad8e19" creation-date="03/23/2021 08:55:25" order-index="15" type="entity">
+            <layout ax="1094" ay="538.5" awidth="270" aheight="217" x="1094" y="538.5" width="140" height="160" />
+            <class />
+          </item>
+          <item id="di377ffe423dd64fc3b51b5f00df378f261900" iid="a206cf0360214501960f006aa42d25ad" creation-date="03/23/2021 09:05:51" order-index="25" type="entity">
+            <layout ax="947.5" ay="1257" awidth="297" aheight="255" x="947.5" y="1257" width="140" height="160" />
+            <class />
+          </item>
+          <item id="diea865a4e76b545bab276914d59dc28a81900" iid="4cf8477c5b284c14a5d8b1b0bf665b47" creation-date="03/23/2021 09:15:04" order-index="31" type="entity">
+            <layout ax="1488" ay="1276" awidth="317" aheight="255" x="1488" y="1276" width="140" height="160" />
+            <class />
+          </item>
+          <item id="di29b9677018514fe8b040125a7ccc8aad1900" iid="fd53443c5dcc4ee88d2e822f046c2fc5" creation-date="03/23/2021 12:04:30" order-index="39" type="entity">
+            <layout ax="505.5" ay="1280.75" awidth="297" aheight="150.5" x="505.5" y="1280.75" width="140" height="150.5" rotation-center="0,39.75" />
+            <class />
+          </item>
+          <item id="di3eeef1caa5ec42369e9e2c5c0e3eb0421900" iid="71f21361ee7349c086a0bda613d0bac1" creation-date="03/23/2021 12:12:59" order-index="47" type="entity">
+            <layout ax="96.5" ay="1295" awidth="297" aheight="122" x="96.5" y="1295" width="140" height="119" rotation-center="0,27.5" />
+            <class />
+          </item>
+          <item id="dif84e76a6390f4adbbc7a883c6bf19c191900" iid="0f9364d6efa6486182961aea5b5fb041" creation-date="05/06/2021 18:25:33" order-index="49" type="entity">
+            <layout ax="110" ay="909" awidth="270" aheight="122" x="110" y="909" width="140" height="160" />
+            <class />
+          </item>
+          <item id="6d21583ad52845409d765715fb5d19e9" iid="1d647e3007db45a7b2a13845942aff1c" creation-date="05/25/2021 19:02:17" order-index="50" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1229" y1="1145" x2="1096" y2="1257" start-border-pos="0.625" end-border-pos="0.125" start-local-pos="135" end-local-pos="148.5" name-position="30,13">
+              <points>
+                <point x="1229" y="1145" />
+                <point x="1096" y="1257" />
+              </points>
+            </layout>
+            <relation from="difee3b6cacb834688a9f5c06eb4b8f8031900" from-iid="014f60c956c74d7d9a7929d7b9f70c6a" to="di377ffe423dd64fc3b51b5f00df378f261900" to-iid="a206cf0360214501960f006aa42d25ad" />
+          </item>
+          <item id="430fc8a71bc64878b4691e1f6253b03f" iid="a31786e82d8640d4a053e436cf0e70d9" creation-date="05/25/2021 19:03:43" order-index="51" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1488" y1="1404" x2="1244" y2="1384" start-border-pos="0.875" end-border-pos="0.375" start-local-pos="80" end-local-pos="99" name-position="0,20">
+              <points>
+                <point x="1488" y="1404" />
+                <point x="1244" y="1384" />
+              </points>
+            </layout>
+            <relation from="diea865a4e76b545bab276914d59dc28a81900" from-iid="4cf8477c5b284c14a5d8b1b0bf665b47" to="di377ffe423dd64fc3b51b5f00df378f261900" to-iid="a206cf0360214501960f006aa42d25ad" />
+          </item>
+          <item id="05643b296b8f4934812e3bf8e4f9457f" iid="ac625d9f2dc7465f86b647312c56414d" creation-date="05/25/2021 19:06:52" order-index="52" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1094" y1="1008" x2="874" y2="987" start-border-pos="0.875" end-border-pos="0.375" start-local-pos="99" end-local-pos="118" name-position="0,20">
+              <points>
+                <point x="1094" y="1008" />
+                <point x="874" y="987" />
+              </points>
+            </layout>
+            <relation from="difee3b6cacb834688a9f5c06eb4b8f8031900" from-iid="014f60c956c74d7d9a7929d7b9f70c6a" to="di518b84a4b65741be803ef2eb2987aaca1900" to-iid="343c2ba3f98548188e08d5c44ab80b55" />
+          </item>
+          <item id="716e1c3bb8274ca6baaf41797f60f8ec" iid="3a971f35089e4ee3b9bd18853e8b746c" creation-date="05/25/2021 19:08:29" order-index="53" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="29.23602,-22.92732" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="true" auto-path="" x1="542" y1="987" x2="380" y2="968" start-border-pos="0.875" end-border-pos="0.369877049180328" start-local-pos="118" end-local-pos="59" name-position="0,20">
+              <points>
+                <point x="542" y="987" />
+                <point x="380" y="968" />
+              </points>
+            </layout>
+            <relation from="di518b84a4b65741be803ef2eb2987aaca1900" from-iid="343c2ba3f98548188e08d5c44ab80b55" to="dif84e76a6390f4adbbc7a883c6bf19c191900" to-iid="0f9364d6efa6486182961aea5b5fb041" to-field="a117abf904e2f4417ac0bef966f3cb7a8684" />
+          </item>
+          <item id="f7292329eb994cd78c1f9d1e39b793b9" iid="795e1ca7b360444081c9f41e207d2630" creation-date="05/25/2021 19:10:20" order-index="54" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="394" y1="1356" x2="506" y2="1356" start-border-pos="0.375" end-border-pos="0.875" start-local-pos="61" end-local-pos="66" name-position="0,20">
+              <points>
+                <point x="394" y="1356" />
+                <point x="506" y="1356" />
+              </points>
+            </layout>
+            <relation from="di3eeef1caa5ec42369e9e2c5c0e3eb0421900" from-iid="71f21361ee7349c086a0bda613d0bac1" to="di29b9677018514fe8b040125a7ccc8aad1900" to-iid="fd53443c5dcc4ee88d2e822f046c2fc5" />
+          </item>
+          <item id="c1ed0fa4c6d44b1298ac494cde7943ce" iid="71bd80ac7a75437f80622ffa08b3ba4d" creation-date="05/25/2021 19:12:14" order-index="55" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="true" auto-path="" x1="948" y1="1354" x2="802" y2="1356" start-border-pos="0.905392156862745" end-border-pos="0.375" start-local-pos="97" end-local-pos="66" name-position="0,20">
+              <points>
+                <point x="948" y="1354" />
+                <point x="802" y="1356" />
+              </points>
+            </layout>
+            <relation from="di377ffe423dd64fc3b51b5f00df378f261900" from-iid="a206cf0360214501960f006aa42d25ad" from-field="a4fcd56ec7bd64d1bb3f70b0bd8358c77225" to="di29b9677018514fe8b040125a7ccc8aad1900" to-iid="fd53443c5dcc4ee88d2e822f046c2fc5" />
+          </item>
+          <item id="c800a4c34c9b4a82abf706a4fdfd41b2" iid="ef36f17aea204f59b5538ab5e86af2cd" creation-date="05/25/2021 19:13:56" order-index="56" type="relation">
+            <layout line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="1229" y1="756" x2="1229" y2="871" start-border-pos="0.625" end-border-pos="0.125" start-local-pos="135" end-local-pos="135" name-position="-40,3">
+              <points>
+                <point x="1229" y="756" />
+                <point x="1229" y="871" />
+              </points>
+            </layout>
+            <relation from="di56dd493e0e2a458589738f57e9a7ce7c1900" from-iid="821b149cc92b4beaa388cff64cad8e19" to="difee3b6cacb834688a9f5c06eb4b8f8031900" to-iid="014f60c956c74d7d9a7929d7b9f70c6a" />
+          </item>
+          <item id="e4adb2fa16c841f1851f4dabe398ac56" iid="20ff2e64b5264b3294aeeaeab959189b" creation-date="05/25/2021 19:14:41" order-index="57" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="244" y1="790" x2="245" y2="909" start-border-pos="0.625335120643432" end-border-pos="0.125" start-local-pos="186" end-local-pos="135" name-position="0,20">
+              <points>
+                <point x="244" y="790" />
+                <point x="245" y="909" />
+              </points>
+            </layout>
+            <relation from="did1b867ac1680485daf5cbf92f4b1266f1900" from-iid="ebd68c2fb3f04b30870dd62f1a94847a" to="dif84e76a6390f4adbbc7a883c6bf19c191900" to-iid="0f9364d6efa6486182961aea5b5fb041" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
