@@ -10,8 +10,6 @@
    
   
   $tabla="";
-  $estado='';
-  $boton='';
   /*$rutaActivaInactiva="";*/
   /*/*
   $botonBorrar='';*/

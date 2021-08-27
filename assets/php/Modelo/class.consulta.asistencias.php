@@ -32,6 +32,25 @@
         }
         return $rows;
 	}
+	public function consultarAsistenciasFiltradas($filtroCol, $valor){
+		$rows=null;
+		$modelo = new Conexion();
+		$conexion = $modelo->getConection();
+		$sql="SELECT u.numeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
+		FROM PROGRAMACION AS p 
+		JOIN USUARIOS AS  u 
+		JOIN CLIENTES AS c 
+		JOIN ASISTENCIAS AS a
+		ON  u.idUsuario=p.idUsuarioFK 
+		AND u.idUsuario=c.idUsuarioFK
+		WHERE ".$filtroCol." LIKE '%".$valor."%'";
+		$statement=$conexion->prepare($sql);
+		$statement->execute();
+		while ($result=$statement->fetch()) {
+			$rows[]=$result;
+		}
+		return $rows;
+	}
 
 	public function registrarProgramacion($fechaInicioPro,$fechaFinPro,$numid){
 			$rows=null;

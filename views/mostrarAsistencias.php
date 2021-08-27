@@ -1,12 +1,14 @@
 <?php
   require_once('../assets/php/Modelo/class.conexion.php');
   require_once('../assets/php/Modelo/class.consulta.asistencias.php');
-
+  
   $ConsultasAsistencias= new ConsultasAsistencias;
-
-
+  if (isset($_GET['filtroCol']) && isset($_GET['valor'])) {
+    $filas = $ConsultasAsistencias->consultarAsistenciasFiltradas($_GET['filtroCol'],$_GET['valor']);    
+  }else{
+    $filas = $ConsultasAsistencias->mostrarAsistencias();
+  }
     $tabla="";
-    $filas=$ConsultasAsistencias->mostrarAsistencias();
 
     if (isset($filas)) {
 
@@ -14,8 +16,8 @@
         $tabla.='<tr class="limitada" scope="row">';
         $tabla.='<td>'.$fila['numeroIdentificacion'].'</td>';
         $tabla.='<td>'.$fila['Nombre Completo'].'</td>';
-        $tabla.='<td>'.$fila['horaIngreso'].'</td>';
-        $tabla.='<td>'.$fila['horaSalida'].'</td>';
+        $tabla.='<td>'.$fila['fechaHoraIngreso'].'</td>';
+        $tabla.='<td>'.$fila['fechaHoraSalida'].'</td>';
 
     }
   }else {
@@ -74,8 +76,8 @@ crossorigin="anonymous">
       <form action="" method="GET" id="form">        
         <td>
           <select type="option" id="est" name="filtroCol" class="form-control" required="">
-            <option value="idUsuario">Número de identificación</option>
-            <option value="rolUsuario">Tipo de Usuario</option>
+            <option value="NumeroIdentificacion">Número de identificación</option>
+            <option value="nombreCliente">Nombre</option>
           </select>          
         </td>
         <td>
@@ -101,8 +103,8 @@ crossorigin="anonymous">
         
         <th scope="col">Numero Identificacion</th>
         <th scope="col">Nombre Completo</th>
-        <th scope="col">Hora Ingreso</th>
-        <th scope="col">Hora Salida</th>
+        <th scope="col">Fecha y Hora de Ingreso</th>
+        <th scope="col">Fecha y Hora de Salida</th>
 
       </tr>
     </thead>
