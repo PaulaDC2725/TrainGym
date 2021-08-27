@@ -215,7 +215,7 @@ CREATE PROCEDURE `registrarAsistencia` (in fechaHoraIngreso DATETIME,
 BEGIN
 	INSERT INTO ASISTENCIAS 
     SELECT MAX(idAsistencia) + 1,fechaHoraIngreso, fechaHoraSalida,(SELECT MAX(idProgramacion)FROM PROGRAMACION)
-    FROM PROGRAMACION;
+    FROM asistencias;
 END$$
 DELIMITER ;
 

@@ -65,13 +65,13 @@ VALUES (5,'2021-06-28','2021-07-04',6);
 SELECT * FROM PROGRAMACION;
 
 /*TABLA ASISTENCIAS*/
-INSERT INTO ASISTENCIAS (idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacioFK)
+INSERT INTO ASISTENCIAS (idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK)
 VALUES (1,'2021-06-28 08:00','2021-06-28 09:10',1);
-INSERT INTO ASISTENCIAS (idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacioFK)
+INSERT INTO ASISTENCIAS (idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK)
 VALUES (2,'2021-07-04 14:00','2021-07-04 15:00',2);
-INSERT INTO ASISTENCIAS (idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacioFK)
+INSERT INTO ASISTENCIAS (idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK)
 VALUES (3,'2021-07-05 12:30','2021-07-05 13:50',3);
-INSERT INTO ASISTENCIAS (idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacioFK)
+INSERT INTO ASISTENCIAS (idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK)
 VALUES (4,'2002-09-12 10:45','2002-09-12 13:00',4);
 
 SELECT * FROM ASISTENCIAS;
