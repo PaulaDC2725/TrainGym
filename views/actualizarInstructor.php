@@ -1,17 +1,20 @@
 <?php 
   require_once('../assets/php/Modelo/class.conexion.php');
   require_once('../assets/php/Modelo/class.consulta.instructor.php');
+  /*require_once('../assets/php/Controlador/Actu2.php');*/
+// require_once ('<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>');
+$ConsultasInstructor = new ConsultasInstructor();
+
 
 
   $consultas = new ConsultasInstructor();
 
  
   $numeroIdentificacion=null;
-  $nombreCliente=null;
-  $apellidoCliente=null;  
-  $fechaNacimientoCliente=null;
-  $correoCliente=null;
-  $telefonoCliente=null;
+  $nombreInstructor=null;
+  $apellidoInstructor=null;  
+  $correoInstructor=null;
+  $telefonoInstructor=null;
 
   if (isset($_GET['id'])) {
     $idF=$_GET['id'];
@@ -31,7 +34,6 @@
       $telefonoInstructor=$fila['telefonoInstructor'];
     } 
   }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,6 +51,7 @@ crossorigin="anonymous">
 <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
 	<!-- Core theme CSS (includes Bootstrap)-->
 <link href="../assets/css/style.css" rel="stylesheet" />
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>| Actualizar instructor</title>
 </head>
@@ -56,7 +59,7 @@ crossorigin="anonymous">
   <nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
             <div class="container">
               <center><a href="inicioRecepcionista.php">
-                <img class="encabezado" width="300" height="70" src="../assets/img/logo.png">
+            <img class="encabezado" width="300" height="70" src="../assets/img/logo.png">
             	</a>
 			</center>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -74,7 +77,7 @@ font-weight: 1000;
 color: black; text-align: center;">ACTUALIZAR INSTRUCTOR</h1>
 </div>
 <div class="container">
-	<form class="box" method="post" action="../assets/php/Controlador/Actu2.php?id=<?php echo $id ?>&NumeroIdentificacion=<?php echo $numeroIdentificacion?>">
+	<form class="box" method="post" action="../assets/php/Controlador/Actu2.php?id=<?php echo $id ?>&NumeroIdentificacion=<?php echo $numeroIdentificacion?>"><!-- -->
 	<div class="form-group">
 			<label for="Num" class="form-label">Numero de documento: </label>
 			<input required type="number" class="form-control" id="Num" name="Num" value="<?php echo $numeroIdentificacion ?>" placeholder="Ingrese  Su Numero  De Identificación"disabled>
@@ -98,8 +101,31 @@ color: black; text-align: center;">ACTUALIZAR INSTRUCTOR</h1>
 			
 		<br>
 		<center><button type="submit" value="Actualizar" name="btnf" class="btn btn-dark">Actualizar</button></center>
-		<br>
-		
+		<br> <!--window.location = "../../views/mostrarInstructores.php";-->
+    <?php  
+    $mensaje1=$consultas->DuplicidadCorr($correoInstructor);
+    $mensaje2=$consultas->DuplicidadTel($telefonoInstructor);
+    if($mensaje1 == 0 && $mensaje2 == 0){
+      echo ('<script>swal("Datos actualizados Correctamente"); </script>');
+      // echo ('<script>swal("Correo Electrónico no disponible, por favor intentelo nuevamente"); </script>');
+      $mensaje4 = $ConsultasInstructor->actualizarInstructor($id, $correoinstructor,$telefonoinstructor);// echo $mensaje4;
+  // header("location: ../../../views/mostrarClientes.php");
+  }else if($mensaje1 == 1 || $mensaje2 == 1){
+   echo ('<script>swal("Datos repetidos, intente nuevamente")</script>');
+  }
+  /*else if(mysqli_num_rows($consulta1)<0 && mysqli_num_rows($consulta2) != 0){
+    echo('<script>swal("Los datos no se actualizaron")</script>');
+  }*/
+//   else{
+//     $id=$_GET['id'];
+//     $correoinstructor = $_POST['email'];
+//     $telefonoinstructor = $_POST['phone'];
+    
+// $mensaje4 = $ConsultasInstructor->actualizarInstructor($id, $correoinstructor,$telefonoinstructor);
+// /*echo $mensaje4;*/
+// //header("location: ../../views/mostrarInstructores.php");
+//   }
+	?>
 		<hr>
 	</form>
 </div>
