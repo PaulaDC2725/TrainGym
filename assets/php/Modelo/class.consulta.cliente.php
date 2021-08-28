@@ -35,6 +35,30 @@
 			}
 			return $rows;
 		}
+		public function DuplicidadCorr($correoCliente){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql="SELECT count(correoCliente) AS correo from CLIENTES where correoCLiente='".$correoCliente."';";
+			$statement=$conexion->prepare($sql);			
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
+		public function DuplicidadTel($telefonoCliente){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql="SELECT count(telefonoCliente) AS Telefono from CLIENTEs where telefonoCliente='".$telefonoCliente."';";
+			$statement=$conexion->prepare($sql);			
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
 		public function consultarClientes(){
 			$rows=null;
 			$estado=1;

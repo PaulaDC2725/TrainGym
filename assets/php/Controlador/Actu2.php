@@ -8,16 +8,16 @@ if (isset($_GET['id'])&& isset($_GET['NumeroIdentificacion'])) {
     $id=$_GET['id'];
     $numeroIdentificacion = $_GET['NumeroIdentificacion'];
     $filtro=$numeroIdentificacion;
-$correoInstructor = $_POST['email'];
-$telefonoInstructor = $_POST['phone'];
-$filas = $consultas->cargarInstructorFiltroId($filtro);
+  $correoInstructor = $_POST['email'];
+  $telefonoInstructor = $_POST['phone'];
+  $filas = $consultas->cargarInstructorFiltroId($filtro);
 
-foreach ($filas as $fila) {
-    $id=$fila['idInstructor'];    
-  $numeroIdentificacion=$fila['NumeroIdentificacion'];    
-  $nombreInstructor=$fila['nombreInstructor'];
-  $apellidoInstructor=$fila['apellidoInstructor'];
-} 
+  foreach ($filas as $fila) {
+      $id=$fila['idInstructor'];    
+    $numeroIdentificacion=$fila['NumeroIdentificacion'];    
+    $nombreInstructor=$fila['nombreInstructor'];
+    $apellidoInstructor=$fila['apellidoInstructor'];
+  } 
 }
 ?>
 <!DOCTYPE html>
@@ -99,27 +99,10 @@ color: black; text-align: center;">ACTUALIZAR INSTRUCTOR</h1>
     }
     if($telefono == 0 || $correo == 0){
       echo ('<script>swal("Excelente","Datos actualizados Correctamente","success");</script>');
-      ('window.location = "../../../views/mostrarInstructores.php";');
-    //   header("location: ../../../views/mostrarInstructores.php");
-      // echo ('<script>swal("Correo Electrónico no disponible, por favor intentelo nuevamente"); </script>');
-      $mensaje4 = $consultas->actualizarInstructor($id, $correoInstructor,$telefonoInstructor);// echo $mensaje4;
-//    header("location: ../../../views/mostrarInstructores.php");
+      $mensaje4 = $consultas->actualizarInstructor($id, $correoInstructor,$telefonoInstructor);
   }else if($telefono == 1 && $correo == 1){
    echo ('<script>swal("Datos repetidos, intente nuevamente")</script>');
-//    header("location: ../../../views/actualizarInstructor.php?id=<?");
   }
-  /*else if(mysqli_num_rows($consulta1)<0 && mysqli_num_rows($consulta2) != 0){
-    echo('<script>swal("Los datos no se actualizaron")</script>');
-  }*/
-//   else{
-//     $id=$_GET['id'];
-//     $correoinstructor = $_POST['email'];
-//     $telefonoinstructor = $_POST['phone'];
-    
-// $mensaje4 = $ConsultasInstructor->actualizarInstructor($id, $correoinstructor,$telefonoinstructor);
-// /*echo $mensaje4;*/
-// //header("location: ../../views/mostrarInstructores.php");
-//   }
 	?>
 		<hr>
 	</form>

@@ -49,6 +49,7 @@
   <!--<link rel="stylesheet" href="../assets/css/style.css">-->
   <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
         <!-- Core theme CSS (includes Bootstrap)-->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link href="../assets/css/styles.css" rel="stylesheet" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>| Actualizar Cliente</title>
@@ -115,6 +116,18 @@
 						</button>
 					</center>
 					<br>
+				<?php
+						$mensaje1=$consultas->DuplicidadCorr($correoCliente);
+						$mensaje2=$consultas->DuplicidadTel($telefonoCliente);
+						if($mensaje1 == 0 && $mensaje2 == 0){
+						echo ('<script>swal("Datos actualizados Correctamente"); </script>');
+						// echo ('<script>swal("Correo Electrónico no disponible, por favor intentelo nuevamente"); </script>');
+						$mensaje4 = $ConsultasInstructor->actualizarInstructor($id, $correoinstructor,$telefonoinstructor);// echo $mensaje4;
+					// header("location: ../../../views/mostrarClientes.php");
+						}else if($mensaje1 == 1 || $mensaje2 == 1){
+							echo ('<script>swal("Datos repetidos, intente nuevamente")</script>');
+						}					
+  				?>
 					<hr>
 				</div>
 			</div>

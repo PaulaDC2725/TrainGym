@@ -113,18 +113,6 @@ color: black; text-align: center;">ACTUALIZAR INSTRUCTOR</h1>
   }else if($mensaje1 == 1 || $mensaje2 == 1){
    echo ('<script>swal("Datos repetidos, intente nuevamente")</script>');
   }
-  /*else if(mysqli_num_rows($consulta1)<0 && mysqli_num_rows($consulta2) != 0){
-    echo('<script>swal("Los datos no se actualizaron")</script>');
-  }*/
-//   else{
-//     $id=$_GET['id'];
-//     $correoinstructor = $_POST['email'];
-//     $telefonoinstructor = $_POST['phone'];
-    
-// $mensaje4 = $ConsultasInstructor->actualizarInstructor($id, $correoinstructor,$telefonoinstructor);
-// /*echo $mensaje4;*/
-// //header("location: ../../views/mostrarInstructores.php");
-//   }
 	?>
 		<hr>
 	</form>
