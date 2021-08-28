@@ -113,7 +113,7 @@ if (isset($_GET['id'])&& isset($_GET['NumeroIdentificacion'])){
                         echo ('<script>swal("Excelente","Datos actualizados Correctamente","success");</script>');
                         $mensaje4 = $consultas-> actualizarCliente($id, $correoCliente, $telefonoCliente);
                         }else if($telefono == 1 && $correo == 1){
-                        echo ('<script>swal("Datos repetidos, intente nuevamente")</script>');
+                        echo ('<script>swal("ERROR!","Datos repetidos, intente nuevamente","error")</script>');
                         }
 	                ?>
 					<hr>
