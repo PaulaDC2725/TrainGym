@@ -128,7 +128,7 @@ crossorigin="anonymous">
         <button type="submit" class="btn btn-dark" >Buscar</button>
       </td>
       <td>
-        <a href="../../../Views/habIns.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
+        <a href="habIns.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
       </td>
     </form>         
     <td>
