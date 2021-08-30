@@ -3,7 +3,7 @@
   require_once('../assets/php/Modelo/class.consulta.instructor.php');
   $consultasIns = new ConsultasInstructor();
   if (isset($_GET['filtroCol']) && isset($_GET['valor'])) {
-    $filas = $consultasIns->consultarInstructorFiltrados($_GET['filtroCol'],$_GET['valor']);
+    $filas = $consultasIns->consultarInstructorFiltrados1($_GET['filtroCol'],$_GET['valor']);
   }else{
     $filas = $consultasIns->consultarInstructorHab();
   }
@@ -100,7 +100,7 @@ crossorigin="anonymous">
           <button type="submit" class="btn btn-dark" >Buscar</button>
         </td>
         <td>
-          <a href="mostrarInstructores.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
+          <a href="mostrarInstructores2.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
         </td>
       </form>         
       <td>

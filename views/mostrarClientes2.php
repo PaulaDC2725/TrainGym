@@ -3,7 +3,7 @@
   require_once('../assets/php/Modelo/class.consulta.cliente.php');
   $consultasCli = new ConsultasClientes();
   if (isset($_GET['filtroCol']) && isset($_GET['valor'])) {
-    $filas = $consultasCli->consultarClientesFiltrados($_GET['filtroCol'],$_GET['valor']);
+    $filas = $consultasCli->consultarClientesFiltrados1($_GET['filtroCol'],$_GET['valor']);
   }else{
     $filas = $consultasCli->consultarClientesHab();
   }
@@ -102,7 +102,7 @@ crossorigin="anonymous">
           <button type="submit" class="btn btn-dark" >Buscar</button>
         </td>
         <td>
-          <a href="mostrarClientes.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
+          <a href="mostrarClientes2.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
         </td>
       </form>         
       <td>
