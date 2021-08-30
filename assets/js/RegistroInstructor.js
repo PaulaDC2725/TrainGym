@@ -24,7 +24,7 @@ function validarForm1() {
                 validarCorreo.innerHTML="Correo Valido";
             }
     }else{ 
-      swal("Correcto!","Listo para registrar","success");
+      swal("Correcto!","Envíe el formulario para continuar","success");
       btnForm2.style.display = 'block';
       btnForm1.style.display= 'none';
     }
