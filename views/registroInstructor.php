@@ -85,7 +85,7 @@ color: black; text-align: center;">Registrar instructor</h1>
 			<input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese Su Contraseña(MINIMO 10 CARACTERES)">
 		</div>
 		<br>
-		<center><button type="submit" value="Enviar" id="registrar" name="registrar" class="btn btn-dark" >Completar</button><button type="button" value="Enviar" id="boton" name="btnf" class="btn btn-dark" onclick=validarForm1()>Enviar</button></center>
+		<center><button type="submit" value="Enviar" id="registrar" name="registrar" class="btn btn-dark" >Enviar</button><button type="button" value="Enviar" id="boton" name="btnf" class="btn btn-dark" onclick=validarForm1()>Enviar</button></center>
 		<br>
 		
 		
