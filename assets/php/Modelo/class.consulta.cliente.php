@@ -99,7 +99,23 @@
 			FROM USUARIOS AS U 
 			JOIN CLIENTES AS C 
 			ON U.idUsuario=C.idUsuarioFK
-			WHERE ".$filtroCol." LIKE '%".$valor."%'";
+			WHERE ".$filtroCol." LIKE '%".$valor."%'AND estadoUsuario=1";
+			$statement=$conexion->prepare($sql);
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
+		public function consultarClientesFiltrados1($filtroCol, $valor){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql="SELECT C.idCliente,U.NumeroIdentificacion, C.nombreCliente, C.apellidoCliente, C.fechaNacimientoCliente,C.correoCliente, C.telefonoCliente 
+			FROM USUARIOS AS U 
+			JOIN CLIENTES AS C 
+			ON U.idUsuario=C.idUsuarioFK
+			WHERE ".$filtroCol." LIKE '%".$valor."%'AND estadoUsuario=0";
 			$statement=$conexion->prepare($sql);
 			$statement->execute();
 			while ($result=$statement->fetch()) {

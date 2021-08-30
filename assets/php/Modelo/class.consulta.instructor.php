@@ -98,7 +98,23 @@
 			FROM USUARIOS AS U 
 			JOIN INSTRUCTORES AS I
 			ON U.idUsuario=I.idUsuarioFK
-			WHERE ".$filtroCol." LIKE '%".$valor."%'";
+			WHERE ".$filtroCol." LIKE '%".$valor."%' AND estadoUsuario=1";
+			$statement=$conexion->prepare($sql);
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
+		public function consultarInstructorFiltrados1($filtroCol, $valor){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql="SELECT I.idInstructor,U.NumeroIdentificacion, I.nombreInstructor, I.apellidoInstructor, I.correoInstructor, I.telefonoInstructor
+			FROM USUARIOS AS U 
+			JOIN INSTRUCTORES AS I
+			ON U.idUsuario=I.idUsuarioFK
+			WHERE ".$filtroCol." LIKE '%".$valor."%' AND estadoUsuario=0";
 			$statement=$conexion->prepare($sql);
 			$statement->execute();
 			while ($result=$statement->fetch()) {

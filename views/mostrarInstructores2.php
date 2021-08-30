@@ -25,38 +25,7 @@
         $tabla.='<td>'.$fila['nombreInstructor'].'</td>';
         $tabla.='<td>'.$fila['apellidoInstructor'].'</td>';
         $tabla.='<td>'.$fila['correoInstructor'].'</td>';
-        $tabla.='<td>'.$fila['telefonoInstructor'].'</td>';
-
-/*if ($fila['rolUsuario']=='Paciente') {
-          $botonBorrar='<a href="borrar/borr_pac.php?id='.$fila['idUsuario'].'"><input type="button" class="btn btn-danger" value="Borrar"></a>';
-
-        }else if ($fila['rolUsuario']=='Médico') {
-          $botonBorrar='<a href="borrar/borr_Med.php?id='.$fila['idUsuario'].'"><input type="button" class="btn btn-danger" value="Borrar"></a>';
-         }else{
-          $botonBorrar="";
-        }*/
-        /*if ($fila['rolUsuario']=='Paciente') {
-          $botonEditar='<a href="actualizar/act_usu.php?id='.$fila['idUsuario'].'"><input type="button" class="btn btn-info" value="Editar"></a>'; 
-          $rutaActivaInactiva='estado/habilitarDeshabilitarPacienteUsu.php';
-
-        }else if ($fila['rolUsuario']=='Médico') {
-          $botonEditar='<a href="actualizar/act_usu_m.php?id='.$fila['idUsuario'].'"><input type="button" class="btn btn-info" value="Editar"></a>';
-          $rutaActivaInactiva='estado/habilitarDeshabilitarMedicoUsu.php';  
-        }else{
-          $botonEditar="";
-        }
-
-
-        if ($fila['estadoUsuario']=='1'){
-          $estado='<td>Activo</td>';
-          $boton='<a href="'.$rutaActivaInactiva.'?estado=0&id='.$fila['idUsuario'].'"><input type="button" class="btn btn-danger" value="Inhabilitar"></a>';
-        }else{
-          $estado='<td>Inactivo</td>';
-          $boton='<a href="'.$rutaActivaInactiva.'?estado=1&id='.$fila['idUsuario'].'"><input type="button" class="btn btn-success" value="Habilitar"></a>';
-        }
-
-        $tabla.=$estado;   */     
-        
+        $tabla.='<td>'.$fila['telefonoInstructor'].'</td>';        
        $tabla.='<center><td class="row_buttons">'.$boton.'</td></center>';
       /*$tabla.='<td><button class="btn btn-light">Actualizar</button> <button class="btn btn-light">Inhabilitar</button></td>';*/
       $tabla.='</tr>';
