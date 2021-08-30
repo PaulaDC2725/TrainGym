@@ -22,7 +22,6 @@ $idRolFK = "2";
 $nombreRol = "Instructor";
 $nombreInstructor=$_POST['Nom'];
 $apellidoInstructor = $_POST['Ape'];
-header ('location: ../../../views/mostrarInstructores.php');
  ?>
  <!DOCTYPE html>
 <html>
