@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link
 href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
 rel="stylesheet"
@@ -75,14 +76,6 @@ color: black; text-align: center;">Registrar instructor</h1>
 			<div class="form-group">
 			<label for="Num" class="form-label">Telefono: </label>
 			<input required type="number" class="form-control" id="phone" name="phone"placeholder="Ingrese Su Numero De Telefono">
-		</div>
-			<div class="form-group">
-			<label for="Num" class="form-label">Fecha de nacimiento: </label>
-			<input required type="date" class="form-control" id="FechaN" name="FechaN">
-		</div>
-		<div class="form-group">
-			<label for="Num" class="form-label">Estado del ususario: </label>
-			<input required type="text" class="form-control" id="FechaN" name="FechaN" value="Activo" disabled>
 		</div>
 		<div class="form-group">
 			<label for="Contraseña" class="form-label">Contraseña: </label>

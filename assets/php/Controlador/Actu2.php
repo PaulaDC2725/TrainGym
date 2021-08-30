@@ -85,8 +85,7 @@ color: black; text-align: center;">ACTUALIZAR INSTRUCTOR</h1>
 		</div>
 			
 		<br>
-		<center><button type="submit" value="Actualizar" name="btnf" class="btn btn-dark">Actualizar</button>
-		<a href="../../../views/mostrarInstructores.php" class="btn btn-dark">Mostrar datos</a></center>
+		<center><button type="submit" value="Actualizar" name="btnf" class="btn btn-dark">Actualizar</button></center>
         <br> <!--window.location = "../../views/mostrarInstructores.php";-->
     <?php  
     $mensajes1=$consultas->DuplicidadCorr($correoInstructor);
@@ -98,8 +97,9 @@ color: black; text-align: center;">ACTUALIZAR INSTRUCTOR</h1>
         $telefono=$mensaje2['Telefono'];    
     }
     if($telefono == 0 || $correo == 0){
-      echo ('<script>swal("Excelente","Datos actualizados Correctamente","success");</script>');
-      $mensaje4 = $consultas->actualizarInstructor($id, $correoInstructor,$telefonoInstructor);
+            $mensaje4 = $consultas->actualizarInstructor($id, $correoInstructor,$telefonoInstructor);
+            echo "<script>location.href=' ../../../views/mostrarInstructores.php';</script>";
+            die();
   }else if($telefono == 1 && $correo == 1){
    echo ('<script>swal("ERROR!","Datos repetidos, intente nuevamente", "error")</script>');
   }

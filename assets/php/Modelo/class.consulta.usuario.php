@@ -18,6 +18,18 @@
 			 	return $rows;
 			 }
 		}
+		public function DuplicidadDoc($numeroIdentificacion){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql="SELECT count(NumeroIdentificacion) AS Doc from USUARIOS where NumeroIdentificacion='".$numeroIdentificacion."';";
+			$statement=$conexion->prepare($sql);			
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
 		public function registrarTipoDocumento($idTipoDocumento,$nombreDocumento){
 			
 			$rows=null;

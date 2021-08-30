@@ -98,7 +98,7 @@ if (isset($_GET['id'])&& isset($_GET['NumeroIdentificacion'])){
 					</div>
 					<br>
 					<center><button type="submit" value="Actualizar" name="btnf" class="btn btn-dark">Actualizar</button>
-		            <a href="../../../views/mostrarClientes.php" class="btn btn-dark">Mostrar datos</a></center>
+		           </center>
 					<br>
                     <?php  
                         $mensajes1=$consultas->DuplicidadCorr($correoCliente);
@@ -109,9 +109,10 @@ if (isset($_GET['id'])&& isset($_GET['NumeroIdentificacion'])){
                         foreach ($mensajes2 as $mensaje2) {
                             $telefono=$mensaje2['Telefono'];    
                         }
-                        if($telefono == 0 || $correo == 0){
-                        echo ('<script>swal("Excelente","Datos actualizados Correctamente","success");</script>');
+                        if($telefono == 0 || $correo == 0){                        
                         $mensaje4 = $consultas-> actualizarCliente($id, $correoCliente, $telefonoCliente);
+                        echo "<script>location.href=' ../../../views/mostrarClientes.php';</script>";
+                        die();
                         }else if($telefono == 1 && $correo == 1){
                         echo ('<script>swal("ERROR!","Datos repetidos, intente nuevamente","error")</script>');
                         }
