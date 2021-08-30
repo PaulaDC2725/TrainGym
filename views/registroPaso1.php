@@ -15,7 +15,8 @@
   <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
         <!-- Core theme CSS (includes Bootstrap)-->
   <link href="../assets/css/styles.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>| Matricular cliente</title>
 </head>
 <body>

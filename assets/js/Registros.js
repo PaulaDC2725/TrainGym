@@ -31,11 +31,11 @@ function validarForm1() {
     let validarCorreo = document.getElementById('emailValid');
     if ((numeroIdentificacion == "") || (nombreCliente == "") || (apellidoCliente == "") || (fechaNacimiento == "") || (telefonoCliente == "") || (contraseñaCliente == "") || (correoCliente == ""))
     {
-          alert('Debe completar todos los campos');
+      swal("Ups!","Debe completar todos los campos","warning");
     }else if (contraseñaCliente.length < 10 ) {
-        alert('La contraseña ingresada no es válida');
+      swal("ERROR!","La contraseña ingresada no es válida","error");
     }else if(emailRegex.test(correoCliente)==false){
-            alert('Correo invalido');
+            swal('Correo invalido');
             validarCorreo.innerHTML="Correo invalido (debe contener '@' y terminar en '.com') ";
             if(emailRegex.test(correoCliente)==true){
                 validarCorreo.innerHTML="Correo Valido";

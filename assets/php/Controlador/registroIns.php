@@ -104,7 +104,7 @@ color: black; text-align: center;">Registrar instructor</h1>
 		</div>
 		<div class="form-group">
 			<label for="Contraseña" class="form-label">Contraseña: </label>
-			<input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese Su Contraseña(MINIMO 10 CARACTERES)">
+			<input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese Su Contraseña(MINIMO 10 CARACTERES)"value="<?php echo $contra1?>">
 		</div>
 		<br>
 		<center><button type="submit" value="Enviar" name="btnf" class="btn btn-dark">Enviar</button></center>

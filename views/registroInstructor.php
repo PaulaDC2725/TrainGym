@@ -72,6 +72,9 @@ color: black; text-align: center;">Registrar instructor</h1>
 			<div class="form-group">
 			<label for="Num" class="form-label">Correo electrónico: </label>
 			<input required type="email" class="form-control" id="email" name="email"placeholder="Ingrese  su Correo electronico corectamente(email@example.com)">
+			<strong>
+			<span id="emailValid" style="color: red;"></span>
+			</strong>
 		</div>
 			<div class="form-group">
 			<label for="Num" class="form-label">Telefono: </label>
@@ -82,8 +85,9 @@ color: black; text-align: center;">Registrar instructor</h1>
 			<input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese Su Contraseña(MINIMO 10 CARACTERES)">
 		</div>
 		<br>
-		<center><button type="submit" value="Enviar" name="btnf" class="btn btn-dark">Enviar</button></center>
+		<center><button type="submit" value="Enviar" id="registrar" name="registrar" class="btn btn-dark" >Completar</button><button type="button" value="Enviar" id="boton" name="btnf" class="btn btn-dark" onclick=validarForm1()>Enviar</button></center>
 		<br>
+		
 		
 		<hr>
 	</form>
@@ -95,6 +99,7 @@ color: black; text-align: center;">Registrar instructor</h1>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script src="../assets/js/RegistroInstructor.js">
 <script
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
