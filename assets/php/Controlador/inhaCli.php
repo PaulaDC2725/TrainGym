@@ -48,7 +48,7 @@ if (isset($filas)) {
 
   foreach ($filas as $fila){      
     $boton='<a href="inhaCli.php?id='.$fila['idCliente'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-danger" value="Inhabilitar"></a>';
-    $botonEditar='<a href="actualizarCliente.php?id='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-warning" value="Actualizar"></a>';
+    $botonEditar='<a href="../../../views/actualizarCliente.php?id='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-warning" value="Actualizar"></a>';
     $tabla.='<tr class="limitada" scope="row">';
       $tabla.='<th scope="col">'.$fila['NumeroIdentificacion'].'</th>';
       $tabla.='<td>'.$fila['nombreCliente'].'</td>';
