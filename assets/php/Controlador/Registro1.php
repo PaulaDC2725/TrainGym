@@ -4,142 +4,34 @@ require_once('../Modelo/class.consulta.cliente.php');
 require_once('../Modelo/class.consulta.usuario.php');
 require_once('../Modelo/class.consulta.suscripcion.php');
 require_once('../Modelo/class.consulta.fichaAntro.php');
-$mysqli = new mysqli('127.0.0.1', 'root', '', 'gimnasiobd');
-$mysqli->set_charset("utf8");
 $consultasCliente = new ConsultasClientes();
 $consultasUsuario = new ConsultasUsuario();
 $consultasSuscripcion = new ConsultasSuscripcion();
 $consultasFicha = new consultasFicha();
-$telefonoCliente = $_POST['Tel'];
-$NumeroIdentificacion = $_POST['Num'];
-$correoCliente = $_POST['corr'];
-$tabla1="USUARIOS";
-$tabla2="CLIENTES";
-$NumeroIdentificacion=$mysqli->query("SELECT NumeroIdentificacion from $tabla1 where NumeroIdentificacion='$NumeroIdentificacion'");
-$correoCliente=$mysqli->query("SELECT correoCliente from $tabla2 where correoCliente='$correoCliente'");
-$telefonoCliente=$mysqli->query("SELECT telefonoCliente from $tabla2 where telefonoCliente='$telefonoCliente'");
-if(mysqli_num_rows($NumeroIdentificacion)>0 || mysqli_num_rows($correoCliente)>0 ||mysqli_num_rows($telefonoCliente)>0  )
-{
-echo '<script>alert("ERROR! Datos ya registrados en el sistema anteriormente, por favor ingreselos nuevamente");window.location = "../../../views/registroPaso1.php";</script>';
-}
-else
-{
-$nombreDocumento = '';
-$tipoDocumento=$_POST['tipoDocumentoCli'];
-$metodologia=$_POST['metodologia'];
-$nombreMetodologia='';
-if($metodologia=='1'){
-$nombreMetodologia='Disminuir de peso';
-}else if($metodologia=='2'){
-	$nombreMetodologia='Aumentar masa corporal';
-}else if($metodologia=='3'){
-	$nombreMetodologia='2X1';
-}
 
-
-$nombreParteCuerpo1= $_POST['Craneo'];
-$nombreParteCuerpo2= $_POST['BicDer'];
-$nombreParteCuerpo3= $_POST['BicIzq'];
-$nombreParteCuerpo4= $_POST['musDer'];
-$nombreParteCuerpo5= $_POST['musIzq'];
-$nombreParteCuerpo6= $_POST['Cintura'];
-$nombreParteCuerpo7= $_POST['brazD'];
-$nombreParteCuerpo8= $_POST['brazI'];
-$nombreParteCuerpo9= $_POST['pierD'];
-$nombreParteCuerpo10= $_POST['perI'];
-$idParteDelCuerpo1FK='6';
-$idParteDelCuerpo2FK='7';
-$idParteDelCuerpo3FK='8';
-$idParteDelCuerpo4FK='9';
-$idParteDelCuerpo5FK='10';
-$idParteDelCuerpo6FK='11';
-$idParteDelCuerpo7FK='12';
-$idParteDelCuerpo8FK='13';
-$idParteDelCuerpo9FK='14';
-$idParteDelCuerpo10FK='15';
-$medida1 = $_POST['perCraneo'];
-$medida2 = $_POST['perBic1'];
-$medida3 = $_POST['perBic2'];
-$medida4 = $_POST['perMus1'];
-$medida5 = $_POST['perMus2'];
-$medida6 = $_POST['perCint'];
-$medida7 = $_POST['longExsup1'];
-$medida8 = $_POST['longExsup2'];
-$medida9 = $_POST['longExinf1'];
-$medida10 = $_POST['longExinf1'];
 $nombreCliente=$_POST['Nom'];
 $apellidoCliente = $_POST['Ape'];
 $telefonoCliente = $_POST['Tel'];
 $fechaNacimiento = $_POST['FechaN'];
-$idUsuarioFK = $_POST['Num'];
 $NumeroIdentificacion = $_POST['Num'];
 $correoCliente = $_POST['corr'];
 $contra1 = $_POST['Contraseña'];
-$estadoUsuario ="1";
-$idRolFK = "3";
-$estadoSuscripcion = "1";
-$valorSuscripcion = $_POST['valorS'];
-$fechaSuscripcion = $_POST['FechaS'];
-$FechaFicha = $_POST['FechaFicha'];
-$Estatura = $_POST['Estatura'];
-$descMedic = $_POST['descMedic'];
-$pesoCliente = $_POST['Peso'];
-$mensaje3 = $consultasUsuario->registrarUsuario($NumeroIdentificacion,$contra1, $estadoUsuario,$idRolFK,$tipoDocumento);
-$mensaje4 = $consultasCliente->registrarCliente($nombreCliente, $apellidoCliente,$fechaNacimiento,$correoCliente,$telefonoCliente,$estadoUsuario);
-$mensaje6 = $consultasSuscripcion -> registrarSuscripcion($valorSuscripcion, $fechaSuscripcion, $estadoSuscripcion,$metodologia);
-$mensaje7 = $consultasFicha -> registrarFichaAntro($FechaFicha, $Estatura, $pesoCliente,$descMedic);
-$mensaje9 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo1FK, $medida1);
-$mensaje11 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo2FK, $medida2);
-$mensaje13 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo3FK, $medida3);
-$mensaje15 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo4FK, $medida4);
-$mensaje17 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo5FK, $medida5);
-$mensaje19 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo6FK, $medida6);
-$mensaje21 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo7FK, $medida7);
-$mensaje23 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo8FK, $medida8);
-$mensaje25 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo9FK, $medida9);
-$mensaje27 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo10FK, $medida10);
-header ('location: ../../../views/login.php');
-} 
-class Registro{
-
-	public function DuplicidadCorr($correoCliente){
-		$rows=null;
-		$modelo = new Conexion();
-		$conexion = $modelo->getConection();					
-		$sql="SELECT count(correoCliente) AS correo from CLIENTES where correoCLiente='".$correoCliente."';";
-		$statement=$conexion->prepare($sql);			
-		$statement->execute();
-		while ($result=$statement->fetch()) {
-			$rows[]=$result;
-		}
-		return $rows;
-	}
-	public function DuplicidadTel($telefonoCliente){
-		$rows=null;
-		$modelo = new Conexion();
-		$conexion = $modelo->getConection();					
-		$sql="SELECT count(telefonoCliente) AS Telefono from CLIENTES where telefonoCliente='".$telefonoCliente."';";
-		$statement=$conexion->prepare($sql);			
-		$statement->execute();
-		while ($result=$statement->fetch()) {
-			$rows[]=$result;
-		}
-		return $rows;
-	}
-	public function DuplicidadDoc($NumeroIdentificacion){
-		$rows=null;
-		$modelo = new Conexion();
-		$conexion = $modelo->getConection();					
-		$sql="SELECT count(NumeroIdentificacion) AS Doc from CLIENTES where NumeroIdentificacion='".$NumeroIdentificacion."';";
-		$statement=$conexion->prepare($sql);			
-		$statement->execute();
-		while ($result=$statement->fetch()) {
-			$rows[]=$result;
-		}
-		return $rows;
-	}
-	
+$nombreDocumento = '';
+$tipoDocumento=$_POST['tipoDocumentoCli'];
+if($tipoDocumento =="1"){
+    $nombreDocumento="Cedula de ciudadania";
+}else if($tipoDocumento =="2"){
+    $nombreDocumento="Tarjeta de identidad";
+}else if($tipoDocumento =="3"){
+    $nombreDocumento="Cedula de extranjeria";
+}else if($tipoDocumento =="4"){
+    $nombreDocumento="Pasaporte";
 }
+						
+
+// header ('location: ../../../views/login.php');
+
+
 /*echo ($mensaje1);
 echo '<br>';
 echo ($mensaje2);
@@ -175,4 +67,149 @@ echo '<br>';
 echo ($mensaje27);*/
 /**/
  ?>
+ <!Doctype HTML>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="../assets/css/style.css">-->
+  <link rel="icon" type="image/x-icon" href="../../../assets/img/Logotipo.PNG" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="../../../assets/css/styles.css" rel="stylesheet" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>| Matricular cliente</title>
+</head>
+<body>
+    <!-- Responsive navbar-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
+            <div class="container">
+              <a href="index.php">
+                <img width="300" height="70" src="../../../assets/img/logo.png">
+            	</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="COVID.php">COVID-19</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Registro.php" >Registrate</a></li>
+                        <li class="nav-item"><a class="nav-link" href="loginAg.php">Programar</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.php">Ingresar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+   <!---->
+   <br>
+  <div class="container"> 
+	<form method="post" action="Registro1.php">
+			<!--<form class="box" method="post" action="../assets/php/Controlador/Registro1.php">-->
+			<div id="registroPaso1">
+				<center>
+					<h1 margin: 0,padding: 0 0 20px, text-align: center, font-size: 22px>
+						Paso 1: Datos Personales 
+					</h1>
+				</center>
+				<div class="container">
+					<div class="form-group">
+						<label for="TipoDoc" class="form-label">Tipo de documento: </label>
+						<select class="form-control" id="tipoDocumentoCli" name="tipoDocumentoCli" >
+							<option selected value="<?php echo $tipoDocumento?>" disabled><?php echo $nombreDocumento?></option>
+							<option selected value="<?php echo $tipoDocumento?>" hidden><?php echo $nombreDocumento?></option>
+							<option value="1">Cedula de ciudadania</option>
+							<option value="2">Tarjeta de identidad</option>
+							<option value="3">Cedula de extranjeria</option>
+							<option value="4">Pasaporte</option>
+						</select>
+					</div>			
+					<div class="form-group">
+						<label for="Num" class="form-label">Numero de documento: </label>
+						<input required type="number" class="form-control" id="Num" name="Num"placeholder="Ingrese Numero De Identificación" value="<?php echo $NumeroIdentificacion?>">
+					</div>
+					<div class="form-group">
+						<label for="text" class="form-label">Nombre: </label>
+						<input required type="text" class="form-control" id="Nom" name="Nom"placeholder="Ingrese Nombre Completo"value="<?php echo $nombreCliente?>">
+					</div>
+					<div class="form-group">
+						<label for="text" class="form-label">Apellido: </label>
+						<input required type="text" class="form-control" id="Ape" name="Ape"placeholder="Ingrese Apellido Completo"value="<?php echo $apellidoCliente?>">
+					</div>
+					<div class="form-group">
+						<label for="date" class="form-label">Fecha de nacimiento: </label>
+						<input required type="date" class="form-control" id="FechaN" name="FechaN" value="<?php echo $fechaNacimiento?>">
+					</div>
+					<div class="form-group">
+						<label for="Num" class="form-label">Telefono </label>
+						<input required type="number" class="form-control" id="Tel" name="Tel"placeholder="Ingrese Numero De Telefono"value="<?php echo $telefonoCliente?>">
+					</div>
+					<div class="form-group">
+						<label for="email" class="form-label">Correo Electrónico </label>
+						<input required type="email" class="form-control" id="corr" name="corr"placeholder="Ingrese Correo electronico(email@example.com)"value="<?php echo $correoCliente?>">			
+						<strong>					
+					<span id="emailValid" style="color: red;"></span>
+						</strong>		
+					</div>
+					<div class="form-group">
+						<label for="Contraseña" class="form-label">Contraseña: </label>
+						<input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese contraseña (MINIMO 10 CARACTERES)"value="<?php echo $contra1?>">
+					</div>
+					<br>
+					<center>
+						<button type="button" value="Enviar"  id="registrar1" name="registrar1" class="btn btn-dark">
+							Continuar
+						</button>
+					</center>
+					<center>
+						<input type="submit" class="btn btn-dark" id="enviar" value="Continuar" name="enviar" onclick="location.href='Registro.php'">
+					</center>
+					<br>
+				<?php  
+                        $mensajes1=$consultasCliente->DuplicidadCorr($correoCliente);
+                        foreach ($mensajes1 as $mensaje1) {
+                            $correo=$mensaje1['correo'];    
+                        } 
+                        $mensajes2=$consultasCliente->DuplicidadTel($telefonoCliente);
+                        foreach ($mensajes2 as $mensaje2) {
+                            $telefono=$mensaje2['Telefono'];    
+                        }
+						$mensajes3=$consultasUsuario->DuplicidadDoc($NumeroIdentificacion);
+                    	foreach ($mensajes3 as $mensaje3) {
+                            $doc=$mensaje3['Doc'];    
+                        }
+                        if($telefono == 1 || $correo == 1 ||$doc == 1){                        
+							echo '<div class="alert alert-warning"><strong>Ups, Lo sentimos!</strong> Datos registrados previamente en el sistema, revisalos e intentalo nuevamente.*Presione enter para continuar*</div>';
+						
+                        }else if($telefono == 0 || $correo == 0 ||$doc == 0){
+							$estadoUsuario="1";
+							$idRolFK="3";
+							$mensaje4 = $consultasUsuario->registrarUsuario($NumeroIdentificacion,$contra1, $estadoUsuario,$idRolFK,$tipoDocumento);
+							$mensaje5 = $consultasCliente->registrarCliente($nombreCliente, $apellidoCliente,$fechaNacimiento,$correoCliente,$telefonoCliente,$estadoUsuario);							
+							echo "<script>location.href=' Registro2.php';</script>";
+							die();
+						}
+	                ?>
+					<hr>
+				  </div>
+			</div>
+					</div>				
+	  <!-- Footer-->
+	  <footer class="py-5">
+          <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; TrainGym 2021</p></div>
+        </footer> 
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+	<script src="../../js/Registros1.js">
+	</script>	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+			crossorigin="anonymous">
+	</script>
+</html>
  

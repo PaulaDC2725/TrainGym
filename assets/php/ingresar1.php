@@ -23,6 +23,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
   <link href="../css/styles.css" rel="stylesheet" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <title>|Login Usuarios</title>
  </head>
 <body>
@@ -42,8 +43,7 @@
         </div>
     </div>
 </nav>
-<br>
- <?php 
+<?php 
 
 $usuario = $_POST['Num'];
 $contrasenia = $_POST['Contraseña'];
@@ -76,15 +76,36 @@ else if($Rol == '3' && $resultado == "1"){
 	header('location: ../../views/inicioCliente.php?NumeroIdentificacion='.$usuario);
 }
 else{
-	echo('<center><div class="container"><br><br><br><span style="text-align: center;font-size: 20px;color: black;border: solid;border-color: red;background: #ff000038;padding: 70px;"><b>¡LOS DATOS INGRESADOS SON ERRÓNEOS!</b> </span></div></center>');
+	echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
 }
 
-?> <br>
-	
+?>
 <br>
-<br>
-<a href="../../views/login.php"><input type="button" class="btn btn-dark" value="Regresar"></a>
-  <br>
+<div class="container">
+			<form class="box" method="post" action="ingresar1.php">
+				<center>
+					<h1 margin: 0,padding: 0 0 20px, text-align: center, font-size: 22px>
+						LOGIN
+					</h1>
+				</center>				
+				<div class="form-group">
+					<label for="Num" class="form-label">Numero de documento: </label>
+					<input required type="number" class="form-control" value="<?php echo $usuario?>" id="Num" name="Num"placeholder="Ingrese  numero de documento">
+				</div>
+				<div class="form-group">
+					<label for="contraseña" class="form-label">Contraseña: </label>
+					<input  required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese  contraseña ">
+				</div>
+				<br>
+				<center><button type="submit" value="Login" name="btnf" class="btn btn-dark">Entrar</button></center>
+				<br>
+				
+			<hr>
+			</form>
+			<br>		
+					
+		</div>
+		</div>
    <!-- Footer-->
    <footer class="py-5">
     <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; TrainGym 2021</p></div>
