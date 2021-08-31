@@ -21,6 +21,7 @@
   <link rel="icon" type="image/x-icon" href="../img/Logotipo.PNG" />
         <!-- Core theme CSS (includes Bootstrap)-->
   <link href="../css/styles.css" rel="stylesheet" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>|Login Cliente</title>
  </head>
@@ -44,6 +45,7 @@
  <!---->
  <br>
     </div>
+
  <?php 
 
 $usuario = $_POST['Num'];
@@ -66,15 +68,30 @@ if($resultado=='1'){
 /*else if($resultado == '0' && $estado="0"){
 	echo('<center><div class="container"><br><br><br><span style="text-align: center;font-size: 20px;color: black;border: solid;border-color: red;background: #ff000038;padding: 70px;"><b>¡Usuario inhabilitado, por favor comuniqusese con la recepcionista para habilitarse nuevamente!</b> </span></div></center>');
 }*/else{
-  echo('<center><div class="container"><br><br><br><span style="text-align: center;font-size: 20px;color: black;border: solid;border-color: red;background: #ff000038;padding: 70px;"><b>¡LOS DATOS INGRESADOS SON ERRÓNEOS!</b> </span></div></center>');
+  echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
 }
 
 ?> <br>
-	
-<br>
-<br>
-  <a href="../../views/loginAg.php"><input type="button" class="btn btn-dark" value="Regresar"></a>
-  <br>
+	<div class="container">
+			<form class="box" method="post" action="AgendaIngreso.php">
+		<center><h1 margin: 0,padding: 0 0 20px, text-align: center, font-size: 22px>LOGIN</h1></center>
+				<div class="form-group">
+				<div class="form-group">
+					<label for="Num" class="form-label">Numero de documento: </label>
+					<input required type="number" value="<?php echo $usuario?>" class="form-control" id="Num" name="Num"placeholder="Ingrese Numero De Identificación">
+				</div>
+				<div class="form-group">
+					<label for="contraseña" class="form-label">Contraseña: </label>
+					<input  required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese contraseña">
+				</div>
+				<br>
+				<center><button type="submit" value="Login" name="btnf" class="btn btn-dark">Agendar Entrenamiento</button></center>
+				<br>
+			<br>
+			</form>			
+						
+		</div>
+</div>
    <!-- Footer-->
    <footer class="py-5">
     <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; TrainGym 2021</p></div>
