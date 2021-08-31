@@ -65,8 +65,17 @@ function sigForm(){
         formulario1.style.display= 'none';
     }
 };
-/*
+/*let numeroIdentificacion = document.getElementById('Num').value;
+let telefonoCliente = document.getElementById('Tel').value;
+let correoCliente = document.getElementById('corr').value;
+*//*
 let accionF= [];*/
+/*function alerta(){
+  if(numeroIdentificacion == numeroIdentificacion){
+    swal("Error!","Numero de identificacion duplicado","error");
+    window.location= "../../views/registroPaso1.php"
+  }
+}*/
 function sigFormA(){
     if(formulario3.style.display === 'none'){
         formulario3.style.display = 'block';

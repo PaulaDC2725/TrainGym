@@ -59,6 +59,18 @@
 			}
 			return $rows;
 		}
+		public function DuplicidadDoc($NumeroIdentificacion){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql="SELECT count(NumeroIdentificacion) AS Doc from CLIENTES where NumeroIdentificacion='".$NumeroIdentificacion."';";
+			$statement=$conexion->prepare($sql);			
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
 		public function consultarClientes(){
 			$rows=null;
 			$estado=1;

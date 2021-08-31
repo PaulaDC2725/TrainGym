@@ -95,7 +95,7 @@
 					</div>
 					<br>
 					<center>
-						<button type="button" value="Enviar" id="registrar1" name="registrar1" class="btn btn-dark">
+						<button type="button" value="Enviar"  id="registrar1" name="registrar1" class="btn btn-dark">
 							Continuar
 						</button>
 					</center>
@@ -105,6 +105,18 @@
 					</center>
 					<hr>
 				</div>
+				<!--/*
+						$mensaje1=$consultas->DuplicidadCorr($correoCliente);
+						$mensaje2=$consultas->DuplicidadTel($telefonoCliente);
+						if($mensaje1 == 0 && $mensaje2 == 0){
+						echo ('<script>swal("Datos actualizados Correctamente"); </script>');
+						// echo ('<script>swal("Correo Electrónico no disponible, por favor intentelo nuevamente"); </script>');
+						$mensaje4 = $ConsultasInstructor->actualizarInstructor($id, $correoinstructor,$telefonoinstructor);// echo $mensaje4;
+					// header("location: ../../../views/mostrarClientes.php");
+						}else if($mensaje1 == 1 || $mensaje2 == 1){
+							echo ('<script>swal("Datos repetidos, intente nuevamente")</script>');
+						}					
+  				*/?> -->
 			</div>
 			<div id="registroPaso2">
 				<div class="container">

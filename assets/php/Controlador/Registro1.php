@@ -100,7 +100,46 @@ $mensaje25 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo9FK, $medi
 $mensaje27 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo10FK, $medida10);
 header ('location: ../../../views/login.php');
 } 
+class Registro{
 
+	public function DuplicidadCorr($correoCliente){
+		$rows=null;
+		$modelo = new Conexion();
+		$conexion = $modelo->getConection();					
+		$sql="SELECT count(correoCliente) AS correo from CLIENTES where correoCLiente='".$correoCliente."';";
+		$statement=$conexion->prepare($sql);			
+		$statement->execute();
+		while ($result=$statement->fetch()) {
+			$rows[]=$result;
+		}
+		return $rows;
+	}
+	public function DuplicidadTel($telefonoCliente){
+		$rows=null;
+		$modelo = new Conexion();
+		$conexion = $modelo->getConection();					
+		$sql="SELECT count(telefonoCliente) AS Telefono from CLIENTES where telefonoCliente='".$telefonoCliente."';";
+		$statement=$conexion->prepare($sql);			
+		$statement->execute();
+		while ($result=$statement->fetch()) {
+			$rows[]=$result;
+		}
+		return $rows;
+	}
+	public function DuplicidadDoc($NumeroIdentificacion){
+		$rows=null;
+		$modelo = new Conexion();
+		$conexion = $modelo->getConection();					
+		$sql="SELECT count(NumeroIdentificacion) AS Doc from CLIENTES where NumeroIdentificacion='".$NumeroIdentificacion."';";
+		$statement=$conexion->prepare($sql);			
+		$statement->execute();
+		while ($result=$statement->fetch()) {
+			$rows[]=$result;
+		}
+		return $rows;
+	}
+	
+}
 /*echo ($mensaje1);
 echo '<br>';
 echo ($mensaje2);
