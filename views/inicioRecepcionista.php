@@ -22,7 +22,7 @@ crossorigin="anonymous">
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
-			<img width="150" height="80" src="../assets/img/Logotipo.PNG"><h1 style="font-size: 2.0em;
+			<img width="150" height="80" src="../assets/img/Recurso.PNG"><h1 style="font-size: 2.0em;
 			font-weight: 1000;
 			color: white ">Bienvenido</h1>
 		</a>
