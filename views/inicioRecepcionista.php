@@ -89,7 +89,7 @@ crossorigin="anonymous">
 <div class="container">	
 					<br>
 				<div class="row">
-				 <center><img width="1000" height="420"  src="../assets/img/recepcionHome.jpg"/>
+				 <center><img width="500" class="card-img-top" height="420"  src="../assets/img/recepcionHome.jpg"/>
 				  </div> 
 				</div>
 			</div>									

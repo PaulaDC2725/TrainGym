@@ -73,7 +73,7 @@ crossorigin="anonymous">
 			<h1 style="font-size: 1.5em; text-align: center;"><?php echo $fila['nombreCliente']; ?><br> ¿Que desea hacer?</h1>
 			<div class="row">
 			  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			 <center><img width="1000" height="420"  src="../assets/img/clienteHome.jpg"/>
+			 <center><img width="1000" height="420" class="card-img-top"  src="../assets/img/clienteHome.jpg"/>
 			  </div> 
 			  </div>
 			  </div> 

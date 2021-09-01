@@ -88,7 +88,7 @@ crossorigin="anonymous">
 				<div class="container">
 					<div class="row">
 					  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					 <center><img width="1000" height="420"  src="../assets/img/intructorHome.jpg"/>
+					 <center><img width="1000" class="card-img-top" height="420"  src="../assets/img/intructorHome.jpg"/>
 					  </div> 
 					  </div>
 					  </div>       
