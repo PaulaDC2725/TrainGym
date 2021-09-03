@@ -166,7 +166,7 @@ echo ($mensaje27);*/
 						</button>
 					</center>
 					<center>
-						<input type="submit" class="btn btn-dark" id="enviar" value="Continuar" name="enviar" onclick="location.href='Registro.php'">
+						<input type="submit" class="btn btn-dark" id="enviar" value="Enviar" name="enviar" onclick="location.href='Registro.php'">
 					</center>
 					<br>
 				<?php  
@@ -182,10 +182,16 @@ echo ($mensaje27);*/
                     	foreach ($mensajes3 as $mensaje3) {
                             $doc=$mensaje3['Doc'];    
                         }
-                        if($telefono == 1 || $correo == 1 ||$doc == 1){                        
-							echo '<div class="alert alert-warning"><strong>Ups, Lo sentimos!</strong> Datos registrados previamente en el sistema, revisalos e intentalo nuevamente.*Presione enter para continuar*</div>';
+                        if($telefono == 1){                        
+							echo '<div class="alert alert-warning"><strong>Ups, Lo sentimos!</strong> Telefono registrado previamente en el sistema, revisalo e intentalo nuevamente.</div>';
 						
-                        }else if($telefono == 0 || $correo == 0 ||$doc == 0){
+                        }else if($correo == 1 ){
+							echo '<div class="alert alert-warning"><strong>Ups, Lo sentimos!</strong> Correo registrado previamente en el sistema, revisalo e intentalo nuevamente.</div>';
+						}else if($doc == 1){
+							echo '<div class="alert alert-warning"><strong>Ups, Lo sentimos!</strong> Numero de documento registrado previamente en el sistema, revisalo e intentalo nuevamente.</div>';
+						}else if($telefono == 1 && $correo == 1 && $doc == 1 ){
+							echo '<div class="alert alert-warning"><strong>Ups, Lo sentimos!</strong> Datos registrados previamente en el sistema, revisalos e intentalo nuevamente.</div>';
+						}else if($telefono == 0 || $correo == 0 ||$doc == 0){
 							$estadoUsuario="1";
 							$idRolFK="3";
 							$mensaje4 = $consultasUsuario->registrarUsuario($NumeroIdentificacion,$contra1, $estadoUsuario,$idRolFK,$tipoDocumento);

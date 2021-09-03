@@ -127,9 +127,15 @@ color: black; text-align: center;">Registrar instructor</h1>
           $mensaje5= $consultasInstructor-> registrarInstructor($nombreInstructor, $apellidoInstructor, $correoInstructor,$telefonoInstructor,$estadoInstructor);
           echo "<script>location.href=' ../../../views/mostrarInstructores.php';</script>";
             die();
-      }else if($telefono == 1 || $correo == 1 || $doc == 1){
+      }else if($telefono == 1 && $correo == 1 && $doc == 1){
        echo ('<script>swal("ERROR!","Datos registrados anteriormente", "error")</script>');
-      }
+      }else if($telefono == 1){
+		echo ('<script>swal("ERROR!","Telefono registrado anteriormente", "error")</script>');
+	   }else if($correo == 1){
+		echo ('<script>swal("ERROR!","Correo registrado anteriormente", "error")</script>');
+	   }else if($doc == 1){
+		echo ('<script>swal("ERROR!","Numero de documento registrado anteriormente", "error")</script>');
+	   }
         ?>
 		<hr>
 	</form>

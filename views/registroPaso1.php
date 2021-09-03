@@ -101,7 +101,7 @@
 					</center>
 					<center>
 						<button type="submit" value="Enviar"  id="enviar" name="registrar1" class="btn btn-dark">
-							Continuar
+						 Enviar
 						</button>
 					</center>
 					<br>
