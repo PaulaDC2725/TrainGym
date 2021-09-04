@@ -44,7 +44,7 @@
 			<div class="row">
 <div class="col-sm-3">
 <div class="card border-dark mb-3" style="max-width: 18rem; border: black 2px solid;">
-   <div class="card-body" style="background-color: #ef930aab; ">
+   <div class="card-body" style="background-color: #FF9900; ">
     <b class="card-text" >Paso 1</b>
   </div>
   <div class="card-body">
@@ -56,7 +56,7 @@
 </div>
 <div class="col-sm-3">
 <div class="card border-dark mb-3" style="max-width: 18rem; border: black 2px solid;">
-   <div class="card-body" style="background-color: #ef930aab; ">
+   <div class="card-body" style="background-color: #FF9900; ">
     <b class="card-text" >Paso 2</b>
   </div>
   <div class="card-body">
@@ -68,7 +68,7 @@
 </div>
 <div class="col-sm-3">
 <div class="card border-dark mb-3" style="max-width: 18rem; border: black 2px solid;">
-   <div class="card-body" style="background-color: #ef930aab; ">
+   <div class="card-body" style="background-color: #FF9900; ">
     <b class="card-text" >Paso 3</b>
   </div>
   <div class="card-body">
@@ -80,7 +80,7 @@
 </div>
 <div class="col-sm-3">
 <div class="card border-dark mb-3" style="max-width: 18rem; border: black 2px solid;">
-   <div class="card-body" style="background-color: #ef930aab; ">
+   <div class="card-body" style="background-color: #FF9900; ">
     <b class="card-text" >Paso 4</b>
   </div>
   <div class="card-body">
@@ -93,9 +93,6 @@
 <br>
 				<center><button type="button" value="Continuar" name="btnf" class="btn btn-dark" onclick="location.href='registroPaso1.php'">Continuar</button></center>
 				<br>
-				<br>
-				
-				<center><input type="botton" class="btn btn-dark" value="Regresar" name="boton1" onclick="location.href='index.php'"></center>
 				<hr>
 			</form>
 		</div>
