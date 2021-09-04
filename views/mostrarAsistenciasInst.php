@@ -4,9 +4,9 @@
   
   $ConsultasAsistencias= new ConsultasAsistencias;
   if (isset($_GET['filtroCol']) && isset($_GET['valor'])) {
-    $filas = $ConsultasAsistencias->consultarAsistenciasFiltradas($_GET['filtroCol'],$_GET['valor']);    
+    $filas = $ConsultasAsistencias->consultarAsistenciasFiltradasIns($_GET['filtroCol'],$_GET['valor']);    
   }else{
-    $filas = $ConsultasAsistencias->mostrarAsistencias();
+    $filas = $ConsultasAsistencias->mostrarAsistenciasIns();
   }
     $tabla="";
 
@@ -68,7 +68,7 @@ crossorigin="anonymous">
 
 		<h1 style="font-size: 2.6em;
 		font-weight: 1000;
-		color: black; "> Clientes que han ingresado al gimnasio</h1>
+		color: black; "> Instructores que han ingresado al gimnasio</h1>
 		</div>
 		<table class="table table-striped">
   <tbody>
@@ -77,7 +77,7 @@ crossorigin="anonymous">
         <td>
           <select type="option" id="est" name="filtroCol" class="form-control" required="">
             <option value="NumeroIdentificacion">Número de identificación</option>
-            <option value="nombreCliente">Nombre</option>
+            <option value="nombreInstructor">Nombre</option>
           </select>          
         </td>
         <td>
@@ -87,7 +87,7 @@ crossorigin="anonymous">
           <button type="submit" class="btn btn-dark" >Buscar</button>
         </td>
         <td>
-          <a href="mostrarAsistencias.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
+          <a href="mostrarAsistenciasInst.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
         </td>
       </form>         
       <td>
@@ -116,7 +116,6 @@ crossorigin="anonymous">
    
     <br>
 		
-				
 		<hr>
 		<footer class="py-5">
           <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; Recepcionista TrainGym 2021</p></div>

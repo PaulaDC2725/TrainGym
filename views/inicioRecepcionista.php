@@ -61,7 +61,7 @@ crossorigin="anonymous">
 								<a class="nav-link" href="registroAsistencias.php"style="font-size: 15px">Registar asistencias</a>	
 							</li>
 							<li  class="nav-item">
-								<a class="nav-link" href="mostrarAsistencias.php"style="font-size: 15px">Mostrar Asistencias</a>	
+								<a class="nav-link" href="Asistencias.php"style="font-size: 15px">Mostrar Asistencias</a>	
 							</li>
 						</ul>
 					</li>

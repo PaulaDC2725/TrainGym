@@ -77,9 +77,6 @@
   </div>
 </div> 
 <br>
-<div class="form-group">					
-	<input type="submit" class="btn-Regresar" value="Regresar" name="boton1" onclick="location.href='index.php'">
-</div> 
 <br>
   <!-- Footer-->
   <footer class="py-5">

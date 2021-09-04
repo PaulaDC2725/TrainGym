@@ -51,6 +51,37 @@
 		}
 		return $rows;
 	}
+	public function mostrarAsistenciasIns(){
+		$rows=null;
+		$modelo = new Conexion();
+		$conexion = $modelo->getConection();					
+		$sql = "call consultarAsistenciaInstructor()";
+		$statement=$conexion->prepare($sql);		
+	$statement->execute();
+	while ($result=$statement->fetch()) {
+		$rows[]=$result;
+	}
+	return $rows;
+}
+public function consultarAsistenciasFiltradasIns($filtroCol, $valor){
+	$rows=null;
+	$modelo = new Conexion();
+	$conexion = $modelo->getConection();
+	$sql="SELECT u.numeroIdentificacion, CONCAT(i.nombreInstructor ,' ', i.apellidoInstructor) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
+	FROM PROGRAMACION AS p 
+	JOIN USUARIOS AS  u 
+	JOIN INSTRUCTORES AS i 
+	JOIN ASISTENCIAS AS a
+	ON  u.idUsuario=p.idUsuarioFK 
+	AND u.idUsuario=i.idUsuarioFK
+	WHERE ".$filtroCol." LIKE '%".$valor."%'";
+	$statement=$conexion->prepare($sql);
+	$statement->execute();
+	while ($result=$statement->fetch()) {
+		$rows[]=$result;
+	}
+	return $rows;
+}
 
 	public function registrarProgramacion($fechaInicioPro,$fechaFinPro,$numid){
 			$rows=null;

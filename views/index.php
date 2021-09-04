@@ -39,7 +39,7 @@
         <header class="py-5 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5"> 
-                    <h1 class="fw-bolder">Bienvenido a TrainGym</h1>
+                    <h1 class="fw-bolder" style="font-family: masque;">Bienvenido a TrainGym</h1>
                     <p class="lead mb-0">La mejor herramienta para tener el control y manejo de cualquier gimnasio</p>
                     <hr>
                     <center>
