@@ -171,7 +171,7 @@
 		// 	return $rows;
 
 		// }
-		public function borrarCliente($idInstructor){
+		public function borrarCliente($idCliente){
 			$rows=null;
                 /*$estado=1;*/
                 $modelo = new Conexion();

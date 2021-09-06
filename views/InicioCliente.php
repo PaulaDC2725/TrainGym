@@ -53,8 +53,6 @@ crossorigin="anonymous">
 			<a href="index.php">
                 <img width="300" height="70" style="padding: 3px" src="../assets/img/logo.png">
 			</a>
-			<h1 style="font-size: 3em;
-		font-weight: 1000;color: white;text-align: center">Bienvenido</h1>
 		
             
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>

@@ -34,19 +34,19 @@ SELECT * FROM USUARIOS;
 
 /*TABLA INSTRUCTORES*/
 INSERT INTO INSTRUCTORES (idInstructor,nombreInstructor,apellidoInstructor,correoInstructor,telefonoInstructor,estadoInstructor,idUsuarioFK)
-VALUES (1,'Andrea','Sastoque','andreas@gmail.com',321348028,1,2);
+VALUES (1,'Andrea','Sastoque','andreas@gmail.com',3213480281,1,2);
 INSERT INTO INSTRUCTORES (idInstructor,nombreInstructor,apellidoInstructor,correoInstructor,telefonoInstructor,estadoInstructor,idUsuarioFK)
-VALUES (2,'Ana Maria','Valencia','anaMaria@gmail.com',300535096,1,3);
+VALUES (2,'Ana Maria','Valencia','anaMaria@gmail.com',3005350960,1,3);
 
 SELECT * FROM INSTRUCTORES;
 
 /*TABLA CLIENTES*/
 INSERT INTO CLIENTES (idCliente,nombreCliente,apellidoCliente,fechaNacimientoCliente,correoCliente,telefonoCliente,estadoCliente,idUsuarioFK)
-VALUES (1,'Maria','Castillo','2002-05-12','mariacastillo@hotmail.com',302455687,1,4);
+VALUES (1,'Maria','Castillo','2002-05-12','mariacastillo@hotmail.com',3024556876,1,4);
 INSERT INTO CLIENTES (idCliente,nombreCliente,apellidoCliente,fechaNacimientoCliente,correoCliente,telefonoCliente,estadoCliente,idUsuarioFK)
-VALUES (2,'Paula Catalina','Delgado','2002-09-12','kimikta45@gmail.com',312361710,1,5);
+VALUES (2,'Paula Catalina','Delgado','2002-10-27','kimikta45@gmail.com',3123617109,1,5);
 INSERT INTO CLIENTES (idCliente,nombreCliente,apellidoCliente,fechaNacimientoCliente,correoCliente,telefonoCliente,estadoCliente,idUsuarioFK)
-VALUES (3,'Valentina','Prueba','2000-02-25','prueba@hotmail.com',300230005,1,6);
+VALUES (3,'Valentina','Prueba','2000-02-25','prueba@hotmail.com',3002300045,1,6);
 
 SELECT * FROM CLIENTES;
 
