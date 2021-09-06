@@ -18,8 +18,7 @@ function validarForm1() {
     }else if (contraseña.length < 10 ) {
       swal("ERROR!","La contraseña ingresada no es válida","error");
     }else if(emailRegex.test(correo)==false){
-      swal("Ups!","Correo invalido","warning");
-            validarCorreo.innerHTML="Correo invalido (debe contener '@' y terminar en '.com') ";
+      swal("Ups!","Correo invalido","warning");;
             if(emailRegex.test(correoCliente)==true){
                 validarCorreo.innerHTML="Correo Valido";
             }
