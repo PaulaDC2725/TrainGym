@@ -37,14 +37,13 @@ public function registrarParteCuerpo($nombreParteCuerpo)
         $modelo = new Conexion();
         $conexion = $modelo->getConection();					
         $sql = " INSERT INTO ficha_medida(idFichaFK, idParteDelCuerpoFK, medida) Values ((SELECT MAX(idFicha) FROM ficha_antropometrica),'".$idParteDelCuerpoFK."','".$medida."')";
-        $statement=$conexion->prepare($sql);
+        $statement=$conexion->prepare($sql);			
+        $statement->execute();
+        while ($result=$statement->fetch()) {
+            $rows[]=$result;
+        }
+        return $rows;
 
-    if (!$statement) {
-         return "error al crear registro";			 	
-     }else{
-         $statement->execute();	
-         return $rows;
-     }
     }
     public function consultarFichaAntro1($filtro)
     {$rows=null;

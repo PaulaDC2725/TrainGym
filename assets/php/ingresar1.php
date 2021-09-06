@@ -42,7 +42,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
     <div class="container">
       <a href="../../views/index.php">
-        <img width="450" height="100" src="../img/Logo.PNG" alt="Logo TrainGym">
+        <img width="450" height="100" src="../img/Logo1.PNG" alt="Logo TrainGym">
     </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -15,16 +15,6 @@ $nombreMetodologia='Disminuir de peso';
 }
 
 
-$nombreParteCuerpo1= $_POST['Craneo'];
-$nombreParteCuerpo2= $_POST['BicDer'];
-$nombreParteCuerpo3= $_POST['BicIzq'];
-$nombreParteCuerpo4= $_POST['musDer'];
-$nombreParteCuerpo5= $_POST['musIzq'];
-$nombreParteCuerpo6= $_POST['Cintura'];
-$nombreParteCuerpo7= $_POST['brazD'];
-$nombreParteCuerpo8= $_POST['brazI'];
-$nombreParteCuerpo9= $_POST['pierD'];
-$nombreParteCuerpo10= $_POST['perI'];
 $idParteDelCuerpo1FK='6';
 $idParteDelCuerpo2FK='7';
 $idParteDelCuerpo3FK='8';
@@ -80,7 +70,7 @@ $pesoCliente = $_POST['Peso'];
 	<nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
             <div class="container">
               <a href="index.php">
-                <img width="300" height="70" src="../../../assets/img/logo.png">
+                <img width="300" height="70" src="../../../assets/img/logo1.png">
             	</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

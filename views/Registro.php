@@ -22,7 +22,7 @@
    <nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
             <div class="container">
               <a href="index.php">
-                <img width="300" height="70" src="../assets/img/logo.png">
+                <img width="300" height="70" src="../assets/img/logo1.png">
             </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,12 +39,16 @@
 </div>
 <!---->
 <br>
+
 		<div class="container">
 		<center><h1 margin: 0,padding: 0 0 20px, text-align: center, font-size: 22px>REGISTRO</h1></center>
+    <br>
+    <br>
+    <br>
 			<div class="row">
 <div class="col-sm-3">
 <div class="card border-dark mb-3" style="max-width: 18rem; border: black 2px solid;">
-   <div class="card-body" style="background-color: #FF9900; ">
+   <div class="card-body" style="background-color: #FF9900;opacity: 0.8; ">
     <b class="card-text" >Paso 1</b>
   </div>
   <div class="card-body">
@@ -56,7 +60,7 @@
 </div>
 <div class="col-sm-3">
 <div class="card border-dark mb-3" style="max-width: 18rem; border: black 2px solid;">
-   <div class="card-body" style="background-color: #FF9900; ">
+   <div class="card-body" style="background-color: #FF9900;opacity: 0.8; ">
     <b class="card-text" >Paso 2</b>
   </div>
   <div class="card-body">
@@ -68,7 +72,7 @@
 </div>
 <div class="col-sm-3">
 <div class="card border-dark mb-3" style="max-width: 18rem; border: black 2px solid;">
-   <div class="card-body" style="background-color: #FF9900; ">
+   <div class="card-body" style="background-color: #FF9900; opacity: 0.8;">
     <b class="card-text" >Paso 3</b>
   </div>
   <div class="card-body">
@@ -80,7 +84,7 @@
 </div>
 <div class="col-sm-3">
 <div class="card border-dark mb-3" style="max-width: 18rem; border: black 2px solid;">
-   <div class="card-body" style="background-color: #FF9900; ">
+   <div class="card-body" style="background-color: #FF9900; opacity: 0.8;">
     <b class="card-text" >Paso 4</b>
   </div>
   <div class="card-body">
@@ -90,6 +94,18 @@
   </div>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 				<center><button type="button" value="Continuar" name="btnf" class="btn btn-dark" onclick="location.href='registroPaso1.php'">Continuar</button></center>
 				<br>
