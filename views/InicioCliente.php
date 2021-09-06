@@ -61,7 +61,8 @@ crossorigin="anonymous">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="consultarAgendaCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>">Consultar Agenda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="AgendarCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?> ">Agendar entrenamiento</a></li>
+                        <li class="nav-item"><a class="nav-link" href="AgendarCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?> ">Agendar Programacion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registrarAsistenciasCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?> ">Registrar Asistencias</a></li>
                     </ul>
                 </div>
             </div>

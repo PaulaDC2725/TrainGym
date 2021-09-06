@@ -158,19 +158,19 @@
 			return $rows;
 
 		}
-		public function cargarAgendaCliFiltroId($filtro){
-			$rows=null;
-			$modelo = new Conexion();
-			$conexion = $modelo->getConection();
-			$sql="SELECT c.nombreCliente,u.NumeroIdentificacion,h.horaInicioHorario, h.horaFinHorario, h.semanaDiaHorario from horarios AS h JOIN programacion_horario AS ph JOIN programacion AS p JOIN usuarios AS u JOIN clientes AS c on ph.idHorarioFK = h.idHorario and p.idUsuarioFK = u.idUsuario and ph.idProgramacionFK=p.idProgramacion and c.idUsuarioFK=u.idUsuario where u.NumeroIdentificacion='".$filtro."'";
-			$statement=$conexion->prepare($sql);			
-			$statement->execute();
-			while ($result=$statement->fetch()) {
-				$rows[]=$result;
-			}
-			return $rows;
+		// public function cargarAgendaCliFiltroId($filtro){
+		// 	$rows=null;
+		// 	$modelo = new Conexion();
+		// 	$conexion = $modelo->getConection();
+		// 	$sql="SELECT c.nombreCliente,u.NumeroIdentificacion,h.horaInicioHorario, h.horaFinHorario, h.semanaDiaHorario from horarios AS h JOIN programacion_horario AS ph JOIN programacion AS p JOIN usuarios AS u JOIN clientes AS c on ph.idHorarioFK = h.idHorario and p.idUsuarioFK = u.idUsuario and ph.idProgramacionFK=p.idProgramacion and c.idUsuarioFK=u.idUsuario where u.NumeroIdentificacion='".$filtro."'";
+		// 	$statement=$conexion->prepare($sql);			
+		// 	$statement->execute();
+		// 	while ($result=$statement->fetch()) {
+		// 		$rows[]=$result;
+		// 	}
+		// 	return $rows;
 
-		}
+		// }
 		public function borrarCliente($idInstructor){
 			$rows=null;
                 /*$estado=1;*/

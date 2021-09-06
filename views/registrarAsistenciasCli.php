@@ -1,9 +1,24 @@
 <?php
+  require_once('../assets/php/Modelo/class.conexion.php');
+  require_once('../assets/php/Modelo/class.consulta.cliente.php');
+  $consultas = new ConsultasClientes();
+  $numeroIdentificacion=null;
+  $nombreCliente=null;
+if (isset($_GET['NumeroIdentificacion'])) 
+{
+    $id=$_GET['NumeroIdentificacion'];
+    $filtro=$id;
+    $filas1 = $consultas->cargarClientesFiltroId($filtro);
+      foreach ($filas1 as $fila) {
+        $nombreCliente = $fila['nombreCliente']; 
+  }
+  
 date_default_timezone_set('America/Bogota');
-$DateAndTime = date('d-m-Y h:i:s a', time());  
+$DateAndTime = date('d-m-Y h:i:s a', time()); 
+  } 
+
 
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -46,7 +61,7 @@ $DateAndTime = date('d-m-Y h:i:s a', time());
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-				<li class="nav-item"><a class="nav-link" href="inicioRecepcionista.php">Regresar</a></li>
+				<li class="nav-item"><a class="nav-link" href="inicioCliente.php?NumeroIdentificacion=<?php echo $id?>">Regresar</a></li>
 			</ul>
 		</div>
 	</div>
@@ -65,14 +80,14 @@ $DateAndTime = date('d-m-Y h:i:s a', time());
               <h1 style="font-size: 2.6em;
 									font-weight: 1000;
 									color: black; ">
-										Registrar Asistencia Instructor
+										Registrar Asistencia Cliente <?php echo $nombreCliente?>
 				</h1>
               </div>
-            <form action="" method="post">
+            <form action="../assets/php/ingresar1.php" method="post">
             
 			<label for="username">Numero de Documento</label>  
 			<div class="form-group first">
-                <input type="number" class="form-control" placeholder="Ingrese su número de identificación" id="Num" name="Num" required>			
+                <input type="number" class="form-control" value="<?php echo $id?>" placeholder="Ingrese su número de identificación" id="Num" name="Num" required>			
               </div>
 			  <br>
 			  <label for="Num" class="form-label">Fecha Hora Ingreso: </label>
