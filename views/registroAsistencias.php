@@ -1,5 +1,6 @@
 <?php
-$DateAndTime = date('m-d-Y h:i:s a', time());  
+date_default_timezone_set('America/Bogota');
+$DateAndTime = date('d-m-Y h:i:s a', time());  
 
 ?>
 
@@ -78,7 +79,7 @@ $DateAndTime = date('m-d-Y h:i:s a', time());
 										<label for="Num" class="form-label">Fecha Hora Salida: </label>
 										<div class="form-group last mb-12">		
 											<div class="input-group mb-3">
-												<input step="any" required type="datetime-local" class="form-control" placeholder="Ingrese Su Peso" id="Peso" name="Peso">
+												<input step="any" required type="datetime-local" class="form-control"  id="Peso" name="Peso">
 											</div>
 										</div>
 									</div>						
