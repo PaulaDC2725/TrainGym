@@ -22,13 +22,13 @@ $horaSalida=$_POST['salida'];*/
 $mensaje2 = $ConsultasAsistencias->registrarAsistencia($fechaHoraIngreso,$fechaHoraSalida,$numeroIdentificacion);
 //$mensaje3 = $ConsultasAsistencias->registrarAsistenciaCli($horaIngreso,$horaSalida);
 //echo $mensaje1;
-echo $mensaje2;
+//echo $mensaje2;
 //echo $mensaje3;
 
 //$mensaje2 = $consultasClientes-> registrarInstructor($nombreInstructor, $apellidoInstructor, $correoInstructor,$telefonoInstructor,$estadoInstructor);
 
 
-//header ('location: ../../../views/Asistencias.php');
+header ('location: ../../../views/Asistencias.php');
 
  ?>
 

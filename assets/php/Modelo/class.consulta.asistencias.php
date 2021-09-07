@@ -107,7 +107,7 @@ public function consultarAsistenciasFiltradasIns($filtroCol, $valor){
 			return "error al crear registro";			 	
 		}else{
 			$statement->execute();	
-			return $sql;
+			return $rows;
 		}	
 
         
