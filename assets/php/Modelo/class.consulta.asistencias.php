@@ -96,17 +96,21 @@ public function consultarAsistenciasFiltradasIns($filtroCol, $valor){
         return $rows;
 	}
 
-	public function registrarAsistencia($fechaAsistencia){
+	public function registrarAsistencia($fechaHoraIngreso,$fechaHoraSalida,$numid){
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "call registrarAsistencia('".$fechaAsistencia."')";
-			$statement=$conexion->prepare($sql);		
-        $statement->execute();
-        while ($result=$statement->fetch()) {
-            $rows[]=$result;
-        }
-        return $rows;
+			$sql = "call registrarAsistencia('".$fechaHoraIngreso."','".$fechaHoraSalida."','".$numid."')";
+			$statement=$conexion->prepare($sql);
+
+		if (!$statement) {
+			return "error al crear registro";			 	
+		}else{
+			$statement->execute();	
+			return $sql;
+		}	
+
+        
 	}
 
 	}

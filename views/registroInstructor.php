@@ -114,7 +114,7 @@ color: black; text-align: center;">Registrar instructor</h1>
 			<div class="col-md-7 contents">
 			<div class="row justify-content-center">
 				<div class="col-md-12">
-					<div class="mb-7">
+					<div class="mb-7"> 
 							<h1 style="text-align: center;">
 								 Registro Instructor
 							</h1>
