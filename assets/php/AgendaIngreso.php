@@ -37,7 +37,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
     <div class="container">
       <a href="../../views/index.php">
-        <img width="450" height="100" src="../img/Logo.PNG" alt="Logo TrainGym">
+        <img width="450" height="100" src="../img/Logo1.PNG" alt="Logo TrainGym">
     </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -72,6 +72,8 @@ if (is_array($filas) || is_object($filas))
 }
 if($resultado=='1'){
 	header('location: ../../views/AgendarCli.php?NumeroIdentificacion='.$usuario);
+}else if($usuario=="" || $contrasenia==""){
+  echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
 }
 /*else if($resultado == '0' && $estado="0"){
 	echo('<center><div class="container"><br><br><br><span style="text-align: center;font-size: 20px;color: black;border: solid;border-color: red;background: #ff000038;padding: 70px;"><b>¡Usuario inhabilitado, por favor comuniqusese con la recepcionista para habilitarse nuevamente!</b> </span></div></center>');
@@ -113,7 +115,7 @@ if($resultado=='1'){
                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
               </div>
 
-              <input type="submit" value="INGRESAR" class="btn btn-block btn-warning" style="background-color: #FF9900">
+              <input type="submit" value="INGRESAR" class="btn btn-block btn-warning" onclick="validarForm()" style="background-color: #FF9900">
 
               
               
@@ -135,4 +137,5 @@ if($resultado=='1'){
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   
 </body>
+<script src="../js/Ingresos.js">
 </html>

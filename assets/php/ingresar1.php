@@ -80,6 +80,8 @@ else if($Rol == '2' && $resultado == "1"){
 }
 else if($Rol == '3' && $resultado == "1"){
 	header('location: ../../views/inicioCliente.php?NumeroIdentificacion='.$usuario);
+}else if($usuario=="" || $contrasenia==""){
+  echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
 }
 else{
 	echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
@@ -148,6 +150,7 @@ else{
 			
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script src="../js/Ingresos.js">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"

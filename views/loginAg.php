@@ -12,11 +12,6 @@
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
 	<link rel="icon" type="image/x-icon" href="../ASSETS/img/Logotipo.PNG" />
-  <!-- <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" /> -->
-        <!-- Core theme CSS (includes Bootstrap)
-  <link href="../assets/css/styles.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
@@ -28,6 +23,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Style -->
     <link rel="stylesheet" href="../assets/css/styleLogin.css">
 <title>|Login Cliente</title>
@@ -87,7 +83,7 @@
                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
               </div>
 
-              <input type="submit" value="INGRESAR" class="btn btn-block btn-warning" style="background-color: #FF9900">
+              <input type="submit" value="INGRESAR" class="btn btn-block btn-warning" onclick="validarForm()" style="background-color: #FF9900">
 
               
               
@@ -108,6 +104,7 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script src="../assets/js/Ingresos.js">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
