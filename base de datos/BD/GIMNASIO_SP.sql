@@ -19,7 +19,7 @@ BEGIN
 	AND idRolFK=rol 
 	AND estadoUsuario=estado;
 END$$
-DELIMITER;
+DELIMITER ;
 
 /*---------------SP PARA VALIDACION DE ROLES EN EL LOGIN------------------------------*/
 
@@ -193,15 +193,14 @@ CREATE PROCEDURE `registrarProgramacion` (	in fechaInicioPro DATE,
 											in fechaFinPro DATE,
 											in numid VARCHAR(25))
 BEGIN
-	INSERT INTO PROGRAMACION SELECT MAX(idProgramacion) + 1 ,fechaInicioPro,fechaFinPro, 
+	INSERT INTO PROGRAMACION 
+    SELECT MAX(idProgramacion) + 1 ,fechaInicioPro,fechaFinPro, 
     (SELECT idUsuario FROM USUARIOS WHERE numeroIdentificacion=numid) 
     FROM PROGRAMACION;
 END$$
 DELIMITER ;
 
 CALL registrarProgramacion('2021-08-04','2021-09-10','1001299203');
-
-
 
 /*---------------SP PARA REGISTRAR LA ASISTENCIA ------------------------------*/
 
@@ -211,15 +210,18 @@ DROP PROCEDURE IF EXISTS `registrarAsistencia`;
 DELIMITER $$
 USE `gimnasiobd`$$
 CREATE PROCEDURE `registrarAsistencia` (in fechaHoraIngreso DATETIME,
-										in fechaHoraSalida DATETIME)
+										in fechaHoraSalida DATETIME,
+                                        in numid VARCHAR(25))
 BEGIN
 	INSERT INTO ASISTENCIAS 
-    SELECT MAX(idAsistencia) + 1,fechaHoraIngreso, fechaHoraSalida,(SELECT MAX(idProgramacion)FROM PROGRAMACION)
-    FROM asistencias;
+    SELECT MAX(idAsistencia) + 1,fechaHoraIngreso,fechaHoraSalida,(SELECT MAX(idProgramacion)FROM PROGRAMACION)
+    FROM ASISTENCIAS AS a 
+    JOIN PROGRAMACION AS p  
+    JOIN USUARIOS AS u 
+    ON a.idProgramacionFK=p.idProgramacion AND p.idUsuarioFK=u.idUsuario
+    WHERE u.numeroIdentificacion=numid;
 END$$
 DELIMITER ;
-
-CALL registrarAsistencia('2021-04-08 05:00','2021-09-10 08:00');
 
 /*---------------SP PARA CONSULTAR LA ASISTENCIA DEL CLIENTE------------------------------*/
 
@@ -231,16 +233,41 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `consultarAsistenciaCliente` ()
 BEGIN
 	SELECT u.numeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
-	FROM PROGRAMACION AS p 
+	FROM ASISTENCIAS AS a
+    JOIN PROGRAMACION AS p
 	JOIN USUARIOS AS  u 
 	JOIN CLIENTES AS c 
-	JOIN ASISTENCIAS AS a
-	ON  u.idUsuario=p.idUsuarioFK 
-	AND u.idUsuario=c.idUsuarioFK;
+	ON  p.idProgramacion=a.idProgramacionFK
+    AND u.idUsuario=p.idUsuarioFK 
+	AND u.idUsuario=c.idUsuarioFK 
+    WHERE c.idUsuarioFK=p.idUsuarioFK;
 END$$
 DELIMITER ;
 
 CALL consultarAsistenciaCliente();
+
+
+/*---------------SP PARA REGISTRAR PAGOS ------------------------------*/
+
+USE `gimnasiobd`;
+DROP PROCEDURE IF EXISTS `registrarPagos`;
+
+DELIMITER $$
+USE `gimnasiobd`$$
+CREATE PROCEDURE `registrarPagos` ( in fechaPago DATETIME,
+									in ValorPago FLOAT,
+                                    in descripcionPago VARCHAR(200),
+                                    in urlSoportePago VARCHAR(500))
+BEGIN
+	INSERT INTO PAGOS 
+    SELECT MAX(idPago) + 1,fechaPago,ValorPago,descripcionPago,urlSoportePago,(SELECT MAX(idSuscripcion) FROM SUSCRIPCIONES)
+    FROM PAGOS;
+END$$
+DELIMITER ;
+
+CALL registrarPagos('2021-09-08',50.585,'Pago del mes de Septiembre','www.urldepagodeseptiembredenombreyapellido.com');
+
+SELECT * FROM PAGOS;
 
 /*---------------SP PARA CONSULTAR LA ASISTENCIA DEL INSTRUCTOR------------------------------*/
 
@@ -252,16 +279,20 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `consultarAsistenciaInstructor` ()
 BEGIN
 	SELECT u.numeroIdentificacion, CONCAT(i.nombreInstructor ,' ', i.apellidoInstructor) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
-	FROM PROGRAMACION AS p 
+	FROM ASISTENCIAS AS a
+    JOIN PROGRAMACION AS p
 	JOIN USUARIOS AS  u 
 	JOIN INSTRUCTORES AS i
-	JOIN ASISTENCIAS AS a
-	ON  u.idUsuario=p.idUsuarioFK 
-	AND u.idUsuario=i.idUsuarioFK;
+	ON  p.idProgramacion=a.idProgramacionFK
+    AND u.idUsuario=p.idUsuarioFK 
+	AND u.idUsuario=i.idUsuarioFK 
+    WHERE i.idUsuarioFK=p.idUsuarioFK;
 END$$
 DELIMITER ;
 
 CALL consultarAsistenciaInstructor();
+
+/*NO ESTAN EJECUTADOS*/
 
 /*---------------SP PARA REGISTRAR LA SERIE DE EJERCICIOS ------------------------------*/
 
@@ -278,3 +309,28 @@ BEGIN
 	FROM SERIE_DE_EJERCICIO;
 END$$
 DELIMITER ;
+
+/*---------------SP PARA CONSULTAR LA SERIE DE EJERCICIOS ------------------------------*/
+
+USE `gimnasiobd`;
+DROP PROCEDURE IF EXISTS `consultarSerieEjercicio`;
+
+DELIMITER $$
+USE `gimnasiobd`$$
+CREATE PROCEDURE `consultarSerieEjercicio` ()
+BEGIN
+	SELECT u.numeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', s.idSerie, s.nombreSerieEjercicio, s.descripcionSerieEjercicio
+	FROM SERIE_DE_EJERCICIO AS s
+	JOIN TIPO_RUTINAS_EJERCICIO AS t
+    JOIN EJERCICIOS AS e
+    JOIN IMAGENES AS i
+    JOIN SUSCRIPCIONES_EJERCICIO AS se
+    JOIN SUSCRIPCIONES AS sp
+	JOIN CLIENTES AS c
+    JOIN USUARIOS AS u
+	ON  c.idCliente=sp.idClienteFK
+    AND u.idUsuario=c.idClienteFK;
+END$$
+DELIMITER ;
+
+CALL consultarSerieEjercicio();
