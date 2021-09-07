@@ -1,25 +1,6 @@
 let registrar1_btn = document.getElementById('registrar1');
 let btnForm2 = document.getElementById('enviar');
-/*registrar1_btn.addEventListener('click', sigForm);*/
 registrar1_btn.addEventListener('click', validarForm1);
-// let registrar2a_btn = document.getElementById('metodologia1');
-// registrar2a_btn.addEventListener('click', sigFormA);
-// let registrar2b_btn = document.getElementById('metodologia2');
-// registrar2b_btn.addEventListener('click', sigFormAA);
-// let registrar2c_btn = document.getElementById('metodologia3');
-// registrar2c_btn.addEventListener('click', sigFormAB);
-// let registrar3_btn = document.getElementById('registrar3');
-// /*registrar3_btn.addEventListener('click', sigFormB);*/ 
-// // registrar3_btn.addEventListener('click', validarForm3);        
-// let formulario2 = document.getElementById('registroPaso2');
-// let formulario1 = document.getElementById('registroPaso1');
-// let formulario3 = document.getElementById('registroPaso3');
-// let formulario4 = document.getElementById('registroPaso4');
-
-
-// formulario2.style.display='none';
-// formulario3.style.display='none';
-// formulario4.style.display='none';
 btnForm2.style.display='none';
 function validarForm1() {
     let numeroIdentificacion = document.getElementById('Num').value;

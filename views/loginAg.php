@@ -11,11 +11,25 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
-  <!--<link rel="stylesheet" href="../assets/css/style.css">-->
-  <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
-        <!-- Core theme CSS (includes Bootstrap)-->
+	<link rel="icon" type="image/x-icon" href="../ASSETS/img/Logotipo.PNG" />
+  <!-- <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" /> -->
+        <!-- Core theme CSS (includes Bootstrap)
   <link href="../assets/css/styles.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="../assets/css/styleLogin.css">
 <title>|Login Cliente</title>
 </head>
 <body>
@@ -39,30 +53,54 @@
  </div>
  <!---->
  <br>
+    </div>  
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+         <center> <img src="../assets/img/LogoTipo.PNG" alt="Image" class="img-fluid"></center>
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <h3 style="font-family: masque;">Inicia Sesión</h3>
+              </div>
+            <form action="../assets/php/AgendaIngreso.php" method="post">
+            
+			<label for="username">Numero de Documento</label>  
+			<div class="form-group first">
+                <input type="number" class="form-control" placeholder="Ingrese su número de identificación" id="Num" name="Num" required>			
+              </div>
+			  <br>
+                <label for="password">Contraseña</label>
+              <div class="form-group last mb-4">
+                <input type="password" class="form-control" placeholder="Ingrese la contraseña" id="Contraseña"name="Contraseña"required>
+                
+              </div>
+              
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+              </div>
+
+              <input type="submit" value="INGRESAR" class="btn btn-block btn-warning" style="background-color: #FF9900">
+
+              
+              
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
     </div>
-	<div class="container">
-			<form class="box" method="post" action="../assets/php/AgendaIngreso.php">
-		<center><h1 margin: 0,padding: 0 0 20px, text-align: center, font-size: 22px>LOGIN</h1></center>
-				<div class="form-group">
-				<div class="form-group">
-					<label for="Num" class="form-label">Numero de documento: </label>
-					<input required type="number" class="form-control" id="Num" name="Num"placeholder="Ingrese Numero De Identificación">
-				</div>
-				<div class="form-group">
-					<label for="contraseña" class="form-label">Contraseña: </label>
-					<input  required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese contraseña">
-				</div>
-				<br>
-				<center><button type="submit" value="Login" name="btnf" class="btn btn-dark">Agendar Entrenamiento</button></center>
-				<br>
-				<center><input type="botton" class="btn btn-dark" value="Regresar" name="boton1" onclick="location.href='index.php'"></center>
-			<br>
-			</form>			
-						
-		</div>
-		<br>
-		<hr>
-		</div>
+  </div>
+    </div>
 		  <!-- Footer-->
 		  <footer class="py-5">
           <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; TrainGym 2021</p></div>

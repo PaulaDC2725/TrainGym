@@ -18,11 +18,6 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
-  <!-- <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" /> -->
-        <!-- Core theme CSS (includes Bootstrap)
-  <link href="../assets/css/styles.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
