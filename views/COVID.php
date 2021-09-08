@@ -45,7 +45,7 @@
       <div class="col-sm-3">
         <div class="card border-dark mb-3" style="max-width: 15rem; border: black 2px solid;">
           <img class="card-img-top" src="../assets/img/temperatura.png">
-          <div class="card-body" style="background-color: #FF9900; ">
+          <div class="card-body" style="background-color: #FF9900;opacity: 0.8; ">
             <b class="card-text">Temperatura</b>
           </div>
         </div>
@@ -53,7 +53,7 @@
     <div class="col-sm-3">
         <div class="card border-dark mb-3" style="max-width: 15rem; border: black 2px solid;">
           <img class="card-img-top" src="../assets/img/desinfeccion.png">
-          <div class="card-body" style="background-color: #FF9900; ">
+          <div class="card-body" style="background-color: #FF9900;opacity: 0.8; ">
             <b class="card-text">Desinfección</b>
           </div>
         </div>
@@ -61,7 +61,7 @@
     <div class="col-sm-3">
         <div class="card border-dark mb-3" style="max-width: 15rem; border: black 2px solid;">
           <img class="card-img-top" src="../assets/img/Tapabocas.png">
-          <div class="card-body" style="background-color: #FF9900; ">
+          <div class="card-body" style="background-color: #FF9900; opacity: 0.8;">
             <b class="card-text">Tapabocas</b>
           </div>
         </div>
@@ -69,7 +69,7 @@
     <div class="col-sm-3">
       <div class="card border-dark mb-3" style="max-width: 15rem; border: black 2px solid;">
         <img class="card-img-top" src="../assets/img/agendamiento.png">
-        <div class="card-body" style="background-color: #FF9900; ">
+        <div class="card-body" style="background-color: #FF9900; opacity: 0.8;">
         <b class="card-text" >Agendar entrenamiento</b>
         </div>
       </div>
