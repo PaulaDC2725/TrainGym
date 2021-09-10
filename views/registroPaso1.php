@@ -66,7 +66,7 @@
 							</h1>
 					</div>
 					<br>
-					<form action="../assets/php/Controlador/Registro1.php" method="post">
+					<form action="../assets/php/Controlador/Registro1.php" method="post" id="formPaso1">
 						<div class="row">
 							<div class="col-md-6">												
 								<label for="TipoDoc" class="form-label">Tipo de documento: </label>

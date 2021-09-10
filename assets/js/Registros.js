@@ -28,6 +28,7 @@ function validarForm1() {
       swal("Correcto!","Envíe el formulario para continuar","success");
       btnForm2.style.display = 'block';
       registrar1_btn.style.display= 'none';
+      document.getElementById('formPaso1').submit();
     // }else{      
     //   sigForm();
     // }    
