@@ -3,6 +3,7 @@ let btnForm2 = document.getElementById('enviar');
 registrar1_btn.addEventListener('click', validarForm1);
 btnForm2.style.display='none';
 function validarForm1() {
+  let tipoDocumento = document.getElementById('tipoDocumentoCli').value;
     let numeroIdentificacion = document.getElementById('Num').value;
     let nombreCliente = document.getElementById('Nom').value;
     let apellidoCliente = document.getElementById('Ape').value;
@@ -12,7 +13,7 @@ function validarForm1() {
     let contraseñaCliente = document.getElementById('Contraseña').value;
     let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     let validarCorreo = document.getElementById('emailValid');
-    if ((numeroIdentificacion == "") || (nombreCliente == "") || (apellidoCliente == "") || (fechaNacimiento == "") || (telefonoCliente == "") || (contraseñaCliente == "") || (correoCliente == ""))
+    if ((tipoDocumento=="")||(numeroIdentificacion == "") || (nombreCliente == "") || (apellidoCliente == "") || (fechaNacimiento == "") || (telefonoCliente == "") || (contraseñaCliente == "") || (correoCliente == ""))
     {
       swal("Ups!","Debe completar todos los campos","warning");
     }else if (contraseñaCliente.length < 10 ) {
@@ -25,7 +26,7 @@ function validarForm1() {
             }
     }
     else{
-      swal("Correcto!","Envíe el formulario para continuar","success");
+      swal("Excelente!","Datos registrados correctamente","success");
       btnForm2.style.display = 'block';
       registrar1_btn.style.display= 'none';
       document.getElementById('formPaso1').submit();

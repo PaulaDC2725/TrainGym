@@ -204,25 +204,27 @@ CALL registrarProgramacion('2021-08-04','2021-09-10','1001299203');
 
 /*---------------SP PARA REGISTRAR LA ASISTENCIA ------------------------------*/
 
+Select * from asistencias;
 USE `gimnasiobd`;
 DROP PROCEDURE IF EXISTS `registrarAsistencia`;
 
 DELIMITER $$
 USE `gimnasiobd`$$
-CREATE PROCEDURE `registrarAsistencia` (in fechaHoraIngreso DATETIME,
-										in fechaHoraSalida DATETIME,
-                                        in numid VARCHAR(25))
+CREATE PROCEDURE `registrarAsistencia` (in idAsis int,
+										in idPro INT,
+										in fechaHoraIngreso DATETIME,
+										in fechaHoraSalida DATETIME)
 BEGIN
-	INSERT INTO ASISTENCIAS 
-    SELECT MAX(idAsistencia) + 1,fechaHoraIngreso,fechaHoraSalida,(SELECT MAX(idProgramacion)FROM PROGRAMACION)
-    FROM ASISTENCIAS AS a 
-    JOIN PROGRAMACION AS p  
-    JOIN USUARIOS AS u 
-    ON a.idProgramacionFK=p.idProgramacion AND p.idUsuarioFK=u.idUsuario
-    WHERE u.numeroIdentificacion=numid;
+	INSERT INTO ASISTENCIAS(idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK) 
+    values (idAsis,fechaHoraIngreso,fechaHoraSalida,idPro);
 END$$
 DELIMITER ;
-
+select max(fechaInicioPro) from programacion as p join usuarios as u 
+    on p.idUsuarioFK = u.idUsuario where u.NumeroIdentificacion="1000713178";
+Select p.idProgramacion from  programacion as p join usuarios as u join asistencias as a ON a.idProgramacionFK=p.idProgramacion AND p.idUsuarioFK=u.idUsuario
+    where u.numeroIdentificacion="1000713178" and p.fechaInicioPro ='2021-06-28';
+Select max(idAsistencia) + 1 from asistencias;
+call registrarAsistencia('9','1','2021-09-10 12:05:40','2021-09-10 14:30:10');
 /*---------------SP PARA CONSULTAR LA ASISTENCIA DEL CLIENTE------------------------------*/
 
 USE `gimnasiobd`;

@@ -72,7 +72,7 @@
 								<label for="TipoDoc" class="form-label">Tipo de documento: </label>
 								<div class="form-group first col-md-12">
 									<select class="form-control" id="tipoDocumentoCli" name="tipoDocumentoCli" >
-													<option selected value="--Seleccione el tipo de documento--" disabled>--Seleccione el tipo de documento--</option>
+													<option selected value="" disabled>--Seleccione el tipo de documento--</option>
 													<option value="1">Cedula de ciudadania</option>
 													<option value="2">Tarjeta de identidad</option>
 													<option value="3">Cedula de extranjeria</option>

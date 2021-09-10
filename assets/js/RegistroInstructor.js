@@ -3,7 +3,7 @@
     let btnForm2 = document.getElementById('registrar');
     btnForm2.style.display='none';
 function validarForm1() {
-    let tipoDocumento = document.getElementById('tipoDocInst')
+    let tipoDocumento = document.getElementById('tipoDocInst').value;
     let numeroIdentificacion = document.getElementById('Num').value;
     let nombre = document.getElementById('Nom').value;
     let apellido = document.getElementById('Ape').value;
@@ -23,8 +23,10 @@ function validarForm1() {
                 validarCorreo.innerHTML="Correo Valido";
             }
     }else{ 
-      swal("Correcto!","Envíe el formulario para continuar","success");
+      swal("Excelente!","Datos registrados correctamente","success");
       btnForm2.style.display = 'block';
       btnForm1.style.display= 'none';
+      document.getElementById('formInst').submit();
+
     }
   }

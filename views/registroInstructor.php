@@ -120,13 +120,13 @@ color: black; text-align: center;">Registrar instructor</h1>
 							</h1>
 					</div>
 					<br>
-					<form action="../assets/php/Controlador/registroins.php" method="post">
+					<form action="../assets/php/Controlador/registroins.php" id="formInst" method="post">
 						<div class="row">
 							<div class="col-md-6">												
 								<label for="TipoDoc" class="form-label">Tipo de documento: </label>
 								<div class="form-group first col-md-12">
 								<select class="form-control" id="tipoDocInst" name="tipoDocInst" >
-													<option selected value="--Seleccione el tipo de documento--" disabled>--Seleccione el tipo de documento--</option>
+													<option selected value="" disabled>--Seleccione el tipo de documento--</option>
 													<option value="1">Cedula de ciudadania</option>
 													<option value="3">Cedula de extranjeria</option>
 													<option value="4">Pasaporte</option>

@@ -133,7 +133,7 @@ echo ($mensaje27);*/
 							</h1>
 					</div>
 					<br>
-					<form action="Registro1.php" method="post">
+					<form action="Registro1.php" id="formPaso1" method="post">
 					<?php  
 							$mensajes1=$consultasCliente->DuplicidadCorr($correoCliente);
 							foreach ($mensajes1 as $mensaje1) {
