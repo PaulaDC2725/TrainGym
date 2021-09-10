@@ -51,8 +51,7 @@
                 </div>
             </div>
         </nav>
-<br>
-    </div>  
+<br> 
   <div class="content">
     <div class="container">
       <div class="row">

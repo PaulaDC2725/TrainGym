@@ -43,7 +43,7 @@
                     <p class="lead mb-0">La mejor herramienta para tener el control y manejo de cualquier gimnasio</p>
                     <hr>
                     <center>
-                      <a href="#!"><img width="300" height="400"class="card-img-top" src="../assets/img/Homepage.jpg" alt="Logo TrainGym" /></a>
+                      <a href="#!"><img width="300" height="400"class="card-img-top" src="../assets/img/Homepage.jpg" class="img-fluid" alt="Logo TrainGym" /></a>
                     </center>
                 </div>
             </div>
