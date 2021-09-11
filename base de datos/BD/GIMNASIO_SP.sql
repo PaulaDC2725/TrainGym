@@ -223,7 +223,6 @@ DELIMITER ;
 select max(idProgramacion) as idProgramacion from programacion as p join usuarios as u 
     on p.idUsuarioFK = u.idUsuario where u.NumeroIdentificacion="1000713178";
 Select max(idAsistencia) + 1 as idAsistencia from asistencias;
-call registrarAsistencia('11','11','2021-09-10 21:33:00','2021-09-11 03:11:00');
 /*---------------SP PARA CONSULTAR LA ASISTENCIA DEL CLIENTE------------------------------*/
 
 USE `gimnasiobd`;
