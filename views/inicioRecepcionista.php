@@ -40,6 +40,9 @@ crossorigin="anonymous">
 								<li  class="nav-item">
 									<a class="nav-link" href="mostrarInstructores2.php"style="font-size: 15px">Habilitar Instructores</a>	
 								</li>
+								<li  class="nav-item">
+									<a class="nav-link" href="mostrarInstructores3.php"style="font-size: 15px">Agendar Programacion</a>	
+								</li>
 							</ul>					
 					</li>
 					<li class="nav-item"><a class="nav-link">Clientes</a>

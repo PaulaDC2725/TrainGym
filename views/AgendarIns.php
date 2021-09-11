@@ -1,9 +1,9 @@
 <?php 
   require_once('../assets/php/Modelo/class.conexion.php');
-  require_once('../assets/php/Modelo/class.consulta.cliente.php');
+  require_once('../assets/php/Modelo/class.consulta.instructor.php');
 
 
-  $consultas = new ConsultasClientes();
+  $consultas = new ConsultasInstructor();
 
  
   $numeroIdentificacion=null;
@@ -12,10 +12,10 @@
   if (isset($_GET['NumeroIdentificacion'])) {
     $id=$_GET['NumeroIdentificacion'];
     $filtro=$id;
-  $filas1 = $consultas->cargarClientesFiltroId($filtro);
+  $filas1 = $consultas->cargarInstructorFiltroId($filtro);
     foreach ($filas1 as $fila) {
     $numeroIdentificacion=$fila['NumeroIdentificacion']; 
-      $nombreCliente = $fila['nombreCliente']; 
+      $nombreInstructor = $fila['nombreInstructor']; 
 }
 }
 ?>
@@ -53,14 +53,14 @@
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
             <div class="container">
-              <center><a href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>">
+              <center><a href="inicioRecepcionista.php">
                 <img class="encabezado" width="300" height="70" src="../assets/img/logo1.png">
             	</a>
 			</center>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>">Regresar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mostrarInstructores3.php">Regresar</a></li>
                     </ul>
                 </div>
             </div>
@@ -78,9 +78,9 @@
               <div class="mb-4">
               <h1 style="font-size: 2.6em;
             font-weight: 1000;
-    color: black; ">Agende la programación <?php echo $nombreCliente;?> </h1>
+    color: black; ">Agende la programación <?php echo $nombreInstructor;?> </h1>
               </div>
-            <form action="/TrainGym/assets/php/controlador/AgendarPrograCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>" method="post">
+            <form action="/TrainGym/assets/php/controlador/AgendarPrograIns.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>" method="post">
             
 			<label for="username">Fecha inicio programación:</label>  
 			<div class="form-group first">

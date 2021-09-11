@@ -200,7 +200,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-CALL registrarProgramacion('2021-08-04','2021-09-10','1001299203');
+CALL registrarProgramacion('2021-09-10','2021-10-10','1000713178');
 
 /*---------------SP PARA REGISTRAR LA ASISTENCIA ------------------------------*/
 
@@ -219,12 +219,11 @@ BEGIN
     values (idAsis,fechaHoraIngreso,fechaHoraSalida,idPro);
 END$$
 DELIMITER ;
-select max(fechaInicioPro) from programacion as p join usuarios as u 
+
+select max(idProgramacion) as idProgramacion from programacion as p join usuarios as u 
     on p.idUsuarioFK = u.idUsuario where u.NumeroIdentificacion="1000713178";
-Select p.idProgramacion from  programacion as p join usuarios as u join asistencias as a ON a.idProgramacionFK=p.idProgramacion AND p.idUsuarioFK=u.idUsuario
-    where u.numeroIdentificacion="1000713178" and p.fechaInicioPro ='2021-06-28';
-Select max(idAsistencia) + 1 from asistencias;
-call registrarAsistencia('9','1','2021-09-10 12:05:40','2021-09-10 14:30:10');
+Select max(idAsistencia) + 1 as idAsistencia from asistencias;
+call registrarAsistencia('11','11','2021-09-10 21:33:00','2021-09-11 03:11:00');
 /*---------------SP PARA CONSULTAR LA ASISTENCIA DEL CLIENTE------------------------------*/
 
 USE `gimnasiobd`;
@@ -311,9 +310,9 @@ BEGIN
 	FROM SERIE_DE_EJERCICIO;
 END$$
 DELIMITER ;
-
+/*Sin ejecutar*/
 /*---------------SP PARA CONSULTAR LA SERIE DE EJERCICIOS ------------------------------*/
-
+/*
 USE `gimnasiobd`;
 DROP PROCEDURE IF EXISTS `consultarSerieEjercicio`;
 
@@ -335,4 +334,4 @@ BEGIN
 END$$
 DELIMITER ;
 
-CALL consultarSerieEjercicio();
+CALL consultarSerieEjercicio();*/

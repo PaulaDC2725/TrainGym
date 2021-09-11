@@ -1,39 +1,50 @@
 <?php
   require_once('../assets/php/Modelo/class.conexion.php');
-  require_once('../assets/php/Modelo/class.consulta.asistencias.php');
-  
-  $ConsultasAsistencias= new ConsultasAsistencias;
+  require_once('../assets/php/Modelo/class.consulta.instructor.php');
+  $consultasIns = new ConsultasInstructor();
   if (isset($_GET['filtroCol']) && isset($_GET['valor'])) {
-    $filas = $ConsultasAsistencias->consultarAsistenciasFiltradas($_GET['filtroCol'],$_GET['valor']); 
-   }else{
-    $filas = $ConsultasAsistencias->mostrarAsistencias();
+    $filas = $consultasIns->consultarInstructorFiltrados($_GET['filtroCol'],$_GET['valor']);
+  }else{
+    $filas = $consultasIns->consultarInstructor();
   }
-    $tabla="";
+   
+  
+  $tabla="";
+  $estado='';
+  $boton='';
+  /*$rutaActivaInactiva="";*/
+  /*$botonEditar='';/*
+  $botonBorrar='';*/
 
-    if (isset($filas)) {
+  if (isset($filas)) {    
 
-  foreach ($filas as $fila) {
-        $tabla.='<tr class="limitada" scope="row">';
-        $tabla.='<td>'.$fila['numeroIdentificacion'].'</td>';
-        $tabla.='<td>'.$fila['Nombre Completo'].'</td>';
-        $tabla.='<td>'.$fila['fechaHoraIngreso'].'</td>';
-        $tabla.='<td>'.$fila['fechaHoraSalida'].'</td>';
+    foreach ($filas as $fila){
+      $boton='<a href="AgendarIns.php?NumeroIdentificacion='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-warning" style="background-color: #FF9900" value="Agendar Programación"></a>';
+      $tabla.='<tr class="limitada" scope="row">';
+        $tabla.='<th scope="col">'.$fila['NumeroIdentificacion'].'</th>';
+        $tabla.='<td>'.$fila['nombreInstructor'].'</td>';
+        $tabla.='<td>'.$fila['apellidoInstructor'].'</td>';
+        $tabla.='<td>'.$fila['correoInstructor'].'</td>';
+        $tabla.='<td>'.$fila['telefonoInstructor'].'</td>';
+        $tabla.='<center><td class="row_buttons">'.$boton.'</td></center>';
+        $tabla.='</tr>';
 
-    }
-  }else {
-          $tabla='<tr style="text-align: center">';
-          $tabla.='<td colspan="9" style="color: black; font-size: 20px">';
+     
+     }  
+ }else{
+  $tabla='<tr style="text-align: center">';
+        $tabla.='<td colspan="9" style="color: black; font-size: 20px">';
           $tabla.='No se encuentran resultados para la busqueda';
-          $tabla.='</td>';
-          $tabla.='</tr>';
-   }
+        $tabla.='</td>';
+      $tabla.='</tr>';
+ }
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	
-<title>| Asistencias al gimnasio</title>
+<title>| Instructores en el sistema</title>
 <meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="" />
@@ -59,7 +70,7 @@ crossorigin="anonymous">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="Asistencias.php">Regresar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="inicioRecepcionista.php">Regresar</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,7 +79,7 @@ crossorigin="anonymous">
 
 		<h1 style="font-size: 2.6em;
 		font-weight: 1000;
-		color: black; "> Clientes que han ingresado al gimnasio</h1>
+		color: black; ">Instructores del gimnasio</h1>
 		</div>
 		<table class="table table-striped">
   <tbody>
@@ -77,7 +88,8 @@ crossorigin="anonymous">
         <td>
           <select type="option" id="est" name="filtroCol" class="form-control" required="">
             <option value="NumeroIdentificacion">Número de identificación</option>
-            <option value="nombreCliente">Nombre</option>
+            <option value="nombreInstructor">Nombre</option>
+            <option value="correoInstructor">Correo Electrónico</option>
           </select>          
         </td>
         <td>
@@ -87,7 +99,7 @@ crossorigin="anonymous">
           <button type="submit" class="btn btn-dark" >Buscar</button>
         </td>
         <td>
-          <a href="mostrarAsistencias.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
+          <a href="mostrarInstructores.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
         </td>
       </form>         
       <td>
@@ -101,11 +113,12 @@ crossorigin="anonymous">
     <thead>
       <tr>
         
-        <th scope="col">Numero Identificacion</th>
-        <th scope="col">Nombre Completo</th>
-        <th scope="col">Fecha y Hora de Ingreso</th>
-        <th scope="col">Fecha y Hora de Salida</th>
-
+        <th scope="col">Número de identificación</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo electrónico</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Acción</th>
       </tr>
     </thead>
     <tbody>        
@@ -115,7 +128,7 @@ crossorigin="anonymous">
     </div>
    
     <br>
-		
+		<center><input type="botton" class="btn btn-dark" value="Regresar" name="boton1" onclick="location.href='inicioRecepcionista.php'"></center>
 				
 		<hr>
 		<footer class="py-5">
