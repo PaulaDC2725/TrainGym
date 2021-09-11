@@ -258,15 +258,16 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `registrarPagos` ( in fechaPago DATETIME,
 									in ValorPago FLOAT,
                                     in descripcionPago VARCHAR(200),
-                                    in urlSoportePago VARCHAR(500))
+                                    in urlSoportePago VARCHAR(500),
+                                    in idSuscripcion int(100))
 BEGIN
 	INSERT INTO PAGOS 
-    SELECT MAX(idPago) + 1,fechaPago,ValorPago,descripcionPago,urlSoportePago,(SELECT MAX(idSuscripcion) FROM SUSCRIPCIONES)
+    SELECT MAX(idPago) + 1,fechaPago,ValorPago,descripcionPago,urlSoportePago,idSuscripcion
     FROM PAGOS;
 END$$
 DELIMITER ;
 
-CALL registrarPagos('2021-09-08',50.585,'Pago del mes de Septiembre','www.urldepagodeseptiembredenombreyapellido.com');
+CALL registrarPagos('2021-09-08',50.585,'Pago del mes de Septiembre','www.urldepagodeseptiembredenombreyapellido.com','3');
 
 SELECT * FROM PAGOS;
 
@@ -293,7 +294,6 @@ DELIMITER ;
 
 CALL consultarAsistenciaInstructor();
 
-/*NO ESTAN EJECUTADOS*/
 
 /*---------------SP PARA REGISTRAR LA SERIE DE EJERCICIOS ------------------------------*/
 

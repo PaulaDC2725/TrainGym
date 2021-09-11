@@ -1,9 +1,53 @@
+<?php
+  require_once('../assets/php/Modelo/class.conexion.php');
+  require_once('../assets/php/Modelo/class.consulta.cliente.php');
+  $consultasCli = new ConsultasClientes();
+  if (isset($_GET['filtroCol']) && isset($_GET['valor'])) {
+    $filas = $consultasCli->consultarClientesFiltrados($_GET['filtroCol'],$_GET['valor']);
+  }else{
+    $filas = $consultasCli->consultarClientes();
+  }
+   
+  
+  $tabla="";
+  $estado='';
+  $boton='';
+  /*$rutaActivaInactiva="";*/
+  
+  /*$botonBorrar='';*/
 
+  if (isset($filas)) {    
+
+    foreach ($filas as $fila){
+     
+      $tabla.='<tr class="limitada" scope="row">';
+        $tabla.='<th scope="col">'.$fila['NumeroIdentificacion'].'</th>';
+        $tabla.='<td>'.$fila['nombreCliente'].'</td>';
+        $tabla.='<td>'.$fila['apellidoCliente'].'</td>';
+        $tabla.='<td>'.$fila['fechaNacimientoCliente'].'</td>';
+        $tabla.='<td>'.$fila['correoCliente'].'</td>';
+        $tabla.='<td>'.$fila['telefonoCliente'].'</td>';
+        $botonPagos='<a href=ConsultarPagosClientes.php?NumeroIdentificacion='.$fila['NumeroIdentificacion'].'&id='.$fila['idCliente'].'"><input type="button" class="btn btn-info" value="Consultar Pagos"></a>';
+
+        $tabla.='<center><td class="row_buttons">'.$botonPagos.'</td></center>';
+      $tabla.='</tr>';
+
+     
+     }  
+ }else{
+  $tabla='<tr style="text-align: center">';
+        $tabla.='<td colspan="9" style="color: black; font-size: 20px">';
+          $tabla.='No se encuentran resultados para la busqueda';
+        $tabla.='</td>';
+      $tabla.='</tr>';
+ }
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	
-<title>| Clientes</title>
+<title>| Clientes en el sistema</title>
 <meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="" />
@@ -35,11 +79,10 @@ crossorigin="anonymous">
             </div>
         </nav>
   <div class="container">
-  <div class="container">
 
 		<h1 style="font-size: 2.6em;
 		font-weight: 1000;
-		color: black; "> Información de los pagos por cliente</h1>
+		color: black; ">Clientes del gimnasio</h1>
 		</div>
 		<table class="table table-striped">
   <tbody>
@@ -47,8 +90,9 @@ crossorigin="anonymous">
       <form action="" method="GET" id="form">        
         <td>
           <select type="option" id="est" name="filtroCol" class="form-control" required="">
-            <option value="idCliente">Número de identificación</option>
-            <option value="nombreCliente">nombre</option>
+            <option value="NumeroIdentificacion">Número de identificación</option>
+            <option value="nombreCliente">Nombre</option>
+            <option value="correoCliente">Correo Electrónico</option>
           </select>          
         </td>
         <td>
@@ -58,7 +102,7 @@ crossorigin="anonymous">
           <button type="submit" class="btn btn-dark" >Buscar</button>
         </td>
         <td>
-          <a href="mostrarPagos.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
+          <a href="mostrarClientes2.php"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
         </td>
       </form>         
       <td>
@@ -72,29 +116,25 @@ crossorigin="anonymous">
     <thead>
       <tr>
         
-        <th scope="col">Tipo de documento</th>
         <th scope="col">Número de identificación</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
-        <th scope="col">Accion</th>
+        <th scope="col">Fecha de nacimiento</th>
+        <th scope="col">Correo electrónico</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Acción</th>
       </tr>
     </thead>
     <tbody>        
-       <tr class="limitada" scope="row">
-     <th scope="col">tarjeta de identidad</th>
-        <td>13425678</td>
-        <td>Ana Maria</td>
-        <td>Valencia</td>
-        <td><a href="ConsultarPagosClientes.php"><button >Consultar</button> </a></td>
+      <?php echo $tabla;?>
     </tbody>
     </table>
     </div>
    
     <br>
-		<center><input type="botton" class="btn btn-dark" value="Regresar" name="boton1" onclick="location.href='inicioRecepcionista.php'"></center>
-				<hr>
-</div>
-        <hr>
+		
+				
+		<hr>
 		<footer class="py-5">
           <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; Recepcionista TrainGym 2021</p></div>
         </footer> 

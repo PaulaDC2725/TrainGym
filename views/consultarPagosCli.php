@@ -1,5 +1,5 @@
 <?php 
-  require_once('../assets/php/Modelo/class.conexion.php');  
+  require_once('../assets/php/Modelo/class.conexion.php');
   require_once('../assets/php/Modelo/class.consulta.Cliente.php');
   require_once('../assets/php/Modelo/class.consulta.Suscripcion.php');
 
@@ -93,14 +93,14 @@ crossorigin="anonymous">
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
             <div class="container">
-              <center><a href="inicioRecepcionista.php">
+              <center><a href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>">
                 <img class="encabezado" width="300" height="70" src="../assets/img/logo.png">
             	</a>
 			</center>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="mostrarPagos.php">Regresar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>">Regresar</a></li>
                     </ul>
                 </div>
             </div>
@@ -130,7 +130,7 @@ crossorigin="anonymous">
     </div>
    
     <br>
-		
+	
     <hr>
 <footer class="py-5">
           <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; Recepcionista TrainGym 2021</p></div>

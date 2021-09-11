@@ -79,7 +79,7 @@ $horaSalida=$_POST['salida'];*/
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
 		<div class="container">
-			<center><a href="inicioRecepcionista.php">
+			<center><a href="../../../views/inicioRecepcionista.php">
 				<img class="encabezado" width="300" height="70" src="../../../assets/img/logo1.png">
 			</a>
 		</center>

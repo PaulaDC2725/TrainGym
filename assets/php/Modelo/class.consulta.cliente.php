@@ -185,7 +185,7 @@
                 return $rows;
 
 		}
-
+		
 		public function mostrarAforos(){
 			$rows=null;
                 /*$estado=1;*/
