@@ -25,14 +25,14 @@
         foreach ($filas as $fila) 
         {
           $tabla.='<tr class="limitada" scope="row">';
-          $tabla.='<td>'.$fila['horaInicioHorario'].'</td>';
-          $tabla.='<td>'.$fila['horaFinHorario'].'</td>';
-          $tabla.='<td>'.$fila['semanaDiaHorario'].'</td>';
+          $tabla.='<td>'.$fila['idProgramacion'].'</td>';
+          $tabla.='<td>'.$fila['fechaInicioPro'].'</td>';
+          $tabla.='<td>'.$fila['fechaFinPro'].'</td>';
           $numeroIdentificacion=$fila['NumeroIdentificacion']; 
           $nombreCliente = $fila['nombreCliente'];   
-          $semanaDiaHorario=$fila['semanaDiaHorario'];
-          $horaFinHorario =$fila['horaFinHorario'];
-          $horaInicioHorario =$fila['horaInicioHorario'];
+          $fechaInicioPro=$fila['fechaInicioPro'];
+          $fechaFinPro =$fila['fechaFinPro'];
+          $idProgramacion=$fila['idProgramacion'];
         }
       }else{
       $filas1 = $consultas->cargarClientesFiltroId($filtro);
@@ -53,9 +53,9 @@
         {
           $numeroIdentificacion=$fila['NumeroIdentificacion']; 
           $nombreCliente = $fila['nombreCliente'];   
-          $semanaDiaHorario=$fila['semanaDiaHorario'];
-          $horaFinHorario =$fila['horaFinHorario'];
-          $horaInicioHorario =$fila['horaInicioHorario'];
+          $fechaInicioPro=$fila['fechaInicioPro'];
+          $fechaFinPro =$fila['fechaFinPro'];
+          $idProgramacion=$fila['idProgramacion'];
         }
       }
   }
@@ -105,9 +105,9 @@ crossorigin="anonymous">
   <table class="table table-striped">
     <thead>
       <tr>
-         <th scope="col">Fecha y hora de ingreso</th>
-        <th scope="col">Fecha y hora de Salida</th>
-        <th scope="col">Dia</th>
+      <th scope="col">Número de la programación</th>
+         <th scope="col">Fecha Inicio de la programación</th>
+        <th scope="col">Fecha Fin de la programación</th>
       </tr>
     </thead>
     <tbody>        

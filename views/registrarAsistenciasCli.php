@@ -83,7 +83,7 @@ $DateAndTime = date('d-m-Y h:i:s a', time());
 										Registrar Asistencia Cliente <?php echo $nombreCliente?>
 				</h1>
               </div>
-            <form action="../assets/php/ingresar1.php" method="post">
+            <form action="../assets/php/Controlador/RegistroAsisCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>" method="post">
             
 			<label for="username">Numero de Documento</label>  
 			<div class="form-group first">
