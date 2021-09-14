@@ -180,8 +180,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-CALL consultarSuscripcion('1001299203');
-
 /*---------------SP PARA REGISTRAR LA PROGRAMACION ------------------------------*/
 
 USE `gimnasiobd`;
@@ -199,8 +197,6 @@ BEGIN
     FROM PROGRAMACION;
 END$$
 DELIMITER ;
-
-CALL registrarProgramacion('2021-09-10','2021-10-10','1000713178');
 
 /*---------------SP PARA REGISTRAR LA ASISTENCIA ------------------------------*/
 
@@ -220,9 +216,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-select max(idProgramacion) as idProgramacion from programacion as p join usuarios as u 
-    on p.idUsuarioFK = u.idUsuario where u.NumeroIdentificacion="1000713178";
-Select max(idAsistencia) + 1 as idAsistencia from asistencias;
 /*---------------SP PARA CONSULTAR LA ASISTENCIA DEL CLIENTE------------------------------*/
 
 USE `gimnasiobd`;
@@ -244,8 +237,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-CALL consultarAsistenciaCliente();
-
 
 /*---------------SP PARA REGISTRAR PAGOS ------------------------------*/
 
@@ -266,9 +257,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-CALL registrarPagos('2021-09-08',50.585,'Pago del mes de Septiembre','www.urldepagodeseptiembredenombreyapellido.com','3');
-
-SELECT * FROM PAGOS;
 
 /*---------------SP PARA CONSULTAR LA ASISTENCIA DEL INSTRUCTOR------------------------------*/
 
@@ -291,8 +279,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-CALL consultarAsistenciaInstructor();
-
 
 /*---------------SP PARA REGISTRAR LA SERIE DE EJERCICIOS ------------------------------*/
 
@@ -311,6 +297,7 @@ BEGIN
 	FROM SERIE_DE_EJERCICIO;
 END$$
 DELIMITER ;
+
 /*Sin ejecutar*/
 /*CONSULTAS*//*
 INSERT INTO EJERCICIOS
@@ -339,3 +326,18 @@ END$$
 DELIMITER ;
 
 CALL consultarSerieEjercicio();*/
+
+CALL consultarAsistenciaInstructor();
+
+CALL registrarPagos('2021-09-08',50.585,'Pago del mes de Septiembre','www.urldepagodeseptiembredenombreyapellido.com','3');
+
+SELECT * FROM PAGOS;
+
+select max(idProgramacion) as idProgramacion from programacion as p join usuarios as u 
+    on p.idUsuarioFK = u.idUsuario where u.NumeroIdentificacion="1000713178";
+Select max(idAsistencia) + 1 as idAsistencia from asistencias;
+
+CALL consultarAsistenciaCliente();
+
+CALL registrarProgramacion('2021-09-10','2021-10-10','1000713178');
+CALL consultarSuscripcion('1001299203');

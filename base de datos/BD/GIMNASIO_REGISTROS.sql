@@ -195,12 +195,12 @@ VALUES (5,'Inchworms',3);
 SELECT * FROM EJERCICIOS;
 
 /*TABLA SERIE_DE_EJERCICIO*/
-INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio)
-VALUES (1,'HiIt','Realizar los ejercicios propuestos',5,10);
-INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio)
-VALUES (2,'ABC','Realizar los ejercicios propuestos',5,15);
-INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio)
-VALUES (3,'Burppies','Realizar los ejercicios propuestos',4,10);
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,idMetodologiaFK)
+VALUES (1,'HiIt','Realizar los ejercicios propuestos',5,10,1);
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,idMetodologiaFK)
+VALUES (2,'ABC','Realizar los ejercicios propuestos',5,15,2);
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,idMetodologiaFK)
+VALUES (3,'Burppies','Realizar los ejercicios propuestos',4,10,3);
 
 
 SELECT * FROM SERIE_DE_EJERCICIO;
