@@ -116,8 +116,6 @@ crossorigin="anonymous">
     </table>
     </div>
    
-    <br>
-		<center><input type="botton" class="btn btn-dark" value="Regresar" name="boton1" onclick="location.href='InicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>'"></center>
     <hr>
 <footer class="py-5">
           <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; Recepcionista TrainGym 2021</p></div>

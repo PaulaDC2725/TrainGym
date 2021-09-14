@@ -22,77 +22,75 @@ crossorigin="anonymous">
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
-			<img width="150" height="80" src="../assets/img/Recurso.PNG"><h1 style="font-size: 2.0em;
-			font-weight: 1000;
-			color: white ">Bienvenido</h1>
-		</a>
+			<img width="150" height="80" src="../assets/img/Recurso.PNG">
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<br>
+			<br>
+			<br>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<ul class="navbar-nav mb-2 mb-lg-0">
 					<li  class="nav-item">
-						<a class="nav-link" href="mostrarPagos.php"style="font-size: 15px">Consultar Pagos</a>	
+						<a class="nav-link" href="mostrarPagos.php"style="font-size: 18px">Consultar Pagos</a>	
 					</li>
 					<li class="nav-item"><a class="nav-link" href="">Instructores</a>
-							<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<ul class="navbar-nav mb-2 mb-lg-0">
 								<li  class="nav-item">
-									<a class="nav-link" href="registroInstructor.php" style="font-size: 15px">Registrar Instructor</a>	
+									<a class="nav-link" href="registroInstructor.php" style="font-size: 14px">Registrar Instructor</a>	
 								</li>
 								<li  class="nav-item">
-									<a class="nav-link" href="mostrarInstructores.php"style="font-size: 15px">MostrarInstructores</a>	
+									<a class="nav-link" href="mostrarInstructores.php"style="font-size: 14px">MostrarInstructores</a>	
 								</li>
 								<li  class="nav-item">
-									<a class="nav-link" href="mostrarInstructores2.php"style="font-size: 15px">Habilitar Instructores</a>	
+									<a class="nav-link" href="mostrarInstructores2.php"style="font-size: 14px">Habilitar Instructores</a>	
 								</li>
 								<li  class="nav-item">
-									<a class="nav-link" href="mostrarInstructores3.php"style="font-size: 15px">Agendar Programacion</a>	
+									<a class="nav-link" href="mostrarInstructores3.php"style="font-size: 14px">Agendar Programacion</a>	
 								</li>
 							</ul>					
 					</li>
 					<li class="nav-item"><a class="nav-link">Clientes</a>
-						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+						<ul class="navbar-nav   mb-2 mb-lg-0">
 							<li  class="nav-item">
-								<a class="nav-link" href="mostrarClientes.php"style="font-size: 15px">Mostrar Clientes</a>	
+								<a class="nav-link" href="mostrarClientes.php"style="font-size: 14px">Mostrar Clientes</a>	
 							</li>
 							<li  class="nav-item">
-								<a class="nav-link" href="mostrarClientes1.php"style="font-size: 15px">Ficha y suscripcion </a>	
+								<a class="nav-link" href="mostrarClientes1.php"style="font-size: 14px">Ficha y suscripcion </a>	
 							</li>
 							<li  class="nav-item">
-								<a class="nav-link" href="mostrarClientes2.php"style="font-size: 15px">Habilitar Clientes</a>	
+								<a class="nav-link" href="mostrarClientes2.php"style="font-size: 14px">Habilitar Clientes</a>	
 							</li>
 						</ul>
 					</li>
 					<li class="nav-item"><a class="nav-link">Asistencias</a>
-						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+						<ul class="navbar-nav  mb-2 mb-lg-0">
 							<li  class="nav-item">
-								<a class="nav-link" href="registroAsistencias.php"style="font-size: 15px">Registar asistencias</a>	
+								<a class="nav-link" href="registroAsistencias.php"style="font-size: 14px">Registar asistencias</a>	
 							</li>
 							<li  class="nav-item">
-								<a class="nav-link" href="Asistencias.php"style="font-size: 15px">Mostrar Asistencias</a>	
+								<a class="nav-link" href="Asistencias.php"style="font-size: 14px">Mostrar Asistencias</a>	
 							</li>
 						</ul>
 					</li>
 					<li class="nav-item"><a class="nav-link">Agenda</a>
-						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-							<!--<li  class="nav-item">
-								<a class="nav-link" href="agendarProgramacion.php"style="font-size: 12px">Agendar Programacion</a>	
-							</li>
+						<ul class="navbar-nav mb-2 mb-lg-0">							
 							<li  class="nav-item">
-								<a class="nav-link" href="registroHorarioInstructor.php"style="font-size: 12px">Registrar el horario del instructor</a>	
-							</li>-->
-							<li  class="nav-item">
-								<a class="nav-link" href="consultarAgendaClientes.php"style="font-size: 12px">Consultar agenda de clientes</a>	
+								<a class="nav-link" href="consultarAgendaClientes.php"style="font-size: 13px; text-align: center;">Consultar agenda de clientes</a>	
 							</li>
 						</ul>
 					</li>
-					<li  class="nav-item">
+					<!-- <li  class="nav-item">
 						<a class="nav-link" href="consultarAforos.php"style="font-size: 15px">Aforos</a>	
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</div>
 	</nav>
 	
-<div class="container">	
+<div class="container">
+	
+<br>
+<h1 style="font-size: 2.0em;
+			font-weight: 1000;text-align: center;">Bienvenido</h1>	
 					<br>
 				<div class="row">
 				 <center><img width="500" class="card-img-top" height="420"  src="../assets/img/recepcionHome.jpg"/>

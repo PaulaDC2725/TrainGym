@@ -7,23 +7,57 @@
 
  
   $numeroIdentificacion=null;
-  $nombreInstructor=null;
+  $semanaDiaHorario=null;
+  $horaFinHorario=null;  
+  $horaInicioHorario=null;
 
-  if (isset($_GET['NumeroIdentificacion'])) {
-    $id=$_GET['NumeroIdentificacion'];
-  
+  if (isset($_GET['NumeroIdentificacion'])) 
+  {
+      $id=$_GET['NumeroIdentificacion'];
+    
+      $tabla="";
+      $filtro=$id;
+      $select="";
 
-    $filtro=$id;
-    $select="";
-
-    $filas = $consultas->cargarInstructorFiltroId($filtro);
-    if (is_array($filas) || is_object($filas)){
-      
-    foreach ($filas as $fila) {
-      $numeroIdentificacion=$fila['NumeroIdentificacion'];    
-      $nombreInstructor=$fila['nombreInstructor'];
-    } 
+      $filas = $consultas->cargarAgendaInsFiltroId($filtro);
+      if (is_array($filas) || is_object($filas))
+      {      
+        foreach ($filas as $fila) 
+        {
+          $tabla.='<tr class="limitada" scope="row">';
+          $tabla.='<td>'.$fila['idProgramacion'].'</td>';
+          $tabla.='<td>'.$fila['fechaInicioPro'].'</td>';
+          $tabla.='<td>'.$fila['fechaFinPro'].'</td>';
+          $numeroIdentificacion=$fila['NumeroIdentificacion']; 
+          $nombreInstructor = $fila['nombreInstructor'];   
+          $fechaInicioPro=$fila['fechaInicioPro'];
+          $fechaFinPro =$fila['fechaFinPro'];
+          $idProgramacion=$fila['idProgramacion'];
+        }
+      }else{
+      $filas1 = $consultas->cargarInstructorFiltroId($filtro);
+      foreach ($filas1 as $fila) 
+      {
+        $numeroIdentificacion=$fila['NumeroIdentificacion']; 
+          $nombreInstructor = $fila['nombreInstructor'];   
+        $tabla='<tr style="text-align: center">';
+        $tabla.='<td colspan="9" style="color: black; font-size: 20px">';
+          $tabla.='No se encuentran resultados para la busqueda';
+        $tabla.='</td>';
+        $tabla.='</tr>';
+      }
     }
+      if (is_array($filas) || is_object($filas))
+      {  
+        foreach ($filas as $fila) 
+        {
+          $numeroIdentificacion=$fila['NumeroIdentificacion']; 
+          $nombreInstructor = $fila['nombreInstructor'];   
+          $fechaInicioPro=$fila['fechaInicioPro'];
+          $fechaFinPro =$fila['fechaFinPro'];
+          $idProgramacion=$fila['idProgramacion'];
+        }
+      }
   }
 
 ?>
@@ -60,32 +94,27 @@ crossorigin="anonymous">
                 </div>
             </div>
         </nav>
-  <div class="container">
+        <div class="container">
 
-		<h1 style="font-size: 2.6em;
-		font-weight: 1000;
-		color: black; "> Información Horario del instructor <?php echo $nombreInstructor; ?></h1>
-		</div>
-		<div class="table-responsive"> 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        
-        <th scope="col">Fecha y hora de ingreso</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Zona</th>
-      </tr>
-    </thead>
-    <tbody>        
-       <tr class="limitada" scope="row">
-     <th scope="col">06/03/2021 01:30 pm</th>
-        <td>Antonio</td>
-        <td>Jimenez</td>
-        <td>3</td>
-    </tbody>
-    </table>
-    </div><hr>
+<h1 style="font-size: 2.6em;
+font-weight: 1000;
+color: black; "> Información de la Agenda de <?php echo $nombreInstructor?></h1>
+</div>
+<div class="table-responsive"> 
+<table class="table table-striped">
+<thead>
+  <tr>
+  <th scope="col">Número de la programación</th>
+     <th scope="col">Fecha Inicio de horario</th>
+    <th scope="col">Fecha Fin de horario</th>
+  </tr>
+</thead>
+<tbody>        
+  <?php echo $tabla;?>
+</tbody>
+</table>
+</div>
+<hr>
 		
 		 <!-- Footer-->
      <footer class="py-5">

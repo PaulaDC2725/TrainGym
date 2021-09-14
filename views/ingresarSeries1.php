@@ -51,11 +51,7 @@ crossorigin="anonymous">
             <div class="container">
 			<a href="inicioInstructor.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>">
                 <img width="300" height="70" style="padding: 3px" src="../assets/img/logo.png">
-			</a>
-			<h1 style="font-size: 1.8em;
-		font-weight: 1000;color: white; text-align: center;">Bienvenido Instructor</h1>
-		
-		
+			</a>		
             
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -75,7 +71,7 @@ crossorigin="anonymous">
 		<div class="col-sm-4">
 <div class="card" style="width: 18rem;">
   <div class="card-body"  style="background-color: white;">
-    <center><h5 class="card-title">Disminuir de peso</h5></center>
+    <center><h5 class="card-title" style="font-family: inherit;">Disminuir de peso</h5></center>
     </div>
    
     <a href="ingresarSeries2Dism.php?NumeroIdentificacion=<?php echo $numeroIdentificacion;?>" class="btn btn-warning">Seleccionar</a>
@@ -85,7 +81,7 @@ crossorigin="anonymous">
 <div class="col-sm-4">
 <div class="card" style="width: 18rem;">
   <div class="card-body"  style="background-color: white;">
-    <center><h5 class="card-title">Aumentar Masa Coporal</h5></center>
+    <center><h5 class="card-title"style="font-family: inherit;">Aumentar Masa Coporal</h5></center>
     </div>
     
     <a href="ingresarSeries2Aum.php?NumeroIdentificacion=<?php echo $numeroIdentificacion;?>" class="btn btn-warning">Seleccionar</a>
@@ -95,7 +91,7 @@ crossorigin="anonymous">
   <div class="col-sm-4">
 <div class="card" style="width: 18rem;">
   <div class="card-body" style="background-color: white;">
-    <center><h5 class="card-title">2 X 1</h5></center>
+    <center><h5 class="card-title"style="font-family: inherit;">2 X 1</h5></center>
     </div>
    
     <a href="ingresarSeries2X1.php?NumeroIdentificacion=<?php echo $numeroIdentificacion;?>" class="btn btn-warning">Seleccionar</a>

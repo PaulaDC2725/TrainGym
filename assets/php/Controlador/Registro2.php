@@ -194,7 +194,7 @@
 		<div class="content">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-5">
+						<div class="col-md-5 contents">
 							<center>
 								<h1 style="font-size: 25px">
 								Paso 4: <br>Ficha Antropométrica y Datos médicos
@@ -273,74 +273,74 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-md-6">
-											<strong><label for="tex" class="form-label">Perímetro de biceps: </label></strong><br>											
+									<div class="col-md-6">
+											<strong><label for="text" class="form-label">Perímetro de biceps: </label></strong><br>				
 											<label for="text" class="form-label">Derecho: </label>
-											<div class="form-group first col-md-12">
+												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
-														<input required type="number" class="form-control" id="perBic1" name="perBic1" >
+														<input step="any" required type="number"  class="form-control" id="perBic1" name="perBic1">
 														<strong><span class="input-group-text">cm</span></strong>
 													</div>
-											</div>
-											<label for="text" class="form-label">Izquierdo: </label>
-											<div class="form-group first col-md-12">
+												</div>
+												<label for="text" class="form-label">Izquierdo: </label>
+												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
-														<input required type="number" class="form-control" id="perBic2" name="perBic2" >
+														<input step="any" required type="number"  class="form-control" id="perBic2" name="perBic2">
 														<strong><span class="input-group-text">cm</span></strong>
 													</div>
-											</div>		
-										</div>
+												</div>
+										</div>										
 										<div class="col-md-6">
-											<strong><label for="tex" class="form-label">Longitud extremidades superiores: </label></strong>											
+											<strong><label for="text" class="form-label">Longitud Brazos: </label></strong><br>											
 											<label for="text" class="form-label">Derecho: </label>
-											<div class="form-group first col-md-12">
+												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
-													<input required type="number" class="form-control" id="longExsup1" name="longExsup1">
+														<input step="any" required type="number"  class="form-control" id="longExsup1" name="longExsup1">
 														<strong><span class="input-group-text">cm</span></strong>
 													</div>
-											</div>
-											<label for="text" class="form-label">Izquierdo: </label>
-											<div class="form-group first col-md-12">
+												</div>
+												<label for="text" class="form-label">Izquierdo: </label>
+												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
-													<input required type="number" class="form-control" id="longExsup2" name="longExsup2">
-													<strong><span class="input-group-text">cm</span></strong>
+														<input step="any" required type="number"  class="form-control" id="longExsup2" name="longExsup2">
+														<strong><span class="input-group-text">cm</span></strong>
 													</div>
-											</div>		
+												</div>											
 										</div>
 										<div class="row">
 										<div class="col-md-6">
 											<strong><label for="tex" class="form-label">Perímetro Muslos: </label></strong><br>											
 											<label for="text" class="form-label">Derecho: </label>
-											<div class="form-group first col-md-12">
+												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
-													<input required type="number" class="form-control" id="perMus1" name="perMus1" >
+														<input step="any" required type="number"  class="form-control" id="perMus1" name="perMus1">
 														<strong><span class="input-group-text">cm</span></strong>
 													</div>
-											</div>
-											<label for="text" class="form-label">Izquierdo: </label>
-											<div class="form-group first col-md-12">
+												</div>
+												<label for="text" class="form-label">Izquierdo: </label>
+												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
-													<input required type="number" class="form-control" id="perMus2" name="perMus2" >	
+														<input step="any" required type="number"  class="form-control" id="perMus2" name="perMus2">
 														<strong><span class="input-group-text">cm</span></strong>
 													</div>
-											</div>		
+												</div>		
 										</div>
 										<div class="col-md-6">
-											<strong><label for="tex" class="form-label">Longitud extremidades inferiores: </label></strong>											
-											<label for="text" class="form-label">Derecho: </label>
-											<div class="form-group first col-md-12">
+											<strong><label for="tex" class="form-label">Longitud Piernas: </label></strong>	<br>										
+											<label for="text" class="form-label">Derecha: </label>
+												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
-													<input required type="number" class="form-control" id="longExinf1" name="longExinf1">
+														<input step="any" required type="number"  class="form-control" id="longExinf1" name="longExinf1">
 														<strong><span class="input-group-text">cm</span></strong>
 													</div>
-											</div>
-											<label for="text" class="form-label">Izquierdo: </label>
-											<div class="form-group first col-md-12">
-												<div class="input-group mb-3">
-													<input required type="number" class="form-control" id="longExinf2" name="longExinf2">
-													<strong><span class="input-group-text">cm</span></strong>
 												</div>
-											</div>		
+												<label for="text" class="form-label">Izquierda: </label>
+												<div class="form-group last md-12">													
+													<div class="input-group mb-3">
+														<input step="any" required type="number"  class="form-control" id="longExinf2" name="longExinf2">
+														<strong><span class="input-group-text">cm</span></strong>
+													</div>
+												</div>											
 										</div>
 									</div>
 								</div>							

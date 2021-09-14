@@ -172,6 +172,26 @@
 			return $rows;
 
 		}
+		public function cargarAgendaInsFiltroId($filtro){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql="SELECT p.idProgramacion, i.nombreInstructor,u.NumeroIdentificacion,p.fechaInicioPro, p.fechaFinPro
+			from programacion AS p 
+			JOIN usuarios AS u 
+			JOIN instructores AS i 
+			on  p.idUsuarioFK = u.idUsuario 
+			and i.idUsuarioFK=u.idUsuario 
+			and i.idUsuarioFK=p.idUsuarioFK 
+			where u.NumeroIdentificacion='".$filtro."'";
+		 	$statement=$conexion->prepare($sql);			
+		 	$statement->execute();
+		 	while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+		 	return $rows;
+
+		 }
 
 	}
 ?>

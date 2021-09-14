@@ -10939,8 +10939,7 @@ h2 {
       width: 100%; } }
   .content .contents .form-group, .content .bg .form-group {
     overflow: hidden;
-    border-bottom: none;
-    border-bottom: 1px solid #e6edf1; }
+    border-bottom: none;}
     .content .contents .form-group label, .content .bg .form-group label {
       position: absolute;
       top: 50%;
@@ -10967,6 +10966,8 @@ h2 {
       margin-top: -20px; }
       .content .contents .form-control, .content .bg .form-control {
         border-radius: 0;
+        border: block;
+        padding: 0;
     }
     .content .contents .form-control:active, .content .contents .form-control:focus, .content .bg .form-control:active, .content .bg .form-control:focus {
       outline: none;
