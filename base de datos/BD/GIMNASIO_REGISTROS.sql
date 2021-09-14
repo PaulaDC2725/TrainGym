@@ -181,28 +181,39 @@ VALUES (3,4,74.6);
 SELECT * FROM FICHA_MEDIDA;
 
 /*TABLA EJERCICIOS*/
-INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpo)
+INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpoFK)
 VALUES (1,'Sentadilla',5);
-INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpo)
+INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpoFK)
 VALUES (2,'Movientos circulares',1);
-INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpo)
+INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpoFK)
 VALUES (3,'Low Plank',4);
-INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpo)
+INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpoFK)
 VALUES (4,'Leg Raises',5);
-INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpo)
+INSERT INTO EJERCICIOS (idEjercicio,nombreEjercicio,idParteDelCuerpoFK)
 VALUES (5,'Inchworms',3);
 
 SELECT * FROM EJERCICIOS;
 
-/*TABLA SUSCRIPCIONES_EJERCICIO*/
-INSERT INTO SUSCRIPCIONES_EJERCICIO (idEjercicioFK,idSuscripcionFK,fechaInicio,fechaFin,repeticionEjercicio,secuenciaEjercicio)
-VALUES (2,1,'2021-06-29','2021-07-29',2,3);
-INSERT INTO SUSCRIPCIONES_EJERCICIO (idEjercicioFK,idSuscripcionFK,fechaInicio,fechaFin,repeticionEjercicio,secuenciaEjercicio)
-VALUES (4,2,'2021-06-30','2021-07-30',2,3);
-INSERT INTO SUSCRIPCIONES_EJERCICIO (idEjercicioFK,idSuscripcionFK,fechaInicio,fechaFin,repeticionEjercicio,secuenciaEjercicio)
-VALUES (5,3,'2021-06-29','2021-07-29',2,3);
+/*TABLA SERIE_DE_EJERCICIO*/
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio)
+VALUES (1,'HiIt','Realizar los ejercicios propuestos',5,10);
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio)
+VALUES (2,'ABC','Realizar los ejercicios propuestos',5,15);
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio)
+VALUES (3,'Burppies','Realizar los ejercicios propuestos',4,10);
 
-SELECT * FROM SUSCRIPCIONES_EJERCICIO;
+
+SELECT * FROM SERIE_DE_EJERCICIO;
+
+/*TABLA SUSCRIPCIONES_EJERCICIO*/
+INSERT INTO SUSCRIPCIONES_SERIE_EJERCICIO (idSerieFK,idSuscripcionFK,fechaInicio,fechaFin)
+VALUES (2,1,'2021-06-29','2021-07-29');
+INSERT INTO SUSCRIPCIONES_SERIE_EJERCICIO (idSerieFK,idSuscripcionFK,fechaInicio,fechaFin)
+VALUES (3,2,'2021-06-30','2021-07-30');
+INSERT INTO SUSCRIPCIONES_SERIE_EJERCICIO (idSerieFK,idSuscripcionFK,fechaInicio,fechaFin)
+VALUES (1,3,'2021-06-29','2021-07-29');
+
+SELECT * FROM SUSCRIPCIONES_SERIE_EJERCICIO;
 
 /*TABLA IMAGENES*/
 INSERT INTO IMAGENES (idImagen,urlImagen,descripcionImagen,idEjercicioFK)
@@ -214,14 +225,10 @@ VALUES (3,'www.imagen3.com','Espalda totalmente en el piso y levantar lo mas rec
 
 SELECT * FROM IMAGENES;
 
-/*TABLA SERIE_DE_EJERCICIO*/
-INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio)
-VALUES (1,'Hit','Realizar los ejercicios propuestos');
 
-SELECT * FROM SERIE_DE_EJERCICIO;
 
-/*TABLA TIPO_RUTINAS_EJERCICIO*/
-INSERT INTO TIPO_RUTINAS_EJERCICIO(idEjercicioFK,idSerieFK)
+/*TABLA RUTINAS_EJERCICIO*/
+INSERT INTO RUTINAS_EJERCICIO(idEjercicioFK,idSerieFK)
 VALUES (1,1);
 
-SELECT * FROM TIPO_RUTINAS_EJERCICIO;
+SELECT * FROM RUTINAS_EJERCICIO;
