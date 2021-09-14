@@ -172,6 +172,7 @@
 			return $rows;
 
 		}
+		
 		public function cargarAgendaInsFiltroId($filtro){
 			$rows=null;
 			$modelo = new Conexion();
@@ -192,6 +193,58 @@
 		 	return $rows;
 
 		 }
+		 public function metodologias(){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql="SELECT * FROM metodologia";
+		 	$statement=$conexion->prepare($sql);			
+		 	$statement->execute();
+		 	while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+		 	return $rows;
+
+		 }
+		 public function parteCuerpo(){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql="SELECT * FROM Parte_Del_cuerpo Where idParteDelCuerpo>=6";
+		 	$statement=$conexion->prepare($sql);			
+		 	$statement->execute();
+		 	while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+		 	return $rows;
+
+		 }
+		 public function ejercicios(){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql="SELECT idEjercicio, nombreEjercicio FROM Ejercicios";
+		 	$statement=$conexion->prepare($sql);			
+		 	$statement->execute();
+		 	while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+		 	return $rows;
+
+		 }
+		//  public function datosMetodologia(){
+		// 	$rows=null;
+		// 	$modelo = new Conexion();
+		// 	$conexion = $modelo->getConection();
+		// 	$sql="SELECT nombreMetodologia FROM metodologias";
+		//  	$statement=$conexion->prepare($sql);			
+		//  	$statement->execute();
+		//  	while ($result=$statement->fetch()) {
+		// 		$rows[]=$result;
+		// 	}
+		//  	return $rows;
+
+		//  }
 
 	}
 ?>

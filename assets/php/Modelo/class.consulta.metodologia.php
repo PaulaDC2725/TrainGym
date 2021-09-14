@@ -84,14 +84,30 @@ class consultaMetodologia{
 		}
 		return $rows;
 	}
-
-	public function registrarSeries($nombreSerie,$descripcionSerie)
+	public function registrarEjercicios($idParteDelCuerpoFK,$Ejercicio)
 	{
 		$rows=null;
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="CALL registrarSerie('".$nombreSerie."','".$descripcionSerie."')";
+		$sql="INSERT INTO EJERCICIOS
+		SELECT MAX(idEjercicio) + 1,'".$idParteDelCuerpoFK."', '".$Ejercicio."' FROM EJERCICIOS";
+		$statement=$conexion->prepare($sql);			
+		$statement->execute();
+		while ($result=$statement->fetch()) {
+			$rows[]=$result;
+		}
+		return $rows;
+	}
+	
+
+	public function registrarSeries($nombreSerie, $descripcionSerie,$repeticion,$Secuencia)
+	{
+		$rows=null;
+		$estado=1;
+		$modelo = new Conexion();
+		$conexion = $modelo->getConection();					
+		$sql="CALL registrarSerie('".$nombreSerie."','".$descripcionSerie."','".$repeticion."','".$Secuencia."')";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {

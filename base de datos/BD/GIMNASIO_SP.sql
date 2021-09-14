@@ -302,14 +302,19 @@ DROP PROCEDURE IF EXISTS `registrarSerie`;
 DELIMITER $$
 USE `gimnasiobd`$$
 CREATE PROCEDURE `registrarSerie` (	in nombreSerieEjercicio varchar(60), 
-									in descripcionSerieEjercicio text)
+									in descripcionSerieEjercicio text,
+                                    in repeticionEjercicio INT,
+									in secuenciaEjercicio INT )
 BEGIN
 	INSERT INTO SERIE_DE_EJERCICIO 
-	SELECT MAX(idSerie) + 1,nombreSerieEjercicio,descripcionSerieEjercicio 
+	SELECT MAX(idSerie) + 1,nombreSerieEjercicio,descripcionSerieEjercicio, repeticionEjercicio, secuenciaEjercicio 
 	FROM SERIE_DE_EJERCICIO;
 END$$
 DELIMITER ;
 /*Sin ejecutar*/
+/*CONSULTAS*//*
+INSERT INTO EJERCICIOS
+SELECT MAX(idEjercicio) + 1, idParteDelCuerpoFK, nombreEjercicio FROM EJERCICIOS
 /*---------------SP PARA CONSULTAR LA SERIE DE EJERCICIOS ------------------------------*/
 /*
 USE `gimnasiobd`;
