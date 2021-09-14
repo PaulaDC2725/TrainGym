@@ -50,15 +50,14 @@ crossorigin="anonymous">
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
             <div class="container">
-			<a href="index.php">
+			<a href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>">
                 <img width="300" height="70" style="padding: 3px" src="../assets/img/logo.png">
 			</a>
-		
             
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav  mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="">Pagos</a>
+                    <li class="nav-item"><a class="nav-link" style="font-size:15px" href="">Pagos</a>
                             <ul class="navbar-nav mb-2 mb-lg-0">
                               <li  class="nav-item">
                                 <a class="nav-link" href="realizarPagosCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?> ">Realizar Pagos</a></li>
@@ -68,9 +67,10 @@ crossorigin="anonymous">
                               </li>                             
                             </ul>					
                         </li>       
-                        <li class="nav-item"><a class="nav-link" href="consultarAgendaCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>">Consultar Agenda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="AgendarCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?> ">Agendar Programacion</a></li>
-                        <li class="nav-item"><a class="nav-link" href="registrarAsistenciasCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?> ">Registrar Asistencias</a></li>                                
+                        <li class="nav-item"><a class="nav-link"  style="font-size:15px"href="consultarAgendaCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>">Consultar Agenda</a></li>
+                        <li class="nav-item"><a class="nav-link"  style="font-size:15px"href="AgendarCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?> ">Agendar Programacion</a></li>
+                        <li class="nav-item"><a class="nav-link" style="font-size:15px" href="registrarAsistenciasCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?> ">Registrar Asistencias</a></li>
+                        <li class="nav-item"><a class="nav-link"  style="font-size:15px"href="consultarSerie.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?> ">Series de ejercicio</a></li>                                
                     </ul>
                 </div>
             </div>

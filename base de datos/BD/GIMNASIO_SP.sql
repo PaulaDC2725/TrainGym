@@ -290,10 +290,11 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `registrarSerie` (	in nombreSerieEjercicio varchar(60), 
 									in descripcionSerieEjercicio text,
                                     in repeticionEjercicio INT,
-									in secuenciaEjercicio INT )
+									in secuenciaEjercicio INT,
+                                    in idMetodologiaFK INT)
 BEGIN
 	INSERT INTO SERIE_DE_EJERCICIO 
-	SELECT MAX(idSerie) + 1,nombreSerieEjercicio,descripcionSerieEjercicio, repeticionEjercicio, secuenciaEjercicio 
+	SELECT MAX(idSerie) + 1,nombreSerieEjercicio,descripcionSerieEjercicio, repeticionEjercicio, secuenciaEjercicio, idMetodologiaFK 
 	FROM SERIE_DE_EJERCICIO;
 END$$
 DELIMITER ;

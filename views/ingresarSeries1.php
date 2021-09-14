@@ -216,13 +216,13 @@
                         <div class="col-md-6">	
                         <label for="Num" class="form-label">Fecha Inicio: </label>
                           <div class="form-group last mb-12">
-                          <input required type="date" class="form-control" id="FechaI" name="FechaN">
+                          <input required type="date" class="form-control" id="FechaI" name="FechaI">
                           </div>
                         </div>
                         <div class="col-md-6">
                         <label for="Num" class="form-label">Fecha Fin: </label>
                           <div class="form-group last mb-12">
-                          <input required type="date" class="form-control" id="FechaF" name="FechaN">
+                          <input required type="date" class="form-control" id="FechaF" name="FechaF">
                           </div>
                         </div>
                       </div>

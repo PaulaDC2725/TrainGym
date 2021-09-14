@@ -1,8 +1,8 @@
 <?php
   require_once('../assets/php/Modelo/class.conexion.php');
   require_once('../assets/php/Modelo/class.consulta.metodologia.php');  
-  require_once('../assets/php/Modelo/class.consulta.instructor.php');
-  $consultas = new ConsultasInstructor();
+  require_once('../assets/php/Modelo/class.consulta.Cliente.php');
+  $consultas = new ConsultasClientes();
     
   $consultasM = new consultaMetodologia();
  
@@ -16,23 +16,34 @@
     $filtro=$id;
     $select="";
 
-    $filas = $consultas->cargarInstructorFiltroId($filtro);
+    $filas = $consultas->cargarClientesFiltroId($filtro);
     if (is_array($filas) || is_object($filas)){
       
     foreach ($filas as $fila) {
       $numeroIdentificacion=$fila['NumeroIdentificacion'];    
-      $nombreInstructor=$fila['nombreInstructor'];
+      $nombreCliente=$fila['nombreCliente'];
     } 
     }
   }
   if (isset($_GET['filtroCol']) && isset($_GET['valor'])) {
-    $filas = $consultasM->consultarSeriesFiltrados($_GET['filtroCol'],$_GET['valor'],$_GET['NumeroIdentificacion']);
+      $filas = $consultasM->consultarSeriesFiltradosCli($_GET['filtroCol'],$_GET['valor'],$_GET['NumeroIdentificacion'],$_GET['idMetodologia']);
+      $metodologia=$_GET['nombreMetodologia'];
+      $idMetodologia=$_GET['idMetodologia'];
   }else{
-    $filas = $consultasM->consultarSeries($numeroIdentificacion);
+    $clientes = $consultas->consultarMetodologia($numeroIdentificacion);
+    if (is_array($clientes) || is_object($clientes)){
+      
+      foreach ($clientes as $cliente) {
+        $idMetodologia=$cliente['idMetodologiaFK'];
+      } 
+      }
+    $filas = $consultasM->consultarSeriesCli($numeroIdentificacion,$idMetodologia);
   }
    
   
   $tabla="";
+  
+
 
   if (isset($filas)) {    
 
@@ -40,9 +51,8 @@
       $tabla.='<tr class="limitada" scope="row">';
         $tabla.='<td>'.$fila['nombreSerieEjercicio'].'</td>';
         $tabla.='<td>'.$fila['descripcionSerieEjercicio'].'</td>';
-        $tabla.='<td>'.$fila['nombreMetodologia'].'</td>';
       $tabla.='</tr>';
-
+      $metodologia=$fila['nombreMetodologia'];
       $numeroIdentificacion.=$fila['NumeroIdentificacion'];
      
      }  
@@ -77,28 +87,30 @@ crossorigin="anonymous">
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
             <div class="container">
-              <center><a href="inicioRecepcionista.php">
+              <center><a href="inicioCliente.php?NumeroIdentificacion=<?php echo $id?>">
                 <img class="encabezado" width="300" height="70" src="../assets/img/logo.png">
             	</a>
 			</center>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="inicioInstructor.php?NumeroIdentificacion=<?php echo $id?>">Regresar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="inicioCliente.php?NumeroIdentificacion=<?php echo $id?>">Regresar</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
   <div class="container">
-		<h1 style="font-size: 2.6em;
+		<h1 style="font-size: 30px;
 		font-weight: 1000;
-		color: black; ">Series de ejercicio</h1>
+		color: black; font-family: inherit; text-align:center ">Series de ejercicio para la metodología <?php echo $metodologia?></h1>
 		</div>
 		<table class="table table-striped">
   <tbody>
     <tr>
       <form action="" method="GET" id="form">        
         <td>
+        <input type="hidden" name="nombreMetodologia"  value="<?php echo $metodologia ?>">
+        <input type="hidden" name="idMetodologia"  value="<?php echo $idMetodologia ?>">
             <input type="hidden" name="NumeroIdentificacion"  value="<?php echo $id ?>">
           <select type="option" id="est" name="filtroCol" class="form-control" required="">
             <option value="nombreSerieEjercicio">Nombre del ejercicio</option>
@@ -111,7 +123,7 @@ crossorigin="anonymous">
           <button type="submit" class="btn btn-dark" >Buscar</button>
         </td>
         <td>
-          <a href="consultarSeries.php?NumeroIdentificacion=<?php echo $id?>"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
+          <a href="consultarSerie.php?NumeroIdentificacion=<?php echo $id?>"><input type="button" class="btn btn-warning" value="Limpiar Busqueda"></a>
         </td>
       </form>         
       <td>
@@ -127,7 +139,6 @@ crossorigin="anonymous">
         
         <th scope="col">Nombre del ejercicio</th>
         <th scope="col">Descripcion del ejercicio</th>
-        <th scope="col">Metodología</th>
       </tr>
     </thead>
     <tbody>        

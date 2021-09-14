@@ -158,6 +158,20 @@
 			return $rows;
 
 		}
+		public function consultarMetodologia($filtro){
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql="SELECT s.idMetodologiaFK From Suscripciones as s JOIN clientes as c JOIN usuarios as u on s.idClienteFK=c.idCliente and c.idUsuarioFK=u.idUsuario
+			WHERE U.NumeroIdentificacion =  '".$filtro."'";
+			$statement=$conexion->prepare($sql);			
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+
+		}
 		public function cargarAgendaCliFiltroId($filtro){
 			$rows=null;
 			$modelo = new Conexion();

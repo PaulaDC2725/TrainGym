@@ -86,7 +86,6 @@ else if($Rol == '3' && $resultado == "1"){
 else{
 	echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
 }
-
 ?>
 <br>
 <div class="content">
