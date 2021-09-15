@@ -27,7 +27,7 @@ function validarForm1() {
     }
     else{
       swal("Excelente!","Datos registrados correctamente","success");
-      btnForm2.style.display = 'block';
+      btnForm2.style.display = 'none';
       registrar1_btn.style.display= 'none';
       document.getElementById('formPaso1').submit();
     // }else{      
