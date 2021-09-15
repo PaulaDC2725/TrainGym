@@ -169,14 +169,14 @@ color: black; text-align: center;">Registrar instructor</h1>
 								<input required type="email" class="form-control" id="email" name="email"placeholder="Ingrese  su Correo electronico corectamente(email@example.com)">
 								</div>
 						</div>	
-						<div class="row">
+						<!-- <div class="row">
 						<div class="col-md-12"> 
 								<label for="Num" class="form-label">Contraseña: </label>
 								<div class="form-group last mb-12">
 								<input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese Su Contraseña(MINIMO 10 CARACTERES)">
 								</div>
 							</div>
-							</div> 
+							</div>  -->
 							 
 						</div>
 						<br>

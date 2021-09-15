@@ -16,7 +16,11 @@ if($tipoDocumento =="1"){
 }else if($tipoDocumento =="4"){
     $nombreDocumento="Pasaporte";
 }
-$contra1 = $_POST['Contraseña'];
+$contra1="";
+$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+for($i=0;$i<14;$i++){
+	$contra1 .= substr($str,rand(0,62),1);
+}
 $estadoInstructor ="1";
 $idRolFK = "2";
 $nombreRol = "Instructor";
@@ -191,7 +195,7 @@ color: black; text-align: center;">Registrar instructor</h1>
 								</div>
 							</div> 
 						</div>	
-						<div class="row">
+						<!-- <div class="row">
 							
 							<div class="col-md-12"> 
 								<label for="Num" class="form-label">Contraseña: </label>
@@ -199,7 +203,7 @@ color: black; text-align: center;">Registrar instructor</h1>
 								<input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese Su Contraseña(MINIMO 10 CARACTERES)"value="<?php echo $contra1?>">
 								</div>
 							</div> 
-						</div>
+						</div> -->
 						<br>
 						<center><button type="submit" value="Enviar" name="btnf" class="btn btn-block btn-warning" style="background-color: #FF9900">Enviar</button></center>
                       </div>

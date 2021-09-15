@@ -18,7 +18,27 @@ $suscripcionF=$_POST['FechaS'];
 $fechaPago=$_POST['FechaP'];
 $valorPago=$_POST['valorS'];
 $descripcion=$_POST['descPago'];
-$soporte=$_POST['ImgPago'];
+
+// $ruta = '/uploads/';
+// $soporte=$_FILES['ImgPago']['name'];
+// $tempimg =$_FILES['ImgPago']['tmp_name'];
+// $rutaimg= $ruta.$soporte;
+
+// if(!file_exists($ruta)){
+// 	mkdir($ruta,0777,true);
+// }else{
+// 	if(move_uploaded_file($tempimg,$rutaimg)){
+// 		echo 'Guardado';
+// 	}else{
+// 		echo 'Error';
+// 	}
+// 	var_dump($rutaimg);
+// }
+$rutaservidor='images';
+$rutatemporal=$_FILES['ImgPago']['tmp_name'];
+$soporte=$_FILES['ImgPago']['name'];
+$rutadestino=$rutaservidor.'/'.$soporte;
+move_uploaded_file($rutatemporal, $rutadestino);
 $filas = $ConsultasS-> cargarSuscripcionFiltroId($filtro);
 if (is_array($filas) || is_object($filas)){
   

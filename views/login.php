@@ -82,7 +82,7 @@
                   <input type="checkbox" checked="checked"/>
                   <div class="control__indicator"></div>
                 </label>
-                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+                <span class="ml-auto"><a href="./recoveryPasswordView.php" class="forgot-pass">¿Olvidaste tu contraseña?</a></span> 
               </div>
 
               <input type="submit" onclick="validarForm()" value="INGRESAR" class="btn btn-block btn-warning" style="background-color: #FF9900">

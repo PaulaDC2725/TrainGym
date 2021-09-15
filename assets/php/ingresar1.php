@@ -51,7 +51,7 @@
     </div>
 </nav>
 <?php 
-
+session_start();
 $usuario = $_POST['Num'];
 $contrasenia = $_POST['Contraseña'];
 $estadoU = "1";
@@ -72,6 +72,7 @@ if (is_array($filas) || is_object($filas))
 }
 }
 if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo'){
+  $_SESSION["NumeroIdentificacion"] = $usuario;
 	header('location: ../../views/inicioRecepcionista.php');
 }
 else if($Rol == '2' && $resultado == "1"){
@@ -118,7 +119,7 @@ else{
                   <input type="checkbox" checked="checked"/>
                   <div class="control__indicator"></div>
                 </label>
-                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+                <span class="ml-auto"><a href="../../views/recoveryPasswordView.php" class="forgot-pass">¿Olvidaste tu contraseña?</a></span> 
               </div>
 
               <input type="submit" value="INGRESAR" class="btn btn-block btn-warning" style="background-color: #FF9900">

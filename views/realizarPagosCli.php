@@ -80,7 +80,7 @@ $fcha = date("Y-m-d");
    <!---->
    <br>
   <div class="container"> 
-	<form method="post" action="../assets/php/Controlador/RegistroPago.php?NumeroIdentificacion=<?php echo $id?>&SuscripcionNumero=<?php echo $idSuscripcion ?>">
+	<form method="post" action="../assets/php/Controlador/RegistroPago.php?NumeroIdentificacion=<?php echo $id?>&SuscripcionNumero=<?php echo $idSuscripcion ?>" enctype="multipart/form-data">
 	<div id="registroPago">
 		<div class="content">
 			<div class="container">

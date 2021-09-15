@@ -1,4 +1,16 @@
-
+<?php
+error_reporting(E_ERROR | E_PARSE);
+include '../assets/php/Modelo/class.conexion.php';
+session_start();
+$numDoc = $_SESSION["NumeroIdentificacion"];
+if (!isset($numDoc)) {
+    echo '<script type="text/javascript">
+    alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma");
+    window.history.back();
+    </script>';
+} else {
+}
+?>
 <!Doctype HTML>
 <html lang="es-ES">
 <head>
@@ -45,6 +57,9 @@ crossorigin="anonymous">
 								</li>
 								<li  class="nav-item">
 									<a class="nav-link" href="mostrarInstructores3.php"style="font-size: 14px">Agendar Programacion</a>	
+								</li>
+								<li  class="nav-item">
+									<a class="nav-link" href="mostrarInstructores3.php"style="font-size: 14px">Hola! <?php echo $numDoc ?></a>	
 								</li>
 							</ul>					
 					</li>
@@ -98,7 +113,8 @@ crossorigin="anonymous">
 				</div>
 			</div>									
 </div> 
-				  <input type="submit" class="btn btn-dark" value="Cerrar Sesion" name="boton2" onclick="location.href='index.php'">      
+				<a class="btn btn-dark" href="../assets/php/Controlador/logoutController.php">Cerrar Sesion</a>
+				  <!-- <input type="submit" class="btn btn-dark" value="Cerrar Sesion" name="boton2" onclick="location.href='index.php'">       -->
 				  
         <!-- Footer-->
         <footer class="py-5">

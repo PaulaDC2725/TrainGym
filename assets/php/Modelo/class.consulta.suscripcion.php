@@ -21,7 +21,7 @@ class ConsultasSuscripcion{
 		$rows=null;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql = "CALL registrarPagos('".$fechaPago."','".$valorPago."','".$descripcion."','/TrainGym/assets/img/".$soporte."','".$idSuscripcion."')";
+		$sql = "CALL registrarPagos('".$fechaPago."','".$valorPago."','".$descripcion."','".$soporte."','".$idSuscripcion."')";
 		$statement=$conexion->prepare($sql);
 
 	if (!$statement) {
