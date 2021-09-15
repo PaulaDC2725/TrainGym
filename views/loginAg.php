@@ -59,8 +59,9 @@
         <div class="col-md-6 contents">
           <div class="row justify-content-center">
             <div class="col-md-8">
-              <div class="mb-4">
-              <h3 style="font-family: masque;">Inicia Sesión</h3>
+              <div class="mb-4" style="text-align: center;">
+              <h3 style="font-family: masque;">Agenda tu programación</h3>
+              <h3 style="font-family: inherit; font-size: 13px; color: #FF9900;">*Recuerda iniciar sesion previamente*</h3>
               </div>
             <form action="../assets/php/AgendaIngreso.php" method="post">
             
