@@ -43,7 +43,8 @@
         $tabla.='<td>'.$fila['nombreMetodologia'].'</td>';
       $tabla.='</tr>';
 
-      $numeroIdentificacion.=$fila['NumeroIdentificacion'];
+      $numeroIdentificacion=$fila['NumeroIdentificacion'];
+      $metodologia=$fila['nombreMetodologia'];
      
      }  
  }else{
@@ -99,6 +100,7 @@ crossorigin="anonymous">
     <tr>
       <form action="" method="GET" id="form">        
         <td>
+        <input type="hidden" name="metodologia"  value="<?php $fila['nombreMetodologia']?>">
             <input type="hidden" name="NumeroIdentificacion"  value="<?php echo $id ?>">
           <select type="option" id="est" name="filtroCol" class="form-control" required="">
             <option value="nombreSerieEjercicio">Nombre del ejercicio</option>

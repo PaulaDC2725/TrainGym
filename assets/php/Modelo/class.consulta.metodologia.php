@@ -191,7 +191,7 @@ class consultaMetodologia{
 		$rows=null;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();
-		$sql="SELECT  U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN USUARIOS U JOIN INSTRUCTORES I ON I.idUsuarioFK=U.idUsuario WHERE ".$filtroCol." LIKE '%".$valor."%' AND U.NumeroIDentificacion= '".$numeroIdentificacion."'";
+		$sql="SELECT m.nombreMetodologia, U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN metodologia as m JOIN USUARIOS U JOIN INSTRUCTORES I ON I.idUsuarioFK=U.idUsuario and s.idMetodologiaFK=m.idMetodologia WHERE ".$filtroCol." LIKE '%".$valor."%' AND U.NumeroIDentificacion= '".$numeroIdentificacion."'";
 		$statement=$conexion->prepare($sql);
 		$statement->execute();
 		while ($result=$statement->fetch()) {
