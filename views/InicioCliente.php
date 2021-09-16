@@ -3,10 +3,10 @@
   include '../assets/php/Modelo/class.conexion.php';
   session_start();
   $numDoc = $_SESSION["NumeroIdentificacion"];
-  if (!isset($numDoc)) {
+  $rol = $_SESSION["rol"];
+  if (!isset($numDoc) || $rol != 3) {
       echo '<!Doctype HTML>
     <html lang="es-ES">
-    <head>
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
