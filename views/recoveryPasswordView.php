@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="../assets/css/styleLogin.css">
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Login Usuarios</title>
+    <title>Recuperar Contraseña</title>
   </head>
   <body>
   <!-- Responsive navbar-->
@@ -78,7 +78,7 @@
 			  <br>
 
 
-              <input type="submit" onclick="validarForm()" value="INGRESAR" class="btn btn-block btn-warning" style="background-color: #FF9900">
+              <input type="submit" onclick="validarForm()" value="SIGUIENTE" class="btn btn-block btn-warning" style="background-color: #FF9900">
 
               
               

@@ -55,38 +55,48 @@ session_start();
 $usuario = $_POST['Num'];
 $contrasenia = $_POST['Contraseña'];
 $estadoU = "1";
-$rows = $consultasUsuario->validarLogin2($usuario);
-if (is_array($rows) || is_object($rows))
-{foreach($rows as $row) {
-  $Rol=$row['idRolFK'];
-}
+if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
+  echo('<script>swal("Error!", "Datos inválidos","error")</script>');
 }else{
-  $Rol ="0";
+  $rows = $consultasUsuario->validarLogin2($usuario);
+  if (is_array($rows) || is_object($rows))
+  {foreach($rows as $row) {
+    $Rol=$row['idRolFK'];
+  }
+  }else{
+    $Rol ="0";
+  }
+  $filas = $consultasUsuario->validarLoginUsuario($usuario,$contrasenia,$Rol,$estadoU);
+  $resultado=null;
+  if (is_array($filas) || is_object($filas))
+  {
+    foreach($filas as $fila) {
+    $resultado=$fila['RESULTADO'];
+  }
+  }
+  $rolRecepcionista = 1;
+  if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo' && $rolRecepcionista = 1){
+    $_SESSION["rolRecepcionista"] = $rolRecepcionista;
+    $_SESSION["NumeroIdentificacion"] = $usuario;
+    header('location: ../../views/inicioRecepcionista.php');
+  }
+  else if($Rol == '2' && $resultado == "1"){
+    $_SESSION["NumeroIdentificacion"] = $usuario;
+    $_SESSION['rol'] = $Rol;
+    header('location: ../../views/inicioInstructor.php?NumeroIdentificacion='.$usuario);
+  }
+  else if($Rol == '3' && $resultado == "1"){
+    $_SESSION["NumeroIdentificacion"] = $usuario;
+    $_SESSION['rol'] = $Rol;
+    header('location: ../../views/inicioCliente.php?NumeroIdentificacion='.$usuario);
+  }else if($usuario=="" || $contrasenia==""){
+    echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
+  }
+  else{
+    echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
+  }
 }
-$filas = $consultasUsuario->validarLoginUsuario($usuario,$contrasenia,$Rol,$estadoU);
-$resultado=null;
-if (is_array($filas) || is_object($filas))
-{
-  foreach($filas as $fila) {
-  $resultado=$fila['RESULTADO'];
-}
-}
-if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo'){
-  $_SESSION["NumeroIdentificacion"] = $usuario;
-	header('location: ../../views/inicioRecepcionista.php');
-}
-else if($Rol == '2' && $resultado == "1"){
-  echo('<script>alert("Bienvenido"+$usuario)<script>');
-	header('location: ../../views/inicioInstructor.php?NumeroIdentificacion='.$usuario);
-}
-else if($Rol == '3' && $resultado == "1"){
-	header('location: ../../views/inicioCliente.php?NumeroIdentificacion='.$usuario);
-}else if($usuario=="" || $contrasenia==""){
-  echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
-}
-else{
-	echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
-}
+
 ?>
 <br>
 <div class="content">
