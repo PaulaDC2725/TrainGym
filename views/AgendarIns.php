@@ -131,7 +131,7 @@
               <div class="mb-4">
               <h1 style="font-size: 2.6em;
             font-weight: 1000;
-    color: black; ">Agende la programación <?php echo $nombreInstructor;?> </h1>
+    color: black; ">Agende la programación de <?php echo $nombreInstructor;?> </h1>
               </div>
             <form action="/TrainGym/assets/php/controlador/AgendarPrograIns.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>" method="post">
             

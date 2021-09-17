@@ -97,13 +97,7 @@ crossorigin="anonymous">
 								</li>
 								<li  class="nav-item">
 									<a class="nav-link" href="mostrarInstructores2.php"style="font-size: 14px">Habilitar Instructores</a>	
-								</li>
-								<li  class="nav-item">
-									<a class="nav-link" href="mostrarInstructores3.php"style="font-size: 14px">Agendar Programacion</a>	
-								</li>
-								<li  class="nav-item">
-									<a class="nav-link" href="mostrarInstructores3.php"style="font-size: 14px">Hola! <?php echo $numDoc ?></a>	
-								</li>
+								</li>								
 							</ul>					
 					</li>
 					<li class="nav-item"><a class="nav-link">Clientes</a>
@@ -133,6 +127,9 @@ crossorigin="anonymous">
 						<ul class="navbar-nav mb-2 mb-lg-0">							
 							<li  class="nav-item">
 								<a class="nav-link" href="consultarAgendaClientes.php"style="font-size: 13px; text-align: center;">Consultar agenda de clientes</a>	
+							</li>
+							<li  class="nav-item">
+								<a class="nav-link" href="mostrarInstructores3.php"style="font-size: 13px; text-align: center;">Agendar Instructores</a>	
 							</li>
 						</ul>
 					</li>
