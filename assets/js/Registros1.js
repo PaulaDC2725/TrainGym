@@ -44,9 +44,6 @@ function validarForm1() {
                 validarCorreo.innerHTML="Correo Valido";
             }
     }else{
-      swal("Excelente!","Ya puede continuar","success");
-      btnForm2.style.display = 'none';
-      registrar1_btn.style.display= 'none';
        document.getElementById('formPaso1').submit();
     // }else{      
     //   sigForm();

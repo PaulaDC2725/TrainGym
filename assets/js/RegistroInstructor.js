@@ -1,7 +1,5 @@
 
-    let btnForm1 = document.getElementById('boton');
     let btnForm2 = document.getElementById('registrar');
-    btnForm2.style.display='none';
 function validarForm1() {
     let tipoDocumento = document.getElementById('tipoDocInst').value;
     let numeroIdentificacion = document.getElementById('Num').value;
@@ -25,7 +23,6 @@ function validarForm1() {
                 validarCorreo.innerHTML="Correo Valido";
             }
     }else{ 
-      swal("Excelente!","Datos registrados correctamente","success");
       btnForm2.style.display = 'block';
       btnForm1.style.display= 'none';
       document.getElementById('formInst').submit();
