@@ -156,8 +156,7 @@ crossorigin="anonymous">
 		<div class="table-responsive"> 
   <table class="table table-striped">
     <thead>
-      <tr>
-        
+      <tr>        
       <th scope="col">Número de la programación</th>
          <th scope="col">Fecha Inicio de la programación</th>
         <th scope="col">Fecha Fin de la programación</th>

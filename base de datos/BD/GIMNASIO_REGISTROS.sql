@@ -26,7 +26,7 @@ VALUES (3,1004529469,'ana890',1,2,2);
 INSERT INTO USUARIOS (idUsuario,numeroIdentificacion,passwordUsuario,estadoUsuario,idRolFK,idTipoDocumentoFK)
 VALUES (4,1000213057,'Maria789',1,3,2);
 INSERT INTO USUARIOS (idUsuario,numeroIdentificacion,passwordUsuario,estadoUsuario,idRolFK,idTipoDocumentoFK) 
-VALUES (5,1001299203,'5657paula',1,3,1);
+VALUES (5,1001299203,'260421Paulita',1,3,1);
 INSERT INTO USUARIOS (idUsuario,numeroIdentificacion,passwordUsuario,estadoUsuario,idRolFK,idTipoDocumentoFK) 
 VALUES (6,1028481864,'prueba234',1,3,4);
 
@@ -44,7 +44,7 @@ SELECT * FROM INSTRUCTORES;
 INSERT INTO CLIENTES (idCliente,nombreCliente,apellidoCliente,fechaNacimientoCliente,correoCliente,telefonoCliente,estadoCliente,idUsuarioFK)
 VALUES (1,'Maria','Castillo','2002-05-12','mariacastillo@hotmail.com',302455687,1,4);
 INSERT INTO CLIENTES (idCliente,nombreCliente,apellidoCliente,fechaNacimientoCliente,correoCliente,telefonoCliente,estadoCliente,idUsuarioFK)
-VALUES (2,'Paula Catalina','Delgado','2002-09-12','kimikta45@gmail.com',312361710,1,5);
+VALUES (2,'Paula Catalina','Delgado','2002-10-27','kimikta45@gmail.com',3123617109,1,5);
 INSERT INTO CLIENTES (idCliente,nombreCliente,apellidoCliente,fechaNacimientoCliente,correoCliente,telefonoCliente,estadoCliente,idUsuarioFK)
 VALUES (3,'Valentina','Prueba','2000-02-25','prueba@hotmail.com',300230005,1,6);
 
@@ -99,11 +99,11 @@ SELECT * FROM SUSCRIPCIONES;
 
 /*TABLA PAGOS*/
 INSERT INTO PAGOS (idPago,fechaPago,valorPago,descripcionPago,urlSoportePago,idSuscripcionFK)
-VALUES (1,'2021-06-29',19.950,'Pago por un mes, con NOVEDAD','www.pagonumero1.com',1);
+VALUES (1,'2021-06-29',19.950,'Pago por un mes, con NOVEDAD','2021-02-15 12_00_33-Window.png',1);
 INSERT INTO PAGOS (idPago,fechaPago,valorPago,descripcionPago,urlSoportePago,idSuscripcionFK)
-VALUES (2,'2021-06-30',79.800,'Pago por dos meses','www.pagonumero2.com',2);
+VALUES (2,'2021-06-30',79.800,'Pago por dos meses','2021-02-15 12_00_33-Window.png',2);
 INSERT INTO PAGOS (idPago,fechaPago,valorPago,descripcionPago,urlSoportePago,idSuscripcionFK)
-VALUES (3,'2021-06-29',39.900,'Pago por un mes','www.pagonumero2.com',3);
+VALUES (3,'2021-06-29',39.900,'Pago por un mes','2021-02-15 12_00_33-Window.png',3);
 
 SELECT * FROM PAGOS;
 

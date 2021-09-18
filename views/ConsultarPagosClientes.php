@@ -85,7 +85,7 @@
           $tabla.='<td>'.$fila['valorSuscripcion'].'</td>';
           $tabla.='<td>'.$fila['fechaPago'].'</td>';
           $tabla.='<td>'.$fila['descripcionPago'].'</td>';
-          // $tabla.='<td><img src"'.$fila['urlSoportePago'].'" alt="imagen soporte"/></td>';
+          $tabla.='<td><img style="height: 125px;" class="img-fluid" src="/TrainGym/assets/php/Controlador/images/'.$fila['urlSoportePago'].'" alt="imagen soporte"/></td>';
           $tabla.='<td>'.$fila['nombreMetodologia'].'</td>';
           $numeroIdentificacion=$id;
           $descripcion=$fila['descripcionPago'];
@@ -172,7 +172,7 @@ crossorigin="anonymous">
       <th scope="col">Valor del pago</th>
          <th scope="col">Fecha del pago</th>
         <th scope="col">Descripción del pago</th>
-        <!-- <th scope="col">Comprobante pago</th> -->
+        <th scope="col">Comprobante pago</th>
         <th scope="col">Metodología</th>
       </tr>
     </thead>

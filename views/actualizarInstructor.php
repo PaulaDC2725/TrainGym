@@ -153,7 +153,7 @@ color: black; text-align: center;">ACTUALIZAR INSTRUCTOR</h1>
 		</div>
 			
 		<br>
-		<center><button type="submit" value="Actualizar" name="btnf" class="btn btn-dark">Actualizar</button></center>
+		<center><button type="submit" value="Actualizar" id="actualizar" name="actualizar" class="btn btn-dark">Actualizar</button></center>
 		<br> <!--window.location = "../../views/mostrarInstructores.php";-->
     <?php  
     $mensaje1=$consultas->DuplicidadCorr($correoInstructor);

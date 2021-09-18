@@ -1,6 +1,6 @@
 <?php
   error_reporting(E_ERROR | E_PARSE);
-  include '../assets/php/Modelo/class.conexion.php';
+  require_once('../Modelo/class.conexion.php');
   session_start();
   $numDoc = $_SESSION["NumeroIdentificacion"];
   $rol = $_SESSION["rol"];
