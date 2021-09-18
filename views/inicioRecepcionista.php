@@ -658,8 +658,8 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 															<span class="ml-2">Inbox </span>
 														</a> -->
 														<a href="../assets/php/Controlador/logoutController.php" class="dropdown-item ai-icon">
-															<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-															<span class="ml-2">Cerrar Sesion </span>
+															<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+														<span class="ml-2">Cerrar Sesion </span>
 														</a>
 													</div>
 												</li>
@@ -822,7 +822,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 				<div class="deznav-scroll">
 					<ul class="metismenu" id="menu">
 						<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-								<i class="flaticon-381-networking"></i>
+								<i class="flaticon-381-news"></i>
 								<span class="nav-text">Inicio</span>
 							</a>
 							<ul aria-expanded="false">
@@ -831,7 +831,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 							</ul>
 						</li>
 						<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-network"></i>
+							<i class="fa fa-money"></i>
 								<span class="nav-text">Pagos</span>
 							</a>
 							<ul aria-expanded="false">
@@ -843,7 +843,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 							</ul>
 						</li>
 						<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-								<i class="flaticon-381-controls-3"></i>
+								<i class="flaticon-381-user-9"></i>
 								<span class="nav-text">Instructores</span>
 							</a>
 							<ul aria-expanded="false">
@@ -854,7 +854,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 							</ul>
 						</li>
 						<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-controls-3"></i>
+							<i class="flaticon-381-user-9"></i>
 								<span class="nav-text">Clientes </span>
 							</a>
 							<ul aria-expanded="false">
@@ -876,9 +876,9 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 							</ul>
 						</li>
 						<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-notepad"></i>
-							<span class="nav-text">Agenda</span>
-						</a>
+								<i class="flaticon-381-calendar-7"></i>
+								<span class="nav-text">Agenda</span>
+							</a>
 						<ul aria-expanded="false">
 							<li><a href="ConsultarAgendaClientes.php">Consultar Agenda Clientes</a></li>
 							<li><a href="mostrarInstructores3.php">Agendar Programacion Instructores</a></li>
@@ -903,7 +903,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 							</ul>
 						</li>
 						<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-								<i class="flaticon-381-network"></i>
+								<i class="fa fa-money"></i>
 								<span class="nav-text">Table</span>
 							</a>
 							<ul aria-expanded="false">

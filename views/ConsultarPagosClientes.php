@@ -31,24 +31,10 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 	</style>
 	</head>
 	<body>
-	<script> window.addEventListener("load", init, false);
-        function init () {
-            Swal.fire({
-                title: "¡Error!",
-                text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
-                icon: "error",
-                buttons: true,
-                dangerMode: true,
-              }).then((willDelete) => {
-            if (willDelete) {
-                location.href = "index.php";
-            } else {
-                location.href = "index.php";
-            }
-          });
-        }
-        
-          </script>
+	 <script> 
+	 alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
+	 location.href = "index.php";
+	 </script>
 	
 	</body>
 	</html>';
@@ -882,7 +868,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-networking"></i>
+							<i class="flaticon-381-news"></i>
 							<span class="nav-text">Inicio</span>
 						</a>
                         <ul aria-expanded="false">
@@ -891,7 +877,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 						</ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-						<i class="flaticon-381-network"></i>
+						<i class="fa fa-money"></i>
 							<span class="nav-text">Pagos</span>
 						</a>
                         <ul aria-expanded="false">
@@ -903,7 +889,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-controls-3"></i>
+							<i class="flaticon-381-user-9"></i>
 							<span class="nav-text">Instructores</span>
 						</a>
                         <ul aria-expanded="false">
@@ -914,7 +900,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-						<i class="flaticon-381-controls-3"></i>
+						<i class="flaticon-381-user-9"></i>
 							<span class="nav-text">Clientes </span>
 						</a>
                         <ul aria-expanded="false">
@@ -936,7 +922,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
                         </ul>
                     </li>
 					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-						<i class="flaticon-381-notepad"></i>
+						<i class="flaticon-381-calendar-7"></i>
 						<span class="nav-text">Agenda</span>
 					</a>
 					<ul aria-expanded="false">
@@ -963,7 +949,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
                         </ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-network"></i>
+							<i class="fa fa-money"></i>
 							<span class="nav-text">Table</span>
 						</a>
                         <ul aria-expanded="false">

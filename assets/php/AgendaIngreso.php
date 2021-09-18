@@ -55,7 +55,7 @@
     </div>
 
  <?php 
-
+session_start();
 $usuario = $_POST['Num'];
 $contrasenia = $_POST['Contraseña'];
 $estadoU = "1";
@@ -71,6 +71,8 @@ if (is_array($filas) || is_object($filas))
 }
 }
 if($resultado=='1'){
+  $_SESSION["NumeroIdentificacion"] = $usuario;
+  $_SESSION['rol'] = $Rol;
 	header('location: ../../views/AgendarCli.php?NumeroIdentificacion='.$usuario);
 }else if($usuario=="" || $contrasenia==""){
   echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
