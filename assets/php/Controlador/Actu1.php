@@ -981,7 +981,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 								</div>
 								<div class="card-body">
 									<div class="basic-form">
-										<form method="post" action="Actu2.php?id=<?php echo $id ?>&NumeroIdentificacion=<?php echo $numeroIdentificacion?>">
+										<form method="post" action="Actu1.php?id=<?php echo $id ?>&NumeroIdentificacion=<?php echo $numeroIdentificacion?>">
 											<div class="form-row">											
 												<div class="form-group col-md-6">
 													<label>Número De documento</label>
@@ -995,11 +995,11 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 												</div>
 												<div class="form-group col-md-6">
 													<label>Teléfono</label>
-													<input required type="number"value="<?php echo $telefonoCliente?>" class="form-control" id="phone" name="phone"placeholder="Ingrese Su Numero De Telefono">
+													<input required type="number"value="<?php echo $telefonoCliente?>" class="form-control" id="Tel" name="Tel"placeholder="Ingrese Su Numero De Telefono">
 												</div>
 												<div class="form-group col-md-6">
 													<label>Correo Electrónico</label>
-													<input required type="email" value="<?php echo $correoCliente?>" class="form-control" id="email" name="email"placeholder="email@example.com">
+													<input required type="email" value="<?php echo $correoCliente?>" class="form-control" id="corr" name="corr"placeholder="email@example.com">
 												</div>
 											</div>
 											<!-- <div class="form-row">
