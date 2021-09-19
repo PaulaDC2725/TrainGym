@@ -58,9 +58,11 @@
       $tabla="";
       $filtro=$id;
       $select="";
+	  
 
       $filas = $consultasS->cargarPagoCliFiltroId($filtro);
-      if (is_array($filas) || is_object($filas))
+	  
+		if (is_array($filas) || is_object($filas))
       {      
         foreach ($filas as $fila) 
         {
@@ -78,8 +80,28 @@
           $metodologia=$fila['nombreMetodologia'];
           $nombreCliente = $fila['Nombre Completo']; 
         }
-      }
-  }
+      }else{
+		$filas1 = $consultas->cargarClientesFiltroId($filtro);
+		foreach ($filas1 as $fila) 
+		{
+		  $numeroIdentificacion=$fila['NumeroIdentificacion']; 
+			$nombreCliente = $fila['nombreCliente'];   
+		}
+	  }
+		if (is_array($filas) || is_object($filas))
+		{  
+		  foreach ($filas as $fila) 
+		  {
+			$numeroIdentificacion=$fila['NumeroIdentificacion'];
+			$descripcion=$fila['descripcionPago'];
+			$comprobante=$fila['urlSoportePago'];  
+			$fechaPago=$fila['fechaPago'];
+			$valor=$fila['valorSuscripcion'];
+			$metodologia=$fila['nombreMetodologia'];
+			$nombreCliente = $fila['Nombre Completo'];
+		  }
+		}
+	}
 ?>
 
 <!DOCTYPE html>
@@ -1448,7 +1470,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Developed by TrainGym 2021</p>
+                <p>Copyright © Developed by TrainGym 2021</p><?php echo $filas;?>
             </div>
         </div>
         <!--**********************************
