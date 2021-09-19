@@ -78,7 +78,7 @@ $tabla="";
 if (isset($filas)) {    
 
   foreach ($filas as $fila){
-	$botonhab='<a href="assets/php/Controlador/habIns.php?id='.$fila['idInstructor'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check"></i></a>';
+	$botonhab='<a href="habIns.php?id='.$fila['idInstructor'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check"></i></a>';
 	// 	$boton='<a href="assets/php/Controlador/inhaInst.php?id='.$fila['idInstructor'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-danger" value="Inhabilitar"></a>';
 	// $botonEditar='<a href="actualizarInstructor.php?id='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-warning" value="Actualizar"></a>';
 	$tabla.='<tr class="limitada" scope="row">';
