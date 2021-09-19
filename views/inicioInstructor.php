@@ -116,7 +116,7 @@
 			  Nav header start
 		  ***********************************-->
 		  <div class="nav-header">
-			  <a href="inicioinstructor.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" class="brand-logo">
+			  <a href="inicioinstructor.php?NumeroIdentificacion='. $numeroIdentificacion .'" class="brand-logo">
 				  <img class="logo-abbr" src="../images/logo.png" alt="">
 				  <img class="logo-compact" src="../images/logo.jpeg" alt="">
 				  <img class="brand-title" src="../images/logo-text.png" alt="">
@@ -642,7 +642,7 @@
 					  <div class="collapse navbar-collapse justify-content-between">
 						  <div class="header-left">
 							  <div class="dashboard_bar">
-								  Bienvenido <?php echo $nombreInstructor ?>
+								  Bienvenido '. $nombreInstructor .'
 							  </div>
 						  </div>
 						  <ul class="navbar-nav header-right"></ul>
@@ -847,7 +847,7 @@
 							  <span class="nav-text">Inicio</span>
 						  </a>
 						  <ul aria-expanded="false">
-							  <li><a href="inicioinstructor.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Bienvenido</a></li>
+							  <li><a href="inicioinstructor.php?NumeroIdentificacion='. $numeroIdentificacion .'">Bienvenido</a></li>
 							  
 						  </ul>
 					  </li>
@@ -856,14 +856,14 @@
 							  <span class="nav-text">Series de Ejercicio</span>
 						  </a>
 						  <ul aria-expanded="false">
-							  <li><a href="ingresarSeries1.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Registrar</a></li>
+							  <li><a href="ingresarSeries1.php?NumeroIdentificacion='. $numeroIdentificacion .'">Registrar</a></li>
 							  
 							  </li>
-							  <a href="consultarSeries.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Consultar</a>
+							  <a href="consultarSeries.php?NumeroIdentificacion='. $numeroIdentificacion .'">Consultar</a>
 							  </li>
 						  </ul>
 					  </li>
-					  <li><a href="consultarHorarioIns.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>"  href="javascript:void()" aria-expanded="false">
+					  <li><a href="consultarHorarioIns.php?NumeroIdentificacion='. $numeroIdentificacion.'"  href="javascript:void()" aria-expanded="false">
 							  <i class="flaticon-381-search-1"></i>
 							  <span class="nav-text">Consultar Horario</span>
 						  </a>
@@ -874,7 +874,7 @@
 							  
 						  </ul> -->
 					  </li>
-					  <li><a href="Metodologias.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" href="javascript:void()" aria-expanded="false">
+					  <li><a href="Metodologias.php?NumeroIdentificacion='. $numeroIdentificacion .'" href="javascript:void()" aria-expanded="false">
 						  <i class="flaticon-381-search-1"></i>
 							  <span class="nav-text">Consultar Metodologias </span>
 						  </a>
