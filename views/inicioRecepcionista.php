@@ -32,7 +32,7 @@ if (!isset($numDoc) || $rolRec != 1) {
 		function init () {
 			Swal.fire({
 				title: "¡Error!",
-				text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
+				text: "Debe iniciar sesión correctamente para acceder!",
 				icon: "error",
 				buttons: true,
 				dangerMode: true,
@@ -1059,7 +1059,7 @@ if (!isset($numDoc) || $rolRec != 1) {
 										<div class="effect bg-Color1"></div>
 									</div>
 								</div></a>
-						<div class="col-xl-6 col-xxl-12">
+						<div class="col-xxl-12 col-xxl-12">
 							<div class="card">
 								<div class="card-header d-sm-flex d-block pb-0 border-0">
 									<div class="mr-auto pr-3 mb-sm-0 mb-3">
