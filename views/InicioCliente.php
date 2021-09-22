@@ -32,7 +32,7 @@
           function init () {
               Swal.fire({
                   title: "¡Error!",
-                  text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
+                  text: "Debe iniciar sesión correctamente para acceder!",
                   icon: "error",
                   buttons: true,
                   dangerMode: true,
