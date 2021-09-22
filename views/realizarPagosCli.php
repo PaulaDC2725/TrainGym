@@ -28,13 +28,29 @@ if (!isset($numDoc) || $rol != 3) {
   <title>| Error</title>
   </head>
   <body>
-  <script> 
-  alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
-  location.href = "index.php";
-  </script>
+  <script> window.addEventListener("load", init, false);
+		function init () {
+			Swal.fire({
+				title: "¡Error!",
+				text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
+				icon: "error",
+				buttons: true,
+				dangerMode: true,
+			  }).then((willDelete) => {
+			if (willDelete) {
+				location.href = "index.php";
+			} else {
+				location.href = "index.php";
+			}
+		  });
+		}
+		
+		  </script>
+  
   </body>
   </html>';
   
+} else {
 }
 require_once('../assets/php/Modelo/class.consulta.Suscripcion.php');
 $fcha = date("Y-m-d");
@@ -43,7 +59,6 @@ $fcha = date("Y-m-d");
  $consultasS = new ConsultasSuscripcion();
 
 
- $numeroIdentificacion=null;
  $nombreCliente=null;
 
  if (isset($_GET['NumeroIdentificacion'])) {
@@ -67,7 +82,7 @@ $fcha = date("Y-m-d");
  }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -110,7 +125,7 @@ $fcha = date("Y-m-d");
             <a href="inicioCliente.php?NumeroIdentificacion=<?php echo $id ?>" class="brand-logo">
                 <img class="logo-abbr" src="../images/logo.png" alt="">
                 <img class="logo-compact" src="../images/logo.jpeg" alt="">
-                <img class="brand-title" src="../images/logo-text.png" alt="">
+                 <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
             </a>
             <div class="nav-control">
                 <div class="hamburger">
@@ -987,7 +1002,7 @@ $fcha = date("Y-m-d");
                                         </div>-->
                                         <div class="form-group row">
                                             <div class="col-sm-10">
-                                                <button type="submit" id="Registrar" name="btnf" class="btn btn-primary">Registrar Pago</button>
+                                                <button type="submit" id="Registrar" name="btnf" class="btn btn-primary">Realizar Pagos</button>
                                             </div>
                                         </div>
                                     </form>

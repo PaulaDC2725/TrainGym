@@ -112,7 +112,7 @@ if (is_array($rows) || is_object($rows))
             <a href="index.php" class="brand-logo">
                 <img class="logo-abbr" src="../../../images/logo.png" alt="">
                 <img class="logo-compact" src="../../../images/logo.jpeg" alt="">
-                <img class="brand-title" src="../../../images/logo-text.png" alt="">
+                 <img class="brand-title" width="200" height="30" src="../../../images/logo-text.png" alt="">
             </a>
             <div class="nav-control">
                 <div class="hamburger">

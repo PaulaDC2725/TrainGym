@@ -701,12 +701,12 @@
 				labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "January", "February", "March", "April"],
 				datasets: [{
 					label: "Sales Stats",
-					backgroundColor: "#0B2A97",
-					borderColor: '#0B2A97',
-					pointBackgroundColor: '#0B2A97',
-					pointBorderColor: '#0B2A97',
-					pointHoverBackgroundColor: '#0B2A97',
-					pointHoverBorderColor: '#0B2A97',
+					backgroundColor: "#FF9900",
+					borderColor: '#FF9900',
+					pointBackgroundColor: '#FF9900',
+					pointBorderColor: '#FF9900',
+					pointHoverBackgroundColor: '#FF9900',
+					pointHoverBorderColor: '#FF9900',
 					data: [20, 10, 18, 15, 32, 18, 15, 22, 8, 6, 12, 13, 10, 18, 14, 24, 16, 12, 19, 21, 16, 14, 24, 21, 13, 15, 27, 29, 21, 11, 14, 19, 21, 17]
 				}]
 			},
@@ -785,12 +785,12 @@
 				labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 				datasets: [{
 					label: "Sales Stats",
-					backgroundColor: "#0B2A97",
-					borderColor: '#0B2A97',
-					pointBackgroundColor: '#0B2A97',
-					pointBorderColor: '#0B2A97',
-					pointHoverBackgroundColor: '#0B2A97',
-					pointHoverBorderColor: '#0B2A97',
+					backgroundColor: "#FF9900",
+					borderColor: '#FF9900',
+					pointBackgroundColor: '#FF9900',
+					pointBorderColor: '#FF9900',
+					pointHoverBackgroundColor: '#FF9900',
+					pointHoverBorderColor: '#FF9900',
 					borderWidth: 0, 
 					data: [20, 10, 18, 10, 32, 15, 15, 22, 18, 6, 12, 13]
 				}]
@@ -869,11 +869,11 @@
 				datasets: [{
 					label: "Sales Stats",
 					backgroundColor: "rgba(11, 42, 151, .5)",
-					borderColor: '#0B2A97',
-					pointBackgroundColor: '#0B2A97',
-					pointBorderColor: '#0B2A97',
-					pointHoverBackgroundColor: '#0B2A97',
-					pointHoverBorderColor: '#0B2A97',
+					borderColor: '#FF9900',
+					pointBackgroundColor: '#FF9900',
+					pointBorderColor: '#FF9900',
+					pointHoverBackgroundColor: '#FF9900',
+					pointHoverBorderColor: '#FF9900',
 					data: [0, 18, 14, 24, 16, 30]
 				}]
 			},
@@ -1017,10 +1017,10 @@
 					{
 						label: "My First dataset",
 						data: [25, 60, 30, 71, 26, 85, 50],
-						borderColor: '#0B2A97',
+						borderColor: '#FF9900',
 						borderWidth: "2",
 						backgroundColor: 'transparent',  
-						pointBackgroundColor: '#0B2A97', 
+						pointBackgroundColor: '#FF9900', 
 						pointRadius: 0
 					}
 				]

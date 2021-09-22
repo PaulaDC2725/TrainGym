@@ -4,40 +4,53 @@ include '../assets/php/Modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rolRec = $_SESSION["rolRecepcionista"];
-if (!isset($numDoc) || $rolRec != 1 ) {
-    echo '<!Doctype HTML>
-	<html lang="es-ES">
-	<head>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<meta name="description" content="" />
-		<meta name="author" content="" />
-	<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-	crossorigin="anonymous">
-	<!--<link rel="stylesheet" href="../assets/css/style.css">-->
-	<link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
-		<!-- Core theme CSS (includes Bootstrap)-->
-	<link href="../assets/css/style.css" rel="stylesheet" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<title>| Error</title>
-	<style>
-	body{background-color: white;}
-	</style>
-	</head>
-	<body>
-	 <script> 
-	 alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
-	 location.href = "index.php";
-	 </script>
-	
-	</body>
-	</html>';
+if (!isset($numDoc) || $rolRec != 1) {
+	echo '<!Doctype HTML>
+  <html lang="es-ES">
+  <head>
+  <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+  crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="../assets/css/style.css">-->
+  <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+  <link href="../assets/css/style.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <title>| Error</title>
+  </head>
+  <body>
+  <script> window.addEventListener("load", init, false);
+		function init () {
+			Swal.fire({
+				title: "¡Error!",
+				text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
+				icon: "error",
+				buttons: true,
+				dangerMode: true,
+			  }).then((willDelete) => {
+			if (willDelete) {
+				location.href = "index.php";
+			} else {
+				location.href = "index.php";
+			}
+		  });
+		}
+		
+		  </script>
+  
+  </body>
+  </html>';
+  
+} else {
 	
 }
 require_once('../assets/php/Modelo/class.consulta.suscripcion.php');
@@ -66,7 +79,7 @@ if (isset($_GET['id'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Clientes del gimnasio</title>
+	<title>Suscripción</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
@@ -107,7 +120,7 @@ if (isset($_GET['id'])) {
             <a href="inicioRecepcionista.php" class="brand-logo">
                 <img class="logo-abbr" src="../images/logo.png" alt="">
                 <img class="logo-compact" src="../images/logo.jpeg" alt="">
-                <img class="brand-title" src="../images/logo-text.png" alt="">
+                 <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
             </a>
             <div class="nav-control">
                 <div class="hamburger">
@@ -637,8 +650,7 @@ if (isset($_GET['id'])) {
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
                             <div class="dashboard_bar">
-								Agenda de los clientes
-                            </div>
+								Suscripcion                            </div>
                         </div>
                         <ul class="navbar-nav header-right"></ul>
 							<!-- <li class="nav-item">
@@ -971,8 +983,8 @@ if (isset($_GET['id'])) {
             <div class="container-fluid">
                 <div class="page-titles">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Datatable</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Consultar</a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Syscripciones</a></li>
 					</ol>
                 </div>
                 <!-- row -->

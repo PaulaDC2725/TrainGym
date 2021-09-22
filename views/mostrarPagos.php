@@ -74,7 +74,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
     foreach ($filas as $fila){
      
       $tabla.='<tr class="limitada" scope="row">';
-        $tabla.='<th scope="col">'.$fila['NumeroIdentificacion'].'</th>';
+      $tabla.='<td><strong>'.$fila['NumeroIdentificacion'].'</strong></td>';
         $tabla.='<td>'.$fila['nombreCliente'].'</td>';
         $tabla.='<td>'.$fila['apellidoCliente'].'</td>';
         $tabla.='<td>'.$fila['fechaNacimientoCliente'].'</td>';

@@ -62,7 +62,7 @@
 				},
 				distributed: true
 			},
-			colors:['#0B2A97', '#FF9432'],
+			colors:['#FF9900', '#FF9432'],
 			
 			grid: {
 				show: true,
@@ -75,7 +75,7 @@
 			},
 			dataLabels: {
 				enabled: false,
-				colors:['#0B2A97', '#FF9432'],
+				colors:['#FF9900', '#FF9432'],
 				dropShadow: {
 					enabled: true,
 					top: 1,
@@ -149,7 +149,7 @@
         },
         stroke: {
           width: [10],
-		  colors:['#0B2A97'],
+		  colors:['#FF9900'],
 		  curve: 'smooth'
         },
         legend: {
@@ -161,7 +161,7 @@
         },
         markers: {
 		  strokeWidth: [8],
-		  strokeColors: ['#0B2A97'],
+		  strokeColors: ['#FF9900'],
 		  border:0,
 		  colors:['#fff'],
           hover: {
@@ -193,11 +193,11 @@
 		  },
 		},
 		fill: {
-			colors:['#0B2A97'],
+			colors:['#FF9900'],
 			type:'solid',
 			opacity: 0
 		},
-		colors:['#0B2A97'],
+		colors:['#FF9900'],
         grid: {
           borderColor: '#f1f1f1',
 		  xaxis: {
@@ -223,7 +223,7 @@
 				},
 				markers: {
 				  strokeWidth: [4],
-				  strokeColors: ['#0B2A97'],
+				  strokeColors: ['#FF9900'],
 				  border:0,
 				  colors:['#fff'],
 				  hover: {
@@ -232,7 +232,7 @@
 				},
 				stroke: {
 				  width: [6],
-				  colors:['#0B2A97'],
+				  colors:['#FF9900'],
 				  curve: 'smooth'
 				},
 			}

@@ -28,13 +28,29 @@ if (!isset($numDoc) || $rol != 3) {
   <title>| Error</title>
   </head>
   <body>
-  <script> 
-  alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
-  location.href = "index.php";
-  </script>
+  <script> window.addEventListener("load", init, false);
+		function init () {
+			Swal.fire({
+				title: "¡Error!",
+				text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
+				icon: "error",
+				buttons: true,
+				dangerMode: true,
+			  }).then((willDelete) => {
+			if (willDelete) {
+				location.href = "index.php";
+			} else {
+				location.href = "index.php";
+			}
+		  });
+		}
+		
+		  </script>
+  
   </body>
   </html>';
   
+} else {
 }
 require_once('../assets/php/Modelo/class.consulta.metodologia.php');  
   require_once('../assets/php/Modelo/class.consulta.Cliente.php');
@@ -140,7 +156,7 @@ require_once('../assets/php/Modelo/class.consulta.metodologia.php');
             <a href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" class="brand-logo">
                 <img class="logo-abbr" src="../images/logo.png" alt="">
                 <img class="logo-compact" src="../images/logo.jpeg" alt="">
-                <img class="brand-title" src="../images/logo-text.png" alt="">
+                 <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
             </a>
             <div class="nav-control">
                 <div class="hamburger">
@@ -957,7 +973,7 @@ require_once('../assets/php/Modelo/class.consulta.metodologia.php');
                                         </tbody>                                            
                                     </table>
                                 </div>
-                               
+                                
                             </div>
                         </div>
                     </div>					

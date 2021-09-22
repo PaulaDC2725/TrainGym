@@ -2,9 +2,10 @@
 table#example{
     padding: 0rem 0 2rem 0;
 }
-table.dataTable{
-	color:$black;
-	border-radius:$radius;
+table.dataTable {
+    color: #474746;
+	font-size: 100px;
+    border-radius: 1.25rem;
 }
 #example2_wrapper {
     .dataTables_scrollBody {

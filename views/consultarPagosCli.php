@@ -1,41 +1,57 @@
 <?php 
- error_reporting(E_ERROR | E_PARSE);
- include '../assets/php/Modelo/class.conexion.php';
- session_start();
- $numDoc = $_SESSION["NumeroIdentificacion"];
- $rol = $_SESSION["rol"];
- if (!isset($numDoc) || $rol != 3) {
-	 echo '<!Doctype HTML>
-   <html lang="es-ES">
-   <head>
-   <head>
-	 <meta charset="utf-8" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	 <meta name="description" content="" />
-	 <meta name="author" content="" />
-   <link
-   href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-   rel="stylesheet"
-   integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-   crossorigin="anonymous">
-   <!--<link rel="stylesheet" href="../assets/css/style.css">-->
-   <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
-	 <!-- Core theme CSS (includes Bootstrap)-->
-   <link href="../assets/css/style.css" rel="stylesheet" />
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
-   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-   <title>| Error</title>
-   </head>
-   <body>
-   <script> 
-   alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
-   location.href = "index.php";
-   </script>
-   </body>
-   </html>';
-   
- }
+  error_reporting(E_ERROR | E_PARSE);
+  include '../assets/php/Modelo/class.conexion.php';
+  session_start();
+  $numDoc = $_SESSION["NumeroIdentificacion"];
+  $rol = $_SESSION["rol"];
+  if (!isset($numDoc) || $rol != 3) {
+	  echo '<!Doctype HTML>
+	<html lang="es-ES">
+	<head>
+	<head>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	  <meta name="description" content="" />
+	  <meta name="author" content="" />
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+	<!--<link rel="stylesheet" href="../assets/css/style.css">-->
+	<link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
+	  <!-- Core theme CSS (includes Bootstrap)-->
+	<link href="../assets/css/style.css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<title>| Error</title>
+	</head>
+	<body>
+	<script> window.addEventListener("load", init, false);
+		  function init () {
+			  Swal.fire({
+				  title: "¡Error!",
+				  text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
+				  icon: "error",
+				  buttons: true,
+				  dangerMode: true,
+				}).then((willDelete) => {
+			  if (willDelete) {
+				  location.href = "index.php";
+			  } else {
+				  location.href = "index.php";
+			  }
+			});
+		  }
+		  
+			</script>
+	
+	</body>
+	</html>';
+	
+  } else {
+  }
   require_once('../assets/php/Modelo/class.consulta.Cliente.php');
   require_once('../assets/php/Modelo/class.consulta.Suscripcion.php');
 
@@ -58,11 +74,9 @@
       $tabla="";
       $filtro=$id;
       $select="";
-	  
 
       $filas = $consultasS->cargarPagoCliFiltroId($filtro);
-	  
-		if (is_array($filas) || is_object($filas))
+      if (is_array($filas) || is_object($filas))
       {      
         foreach ($filas as $fila) 
         {
@@ -80,28 +94,8 @@
           $metodologia=$fila['nombreMetodologia'];
           $nombreCliente = $fila['Nombre Completo']; 
         }
-      }else{
-		$filas1 = $consultas->cargarClientesFiltroId($filtro);
-		foreach ($filas1 as $fila) 
-		{
-		  $numeroIdentificacion=$fila['NumeroIdentificacion']; 
-			$nombreCliente = $fila['nombreCliente'];   
-		}
-	  }
-		if (is_array($filas) || is_object($filas))
-		{  
-		  foreach ($filas as $fila) 
-		  {
-			$numeroIdentificacion=$fila['NumeroIdentificacion'];
-			$descripcion=$fila['descripcionPago'];
-			$comprobante=$fila['urlSoportePago'];  
-			$fechaPago=$fila['fechaPago'];
-			$valor=$fila['valorSuscripcion'];
-			$metodologia=$fila['nombreMetodologia'];
-			$nombreCliente = $fila['Nombre Completo'];
-		  }
-		}
-	}
+      }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -152,7 +146,7 @@
             <a href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" class="brand-logo">
                 <img class="logo-abbr" src="../images/logo.png" alt="">
                 <img class="logo-compact" src="../images/logo.jpeg" alt="">
-                <img class="brand-title" src="../images/logo-text.png" alt="">
+                 <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
             </a>
             <div class="nav-control">
                 <div class="hamburger">
@@ -1470,7 +1464,7 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Developed by TrainGym 2021</p><?php echo $filas;?>
+                <p>Copyright © Developed by TrainGym 2021</p>
             </div>
         </div>
         <!--**********************************

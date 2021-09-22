@@ -82,7 +82,7 @@ if (isset($filas)) {
 	// 	$boton='<a href="assets/php/Controlador/inhaInst.php?id='.$fila['idInstructor'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-danger" value="Inhabilitar"></a>';
 	// $botonEditar='<a href="actualizarInstructor.php?id='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-warning" value="Actualizar"></a>';
 	$tabla.='<tr class="limitada" scope="row">';
-	  $tabla.='<th scope="col">'.$fila['NumeroIdentificacion'].'</th>';
+	  $tabla.='<td><strong>'.$fila['NumeroIdentificacion'].'<//strong></td>';
 	  $tabla.='<td>'.$fila['nombreInstructor'].'</td>';
 	  $tabla.='<td>'.$fila['apellidoInstructor'].'</td>';
 	  $tabla.='<td>'.$fila['correoInstructor'].'</td>';
@@ -148,7 +148,7 @@ if (isset($filas)) {
             <a href="../../../views/inicioRecepcionista.php" class="brand-logo">
                 <img class="logo-abbr" src="../../../images/logo.png" alt="">
                 <img class="logo-compact" src="../../../images/logo.jpeg" alt="">
-                <img class="brand-title" src="../../../images/logo-text.png" alt="">
+                 <img class="brand-title" width="200" height="30" src="../../../images/logo-text.png" alt="">
             </a>
             <div class="nav-control">
                 <div class="hamburger">
