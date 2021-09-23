@@ -92,14 +92,18 @@
                 return $rows;
             }
 */
-		public function validarLoginUsuario($numeroIdentificacion,
+public function validarLoginUsuario($numeroIdentificacion,
 			$passwordUsuario,$rolFK,$estado){
 			$rows=null;
 			$estado=1;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql="CALL validar_login('".$numeroIdentificacion."',
-			'".$passwordUsuario."','".$rolFK."',".$estado.")";
+			$sql="SELECT COUNT(*) AS RESULTADO 
+			FROM USUARIOS 
+			WHERE NumeroIdentificacion='".$numeroIdentificacion."' 
+			AND passwordUsuario='".$passwordUsuario."' 
+			AND idRolFK='".$rolFK."' 
+			AND estadoUsuario=".$estado."";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
 			while ($result=$statement->fetch()) {
@@ -107,7 +111,22 @@
 			}
 			return $rows;
 		}
-
+		// public function validarLoginUsuario($numeroIdentificacion,
+		// 	$passwordUsuario,$rolFK,$estado){
+		// 	$rows=null;
+		// 	$estado=1;
+		// 	$modelo = new Conexion();
+		// 	$conexion = $modelo->getConection();					
+		// 	$sql="CALL validar_login('".$numeroIdentificacion."',
+		// 	'".$passwordUsuario."','".$rolFK."',".$estado.")";
+		// 	$statement=$conexion->prepare($sql);			
+		// 	$statement->execute();
+		// 	while ($result=$statement->fetch()) {
+		// 		$rows[]=$result;
+		// 	}
+		// 	return $rows;
+		// }
+		
 		public function validarLogin2($numeroIdentificacion){
 			$rows=null;
 			$estado=1;

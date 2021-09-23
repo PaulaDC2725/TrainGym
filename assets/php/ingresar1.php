@@ -65,7 +65,7 @@ if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
   else if($Rol == '2' && $resultado == "1"){
     $_SESSION["NumeroIdentificacion"] = $usuario;
     $_SESSION['rol'] = $Rol;
-    header('location: ../../views/inicioInstructor.php?NumeroIdentificacion='.$usuario);
+    header('location: ../../views/inicioInstructor.php');
   }
   else if($Rol == '3' && $resultado == "1"){
     $_SESSION["NumeroIdentificacion"] = $usuario;
