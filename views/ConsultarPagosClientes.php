@@ -4,7 +4,7 @@
  session_start();
  $numDoc = $_SESSION["NumeroIdentificacion"];
  $rolRec = $_SESSION["rolRecepcionista"];
- if (!isset($numDoc) || $rolRec != 1) {
+ if ($rolRec != 1) {
 	 echo '<!Doctype HTML>
    <html lang="es-ES">
    <head>
@@ -28,24 +28,10 @@
    <title>| Error</title>
    </head>
    <body>
-   <script> window.addEventListener("load", init, false);
-		 function init () {
-			 Swal.fire({
-				 title: "¡Error!",
-				 text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
-				 icon: "error",
-				 buttons: true,
-				 dangerMode: true,
-			   }).then((willDelete) => {
-			 if (willDelete) {
-				 location.href = "index.php";
-			 } else {
-				 location.href = "index.php";
-			 }
-		   });
-		 }
-		 
-		   </script>
+   <script> 
+   alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
+   location.href = "index.php";
+   </script>
    
    </body>
    </html>';

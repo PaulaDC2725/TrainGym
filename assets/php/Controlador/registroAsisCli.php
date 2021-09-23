@@ -1,5 +1,42 @@
 <?php 
+error_reporting(E_ERROR | E_PARSE);
 require_once('../Modelo/class.conexion.php');
+session_start();
+$numDoc = $_SESSION["NumeroIdentificacion"];
+  $rol = $_SESSION["rol"];
+  if ($rol != 3) {
+  echo '<!Doctype HTML>
+  <html lang="es-ES">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+crossorigin="anonymous">
+<!--<link rel="stylesheet" href="../assets/css/style.css">-->
+<link rel="icon" type="image/x-icon" href="../../../assets/img/Logotipo.PNG" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+<link href="../../../assets/css/style.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <title>| Error</title>
+  </head>
+  <body>
+  <script> 
+	  alert("Debe iniciar sesión correctamente para acceder!")
+	  location.href = "../../../Views/index.php";
+	  </script>
+  
+  </body>
+  </html>';
+  
+} else {
+  
+}
 require_once('../Modelo/class.consulta.asistencias.php');
 
 
@@ -71,7 +108,7 @@ if (is_array($rows) || is_object($rows))
     Nav header start
 ***********************************-->
 <div class="nav-header">
-    <a href="../../../views/inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" class="brand-logo">
+    <a href="../../../views/inicioCliente.php" class="brand-logo">
         <img class="logo-abbr" src="../../../images/logo.png" alt="">
         <img class="logo-compact" src="../../../images/logo.jpeg" alt="">
          <img class="brand-title" width="200" height="30" src="../../../images/logo-text.png" alt="">
@@ -812,7 +849,7 @@ if (is_array($rows) || is_object($rows))
 							<span class="nav-text">Inicio</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="../../../views/inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Bienvenido</a></li>
+							<li><a href="../../../views/inicioCliente.php">Bienvenido</a></li>
 							
 						</ul>
                     </li>
@@ -821,29 +858,29 @@ if (is_array($rows) || is_object($rows))
 							<span class="nav-text">Pagos</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="../../../views/realizarPagosCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Registrar</a></li>
+                            <li><a href="../../../views/realizarPagosCli.php">Registrar</a></li>
                             
                             </li>
-							<a href="../../../views/consultarPagosCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Consultar</a>
+							<a href="../../../views/consultarPagosCli.php">Consultar</a>
                             </li>
                         </ul>
                     </li>
-					<li><a href="../../../views/consultarAgendaCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>"  href="../../../javascript:void()" aria-expanded="false">
+					<li><a href="../../../views/consultarAgendaCli.php"  href="../../../javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-search-1"></i>
 							<span class="nav-text">Consultar Agenda</span>
 						</a>
                     </li>
-                    <li><a href="../../../views/AgendarCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" href="../../../javascript:void()" aria-expanded="false">
+                    <li><a href="../../../views/AgendarCli.php" href="../../../javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-calendar-7"></i>
 							<span class="nav-text">Agendar Programación</span>
 						</a>
                     </li>
-                    <li><a href="../../../views/registrarAsistenciasCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>"  href="../../../javascript:void()" aria-expanded="false">
+                    <li><a href="../../../views/registrarAsistenciasCli.php"  href="../../../javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-notepad"></i>
 							<span class="nav-text">Registrar Asistencias</span>
 						</a>
                     </li>
-                    <li><a href="../../../views/consultarSerie.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" href="../../../javascript:void()" aria-expanded="false">
+                    <li><a href="../../../views/consultarSerie.php" href="../../../javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-list-1"></i>
 							<span class="nav-text">Series De Ejercicio </span>
 						</a>
@@ -997,7 +1034,7 @@ if (is_array($rows) || is_object($rows))
 									<?php
 										if(isset($idAsistencia) && isset($idProgramacion)){
 											$mensaje2 = $ConsultasAsistencias->registrarAsistencia($idAsistencia,$idProgramacion,$fechaHoraIngreso,$fechaHoraSalida,$numeroIdentificacion);
-											echo "<script>location.href=' ../../../views/inicioCliente.php?NumeroIdentificacion=".$numeroIdentificacion."';</script>";
+											echo "<script>location.href=' ../../../views/inicioCliente.php';</script>";
 											die();
 										} else{
 											echo('<script> swal("ERROR","Debe programar la agenda para poder asistir al gimnasio","error")</script>');  

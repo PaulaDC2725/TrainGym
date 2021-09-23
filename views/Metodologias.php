@@ -4,7 +4,7 @@ include '../assets/php/Modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rol = $_SESSION["rol"];
-if (!isset($numDoc) || $rol != 2) {
+if ($rol != 2) {
 	echo '<!Doctype HTML>
   <html lang="es-ES">
   <head>
@@ -28,24 +28,10 @@ if (!isset($numDoc) || $rol != 2) {
   <title>| Error</title>
   </head>
   <body>
-  <script> window.addEventListener("load", init, false);
-		function init () {
-			Swal.fire({
-				title: "¡Error!",
-				text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
-				icon: "error",
-				buttons: true,
-				dangerMode: true,
-			  }).then((willDelete) => {
-			if (willDelete) {
-				location.href = "index.php";
-			} else {
-				location.href = "index.php";
-			}
-		  });
-		}
-		
-		  </script>
+  <script> 
+  alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
+  location.href = "index.php";
+  </script>
   
   </body>
   </html>';
@@ -64,8 +50,8 @@ require_once('../assets/php/Modelo/class.consulta.metodologia.php');
   $numeroIdentificacion=null;
   $nombreInstructor=null;
 
-  if (isset($_GET['NumeroIdentificacion'])) {
-    $id=$_GET['NumeroIdentificacion'];
+  if (isset($numDoc) && $rol == 2) {
+	$id=$numDoc;
   
 
     $filtro=$id;
@@ -150,7 +136,7 @@ require_once('../assets/php/Modelo/class.consulta.metodologia.php');
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="inicioinstructor.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" class="brand-logo">
+            <a href="inicioinstructor.php" class="brand-logo">
                 <img class="logo-abbr" src="../images/logo.png" alt="">
                 <img class="logo-compact" src="../images/logo.jpeg" alt="">
                  <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
@@ -891,7 +877,7 @@ require_once('../assets/php/Modelo/class.consulta.metodologia.php');
 							<span class="nav-text">Inicio</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="inicioinstructor.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Bienvenido</a></li>
+							<li><a href="inicioinstructor.php">Bienvenido</a></li>
 							
 						</ul>
                     </li>
@@ -900,14 +886,14 @@ require_once('../assets/php/Modelo/class.consulta.metodologia.php');
 							<span class="nav-text">Series de Ejercicio</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="ingresarSeries1.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Registrar</a></li>
+                            <li><a href="ingresarSeries1.php">Registrar</a></li>
                             
                             </li>
-							<a href="consultarSeries.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Consultar</a>
+							<a href="consultarSeries.php">Consultar</a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="consultarHorarioIns.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>"  href="javascript:void()" aria-expanded="false">
+                    <li><a href="consultarHorarioIns.php"  href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-search-1"></i>
 							<span class="nav-text">Consultar Horario</span>
 						</a>
@@ -918,7 +904,7 @@ require_once('../assets/php/Modelo/class.consulta.metodologia.php');
                             
                         </ul> -->
                     </li>
-                    <li><a href="Metodologias.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" href="javascript:void()" aria-expanded="false">
+                    <li><a href="Metodologias.php" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-search-1"></i>
 							<span class="nav-text">Consultar Metodologias </span>
 						</a>

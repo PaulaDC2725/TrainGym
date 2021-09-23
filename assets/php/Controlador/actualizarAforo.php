@@ -4,7 +4,7 @@ require_once('../Modelo/class.conexion.php');
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
  $rolRec = $_SESSION["rolRecepcionista"];
- if (!isset($numDoc) || $rolRec != 1 )  {
+ if ($rolRec != 1 )  {
   echo '<!Doctype HTML>
   <html lang="es-ES">
   <head>
@@ -26,24 +26,10 @@ crossorigin="anonymous">
   <title>| Error</title>
   </head>
   <body>
-  <script> window.addEventListener("load", init, false);
-	  function init () {
-		  Swal.fire({
-			  title: "¡Error!",
-			  text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
-			  icon: "error",
-			  buttons: true,
-			  dangerMode: true,
-			}).then((willDelete) => {
-		  if (willDelete) {
-			  location.href = "/TrainGym/views/index.php";
-		  } else {
-			  location.href = "/TrainGym/views/index.php";
-		  }
-		});
-	  }
-	  
-		</script>
+  <script> 
+  alert("Debe iniciar sesión correctamente para acceder!")
+  location.href = "../../../Views/index.php";
+  </script>
   
   </body>
   </html>';

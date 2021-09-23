@@ -1,16 +1,52 @@
 <?php
  error_reporting(E_ERROR | E_PARSE);
-include '../Modelo/class.conexion.php';
+ error_reporting(E_ERROR | E_PARSE);
+ require_once('../Modelo/class.conexion.php');
+ session_start();
+ $numDoc = $_SESSION["NumeroIdentificacion"];
+   $rol = $_SESSION["rol"];
+   if ($rol != 3) {
+   echo '<!Doctype HTML>
+   <html lang="es-ES">
+   <head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+   <meta name="description" content="" />
+   <meta name="author" content="" />
+ <link
+ href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+ rel="stylesheet"
+ integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+ crossorigin="anonymous">
+ <!--<link rel="stylesheet" href="../assets/css/style.css">-->
+ <link rel="icon" type="image/x-icon" href="../../../assets/img/Logotipo.PNG" />
+   <!-- Core theme CSS (includes Bootstrap)-->
+ <link href="../../../assets/css/style.css" rel="stylesheet" />
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <title>| Error</title>
+   </head>
+   <body>
+   <script> 
+   alert("Debe iniciar sesión correctamente para acceder!")
+   location.href = "../../../Views/index.php";
+   </script>
+   
+   </body>
+   </html>';
+   
+ } else {
+   
+ }
 require_once('../Modelo/class.consulta.Suscripcion.php');
 
 
 //$ConsultasClientes = new ConsultasClientes();
 $ConsultasS = new ConsultasSuscripcion();
-if (isset($_GET['NumeroIdentificacion'])&& isset($_GET['SuscripcionNumero'])) 
-{
-    $numeroIdentificacion=$_GET['NumeroIdentificacion'];
+if (isset($numDoc) & $rol == 3) {
+	$numeroIdentificacion=$numDoc;
     $filtro=$numeroIdentificacion;
-    $idSuscripcion = $_GET['SuscripcionNumero'];
+    $idSuscripcion = $_POST['SuscripcionNumero'];
 
 $fcha = date("Y-m-d"); 
 $suscripcionF=$_POST['FechaS'];
@@ -95,7 +131,7 @@ $Prueba = $_POST['ImgPago'];
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" class="brand-logo">
+            <a href="inicioCliente.php" class="brand-logo">
                 <img class="logo-abbr" src="../../../images/logo.png" alt="">
                 <img class="logo-compact" src="../../../images/logo.jpeg" alt="">
                  <img class="brand-title" width="200" height="30" src="../../../images/logo-text.png" alt="">
@@ -836,7 +872,7 @@ $Prueba = $_POST['ImgPago'];
 							<span class="nav-text">Inicio</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Bienvenido</a></li>
+							<li><a href="inicioCliente.php">Bienvenido</a></li>
 							
 						</ul>
                     </li>
@@ -845,29 +881,29 @@ $Prueba = $_POST['ImgPago'];
 							<span class="nav-text">Pagos</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="realizarPagosCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Registrar</a></li>
+                            <li><a href="realizarPagosCli.php">Registrar</a></li>
                             
                             </li>
-							<a href="consultarPagosCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Consultar</a>
+							<a href="consultarPagosCli.php">Consultar</a>
                             </li>
                         </ul>
                     </li>
-					<li><a href="consultarAgendaCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>"  href="javascript:void()" aria-expanded="false">
+					<li><a href="consultarAgendaCli.php"  href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-search-1"></i>
 							<span class="nav-text">Consultar Agenda</span>
 						</a>
                     </li>
-                    <li><a href="AgendarCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" href="javascript:void()" aria-expanded="false">
+                    <li><a href="AgendarCli.php" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-calendar-7"></i>
 							<span class="nav-text">Agendar Programación</span>
 						</a>
                     </li>
-                    <li><a href="registrarAsistenciasCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>"  href="javascript:void()" aria-expanded="false">
+                    <li><a href="registrarAsistenciasCli.php"  href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-notepad"></i>
 							<span class="nav-text">Registrar Asistencias</span>
 						</a>
                     </li>
-                    <li><a href="consultarSerie.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" href="javascript:void()" aria-expanded="false">
+                    <li><a href="consultarSerie.php" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-list-1"></i>
 							<span class="nav-text">Series De Ejercicio </span>
 						</a>
@@ -973,9 +1009,7 @@ $Prueba = $_POST['ImgPago'];
                                                 </div>
                                             </div>
                                         </div>-->
-										<?php
-										echo $numeroIdentificacion;
-										echo $Prueba;?>
+									
                                         <div class="form-group row">
                                             <div class="col-sm-10">
                                                 <button type="submit" id="Registrar" name="btnf" class="btn btn-primary">Registar Pago</button>
@@ -985,7 +1019,7 @@ $Prueba = $_POST['ImgPago'];
 											if(isset($fechaPago) && isset($valorPago) && isset($descripcion) && isset($soporte)&& isset($idSuscripcion)&& isset($suscripcionF)){
 												$mensaje1= $ConsultasS->registrarPagos($fechaPago,$valorPago,$descripcion,$soporte,$idSuscripcion);
 												
-												echo "<script>location.href=' ../../../views/inicioCliente.php?NumeroIdentificacion=".$numeroIdentificacion."'</script>";
+												echo "<script>location.href=' ../../../views/inicioCliente.php'</script>";
 												die();
 											} else{
 												echo('<script> swal("ERROR","El pago no se pudo realizar","error")</script>');  
@@ -1009,7 +1043,9 @@ $Prueba = $_POST['ImgPago'];
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Developed by TrainGym 2021</p>
+                <p>Copyright © Developed by TrainGym 2021 	<?php
+										echo $numeroIdentificacion;
+										echo $Prueba;?></p>
             </div>
         </div>
         <!--**********************************

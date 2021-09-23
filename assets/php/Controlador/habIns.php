@@ -4,7 +4,7 @@
   session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rolRec = $_SESSION["rolRecepcionista"];
-if (!isset($numDoc) || $rolRec != 1 ) {
+if ( $rolRec != 1 ) {
     echo '<!Doctype HTML>
 	<html lang="es-ES">
 	<head>
@@ -32,7 +32,7 @@ if (!isset($numDoc) || $rolRec != 1 ) {
 	</head>
 	<body>
 	 <script> 
-	 alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
+	 alert("Debe iniciar sesión correctamente para acceder!")
 	 location.href = "../../../Views/index.php";
 	 </script>
 	

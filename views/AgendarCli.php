@@ -4,7 +4,7 @@ include '../assets/php/Modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rol = $_SESSION["rol"];
-if (!isset($numDoc) || $rol != 3) {
+if ($rol != 3) {
 	echo '<!Doctype HTML>
   <html lang="es-ES">
   <head>
@@ -28,24 +28,10 @@ if (!isset($numDoc) || $rol != 3) {
   <title>| Error</title>
   </head>
   <body>
-  <script> window.addEventListener("load", init, false);
-		function init () {
-			Swal.fire({
-				title: "¡Error!",
-				text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
-				icon: "error",
-				buttons: true,
-				dangerMode: true,
-			  }).then((willDelete) => {
-			if (willDelete) {
-				location.href = "index.php";
-			} else {
-				location.href = "index.php";
-			}
-		  });
-		}
-		
-		  </script>
+  <script> 
+  alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
+  location.href = "index.php";
+  </script>
   
   </body>
   </html>';
@@ -61,8 +47,8 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
   $numeroIdentificacion=null;
   $nombreCliente=null;
 
-  if (isset($_GET['NumeroIdentificacion'])) {
-    $id=$_GET['NumeroIdentificacion'];
+  if (isset($numDoc) || $rol == 3) {
+    $id=$numDoc;
     $filtro=$id;
   $filas1 = $consultas->cargarClientesFiltroId($filtro);
     foreach ($filas1 as $fila) {
@@ -112,7 +98,7 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" class="brand-logo">
+            <a href="inicioCliente.php" class="brand-logo">
                 <img class="logo-abbr" src="../images/logo.png" alt="">
                 <img class="logo-compact" src="../images/logo.jpeg" alt="">
                  <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
@@ -853,7 +839,7 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
 							<span class="nav-text">Inicio</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="inicioCliente.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Bienvenido</a></li>
+							<li><a href="inicioCliente.php">Bienvenido</a></li>
 							
 						</ul>
                     </li>
@@ -862,29 +848,29 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
 							<span class="nav-text">Pagos</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="realizarPagosCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Registrar</a></li>
+                            <li><a href="realizarPagosCli.php">Registrar</a></li>
                             
                             </li>
-							<a href="consultarPagosCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>">Consultar</a>
+							<a href="consultarPagosCli.php">Consultar</a>
                             </li>
                         </ul>
                     </li>
-					<li><a href="consultarAgendaCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>"  href="javascript:void()" aria-expanded="false">
+					<li><a href="consultarAgendaCli.php"  href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-search-1"></i>
 							<span class="nav-text">Consultar Agenda</span>
 						</a>
                     </li>
-                    <li><a href="AgendarCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" href="javascript:void()" aria-expanded="false">
+                    <li><a href="AgendarCli.php" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-calendar-7"></i>
 							<span class="nav-text">Agendar Programación</span>
 						</a>
                     </li>
-                    <li><a href="registrarAsistenciasCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>"  href="javascript:void()" aria-expanded="false">
+                    <li><a href="registrarAsistenciasCli.php"  href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-notepad"></i>
 							<span class="nav-text">Registrar Asistencias</span>
 						</a>
                     </li>
-                    <li><a href="consultarSerie.php?NumeroIdentificacion=<?php echo $numeroIdentificacion ?>" href="javascript:void()" aria-expanded="false">
+                    <li><a href="consultarSerie.php" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-list-1"></i>
 							<span class="nav-text">Series De Ejercicio </span>
 						</a>
@@ -918,7 +904,7 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="../assets/php/controlador/AgendarPrograCli.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>" method="post">
+                                    <form action="../assets/php/controlador/AgendarPrograCli.php" method="post">
 										                      <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Fecha Inicio Programación</label>
                                             <div class="col-sm-9">

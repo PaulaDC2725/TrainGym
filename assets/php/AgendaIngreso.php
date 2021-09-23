@@ -73,7 +73,7 @@ if (is_array($filas) || is_object($filas))
 if($resultado=='1'){
   $_SESSION["NumeroIdentificacion"] = $usuario;
   $_SESSION['rol'] = $Rol;
-	header('location: ../../views/AgendarCli.php?NumeroIdentificacion='.$usuario);
+	header('location: ../../views/AgendarCli.php');
 }else if($usuario=="" || $contrasenia==""){
   echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
 }

@@ -4,7 +4,7 @@ require_once('../Modelo/class.conexion.php');
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
   $rol = $_SESSION["rol"];
-  if (!isset($numDoc) || $rol != 3) {
+  if ($rol != 3) {
   echo '<!Doctype HTML>
   <html lang="es-ES">
   <head>
@@ -26,42 +26,28 @@ crossorigin="anonymous">
   <title>| Error</title>
   </head>
   <body>
-  <script> window.addEventListener("load", init, false);
-	  function init () {
-		  Swal.fire({
-			  title: "¡Error!",
-			  text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
-			  icon: "error",
-			  buttons: true,
-			  dangerMode: true,
-			}).then((willDelete) => {
-		  if (willDelete) {
-			  location.href = "/TrainGym/views/index.php";
-		  } else {
-			  location.href = "/TrainGym/views/index.php";
-		  }
-		});
-	  }
-	  
-		</script>
+  <script> 
+  alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
+  location.href = "../../../Views/index.php";
+  </script>
   
   </body>
   </html>';
   
 } else {
-  
-}
-//require_once('../Modelo/class.consulta.cliente.php');
+  //require_once('../Modelo/class.consulta.cliente.php');
 require_once('../Modelo/class.consulta.asistencias.php');
 
-if(isset($_GET['NumeroIdentificacion'])){
+if (isset($numDoc) && $rol === 3) {
+  $numid=$numDoc;
 //$ConsultasClientes = new ConsultasClientes();
 $ConsultasAsistencias = new ConsultasAsistencias();
-$numid=$_GET['NumeroIdentificacion'];
 $fechaInicioPro=$_POST['ingresopro'];
 $fechaFinPro=$_POST['salidapro'];
 
 $ConsultasAsistencias->registrarProgramacion($fechaInicioPro,$fechaFinPro,$numid); 
-header('location: ../../../views/inicioCliente.php?NumeroIdentificacion='.$numid);
+header('location: ../../../views/inicioCliente.php');
 }
+}
+
 

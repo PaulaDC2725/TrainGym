@@ -4,7 +4,7 @@ include '../assets/php/Modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rolRec = $_SESSION["rolRecepcionista"];
-if (!isset($numDoc) || $rolRec != 1) {
+if ($rolRec != 1) {
 	echo '<!Doctype HTML>
   <html lang="es-ES">
   <head>

@@ -31,24 +31,10 @@
      </style>
      </head>
      <body>
-     <script> window.addEventListener("load", init, false);
-         function init () {
-             Swal.fire({
-                 title: "¡Error!",
-                 text: "La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma",
-                 icon: "error",
-                 buttons: true,
-                 dangerMode: true,
-               }).then((willDelete) => {
-             if (willDelete) {
-                 location.href = "index.php";
-             } else {
-                 location.href = "index.php";
-             }
-           });
-         }
-         
-           </script>
+     <script> 
+	 alert("La pagina a la cual intenta acceder requiere haber iniciado sesion previamente o no tiene permisos para acceder a la misma")
+	 location.href = "../../../Views/index.php";
+	 </script>
      
      </body>
      </html>';

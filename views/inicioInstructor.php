@@ -4,7 +4,7 @@
   session_start();
   $numDoc = $_SESSION["NumeroIdentificacion"];
   $rol = $_SESSION["rol"];
-  if (!isset($numDoc) || $rol != 2) {
+  if ( $rol != 2) {
       echo '<!Doctype HTML>
     <html lang="es-ES">
     <head>
@@ -60,8 +60,8 @@
 	$numeroIdentificacion=null;
 	$nombreInstructor=null;
   
-	if (isset($_GET['NumeroIdentificacion'])) {
-	  $id=$_GET['NumeroIdentificacion'];
+	if (isset($numDoc) && $rol == 2) {
+		$id=$numDoc;
 	
   
 	  $filtro=$id;
@@ -116,7 +116,7 @@
 				Nav header start
 			***********************************-->
 			<div class="nav-header">
-				<a href="inicioinstructor.php?NumeroIdentificacion='.$numeroIdentificacion.'" class="brand-logo">
+				<a href="inicioinstructor.php" class="brand-logo">
 					<img class="logo-abbr" src="../images/logo.png" alt="">
 					<img class="logo-compact" src="../images/logo.jpeg" alt="">
 					 <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
@@ -847,7 +847,7 @@
 								<span class="nav-text">Inicio</span>
 							</a>
 							<ul aria-expanded="false">
-								<li><a href="inicioinstructor.php?NumeroIdentificacion='. $numeroIdentificacion .'">Bienvenido</a></li>
+								<li><a href="inicioinstructor.php">Bienvenido</a></li>
 								
 							</ul>
 						</li>
@@ -856,14 +856,14 @@
 								<span class="nav-text">Series de Ejercicio</span>
 							</a>
 							<ul aria-expanded="false">
-								<li><a href="ingresarSeries1.php?NumeroIdentificacion='. $numeroIdentificacion .'">Registrar</a></li>
+								<li><a href="ingresarSeries1.php">Registrar</a></li>
 								
 								</li>
-								<a href="consultarSeries.php?NumeroIdentificacion='. $numeroIdentificacion .'">Consultar</a>
+								<a href="consultarSeries.php">Consultar</a>
 								</li>
 							</ul>
 						</li>
-						<li><a href="consultarHorarioIns.php?NumeroIdentificacion='. $numeroIdentificacion.'"  href="javascript:void()" aria-expanded="false">
+						<li><a href="consultarHorarioIns.php"  href="javascript:void()" aria-expanded="false">
 								<i class="flaticon-381-search-1"></i>
 								<span class="nav-text">Consultar Horario</span>
 							</a>
@@ -874,7 +874,7 @@
 								
 							</ul> -->
 						</li>
-						<li><a href="Metodologias.php?NumeroIdentificacion='. $numeroIdentificacion .'" href="javascript:void()" aria-expanded="false">
+						<li><a href="Metodologias.php" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-search-1"></i>
 								<span class="nav-text">Consultar Metodologias </span>
 							</a>
@@ -950,7 +950,7 @@
 							<div class="row">
 							<div class="col-sm-6">
 									<div class="card avtivity-card">
-									<a href="ingresarSeries1.php?NumeroIdentificacion='.$numeroIdentificacion.'"><div class="card-body">
+									<a href="ingresarSeries1.php"><div class="card-body">
 											<div>
 												<center><span class="activity-icon" >
 												<i class="flaticon-381-list-1" style="font-size: 40px;margin-top: 20px;" ></i>		
@@ -977,7 +977,7 @@
 								</div></a>
 								<div class="col-sm-6">
 									<div class="card avtivity-card">
-									<a href="consultarHorarioIns.php?NumeroIdentificacion='.$numeroIdentificacion.'"><div class="card-body">
+									<a href="consultarHorarioIns.php"><div class="card-body">
 											<div>
 												<center><span class="activity-icon" >
 												<i class="flaticon-381-calendar-7"style="font-size: 40px;margin-top: 20px;"></i>
@@ -995,17 +995,17 @@
 														<path d="M31.835 38.388C36.3444 38.388 40 34.7325 40 30.2231C40 25.7137 36.3444 22.0581 31.835 22.0581C27.3256 22.0581 23.67 25.7137 23.67 30.2231C23.67 34.7325 27.3256 38.388 31.835 38.388Z" fill="#FF3282"/>
 													</svg> -->
 											<div class="progress" style="height:5px;">
-												<div class="progress-bar bg-Color1" style="width: 90%; height:5px;" role="progressbar">
+												<div class="progress-bar bg-warning" style="width: 90%; height:5px;" role="progressbar">
 												
 												</div>
 											</div>
 										</div>
-										<div class="effect bg-Color1"></div>
+										<div class="effect bg-warning"></div>
 									</div>
 								</div></a>
 								<div class="col-sm-6">
 									<div class="card avtivity-card">
-									<a href="consultarSeries.php?NumeroIdentificacion='.$numeroIdentificacion.'"><div class="card-body">
+									<a href="consultarSeries.php"><div class="card-body">
 											<div>
 												<center><span class="activity-icon" >
 												<i class="flaticon-381-search-1" style="font-size: 40px;margin-top: 20px;" ></i>		
@@ -1022,17 +1022,17 @@
 														<path d="M31.835 38.388C36.3444 38.388 40 34.7325 40 30.2231C40 25.7137 36.3444 22.0581 31.835 22.0581C27.3256 22.0581 23.67 25.7137 23.67 30.2231C23.67 34.7325 27.3256 38.388 31.835 38.388Z" fill="#FF3282"/>
 													</svg> -->
 											<div class="progress" style="height:5px;">
-												<div class="progress-bar bg-warning" style="width: 90%; height:5px;" role="progressbar">
+												<div class="progress-bar bg-Color1" style="width: 90%; height:5px;" role="progressbar">
 												
 												</div>
 											</div>
 										</div>
-										<div class="effect bg-warning" ></div>
+										<div class="effect bg-Color1" ></div>
 									</div>
 								</div></a>
 								<div class="col-sm-6">
 									<div class="card avtivity-card">
-										<a href="Metodologias.php?NumeroIdentificacion='.$numeroIdentificacion.'"><div class="card-body">
+										<a href="Metodologias.php"><div class="card-body">
 											<div>
 												<center><span class="activity-icon" >
 												<i class="flaticon-381-search-1" style="font-size: 40px;margin-top: 20px;" ></i>		
