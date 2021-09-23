@@ -1,171 +1,236 @@
-
-<!Doctype HTML>
-<html lang="es-ES">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-	crossorigin="anonymous">
-	<link rel="icon" type="image/x-icon" href="../ASSETS/img/Logotipo.PNG" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-		<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../assets/fonts/icomoon/style.css">
+     <title>Matricular Cliente</title>
 
-    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    
-    <!-- Style -->
-    <link rel="stylesheet" href="../assets/css/styleLogin.css">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>| Matricular cliente</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/aos.css">
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/tooplate-gymso-style.css">
+     <link rel="icon" type="image/x-icon" href="images/Recurso 1.png" />
+<!--
+Tooplate 2119 Gymso Fitness
+https://www.tooplate.com/view/2119-gymso-fitness
+-->
 </head>
-<body>
-    <!-- Responsive navbar-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-Dark">
-            <div class="container">
-              <a href="index.php">
-                <img width="300" height="70" src="../assets/img/logo1.png">
-            	</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="COVID.php">COVID-19</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Registro.php" >Registrate</a></li>
-                        <li class="nav-item"><a class="nav-link" href="loginAg.php">Programar</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.php">Ingresar</a></li>
-                    </ul>
-                </div>
+
+<body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+
+    <!-- MENU BAR -->
+    
+
+           
+
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item">
+                        <a href="index.php#home" class="nav-link smoothScroll">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.php#about" class="nav-link smoothScroll">Acerca de TRAINGYM</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.php#class" class="nav-link smoothScroll">Módulos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.php#schedule" class="nav-link smoothScroll">Funcionalidades</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.php#ventajas" class="nav-link smoothScroll">Ventajas</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link smoothScroll">Contactanos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="index.php#Login" class="nav-link smoothScroll">Iniciar sesión</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-   <!---->
-   <br>
-   <div class="content">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-         <center> <img src="../assets/img/LogoTipo.PNG" alt="Image" class="img-fluid"></center>
+
         </div>
-			<div class="col-md-7 contents">
-			<div class="row justify-content-center">
-				<div class="col-md-12">
-					<div class="mb-7">
-							<h1 style="text-align: center;">
-								Paso 1: 
-								Datos Personales 
-							</h1>
-					</div>
-					<br>
-					<form action="../assets/php/Controlador/Registro1.php" method="post" id="formPaso1">
-						<div class="row">
-							<div class="col-md-6">												
-								<label for="TipoDoc" class="form-label">Tipo de documento: </label>
-								<div class="form-group first col-md-12">
-									<select class="form-control" id="tipoDocumentoCli" name="tipoDocumentoCli" >
-													<option selected value="" disabled>--Seleccione el tipo de documento--</option>
-													<option value="1">Cedula de ciudadania</option>
-													<option value="2">Tarjeta de identidad</option>
-													<option value="3">Cedula de extranjeria</option>
-													<option value="4">Pasaporte</option>
-									</select>			
-								</div>
-							</div>	
-							<br>
-							<div class="col-md-6">
-								<label for="Num" class="form-label">Numero de documento: </label>
-								<div class="form-group last mb-12">
-									<input required type="number" class="form-control" id="Num" name="Num"placeholder="Ingrese Numero De Identificación">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<label for="Num" class="form-label">Nombre: </label>
-								<div class="form-group last mb-12">
-									<input required type="text" class="form-control" id="Nom" name="Nom"placeholder="Ingrese Nombre Completo">
-								</div>
-							</div>
-							<div class="col-md-6">	
-								<label for="Num" class="form-label">Apellido: </label>
-								<div class="form-group last mb-12">
-									<input required type="text" class="form-control" id="Ape" name="Ape"placeholder="Ingrese Apellido Completo">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">	
-								<label for="Num" class="form-label">Fecha de nacimiento: </label>
-								<div class="form-group last mb-12">
-									<input required type="date" class="form-control" id="FechaN" name="FechaN">
-								</div>
-							</div>
-							<div class="col-md-6">    
-								<label for="Num" class="form-label">Telefono: </label>
-								<div class="form-group last mb-12">
-									<input required type="number" class="form-control" id="Tel" name="Tel"placeholder="Ingrese Numero De Telefono">
-								</div>
-							</div>
-						</div>	
-						<div class="row">
-							<div class="col-md-6">   
-								<label for="Num" class="form-label">Correo Electrónico: </label>
-								<div class="form-group last mb-12">
-									<input required type="email" class="form-control" id="corr" name="corr"placeholder="Ingrese Correo electronico(email@example.com)">
-								</div>
-							</div> 
-							<div class="col-md-6"> 
-								<label for="Num" class="form-label">Contraseña: </label>
-								<div class="form-group last mb-12">
-									<input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese contraseña (MINIMO 10 CARACTERES)">
-								</div>
-							</div> 
-						</div>
-						<br>
-						<div class="row">
-							<center>
-								<div class="col-md-5"> 						
-									<button type="button" value="Enviar"  id="registrar1" name="registrar1" class="btn btn-block btn-warning" style="background-color: #FF9900">
-													Continuar
-									</button>
-								</div>								
-							</center>	
-							<center>
-								<div class="col-md-5">	
-									<input type="submit"  value="Enviar"  id="enviar" name="enviar"class="btn btn-block btn-warning" style="background-color: #FF9900">
-								</div>
-							</center>
-						</div>
-						</form>
-				</div>
-			</div>
-          
-        </div>
-        
-      </div>
-    </div>
-  </div>
+    </nav> -->
+
+
   
-	  <!-- Footer-->
-	  <footer class="py-5">
-          <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; TrainGym 2021</p></div>
-        </footer> 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-	<script src="../assets/js/Registros.js">
-	</script>	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-			crossorigin="anonymous">
+<section class="about section" id="Login">
+    <div class="content">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-6 col-sm-6 col-lg-6 col-6" data-aos="fade-up" data-aos-delay="700">
+                <div class="team-thumb">
+                    <br>
+                    <br>
+                    <br>
+                    <img  src="images/imagenForm.png" class="img-fluid" alt="Trainer">
+                </div>
+             </div>            
+                <div class="card col-md-6 col-sm-6 col-lg-6"data-aos="fade-up" data-aos-delay="700">
+                    <div class="card-body col-md-12">
+                      <div class="col-md-12">
+                        <div class="mb-12">
+                            <CENTER><a class="navbar-brand" href="index.php"><img src="images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>
+                            <center><h1 style="text-align: center;font-size: 23px">Paso 1: Datos Personales</h1> </center>   
+                        </div>
+                        <form action="../assets/php/Controlador/Registro1.php" method="post" id="formPaso1">
+                            <div class="row">
+                                <div class="col-md-6">												
+                                    <label for="TipoDoc" class="form-label">Tipo de documento: </label>
+                                    <select class="form-control" id="tipoDocumentoCli" name="tipoDocumentoCli" >
+                                                        <option selected value="" disabled>--Seleccione el tipo de documento--</option>
+                                                        <option value="1">Cédula de ciudadania</option>
+                                                        <option value="2">Tarjeta de identidad</option>
+                                                        <option value="3">Cédula de extranjeria</option>
+                                                        <option value="4">Pasaporte</option>
+                                        </select>
+                                </div>	
+                                <br>
+                                <div class="col-md-6">
+                                    <label for="Num" class="form-label">Número de documento: </label>
+                                    <div class="form-group last mb-12">
+                                        <input required type="number" class="form-control" id="Num" name="Num">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="Num" class="form-label">Nombre: </label>
+                                    <div class="form-group last mb-12">
+                                        <input required type="text" class="form-control" id="Nom" name="Nom">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">	
+                                    <label for="Num" class="form-label">Apellido: </label>
+                                    <div class="form-group last mb-12">
+                                        <input required type="text" class="form-control" id="Ape" name="Ape">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">	
+                                    <label for="Num" class="form-label">Fecha de nacimiento: </label>
+                                    <div class="form-group last mb-12">
+                                        <input required type="date" class="form-control" id="FechaN" name="FechaN">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">    
+                                    <label for="Num" class="form-label">Teléfono: </label>
+                                    <div class="form-group last mb-12">
+                                        <input required type="number" class="form-control" id="Tel" name="Tel">
+                                    </div>
+                                </div>
+                            </div>	
+                            <div class="row">
+                                <div class="col-md-6">   
+                                    <label for="Num" class="form-label">Correo Electrónico: </label>
+                                    <div class="form-group last mb-12">
+                                        <input required type="email" class="form-control" id="corr" name="corr"placeholder="email@example.com">
+                                    </div>                                 
+                                </div> 
+                                <div class="col-md-6"> 
+                                    <label for="Num" class="form-label">Contraseña: </label>
+                                    <div class="form-group last mb-12">
+                                        <input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Mínimo 10 carácteres">
+                                    </div>                                                             
+                                </div>                                
+                                <div class="col-md-12">	
+                                    <span><a href="Login.php">¿Ya tienes cuenta?  Inicia sesión</a></span>
+                                  </div>                                 
+                            </div>                           
+                            <br>
+                            <center>
+                                <div class="col-md-12">	
+                                    <input type="button"  value="Registrar"  id="Registrar" name="Registrar"class="btn btn-block btn-warning" onclick="validarForm1()" style="color: white;background-color: #FF9900">
+                                </div>
+                                
+                                 
+                            </center>
+                                   
+                                       
+                            </form>
+                    </div>
+                </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+</section>
+     <!-- FOOTER -->
+    
+                   
+
+
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="membershipForm" tabindex="-1" role="dialog" aria-labelledby="membershipFormLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <h2 class="modal-title" id="membershipFormLabel">Membership Form</h2>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form class="membership-form webform" role="form">
+                <input type="text" class="form-control" name="cf-name" placeholder="John Doe">
+
+                <input type="email" class="form-control" name="cf-email" placeholder="Johndoe@gmail.com">
+
+                <input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+                <textarea class="form-control" rows="3" name="cf-message" placeholder="Additional Message"></textarea>
+
+                <button type="submit" class="form-control" id="submit-button" name="submit">Submit Button</button>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="signup-agree">
+                    <label class="custom-control-label text-small text-muted" for="signup-agree">I agree to the <a href="#">Terms &amp;Conditions</a>
+                    </label>
+                </div>
+            </form>
+          </div>
+
+          <div class="modal-footer"></div>
+
+        </div>
+      </div>
+    </div> -->
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/aos.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+     <script src="../assets/js/Registros.js">
 	</script>
+
+</body>
 </html>

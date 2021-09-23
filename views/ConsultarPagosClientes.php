@@ -81,7 +81,14 @@
           $metodologia=$fila['nombreMetodologia'];
           $nombreCliente = $fila['Nombre Completo']; 
         }
-      }
+      }else{
+		$filas1 = $consultas->cargarClientesFiltroId($filtro);
+		foreach ($filas1 as $fila) 
+		{
+		  $numeroIdentificacion=$fila['NumeroIdentificacion']; 
+			$nombreCliente = $fila['nombreCliente'];   
+		}
+	}
   }
 ?>
 

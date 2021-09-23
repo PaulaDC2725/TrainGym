@@ -53,34 +53,41 @@ if ($rol != 3) {
   $metodologia=null;
   $nombreCliente=null;
 
-  if (isset($numDoc) || $rol == 3) {
+  if (isset($numDoc) && $rol == 3) {
     $id=$numDoc;
     
-      $tabla="";
-      $filtro=$id;
-      $select="";
+	$tabla="";
+	$filtro=$id;
+	$select="";
 
-      $filas = $consultasS->cargarPagoCliFiltroId($filtro);
-      if (is_array($filas) || is_object($filas))
-      {      
-        foreach ($filas as $fila) 
-        {
-          $tabla.='<tr class="limitada" scope="row">';
-          $tabla.='<td>'.$fila['valorSuscripcion'].'</td>';
-          $tabla.='<td>'.$fila['fechaPago'].'</td>';
-          $tabla.='<td>'.$fila['descripcionPago'].'</td>';
-          $tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/Controlador/images/'.$fila['urlSoportePago'].'" alt="imagen soporte"/></td>';
-          $tabla.='<td>'.$fila['nombreMetodologia'].'</td>';
-          $numeroIdentificacion=$id;
-          $descripcion=$fila['descripcionPago'];
-          $comprobante=$fila['urlSoportePago'];  
-          $fechaPago=$fila['fechaPago'];
-          $valor=$fila['valorSuscripcion'];
-          $metodologia=$fila['nombreMetodologia'];
-          $nombreCliente = $fila['Nombre Completo']; 
-        }
-      }
-  }
+	$filas = $consultasS->cargarPagoCliFiltroId($filtro);
+	if (is_array($filas) || is_object($filas))
+	{      
+	  foreach ($filas as $fila) 
+	  {
+		$tabla.='<tr class="limitada" scope="row">';
+		$tabla.='<td>'.$fila['valorSuscripcion'].'</td>';
+		$tabla.='<td>'.$fila['fechaPago'].'</td>';
+		$tabla.='<td>'.$fila['descripcionPago'].'</td>';
+		$tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/Controlador/images/'.$fila['urlSoportePago'].'" alt="imagen soporte"/></td>';
+		$tabla.='<td>'.$fila['nombreMetodologia'].'</td>';
+		$numeroIdentificacion=$id;
+		$descripcion=$fila['descripcionPago'];
+		$comprobante=$fila['urlSoportePago'];  
+		$fechaPago=$fila['fechaPago'];
+		$valor=$fila['valorSuscripcion'];
+		$metodologia=$fila['nombreMetodologia'];
+		$nombreCliente = $fila['Nombre Completo']; 
+	  }
+	}else{
+		$filas1 = $consultas->cargarClientesFiltroId($filtro);
+		foreach ($filas1 as $fila) 
+		{
+		  $numeroIdentificacion=$fila['NumeroIdentificacion']; 
+			$nombreCliente = $fila['nombreCliente'];   
+		}
+	}
+}
 ?>
 
 <!DOCTYPE html>

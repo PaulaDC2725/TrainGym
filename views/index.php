@@ -1,63 +1,271 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>| TRAINGYM</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-	crossorigin="anonymous">
-  <!--<link rel="stylesheet" href="../assets/css/style.css">-->
-  <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="../assets/css/styles.css" rel="stylesheet" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <title>TRAINGYM</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/aos.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/tooplate-gymso-style.css">
+     <link rel="icon" type="image/x-icon" href="images/Recurso 1.png" />
+<!--
+Tooplate 2119 Gymso Fitness
+https://www.tooplate.com/view/2119-gymso-fitness
+-->
 </head>
-  <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-              <a href="index.php">
-                <img width="300" height="70" src="../assets/img/logo.png">
-            </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="COVID.php">COVID-19</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Registro.php" >Registrate</a></li>
-                        <li class="nav-item"><a class="nav-link" href="loginAg.php">Programar</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.php">Ingresar</a></li>
-                    </ul>
-                </div>
+
+<body data-spy="scroll" data-target="#navbarNav" data-offset="500">
+
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.php"><img src="images/Recurso 2.png" class="card-img-top"width="50" height="50"/></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link smoothScroll">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link smoothScroll" >Acerca de TRAINGYM</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#class" class="nav-link smoothScroll">COVID-19</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="Registro.php" class="nav-link smoothScroll">Regístrate</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="loginAg.php" class="nav-link smoothScroll">Programar</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link smoothScroll">Contactanos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="Login.php" class="nav-link smoothScroll" style="color: #ff9900" >Iniciar sesión</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <!-- Page header with logo and tagline-->
-        <header class="py-5 bg-light border-bottom mb-4">
-            <div class="container">
-                <div class="text-center my-5"> 
-                    <h1 class="fw-bolder" style="font-family: masque;">Bienvenido a TrainGym</h1>
-                    <p class="lead mb-0">La mejor herramienta para tener el control y manejo de cualquier gimnasio</p>
-                    <hr>
-                    <center>
-                      <a href="#!"><img width="300" height="400"class="card-img-top" src="../assets/img/Homepage.jpg" class="img-fluid" alt="Logo TrainGym" /></a>
-                    </center>
+
+        </div>
+    </nav>
+
+
+     <!-- HERO -->
+     <section class="hero d-flex flex-column justify-content-center align-items-center" id="home">
+
+            <div class="bg-overlay"></div>
+
+               <div class="container">
+                    <div class="row">
+
+                         <div class="col-lg-8 col-md-10 mx-auto col-12">
+                              <div class="hero-text mt-5 text-center">
+
+                                    <h6 data-aos="fade-up" data-aos-delay="300">La mejor herramienta para tener el control y manejo de cualquier gimnasio</h6>
+
+                                    <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">Gestor para gimnasios</h1>
+
+                                    <a href="Login.php" class="btn custom-btn bordered mt-3" data-aos="fade-up" data-aos-delay="700">Ingresa</a>
+
+                                    
+                                   
+                              </div>
+                         </div>
+
+                    </div>
+               </div>
+     </section>
+
+
+     
+
+
+     <!-- ABOUT -->
+     <section class="about section" id="about">
+               <div class="container">
+                    <div class="row">
+
+                            <div class="mt-lg-5 mb-lg-0 mb-4 col-lg-5 col-md-10 mx-auto col-12">
+                                <h2 class="mb-4" data-aos="fade-up" data-aos-delay="300">TRAINGYM</h2>
+
+                                <p data-aos="fade-up" data-aos-delay="400">Un Software que ayudara a llevar el control y manejo dentro de tu gimnasio.</p>
+
+                              <p data-aos="fade-up" data-aos-delay="500">Desarrollado con las mejores tecnologías, que garantizan un excelente producto debido a referecencias que han utilizado estas  anteriormente, entre las que se encuentran Facebook, YouTube y  Spotify.</p>
+
+                            </div>
+
+                            <div class="ml-lg-auto col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="700">
+                                <div class="team-thumb">
+                                    <img src="images/Recurso 1.png" class="img-fluid" alt="Trainer">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+               </div>
+     </section>
+
+
+     <!-- CLASS -->
+     <section class="class section" id="class">
+               <div class="container">
+                    <div class="row">
+
+                            <div class="col-lg-12 col-12 text-center mb-5">
+                                <h6 data-aos="fade-up"></h6>
+
+                                <h2 data-aos="fade-up" data-aos-delay="200">PROTOCOLOS DE BIOSEGURIDAD</h2>
+                             </div>
+
+                            <div  class="col-lg-3 col-md-6 col-12" data-aos="fade-up"   data-aos-delay="400">
+                                <div class="class-thumb" >
+                                   
+
+                                    <div class="class-info">
+                                        <h3 class="mb-1" style="color: #ff9900">Temperatura<br><br></h3>
+
+                                        <img class="card-img-top"src="../assets/img/temperatura.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="400">
+                                <div class="class-thumb">
+                                   
+
+                                    <div class="class-info">
+                                        <h3 class="mb-1" style="color: #ff9900">Desinfección<br><br></h3>
+                                        <img class="card-img-top" src="../assets/img/desinfeccion.png">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-5 mt-lg-0 mt-md-0 col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
+                                <div class="class-thumb">
+                                    
+
+                                    <div class="class-info">
+                                        <h3 class="mb-1"style="color: #ff9900">Tapabocas<br><br></h3>
+                                        <img class="card-img-top"src="../assets/img/Tapabocas.png">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 mt-lg-0 col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="600">
+                                <div class="class-thumb">                                 
+
+                                    <div class="class-info">
+                                        <h3 class="mb-1"style="color: #ff9900">Agendar Entrenamiento</h3>
+                                        <img class="card-img-top" src="../assets/img/agendamiento.png">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+               </div>
+     </section>
+
+
+     
+     
+
+     <!-- FOOTER -->
+     <footer class="site-footer" id="contact">
+          <div class="container">
+               <div class="row">
+
+                    <div class="ml-auto col-lg-4 col-md-5">
+                        <p class="copyright-text">Copyright &copy; 2021 TRAINGYM.
+                        
+                        <br>Design: <a href="https://www.tooplate.com">TRAINGYM</a></p>
+                    </div>
+
+                    <div class="d-flex justify-content-center mx-auto col-lg-5 col-md-7 col-12">
+                        <p class="mr-4">
+                            <i class="fa fa-envelope-o mr-1"></i>
+                            <!--<a href="">-->trainGymSoftware@gmail.com<!--</a>-->
+                        </p>
+
+                        <p><i class="fa fa-phone mr-1"></i> +573123617109 <br> <i class="fa fa-phone mr-1"></i>+573213480298 <br><i class="fa fa-phone mr-1"></i> +573053714069 <br> <i class="fa fa-phone mr-1"></i>+573005350916</p>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="membershipForm" tabindex="-1" role="dialog" aria-labelledby="membershipFormLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <h2 class="modal-title" id="membershipFormLabel">Membership Form</h2>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form class="membership-form webform" role="form">
+                <input type="text" class="form-control" name="cf-name" placeholder="John Doe">
+
+                <input type="email" class="form-control" name="cf-email" placeholder="Johndoe@gmail.com">
+
+                <input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+                <textarea class="form-control" rows="3" name="cf-message" placeholder="Additional Message"></textarea>
+
+                <button type="submit" class="form-control" id="submit-button" name="submit">Submit Button</button>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="signup-agree">
+                    <label class="custom-control-label text-small text-muted" for="signup-agree">I agree to the <a href="#">Terms &amp;Conditions</a>
+                    </label>
                 </div>
-            </div>
-        </header> 
-        <!-- Footer-->
-        <footer class="py-5">
-          <div class="container" ><p class="m-0 text-center text-white">Copyright &copy; TrainGym 2021</p></div>
-        </footer> 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-   
+            </form>
+          </div>
+
+          <div class="modal-footer"></div>
+
+        </div>
+      </div>
+    </div> -->
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/aos.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+
 </body>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-	crossorigin="anonymous"></script>
 </html>
