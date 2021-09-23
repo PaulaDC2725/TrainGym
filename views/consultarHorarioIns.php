@@ -996,9 +996,9 @@ require_once('../assets/php/Modelo/class.consulta.instructor.php');
                                     <table id="example2" class="display">
                                         <thead>
                                             <tr> 
-                                              <th scope="col">Nombre del ejercicio</th>
-                                              <th scope="col">Descripcion del ejercicio</th>
-                                              <th scope="col">Metodología</th>
+											<th scope="col">Número de la programación</th>
+                                            <th scope="col">Fecha Inicio de la programación</th>
+                                            <th scope="col">Fecha Fin de la programación</th>
                                             </tr>
                                         </thead>
                                         <tbody>      
