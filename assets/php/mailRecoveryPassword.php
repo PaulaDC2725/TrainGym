@@ -1,3 +1,17 @@
+<?php
+require_once('Modelo/class.conexion.php');
+require_once('Modelo/class.consulta.usuario.php');
+
+$consultasUsuario = new ConsultasUsuario();
+
+$numeroIdentificacion=$_POST['Num'];
+     $filas = $consultasUsuario->validarUsuario($numeroIdentificacion);
+ 
+     foreach ($filas as $fila) {
+         $resultado=$fila['RESULTADO'];
+       } 
+       
+?>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -37,6 +51,31 @@
 <body>
 
 <?php
+if($resultado == 0){
+    echo "<script> window.addEventListener('load', init, false);
+            function init () {
+                Swal.fire({
+                     title: '¡ERROR!',
+                     text: 'Los datos ingresados no coinciden con nuestros registros',
+                     icon: 'error',
+                     buttons: true,
+                     dangerMode: true,
+                   }).then((willDelete) => {
+                 if (willDelete) {
+                     location.href = '../../views/recoveryPasswordView.php';
+                 } else {
+                     location.href = '../../views/recoveryPasswordView.php';
+                 }
+               });
+             }
+            
+               </script>";
+      
+}else{
+       
+   }
+?>
+<?php 
 session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -54,7 +93,7 @@ $emailRec = mysqli_connect("localhost", "root", "", "gimnasiobd") or die($emailR
 
 $message = '';
 
-if (!empty($_POST['Num'])){
+if (!empty($_POST['Num'])&& $resultado == 1){
     $numDoc = $_POST['Num'];
     $email = $_POST['email'];
     $mail = new PHPMailer(true);

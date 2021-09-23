@@ -42,7 +42,7 @@
               <CENTER><a class="navbar-brand" href="index.php"><img src="images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>
               <h3 style="font-family: masque;">Recuperar Contraseña</h3>
               </div>
-            <form action="../assets/php/mailRecoveryPassword.php" method="POST">
+            <form action="../assets/php/mailRecoveryPassword.php" id="form" method="POST">
             
 			<label for="username">Numero de Documento</label>  
 			<div class="form-group first">
@@ -54,7 +54,7 @@
               </div> <span><a href="login.php" class="forgot-pass">Regresar</a></span>
 			  <br>
         <br>
-              <input type="submit" onclick="validarForm()" value="SIGUIENTE" class="btn btn-block btn-warning" style="background-color: #FF9900">
+              <input type="button" onclick="validarForm1()" value="SIGUIENTE" class="btn btn-block btn-warning" style="background-color: #FF9900">
 
               
               
@@ -79,7 +79,7 @@
 <script src="js/aos.js"></script>
 <script src="js/smoothscroll.js"></script>
 <script src="js/custom.js"></script>
-			  
+<script src="../assets/js/Recuperar1.js"></script>	  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 <script
