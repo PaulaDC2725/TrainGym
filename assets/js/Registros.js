@@ -1,7 +1,3 @@
-let registrar1_btn = document.getElementById('registrar1');
-let btnForm2 = document.getElementById('enviar');
-registrar1_btn.addEventListener('click', validarForm1);
-btnForm2.style.display='none';
 function validarForm1() {
   let tipoDocumento = document.getElementById('tipoDocumentoCli').value;
     let numeroIdentificacion = document.getElementById('Num').value;

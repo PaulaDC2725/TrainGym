@@ -107,7 +107,7 @@ public function validarUsuario($numeroIdentificacion){
 			}
 			return $rows;
 		}
-public function validarLoginUsuario($numeroIdentificacion,
+			public function validarLoginUsuario($numeroIdentificacion,
 			$passwordUsuario,$rolFK,$estado){
 			$rows=null;
 			$estado=1;
