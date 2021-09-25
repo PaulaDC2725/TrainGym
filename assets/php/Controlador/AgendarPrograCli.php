@@ -38,7 +38,6 @@ crossorigin="anonymous">
   //require_once('../Modelo/class.consulta.cliente.php');
 require_once('../Modelo/class.consulta.asistencias.php');
 
-if (isset($numDoc) && $rol === 3) {
   $numid=$numDoc;
 //$ConsultasClientes = new ConsultasClientes();
 $ConsultasAsistencias = new ConsultasAsistencias();
@@ -48,6 +47,6 @@ $fechaFinPro=$_POST['salidapro'];
 $ConsultasAsistencias->registrarProgramacion($fechaInicioPro,$fechaFinPro,$numid); 
 header('location: ../../../views/inicioCliente.php');
 }
-}
+?>
 
 
