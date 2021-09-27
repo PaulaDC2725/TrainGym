@@ -16,6 +16,34 @@ class ConsultasSuscripcion{
 			 return $rows;
 		 }
 	}
+	public function ConsultarCantidadPagosCli()
+		{
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql = "SELECT CantidadPagosCliente() as 'Cantidad de los clientes que han pagado'";
+			$statement=$conexion->prepare($sql);			
+	 $statement->execute();
+	 while ($result=$statement->fetch()) {
+		$rows[]=$result;
+	}
+	 return $rows;
+
+ }
+	public function ConsultarPorcentajePagosCli()
+		{
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql = "SELECT PorcentajePagosCliente() AS 'Porcentaje de los pagos'";
+			$statement=$conexion->prepare($sql);			
+	 $statement->execute();
+	 while ($result=$statement->fetch()) {
+		$rows[]=$result;
+	}
+	 return $rows;
+
+ }
 	public function registrarPagos($fechaPago,$valorPago,$descripcion,$soporte,$idSuscripcion)
 	{
 		$rows=null;

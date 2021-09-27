@@ -1,5 +1,6 @@
 /*PROCEDIMIENTOS ALMACENADOS*/
 
+
 /*---------------SP PARA VALIDACION DE LOGIN---------------------------------*/
 
 USE `gimnasiobd`;
@@ -342,3 +343,30 @@ CALL consultarAsistenciaCliente();
 
 CALL registrarProgramacion('2021-09-10','2021-10-10','1000713178');
 CALL consultarSuscripcion('1001299203');
+
+/*Funciones Escalares*/
+DROP FUNCTION IF EXISTS CantidadPagosCliente; 
+DELIMITER $$ 
+CREATE FUNCTION CantidadPagosCliente() 
+RETURNS tinyint 
+BEGIN 
+DECLARE cantidadClientes int; 
+set @cantidadClientes= (SELECT COUNT(DISTINCT idSuscripcionFK) From pagos); 
+/*Select @cantidadClientes;*/
+RETURN @cantidadClientes; 
+END $$
+DROP FUNCTION IF EXISTS PorcentajePagosCliente; 
+DELIMITER $$ 
+CREATE FUNCTION PorcentajePagosCliente() 
+RETURNS float
+BEGIN 
+DECLARE cantidadClientes int; 
+set @cantidadClientes= (SELECT COUNT(DISTINCT idSuscripcionFK) From pagos); 
+set @Porcentaje=(@cantidadClientes*100/(Select count(*) From Clientes));
+/*Select @Porcentaje;*/
+/*Select @cantidadClientes;*/
+RETURN @Porcentaje; 
+END $$
+Select PorcentajePagosCliente() AS 'Porcentaje de los pagos';
+Select CantidadPagosCliente();
+select CantidadPagosCliente() as 'Cantidad de los clientes que han pagado';

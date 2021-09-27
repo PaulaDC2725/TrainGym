@@ -40,7 +40,9 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 	 
  }
 require_once('../assets/php/Modelo/class.consulta.cliente.php');
+require_once('../assets/php/Modelo/class.consulta.suscripcion.php');
   $consultasCli = new ConsultasClientes();
+  $consultasS = new ConsultasSuscripcion();
  
     $filas = $consultasCli->consultarClientes();
  
@@ -74,8 +76,25 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
       $tabla.='</tr>';
 
      
-     }  
- }
+     }
+	 
+}
+$rows1 = $consultasS->ConsultarCantidadPagosCli();
+	if (is_array($rows1) || is_object($rows1))
+  	{      
+		foreach ($rows1 as $row1) 
+		{
+		$CantidadPagos=$row1['Cantidad de los clientes que han pagado'];
+		}
+	}
+	$rows = $consultasS->ConsultarPorcentajePagosCli();
+	if (is_array($rows) || is_object($rows))
+  	{      
+		foreach ($rows as $row) 
+		{
+		$PorcentajePagos=$row['Porcentaje de los pagos'];
+		}
+	}  
 //  <a href=ConsultarPagosClientes.php?NumeroIdentificacion='.$fila['NumeroIdentificacion'].'&id='.$fila['idCliente'].'"><input type="button" class="btn btn-info" value="Consultar Pagos"></a>
 
 ?>
@@ -1002,7 +1021,7 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
 					<div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Información de los Clientes</h4>
+                                <h4 class="card-title"><strong>Porcentaje de pagos realizados: </strong> <?php echo $PorcentajePagos?>% <br> <strong>Cantidad de clientes que han pagado: </strong><?php echo $CantidadPagos?></h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
