@@ -362,7 +362,7 @@ RETURNS float
 BEGIN 
 DECLARE cantidadClientes int; 
 set @cantidadClientes= (SELECT COUNT(DISTINCT idSuscripcionFK) From pagos); 
-set @Porcentaje=(@cantidadClientes*100/(Select count(*) From Clientes));
+set @Porcentaje=(@cantidadClientes*100/(Select count(*) From Clientes where estadoCliente=1));
 /*Select @Porcentaje;*/
 /*Select @cantidadClientes;*/
 RETURN @Porcentaje; 
