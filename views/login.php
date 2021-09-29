@@ -1,3 +1,10 @@
+<?php
+	require_once('../assets/php/Modelo/class.conexion.php');
+	require_once('../assets/php/Modelo/class.consulta.usuario.php');
+
+	$consultasUsuario = new ConsultasUsuario();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +21,7 @@
      <link rel="stylesheet" href="css/bootstrap.min.css">
      <link rel="stylesheet" href="css/font-awesome.min.css">
      <link rel="stylesheet" href="css/aos.css">
-
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/tooplate-gymso-style.css">
      <link rel="icon" type="image/x-icon" href="images/Recurso 1.png" />
@@ -24,6 +31,59 @@ https://www.tooplate.com/view/2119-gymso-fitness
 -->
 </head>
 <body>
+<?php 
+if(isset($_POST['Num']) && isset($_POST['Contraseña'])){
+  
+session_start();
+$usuario = $_POST['Num'];
+$contrasenia = $_POST['Contraseña'];
+  $estadoU = "1";
+if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
+  echo('<script>swal("Error!", "Datos inválidos","error")</script>');
+}else{
+  $rows = $consultasUsuario->validarLogin2($usuario);
+  if (is_array($rows) || is_object($rows))
+  {foreach($rows as $row) {
+    $Rol=$row['idRolFK'];
+  }
+  }else{
+    $Rol ="0";
+  }
+  $filas = $consultasUsuario->validarLoginUsuario($usuario,$contrasenia,$Rol,$estadoU);
+  $resultado=null;
+  if (is_array($filas) || is_object($filas))
+  {
+    foreach($filas as $fila) {
+    $resultado=$fila['RESULTADO'];
+  }
+  }
+  $rolRecepcionista = 1;
+  if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo' && $rolRecepcionista = 1){
+    $_SESSION["rolRecepcionista"] = $rolRecepcionista;
+    $_SESSION["NumeroIdentificacion"] = $usuario;
+    header('location: inicioRecepcionista.php');
+  }
+  else if($Rol == '2' && $resultado == "1"){
+    $_SESSION["NumeroIdentificacion"] = $usuario;
+    $_SESSION['rol'] = $Rol;
+    header('location: inicioInstructor.php');
+  }
+  else if($Rol == '3' && $resultado == "1"){
+    $_SESSION["NumeroIdentificacion"] = $usuario;
+    $_SESSION['rol'] = $Rol;
+    header('location: inicioCliente.php');
+  }else if($usuario=="" || $contrasenia==""){
+    echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
+  }
+  else{
+    echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
+  }
+}
+}
+
+
+
+?>
 <section class="about section" id="Login">
   <div class="content">
     <div class="container">
@@ -33,7 +93,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
               <br>
               <br>
               <br>
-                  <img  src="images/imagenForm.png" class="img-fluid" alt="Trainer">
+                  <img  src="images/imagenForm.png" class="img-fluid" id="fotoForm" alt="Trainer">
             </div>                                 
           </div>
           <div class="card col-md-6 col-sm-6 col-lg-6"data-aos="fade-up" data-aos-delay="700">
@@ -43,9 +103,9 @@ https://www.tooplate.com/view/2119-gymso-fitness
                   <CENTER><a class="navbar-brand" href="index.php"><img src="images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>
                   <center><h1 style="text-align: center;font-size: 23px">Iniciar Sesión</h1></center>
                 </div>
-                <form action="../assets/php/ingresar1.php" method="post">            
+                <form action="login.php" method="post">            
                   <label for="username">Número de Documento</label> 
-                    <input type="number" class="form-control" placeholder="Ingrese el número de documento" id="Num" name="Num" required>
+                    <input type="number" class="form-control" value="<?php echo $usuario?>"placeholder="Ingrese el número de documento" id="Num" name="Num" required>
                     <br>
                     <label for="password">Contraseña</label>
                     <input type="password" class="form-control" placeholder="Ingrese la contraseña" id="Contraseña"name="Contraseña"required>
