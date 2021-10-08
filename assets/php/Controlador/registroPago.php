@@ -54,21 +54,7 @@ $fechaPago=$_POST['FechaP'];
 $valorPago=$_POST['valorS'];
 $descripcion=$_POST['descPago'];
 
-// $ruta = '/uploads/';
-// $soporte=$_FILES['ImgPago']['name'];
-// $tempimg =$_FILES['ImgPago']['tmp_name'];
-// $rutaimg= $ruta.$soporte;
 
-// if(!file_exists($ruta)){
-// 	mkdir($ruta,0777,true);
-// }else{
-// 	if(move_uploaded_file($tempimg,$rutaimg)){
-// 		echo 'Guardado';
-// 	}else{
-// 		echo 'Error';
-// 	}
-// 	var_dump($rutaimg);
-// }
 $Prueba = $_POST['ImgPago'];
 
 	$rutaservidor='images';

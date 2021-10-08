@@ -218,46 +218,46 @@ VALUES (4,1,14);
 SELECT * FROM PARTE_CUERPO_EJERCICIO;
 
 /*TABLA EJERCICIOS*/
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (1,1,'Movimientos circulares','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (2,2,'Press','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (3,3,'Curl con mancuernas','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (4,4,'Lagartijas','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (5,5,'Sentadilla','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (7,7,'Curl de un solo brazo dr','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (8,8,'Curl de un solo brazo izq','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (9,9,'Press a una pierna dr','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (10,10,'Press a una pierna dr','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (11,11,'Low plank','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (12,12,'Press de hombro dr','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (13,13,'Press de hombros dr','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (14,14,'Inchworms','2021-02-15 12_00_33-Window.png');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio,urlImagen)
-VALUES (15,15,'Inchworms','2021-02-15 12_00_33-Window.png');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (1,1,'Movimientos circulares');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (2,2,'Press');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (3,3,'Curl con mancuernas');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (4,4,'Lagartijas');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (5,5,'Sentadilla');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (7,7,'Curl de un solo brazo dr');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (8,8,'Curl de un solo brazo izq');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (9,9,'Press a una pierna dr');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (10,10,'Press a una pierna dr');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (11,11,'Low plank');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (12,12,'Press de hombro dr');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (13,13,'Press de hombros dr');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (14,14,'Inchworms');
+INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
+VALUES (15,15,'Pesas');
 
 SELECT * FROM EJERCICIOS;
 
 /*TABLA SERIE_DE_EJERCICIO*/
-INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,idMetodologiaFK)
-VALUES (1,'Disminuir de peso principiante','Realizar los ejercicios propuestos',4,12,1);
-INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,idMetodologiaFK)
-VALUES (2,'Disminuir de peso intermedio','Realizar los ejercicios propuestos',5,10,1);
-INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,idMetodologiaFK)
-VALUES (3,'Aumentar masa muscular principante','Realizar los ejercicios propuestos',4,15,2);
-INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,idMetodologiaFK)
-VALUES (4,'Dos objetivos','Realizar los ejercicios propuestos',6,8,3);
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,urlImagen,idMetodologiaFK)
+VALUES (1,'Disminuir de peso principiante','Realizar los ejercicios propuestos',4,12,'2021-02-15 12_00_33-Window.png',1);
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,urlImagen,idMetodologiaFK)
+VALUES (2,'Disminuir de peso intermedio','Realizar los ejercicios propuestos',5,10,'2021-02-15 12_00_33-Window.png',1);
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,urlImagen,idMetodologiaFK)
+VALUES (3,'Aumentar masa muscular principante','Realizar los ejercicios propuestos',4,15,'2021-02-15 12_00_33-Window.png',2);
+INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,urlImagen,idMetodologiaFK)
+VALUES (4,'Dos objetivos','Realizar los ejercicios propuestos',6,8,'2021-02-15 12_00_33-Window.png',3);
 
 SELECT * FROM SERIE_DE_EJERCICIO;
 

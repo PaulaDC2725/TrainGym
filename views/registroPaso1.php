@@ -1,4 +1,5 @@
 <?php
+  error_reporting(E_ERROR | E_PARSE);
 require_once('../assets/php/Modelo/class.conexion.php');
 require_once('../assets/php/Modelo/class.consulta.cliente.php');
 require_once('../assets/php/Modelo/class.consulta.usuario.php');

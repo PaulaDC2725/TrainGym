@@ -1,11 +1,11 @@
 <?php
 class consultaMetodologia{
-    public function registrarMetodologia($idMetodologia,$nombreMetodologia)
+    public function  registrarSuscMeto($metodologia,$fechaMet,$fechaMetFin)
 		{
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "INSERT INTO metodologia(idMetodologia, nombreMetodologia) VALUES ('".$idMetodologia."','".$nombreMetodologia."')";		
+			$sql = "INSERT INTO suscripcion_metodologia(idSuscripcionFK, idMetodologiaFK, fechaMetodologiaInicio,fechaMetodologiaFin)values ((SELECT max(idSuscripcion) FROM suscripciones),'".$metodologia."','".$fechaMet."','".$fechaMetFin."')";		
 
 			$statement=$conexion->prepare($sql);
 
@@ -56,11 +56,7 @@ class consultaMetodologia{
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="SELECT U.NumeroIdentificacion, C.nombreCliente, C.apellidoCliente,C.correoCliente, C.telefonoCliente, M.nombreMetodologia 
-		FROM Clientes C 
-		JOIN usuarios U JOIN metodologia m JOIN suscripciones s 
-		on C.idUsuarioFK = U.idUsuario and s.idClienteFK = C.idCliente and s.idMetodologiaFK=m.idMetodologia
-		order by nombreMetodologia asc";
+		$sql="SELECT * FROM consultarMetodologia";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -101,14 +97,14 @@ class consultaMetodologia{
 	}
 	
 
-	public function registrarSeries($nombreSerie, $descripcionSerie,$repeticion,$Secuencia,$idMetodologia)
+	public function registrarSeries($nombreSerie, $descripcionSerie,$repeticion,$Secuencia,$imgEjercicio,$idMetodologia)
 	{
 		$rows=null;
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
 		$sql="INSERT INTO SERIE_DE_EJERCICIO 
-		SELECT MAX(idSerie) + 1,'".$nombreSerie."','".$descripcionSerie."','".$repeticion."','".$Secuencia."','".$idMetodologia."' FROM SERIE_DE_EJERCICIO;";
+		SELECT MAX(idSerie) + 1,'".$nombreSerie."','".$descripcionSerie."','".$repeticion."','".$Secuencia."','".$imgEjercicio."','".$idMetodologia."' FROM SERIE_DE_EJERCICIO;";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -130,14 +126,13 @@ class consultaMetodologia{
 		}
 		return $rows;
 	}
-	public function registrarSuscSerie($idSuscripcionFK,$fechaInicio,$fechaFin)
+	public function registrartbSerie($idEjercicio)
 	{
 		$rows=null;
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="INSERT INTO suscripciones_serie_ejercicio SELECT MAX(idSerie),'".$idSuscripcionFK."','".$fechaInicio."','".$fechaFin."' 
-		From serie_de_ejercicio";
+		$sql="INSERT INTO tb_series_ejercicios(idEjercicioFK,idSerieFK) values ('".$idEjercicio."',(SELECT MAX(idSerie) From serie_de_ejercicio))";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -145,27 +140,14 @@ class consultaMetodologia{
 		}
 		return $sql;
 	}
-	public function registrarRutEj($idEjercicio)
-	{
-		$rows=null;
-		$estado=1;
-		$modelo = new Conexion();
-		$conexion = $modelo->getConection();					
-		$sql="INSERT INTO rutinas_ejercicio(idEjercicioFK,idSerieFK) Values ('".$idEjercicio."', (SELECT MAX(idSerie) FROM serie_de_ejercicio))";
-		$statement=$conexion->prepare($sql);			
-		$statement->execute();
-		while ($result=$statement->fetch()) {
-			$rows[]=$result;
-		}
-		return $sql;
-	}
+	
 	public function consultarSeries($numeroIdentificacion)
 	{
 		$rows=null;
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="SELECT m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN metodologia as m JOIN USUARIOS U JOIN INSTRUCTORES I ON I.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."'";
+		$sql="SELECT s.urlImagen, m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN metodologia as m JOIN USUARIOS U JOIN INSTRUCTORES I ON I.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."'";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -179,7 +161,7 @@ class consultaMetodologia{
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="SELECT m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,C.nombreCliente From serie_de_ejercicio S JOIN metodologia as m JOIN USUARIOS U JOIN Clientes C ON C.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."' and m.idMetodologia='".$idMetodologia."'";
+		$sql="SELECT s.urlImagen,m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,C.nombreCliente From serie_de_ejercicio S JOIN metodologia as m JOIN USUARIOS U JOIN Clientes C ON C.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."' and m.idMetodologia='".$idMetodologia."'";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {

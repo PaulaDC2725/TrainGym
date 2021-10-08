@@ -1,12 +1,12 @@
 <?php
 class ConsultasSuscripcion{
 
-    public function registrarSuscripcion($valorSuscripcion, $fechaSuscripcion, $estadoSuscripcion,$idMetodologiaFK)
+    public function registrarSuscripcion($valorSuscripcion, $fechaSuscripcion, $estadoSuscripcion)
 		{
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "INSERT INTO SUSCRIPCIONES(idSuscripcion, valorSuscripcion, fechaSuscripcion, estadoSuscripcion, idClienteFK, idMetodologiaFK) SELECT MAX(idSuscripcion) + 1,'".$valorSuscripcion."','".$fechaSuscripcion."','".$estadoSuscripcion."',(SELECT MAX(idCliente)FROM CLIENTES),'".$idMetodologiaFK."' FROM SUSCRIPCIONES";
+			$sql = "INSERT INTO SUSCRIPCIONES(idSuscripcion, valorSuscripcion, fechaSuscripcion, estadoSuscripcion, idClienteFK) SELECT MAX(idSuscripcion) + 1,'".$valorSuscripcion."','".$fechaSuscripcion."','".$estadoSuscripcion."',(SELECT MAX(idCliente)FROM CLIENTES) FROM SUSCRIPCIONES";
 			$statement=$conexion->prepare($sql);
 
 		if (!$statement) {
@@ -63,7 +63,19 @@ public function cargarPagoCliFiltroId($filtro){
 	$rows=null;
 	$modelo = new Conexion();
 	$conexion = $modelo->getConection();
-	$sql="SELECT u.NumeroIdentificacion,p.fechaPago,p.descripcionPago,p.urlSoportePago,m.nombreMetodologia,CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo',s.valorSuscripcion from suscripciones as s join usuarios as u join clientes as c join metodologia as m join pagos as p on s.idClienteFK =c.idCliente and c.idUsuarioFK=u.idUsuario and s.idMetodologiaFK=m.idMetodologia and p.idSuscripcionFK=s.idSuscripcion WHERE u.NumeroIdentificacion='".$filtro."'";
+	$sql="SELECT U.NumeroIdentificacion,CONCAT(C.nombreCliente ,' ', C.apellidoCliente) AS 'Nombre Completo',
+	M.nombreMetodologia,p.urlSoportePago, p.fechaPago,p.valorPago,p.descripcionPago,SM.fechaMetodologiaInicio, SM.fechaMetodologiaFin FROM USUARIOS AS U
+   JOIN CLIENTES AS C 
+   ON U.idUsuario=C.idUsuarioFK
+   JOIN SUSCRIPCIONES AS S 
+   JOIN PAGOS AS p
+   ON S.idSuscripcion=p.idSuscripcionFK
+   ON C.idCliente=S.idClienteFK
+   JOIN SUSCRIPCION_METODOLOGIA AS SM
+   ON S.idSuscripcion=SM.idSuscripcionFK
+   JOIN METODOLOGIA AS M
+   ON SM.idMetodologiaFK=M.idMetodologia
+    WHERE u.NumeroIdentificacion='".$filtro."'";
 	 $statement=$conexion->prepare($sql);			
 	 $statement->execute();
 	 while ($result=$statement->fetch()) {

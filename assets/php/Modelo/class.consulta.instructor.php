@@ -177,7 +177,13 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql="SELECT * FROM consultarMetodologia";
+			$sql="SELECT U.NumeroIdentificacion, i.nombreInstructor, i.apellidoInstructor,p.fechaInicioPro, p.fechaFinPro, p.idProgramacion 
+			FROM Programacion p 
+			JOIN usuarios U 
+			JOIN Instructores I
+			on p.idUsuarioFK = U.idUsuario 
+			and I.idUsuarioFK=u.idUsuario
+			where NumeroIdentificacion='".$filtro."' ;";
 		 	$statement=$conexion->prepare($sql);			
 		 	$statement->execute();
 		 	while ($result=$statement->fetch()) {

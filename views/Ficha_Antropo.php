@@ -40,9 +40,11 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 	 
  }
 require_once('../assets/php/Modelo/class.consulta.fichaAntro.php');
+require_once('../assets/php/Modelo/class.consulta.cliente.php');
 
 
   $consultas = new consultasFicha();
+  $consultasC = new ConsultasClientes();
 
  
 
@@ -54,14 +56,22 @@ require_once('../assets/php/Modelo/class.consulta.fichaAntro.php');
     $select="";
 
     $filas = $consultas->consultarFichaAntro1($filtro);
-
-    foreach ($filas as $fila) {
-      $tabla.='<tr class="limitada" scope="row">';
-        $tabla.='<td>'.$fila['fechaFicha'].'</td>';
-        $tabla.='<td>'.$fila['nombreParteCuerpo'].'</td>';
-        $tabla.='<td>'.$fila['medida'].'<b> cm</b></td>';
-        $tabla.='<td>'.$fila['descripcionFicha'].'</td>';
-    } 
+ if(is_array($filas)||is_object($filas)){
+	foreach ($filas as $fila) {
+		$tabla.='<tr class="limitada" scope="row">';
+		  $tabla.='<td>'.$fila['fechaFicha'].'</td>';
+		  $tabla.='<td>'.$fila['nombreParteCuerpo'].'</td>';
+		  $tabla.='<td>'.$fila['medida'].'<b> cm</b></td>';
+		  $tabla.='<td>'.$fila['descripcionFicha'].'</td>';
+	  }
+ }else{
+		$filas1 = $consultasC->cargarClientesFiltroId($filtro);
+		foreach ($filas1 as $fila) 
+		{
+		  $numeroIdentificacion=$fila['NumeroIdentificacion']; 
+			$nombreCliente = $fila['nombreCliente'];   
+		}
+	}
   }
 ?>
 <!DOCTYPE html>

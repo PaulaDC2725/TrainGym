@@ -50,34 +50,22 @@ $Secuencia = $_POST['Sec'];
 $idParteDelCuerpoFK=$_POST['ParteCuerpo'];
 $Ejercicio="";
 $idEjercicio=$_POST['NomEJ'];
-if($idEjercicio=='1'){
-    $Ejercicio="Sentadilla";
-}else if($idEjercicio=='2'){
-    $Ejercicio="Movientos circulares";
-}else if($idEjercicio=='3'){
-    $Ejercicio="Low Plank";
-}else if($idEjercicio=='4'){
-    $Ejercicio="Leg Raises";
-}else if($idEjercicio=='5'){
-    $Ejercicio="Inchworms";
-}
+$Prueba = $_POST['ImgEjer'];
+
+	$rutaservidor='images';
+	$rutatemporal=$_FILES['ImgEjer']['tmp_name'];
+	$imgEjercicio=$_FILES['ImgEjer']['name'];
+	$rutadestino=$rutaservidor.'/'.$imgEjercicio;
+	move_uploaded_file($rutatemporal, $rutadestino);
 $fechaInicio=$_POST['FechaI'];
 $fechaFin=$_POST['FechaF'];
-$SuscSerie="";
-$registroEj = $consultaMetodologia->registrarEjercicios($idParteDelCuerpoFK,$Ejercicio);
-$mensaje4 = $consultaMetodologia->registrarSeries($nombreSerie, $descripcionSerie,$repeticion,$Secuencia,$idMetodologia);
-$consultarSuscripciones= $consultaMetodologia->ConsultarSucrcipcion($idMetodologia);
-    if (is_array($consultarSuscripciones) || is_object($consultarSuscripciones)){
-    foreach ($consultarSuscripciones as $consultarSuscripcion){       
-        $idSuscripcionFK=$consultarSuscripcion['idSuscripcion'];
-      }
-    }
-    if(isset($idSuscripcionFK)){
-        $SuscSerie =$consultaMetodologia->registrarSuscSerie($idSuscripcionFK,$fechaInicio,$fechaFin);
-        $RutEj= $consultaMetodologia->registrarRutEj($idEjercicio);
-        header('location: ../../../views/consultarSeries.php?NumeroIdentificacion='.$id);
-    }else{
-        echo "No se encontró ninguna suscripción con esa metodología";
+if(isset($_POST['FechaI'])&&isset($_POST['FechaF'])&&isset($imgEjercicio)){
+    $mensaje4 = $consultaMetodologia->registrarSeries($nombreSerie, $descripcionSerie,$repeticion,$Secuencia,$imgEjercicio,$idMetodologia);
+    $SuscSerie =$consultaMetodologia->registrartbSerie($idEjercicio);
+            header('location: ../../../views/consultarSeries.php');
+}else{
+        echo $imgEjercicio;"<script>alert('No se encontró ninguna suscripción con esa metodología')</script>
+        ";
     }
 }
 // 

@@ -970,7 +970,7 @@ if (isset($_GET['id'])) {
                 <div class="page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="javascript:void(0)">Consultar</a></li>
-						<li class="breadcrumb-item active"><a href="javascript:void(0)">Syscripciones</a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Suscripciones</a></li>
 					</ol>
                 </div>
                 <!-- row -->

@@ -162,7 +162,13 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql="SELECT s.idMetodologiaFK From Suscripciones as s JOIN clientes as c JOIN usuarios as u on s.idClienteFK=c.idCliente and c.idUsuarioFK=u.idUsuario
+			$sql="SELECT sm.idMetodologiaFK From Suscripcion_Metodologia as sm 
+			JOIN clientes as c 
+			JOIN usuarios as u 
+			JOIN suscripciones as s 
+			on sm.idsuscripcionFK=s.idSuscripcion 
+			and s.idClienteFK=c.idCliente 
+			and c.idUsuarioFK=u.idUsuario 
 			WHERE U.NumeroIdentificacion =  '".$filtro."'";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();

@@ -17,8 +17,10 @@ formulario4.style.display = "none";
 function validarForm3() {
   let metodoPago = document.getElementById("MetPago").value;
   let fechaSuscripcion = document.getElementById("FechaS").value;
+  let fechaMet = document.getElementById("fechaMet").value;
+  let fechaMetFin= document.getElementById("FechFinMet").value;
   let valorSuscripcion = document.getElementById("valorS").value;
-  if (metodoPago == "" || fechaSuscripcion == "" || valorSuscripcion == "") {
+  if (metodoPago == "" || fechaSuscripcion == "" || valorSuscripcion == ""|| fechaMet == ""|| fechaMetFin == "") {
     swal("Ups!", "Debe completar todos los campos", "error");
   } else {
     sigFormB();

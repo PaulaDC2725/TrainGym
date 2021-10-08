@@ -1,3 +1,18 @@
+/*Vistas*/
+CREATE VIEW ConsultarMetodologia
+AS
+SELECT U.NumeroIdentificacion, C.nombreCliente, C.apellidoCliente,C.correoCliente, C.telefonoCliente, M.nombreMetodologia 
+FROM Clientes C 
+JOIN usuarios U 
+JOIN metodologia m 
+JOIN suscripcion_Metodologia sm 
+JOIN Suscripciones as s
+on C.idUsuarioFK = U.idUsuario 
+and s.idClienteFK = C.idCliente 
+and sm.idMetodologiaFK=m.idMetodologia 
+and sm.idSuscripcionFK=s.idSuscripcion;
+
+
 /*PROCEDIMIENTOS ALMACENADOS*/
 
 
@@ -33,13 +48,10 @@ DROP PROCEDURE IF EXISTS `validar_login2`;
 
 DELIMITER $$
 USE `gimnasiobd`$$
-DROP PROCEDURE IF EXISTS `validar_login2`;
 CREATE PROCEDURE `validar_login2` (in NumiD VARCHAR(15))
 BEGIN
-	SELECT idRolFK, nombreRol 
-	FROM USUARIOS AS u
-	JOIN ROL AS r
-	ON u.idRolFK=r.idRol
+	SELECT idRolFK 
+	FROM USUARIOS 
 	WHERE NumeroIdentificacion=Numid;
 END$$
 DELIMITER ;
@@ -250,6 +262,21 @@ BEGIN
     WHERE c.idUsuarioFK=p.idUsuarioFK;
 END$$
 DELIMITER ;
+
+Create view consultarAsistenciaCliente
+as
+SELECT u.numeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
+	FROM ASISTENCIAS AS a
+    JOIN PROGRAMACION AS p
+	JOIN USUARIOS AS  u 
+	JOIN CLIENTES AS c 
+	ON  p.idProgramacion=a.idProgramacionFK
+    AND u.idUsuario=p.idUsuarioFK 
+	AND u.idUsuario=c.idUsuarioFK 
+    WHERE c.idUsuarioFK=p.idUsuarioFK;
+    Select * from consultarAsistenciaCliente;
+
+
 
 /*---------------SP PARA REGISTRAR PAGOS ------------------------------*/
 

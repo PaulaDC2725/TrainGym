@@ -66,7 +66,7 @@ if ($rol != 3) {
 	  foreach ($filas as $fila) 
 	  {
 		$tabla.='<tr class="limitada" scope="row">';
-		$tabla.='<td>'.$fila['valorSuscripcion'].'</td>';
+		$tabla.='<td>'.$fila['valorPago'].'</td>';
 		$tabla.='<td>'.$fila['fechaPago'].'</td>';
 		$tabla.='<td>'.$fila['descripcionPago'].'</td>';
 		$tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/Controlador/images/'.$fila['urlSoportePago'].'" alt="imagen soporte"/></td>';
@@ -75,7 +75,7 @@ if ($rol != 3) {
 		$descripcion=$fila['descripcionPago'];
 		$comprobante=$fila['urlSoportePago'];  
 		$fechaPago=$fila['fechaPago'];
-		$valor=$fila['valorSuscripcion'];
+		$valor=$fila['valorPago'];
 		$metodologia=$fila['nombreMetodologia'];
 		$nombreCliente = $fila['Nombre Completo']; 
 	  }

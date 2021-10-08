@@ -36,7 +36,7 @@ public function registrarParteCuerpo($nombreParteCuerpo)
         $rows=null;
         $modelo = new Conexion();
         $conexion = $modelo->getConection();					
-        $sql = " INSERT INTO ficha_medida(idFichaFK, idParteDelCuerpoFK, medida) Values ((SELECT MAX(idFicha) FROM ficha_antropometrica),'".$idParteDelCuerpoFK."','".$medida."')";
+        $sql = " INSERT INTO parte_cuerpo_ejercicio(idFichaFK, idParteDelCuerpoFK, medida) Values ((SELECT MAX(idFicha) FROM ficha_antropometrica),'".$idParteDelCuerpoFK."','".$medida."')";
         $statement=$conexion->prepare($sql);			
         $statement->execute();
         while ($result=$statement->fetch()) {
@@ -49,16 +49,16 @@ public function registrarParteCuerpo($nombreParteCuerpo)
     {$rows=null;
         $modelo = new Conexion();
         $conexion = $modelo->getConection();
-        $sql="SELECT FA.idFicha,U.NumeroIdentificacion,C.nombreCliente,C.apellidoCliente,FA.fechaFicha, PC.nombreParteCuerpo,FM.medida,FA.descripcionFicha
+        $sql="SELECT FA.idFicha,U.NumeroIdentificacion,C.nombreCliente,C.apellidoCliente,FA.fechaFicha, PC.nombreParteCuerpo,PCE.medida,FA.descripcionFicha
         FROM clientes C 
         JOIN ficha_antropometrica FA 
         JOIN usuarios U 
         Join parte_del_cuerpo PC 
-        Join ficha_medida FM 
+        Join parte_cuerpo_ejercicio PCE 
         JOIN suscripciones S 
         ON C.idUsuarioFK=U.idUsuario 
-        and FM.idParteDelCuerpoFK=PC.idParteDelCuerpo 
-        and FM.idFichaFK=FA.idFicha 
+        and PCE.idParteDelCuerpoFK=PC.idParteDelCuerpo 
+        and PCE.idFichaFK=FA.idFicha 
         and FA.idSuscripcionFK=S.idSuscripcion 
         and S.idClienteFK = C.idCliente 
         WHERE U.NumeroIdentificacion = '".$filtro."'";

@@ -2,8 +2,10 @@
 require_once('../Modelo/class.conexion.php');
 require_once('../Modelo/class.consulta.suscripcion.php');
 require_once('../Modelo/class.consulta.fichaAntro.php');
+require_once('../Modelo/class.consulta.metodologia.php');
 $consultasSuscripcion = new ConsultasSuscripcion();
 $consultasFicha = new consultasFicha();
+$consultasMetodologia = new consultaMetodologia();
 $metodologia=$_POST['metodologia'];
 $nombreMetodologia='';
 if($metodologia=='1'){
@@ -44,6 +46,9 @@ $FechaFicha = $_POST['FechaFicha'];
 $Estatura = $_POST['Estatura'];
 $descMedic = $_POST['descMedic'];
 $pesoCliente = $_POST['Peso'];
+
+$fechaMet = $_POST['fechaMet'];
+$fechaMetFin = $_POST['FechFinMet'];
 ?>
  <!Doctype HTML>
 <html lang="es-ES">
@@ -88,6 +93,7 @@ $pesoCliente = $_POST['Peso'];
   <div class="container">
   <?php     
   $mensaje6 = $consultasSuscripcion -> registrarSuscripcion($valorSuscripcion, $fechaSuscripcion, $estadoSuscripcion,$metodologia);
+  $mensaje10 = $consultasMetodologia-> registrarSuscMeto($metodologia,$fechaMet,$fechaMetFin);
 $mensaje7 = $consultasFicha -> registrarFichaAntro($FechaFicha, $Estatura, $pesoCliente,$descMedic);
 $mensaje9 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo1FK, $medida1);
 $mensaje11 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo2FK, $medida2);
@@ -112,7 +118,7 @@ die();
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-	<script src="../../js/Registros1.js">
+	<script src="../../js/Registros2.js">
 	</script>	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
