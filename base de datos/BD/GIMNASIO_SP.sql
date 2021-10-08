@@ -24,16 +24,23 @@ DELIMITER ;
 
 /*---------------SP PARA VALIDACION DE ROLES EN EL LOGIN------------------------------*/
 
+/*Procedimiento almacenado que se encarga de validar que rol 
+tiene el usuario logeado en el sistema, para asi mismo enviarlo a su correspondiente modulo,
+esto teniendo en cuenta su numero de identificacion, el tipo de rol con el que se registro y el nombre del rol */
+
 USE `gimnasiobd`;
 DROP PROCEDURE IF EXISTS `validar_login2`;
 
 DELIMITER $$
 USE `gimnasiobd`$$
+DROP PROCEDURE IF EXISTS `validar_login2`;
 CREATE PROCEDURE `validar_login2` (in NumiD VARCHAR(15))
 BEGIN
-	SELECT idRolFK 
-	FROM USUARIOS 
-	WHERE NumeroIdentificacion= Numid;
+	SELECT idRolFK, nombreRol 
+	FROM USUARIOS AS u
+	JOIN ROL AS r
+	ON u.idRolFK=r.idRol
+	WHERE NumeroIdentificacion=Numid;
 END$$
 DELIMITER ;
 
@@ -170,11 +177,13 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `consultarSuscripcion` (in NumiD VARCHAR(15))
 BEGIN
 	SELECT c.nombreCliente, m.nombreMetodologia, s.valorSuscripcion, s.fechaSuscripcion 
-	FROM  Suscripciones AS s
-	JOIN Metodologia AS m 
-	ON s.idMetodologiaFK=m.idMetodologia
-	JOIN Usuarios AS u 
-	JOIN Clientes AS c 
+	FROM  SUSCRIPCIONES AS s
+    JOIN SUSCRIPCION_METODOLOGIA AS sm
+    ON s.idSuscripcion=sm.idSuscripcionFK
+	JOIN METODOLOGIA AS m 
+	ON sm.idMetodologiaFK=m.idMetodologia
+	JOIN USUARIOS AS u 
+	JOIN CLIENTES AS c 
 	ON u.idUsuario=c.idUsuarioFK 
 	AND s.idClienteFK=c.idCliente
 	WHERE u.numeroIdentificacion=NumiD;
@@ -182,6 +191,11 @@ END$$
 DELIMITER ;
 
 /*---------------SP PARA REGISTRAR LA PROGRAMACION ------------------------------*/
+
+/*Procedimiento almacenado para llevar a cabo el registro de la programacion, 
+esto teniendo en cuenta sus fechas de inicio y fin, 
+ademas del numero de identificacion del usuario para que asi cada usuario tenga su programacion en el sisitema y 
+realizar su correcta asistencia al gimansio*/
 
 USE `gimnasiobd`;
 DROP PROCEDURE IF EXISTS `registrarProgramacion`;
@@ -201,7 +215,6 @@ DELIMITER ;
 
 /*---------------SP PARA REGISTRAR LA ASISTENCIA ------------------------------*/
 
-Select * from asistencias;
 USE `gimnasiobd`;
 DROP PROCEDURE IF EXISTS `registrarAsistencia`;
 
@@ -238,8 +251,9 @@ BEGIN
 END$$
 DELIMITER ;
 
-
 /*---------------SP PARA REGISTRAR PAGOS ------------------------------*/
+
+/*Procedimiento almacenado para realizar el pago de la mensualidad del gimnasio, teniendo en cuenta el id de suscripcion*/
 
 USE `gimnasiobd`;
 DROP PROCEDURE IF EXISTS `registrarPagos`;
@@ -300,51 +314,8 @@ BEGIN
 END$$
 DELIMITER ;
 
-/*Sin ejecutar*/
-/*CONSULTAS*//*
-INSERT INTO EJERCICIOS
-SELECT MAX(idEjercicio) + 1, idParteDelCuerpoFK, nombreEjercicio FROM EJERCICIOS
-/*---------------SP PARA CONSULTAR LA SERIE DE EJERCICIOS ------------------------------*/
-/*
-USE `gimnasiobd`;
-DROP PROCEDURE IF EXISTS `consultarSerieEjercicio`;
-
-DELIMITER $$
-USE `gimnasiobd`$$
-CREATE PROCEDURE `consultarSerieEjercicio` ()
-BEGIN
-	SELECT u.numeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', s.idSerie, s.nombreSerieEjercicio, s.descripcionSerieEjercicio
-	FROM SERIE_DE_EJERCICIO AS s
-	JOIN TIPO_RUTINAS_EJERCICIO AS t
-    JOIN EJERCICIOS AS e
-    JOIN IMAGENES AS i
-    JOIN SUSCRIPCIONES_EJERCICIO AS se
-    JOIN SUSCRIPCIONES AS sp
-	JOIN CLIENTES AS c
-    JOIN USUARIOS AS u
-	ON  c.idCliente=sp.idClienteFK
-    AND u.idUsuario=c.idClienteFK;
-END$$
-DELIMITER ;
-
-CALL consultarSerieEjercicio();*/
-
-CALL consultarAsistenciaInstructor();
-
-CALL registrarPagos('2021-09-08',50.585,'Pago del mes de Septiembre','www.urldepagodeseptiembredenombreyapellido.com','3');
-
-SELECT * FROM PAGOS;
-
-select max(idProgramacion) as idProgramacion from programacion as p join usuarios as u 
-    on p.idUsuarioFK = u.idUsuario where u.NumeroIdentificacion="1000713178";
-Select max(idAsistencia) + 1 as idAsistencia from asistencias;
-
-CALL consultarAsistenciaCliente();
-
-CALL registrarProgramacion('2021-09-10','2021-10-10','1000713178');
-CALL consultarSuscripcion('1001299203');
-
 /*Funciones Escalares*/
+
 DROP FUNCTION IF EXISTS CantidadPagosCliente; 
 DELIMITER $$ 
 CREATE FUNCTION CantidadPagosCliente() 
@@ -355,6 +326,8 @@ set @cantidadClientes= (SELECT COUNT(DISTINCT idSuscripcionFK) From pagos);
 /*Select @cantidadClientes;*/
 RETURN @cantidadClientes; 
 END $$
+
+/*PorcentajePagosCliente*/
 DROP FUNCTION IF EXISTS PorcentajePagosCliente; 
 DELIMITER $$ 
 CREATE FUNCTION PorcentajePagosCliente() 
@@ -362,7 +335,7 @@ RETURNS float
 BEGIN 
 DECLARE cantidadClientes int; 
 set @cantidadClientes= (SELECT COUNT(DISTINCT idSuscripcionFK) From pagos); 
-set @Porcentaje=(@cantidadClientes*100/(Select count(*) From Clientes where estadoCliente=1));
+set @Porcentaje=(@cantidadClientes*100/(Select count(*) From Clientes));
 /*Select @Porcentaje;*/
 /*Select @cantidadClientes;*/
 RETURN @Porcentaje; 
