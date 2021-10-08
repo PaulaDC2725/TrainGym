@@ -117,8 +117,7 @@ INSERT INTO SUSCRIPCION_METODOLOGIA (idSuscripcionFK,idMetodologiaFK,fechaMetodo
 VALUES (3,2,'2021-07-10','2021-09-30');
 INSERT INTO SUSCRIPCION_METODOLOGIA (idSuscripcionFK,idMetodologiaFK,fechaMetodologiaInicio,fechaMetodologiaFin)
 VALUES (4,3,'2021-09-05','2021-10-05');
-INSERT INTO SUSCRIPCION_METODOLOGIA (idSuscripcionFK,idMetodologiaFK,fechaMetodologiaInicio,fechaMetodologiaFin)
-VALUES (4,2,'2021-10-05','2021-11-04');
+
 
 SELECT * FROM SUSCRIPCION_METODOLOGIA;
 

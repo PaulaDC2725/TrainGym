@@ -88,7 +88,7 @@ public function cargarPagoCliFiltroId($filtro){
 		$rows=null;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();
-		$sql="SELECT s.idSuscripcion,m.nombreMetodologia,CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo',s.valorSuscripcion,s.fechaSuscripcion from suscripciones as s join usuarios as u join clientes as c join metodologia as m on s.idClienteFK =c.idCliente and c.idUsuarioFK=u.idUsuario and s.idMetodologiaFK=m.idMetodologia WHERE u.NumeroIdentificacion='".$filtro."'";
+		$sql="SELECT s.idSuscripcion,m.nombreMetodologia,CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo',s.valorSuscripcion,s.fechaSuscripcion from suscripciones as s join usuarios as u join clientes as c join metodologia as m  join suscripcion_metodologia as sm  on s.idClienteFK =c.idCliente and c.idUsuarioFK=u.idUsuario and sm.idMetodologiaFK=m.idMetodologia WHERE u.NumeroIdentificacion='".$filtro."'";
 		 $statement=$conexion->prepare($sql);			
 		 $statement->execute();
 		 while ($result=$statement->fetch()) {

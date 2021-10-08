@@ -14,17 +14,11 @@ function validarForm1() {
     {
           swal("Ups!","Debe completar todos los campos","warning");
     }
-    // else if (contraseña.length < 10 ) {
-    //   swal("ERROR!","La contraseña ingresada no es válida","error");
-    // }
+    
     else if(emailRegex.test(correo)==false){
-      swal("Ups!","Correo invalido","warning");;
-            if(emailRegex.test(correoCliente)==true){
-                validarCorreo.innerHTML="Correo Valido";
-            }
+      swal("Ups!","Correo invalido","warning");
+            
     }else{ 
-      btnForm2.style.display = 'block';
-      btnForm1.style.display= 'none';
       document.getElementById('formInst').submit();
 
     }
