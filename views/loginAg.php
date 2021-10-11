@@ -31,39 +31,6 @@ https://www.tooplate.com/view/2119-gymso-fitness
 -->
 </head>
 <body>
-<?php 
-if(isset($_POST['Num'])&&isset($_POST['Contraseña'])){
-  session_start();
-$usuario = $_POST['Num'];
-$contrasenia = $_POST['Contraseña'];
-$estadoU = "1";
-$Rol = "3";
-$filas = $consultasUsuario->validarLoginUsuario($usuario,$contrasenia,$Rol,$estadoU);
-echo ('<script>console.log($filas)</script>');
-$resultado=null;
-if (is_array($filas) || is_object($filas))
-{
-  foreach($filas as $fila) {
-  $resultado=$fila['RESULTADO'];
-  /*$estado = $fila['estadoUsuario'];*/
-}
-}
-if($resultado=='1'){
-  $_SESSION["NumeroIdentificacion"] = $usuario;
-  $_SESSION['rol'] = $Rol;
-	header('location: AgendarCli.php');
-}else if($usuario=="" || $contrasenia==""){
-  echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
-}
-/*else if($resultado == '0' && $estado="0"){
-	echo('<center><div class="container"><br><br><br><span style="text-align: center;font-size: 20px;color: black;border: solid;border-color: red;background: #ff000038;padding: 70px;"><b>¡Usuario inhabilitado, por favor comuniqusese con la recepcionista para habilitarse nuevamente!</b> </span></div></center>');
-}*/else{
-  echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
-}
-
-}
-
-?>
 <section class="about section" id="Login">
   <div class="content">
     <div class="container">
@@ -86,6 +53,59 @@ if($resultado=='1'){
               <h3 style="font-family: inherit; font-size: 15px; color: #FF9900;; text-align:center;">*Recuerda iniciar sesion previamente*</h3>
                 </div>
                 <br>
+                <?php 
+if(isset($_POST['Num'])&&isset($_POST['Contraseña'])){
+  session_start();
+$usuario = $_POST['Num'];
+$contrasenia = $_POST['Contraseña'];
+if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
+  echo('<script>swal("Error!", "Datos inválidos","error")</script>');
+}else{
+$rows = $consultasUsuario->validarLogin2($usuario);
+if (is_array($rows) || is_object($rows))
+{foreach($rows as $row) {
+  $Rol=$row['idRolFK'];
+}
+}else{
+  $Rol ="0";
+}
+$estado=$consultasUsuario->validarLogin3($usuario);
+  if (is_array($estado) || is_object($estado))
+  {foreach($estado as $state) {
+    $estadoU=$state['estadoUsuario'];
+  }
+  }else{
+    $estadoU ="0";
+  }
+$filas = $consultasUsuario->validarLoginUsuario($usuario,$contrasenia,$Rol,$estadoU);
+$resultado=null;
+if (is_array($filas) || is_object($filas))
+{
+  foreach($filas as $fila) {
+  $resultado=$fila['RESULTADO'];
+  /*$estado = $fila['estadoUsuario'];*/
+}
+}
+if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo'){
+  echo '<div class="alert alert-warning"><strong>Usuario Incorrecto!</strong> El Usuario que ha intentado ingresar no es un cliente, Por favor intente nuevamente.</div>';
+}else if($resultado=='1' && $Rol=='3'){
+  $_SESSION["NumeroIdentificacion"] = $usuario;
+  $_SESSION['rol'] = $Rol;
+	header('location: AgendarCli.php');
+}else if($resultado=='1' && $Rol!='3'){
+  echo '<div class="alert alert-warning"><strong>Usuario Incorrecto!</strong> El Usuario que ha intentado ingresar no es un cliente, Por favor intente nuevamente.</div>';
+}else if($usuario=="" || $contrasenia==""){
+  echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
+}else if($estadoU=='0'){
+  echo '<div class="alert alert-warning"><strong>Cliente Inhabilitado!</strong> Si cree que se trata de un error, por favor comuníquese con Recepción.</div>';
+}else{
+  echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
+}
+
+}
+}
+
+?>
                 <form action="loginAg.php" method="post">            
                   <label for="username">Número de Documento</label> 
                     <input type="number" value="<?php echo $usuario?>" class="form-control" placeholder="Ingrese el número de documento" id="Num" name="Num" required>

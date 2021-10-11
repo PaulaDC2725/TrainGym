@@ -31,13 +31,32 @@ https://www.tooplate.com/view/2119-gymso-fitness
 -->
 </head>
 <body>
+<section class="about section" id="Login">
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center"> 
+          <div class="col-md-6 col-sm-6 col-lg-6 col-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="team-thumb">
+              <br>
+              <br>
+              <br>
+                  <img  src="images/imagenForm.png" class="img-fluid" id="fotoForm" alt="Trainer">
+            </div>                                 
+          </div>
+          <div class="card col-md-6 col-sm-6 col-lg-6"data-aos="fade-up" data-aos-delay="700">
+            <div class="card-body col-md-12">
+              <div class="col-md-12">
+                <div class="mb-12">
+                  <CENTER><a class="navbar-brand" href="index.php"><img src="images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>
+                  <center><h1 style="text-align: center;font-size: 23px">Iniciar Sesión</h1></center>
+                </div>
+                
 <?php 
 if(isset($_POST['Num']) && isset($_POST['Contraseña'])){
   
 session_start();
 $usuario = $_POST['Num'];
 $contrasenia = $_POST['Contraseña'];
-  $estadoU = "1";
 if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
   echo('<script>swal("Error!", "Datos inválidos","error")</script>');
 }else{
@@ -48,6 +67,14 @@ if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
   }
   }else{
     $Rol ="0";
+  }
+  $estado=$consultasUsuario->validarLogin3($usuario);
+  if (is_array($estado) || is_object($estado))
+  {foreach($estado as $state) {
+    $estadoU=$state['estadoUsuario'];
+  }
+  }else{
+    $estadoU ="0";
   }
   $filas = $consultasUsuario->validarLoginUsuario($usuario,$contrasenia,$Rol,$estadoU);
   $resultado=null;
@@ -74,8 +101,9 @@ if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
     header('location: inicioCliente.php');
   }else if($usuario=="" || $contrasenia==""){
     echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
-  }
-  else{
+  }else if($estadoU=='0'){
+    echo '<div class="alert alert-warning"><strong>Usuario Inhabilitado!</strong> Si cree que se trata de un error, por favor comuníquese con Recepción.</div>';
+  }else{
     echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
   }
 }
@@ -84,25 +112,6 @@ if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
 
 
 ?>
-<section class="about section" id="Login">
-  <div class="content">
-    <div class="container">
-      <div class="row justify-content-center"> 
-          <div class="col-md-6 col-sm-6 col-lg-6 col-6" data-aos="fade-up" data-aos-delay="700">
-            <div class="team-thumb">
-              <br>
-              <br>
-              <br>
-                  <img  src="images/imagenForm.png" class="img-fluid" id="fotoForm" alt="Trainer">
-            </div>                                 
-          </div>
-          <div class="card col-md-6 col-sm-6 col-lg-6"data-aos="fade-up" data-aos-delay="700">
-            <div class="card-body col-md-12">
-              <div class="col-md-12">
-                <div class="mb-12">
-                  <CENTER><a class="navbar-brand" href="index.php"><img src="images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>
-                  <center><h1 style="text-align: center;font-size: 23px">Iniciar Sesión</h1></center>
-                </div>
                 <form action="login.php" method="post">            
                   <label for="username">Número de Documento</label> 
                     <input type="number" class="form-control" value="<?php echo $usuario?>"placeholder="Ingrese el número de documento" id="Num" name="Num" required>

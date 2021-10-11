@@ -155,6 +155,19 @@ public function validarUsuario($numeroIdentificacion){
 			}
 			return $rows;
 		}
+		public function validarLogin3($numeroIdentificacion){
+			$rows=null;
+			$estado=1;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql="SELECT estadoUsuario FROM usuarios where NumeroIdentificacion='".$numeroIdentificacion."'";
+			$statement=$conexion->prepare($sql);			
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
 		
 	
 
