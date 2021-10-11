@@ -88,13 +88,13 @@ SELECT * FROM ASISTENCIAS;
 
 /*TABLA SUSCRIPCIONES*/
 INSERT INTO SUSCRIPCIONES (idSuscripcion,valorSuscripcion,fechaSuscripcion,estadoSuscripcion,descripcionNovedad,idClienteFK)
-VALUES (1,39.900,'2021-09-29',1,'Ninguna',3);
+VALUES (1,39900,'2021-09-29',1,'Ninguna',3);
 INSERT INTO SUSCRIPCIONES (idSuscripcion,valorSuscripcion,fechaSuscripcion,estadoSuscripcion,descripcionNovedad,idClienteFK)
-VALUES (2,79.800,'2021-09-28',1,'Ninguna',2);
+VALUES (2,79800,'2021-09-28',1,'Ninguna',2);
 INSERT INTO SUSCRIPCIONES (idSuscripcion,valorSuscripcion,fechaSuscripcion,estadoSuscripcion,descripcionNovedad,idClienteFK)
-VALUES (3,39.900,'2021-07-10',1,'Ninguna',1);
+VALUES (3,39900,'2021-07-10',1,'Ninguna',1);
 INSERT INTO SUSCRIPCIONES (idSuscripcion,valorSuscripcion,fechaSuscripcion,estadoSuscripcion,descripcionNovedad,idClienteFK)
-VALUES (4,39.900,'2021-09-05',1,'Ninguna',4);
+VALUES (4,39900,'2021-09-05',1,'Ninguna',4);
 
 SELECT * FROM SUSCRIPCIONES;
 
@@ -123,11 +123,11 @@ SELECT * FROM SUSCRIPCION_METODOLOGIA;
 
 /*TABLA PAGOS*/
 INSERT INTO PAGOS (idPago,fechaPago,valorPago,descripcionPago,urlSoportePago,idSuscripcionFK)
-VALUES (1,'2021-09-29',200000,'Pago la mitad de su suscripcion, debe $19.950','2021-02-15 12_00_33-Window.png',1);
+VALUES (1,'2021-09-29',200000,'Pago la mitad de su suscripcion, debe $19.950','Pago 1.jpeg',1);
 INSERT INTO PAGOS (idPago,fechaPago,valorPago,descripcionPago,urlSoportePago,idSuscripcionFK)
-VALUES (2,'2021-09-28',180000,'Pago por dos meses (septiembre y octubre)','2021-02-15 12_00_33-Window.png',2);
+VALUES (2,'2021-09-28',180000,'Pago por dos meses (septiembre y octubre)','Pago 2.jpeg',2);
 INSERT INTO PAGOS (idPago,fechaPago,valorPago,descripcionPago,urlSoportePago,idSuscripcionFK)
-VALUES (3,'2021-09-05',250000,'Pago por un mes (septiembre)','2021-02-15 12_00_33-Window.png',4);
+VALUES (3,'2021-09-05',250000,'Pago por un mes (septiembre)','Pago 3.jpeg',4);
 
 SELECT * FROM PAGOS;
 
@@ -147,36 +147,25 @@ SELECT * FROM FICHA_ANTROPOMETRICA;
 
 /*TABLA PARTE_DEL_CUERPO*/
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (1,'Cabeza');
+VALUES (1,'Craneo');
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (2,'Cintura');
+VALUES (2,'Bicep Derecho');
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (3,'Biceps');
+VALUES (3,'Bicep Izquierdo');
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (4,'Pecho');
+VALUES (4,'Muslo Derecho');
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (5,'Pierna');
+VALUES (5,'Muslo Izquierdo');
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (6,'Craneo');
+VALUES (6,'Cintura');
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (7,'Bicep Derecho');
+VALUES (7,'Brazo Derecho');
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (8,'Bicep Izquierdo');
+VALUES (8,'Brazo Izquierdo');
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (9,'Muslo Derecho');
+VALUES (9,'Pierna Derecha');
 INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (10,'Muslo Izquierdo');
-INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (11,'Espalda');
-INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (12,'Brazo Derecho');
-INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (13,'Brazo Izquierdo');
-INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (14,'Pierna Derecha');
-INSERT INTO PARTE_DEL_CUERPO (idParteDelCuerpo,nombreParteCuerpo)
-VALUES (15,'Pierna Izquierda');
-
+VALUES (10,'Pierna Izquierda');
 SELECT * FROM PARTE_DEL_CUERPO;
 
 /*TABLA PARTE_CUERPO_EJERCICIO*/
@@ -312,13 +301,13 @@ SELECT * FROM EJERCICIOS;
 
 /*TABLA SERIE_DE_EJERCICIO*/
 INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,urlImagen,idMetodologiaFK)
-VALUES (1,'Disminuir de peso principiante','Realizar los ejercicios propuestos',4,12,'2021-02-15 12_00_33-Window.png',1);
+VALUES (1,'Disminuir de peso principiante','Realizar los ejercicios propuestos',4,12,'Ejercicio 1.jpeg',1);
 INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,urlImagen,idMetodologiaFK)
-VALUES (2,'Disminuir de peso intermedio','Realizar los ejercicios propuestos',5,10,'2021-02-15 12_00_33-Window.png',1);
+VALUES (2,'Disminuir de peso intermedio','Realizar los ejercicios propuestos',5,10,'Ejercicio 2.jpeg',1);
 INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,urlImagen,idMetodologiaFK)
-VALUES (3,'Aumentar masa muscular principante','Realizar los ejercicios propuestos',4,15,'2021-02-15 12_00_33-Window.png',2);
+VALUES (3,'Aumentar masa muscular principante','Realizar los ejercicios propuestos',4,15,'Ejercicio 3.jpeg',2);
 INSERT INTO SERIE_DE_EJERCICIO (idSerie,nombreSerieEjercicio,descripcionSerieEjercicio,repeticionEjercicio,secuenciaEjercicio,urlImagen,idMetodologiaFK)
-VALUES (4,'Dos objetivos','Realizar los ejercicios propuestos',6,8,'2021-02-15 12_00_33-Window.png',3);
+VALUES (4,'Dos objetivos','Realizar los ejercicios propuestos',6,8,'Ejercicio 4.jpeg',3);
 
 SELECT * FROM SERIE_DE_EJERCICIO;
 
@@ -343,8 +332,6 @@ INSERT INTO TB_SERIES_EJERCICIOS(idEjercicioFK,idSerieFK)
 VALUES (5,2);
 INSERT INTO TB_SERIES_EJERCICIOS(idEjercicioFK,idSerieFK)
 VALUES (10,3);
-INSERT INTO TB_SERIES_EJERCICIOS(idEjercicioFK,idSerieFK)
-VALUES (12,3);
 INSERT INTO TB_SERIES_EJERCICIOS(idEjercicioFK,idSerieFK)
 VALUES (9,3);
 INSERT INTO TB_SERIES_EJERCICIOS(idEjercicioFK,idSerieFK)

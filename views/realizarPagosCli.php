@@ -132,56 +132,7 @@ $fcha = date("Y-m-d");
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="deznav">
-            <div class="deznav-scroll">
-				<ul class="metismenu" id="menu">
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-news"></i>
-							<span class="nav-text">Inicio</span>
-						</a>
-                        <ul aria-expanded="false">
-							<li><a href="inicioCliente.php">Bienvenido</a></li>
-							
-						</ul>
-                    </li>
-                    <li class="mm-active"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-						<i class="fa fa-money"></i>
-							<span class="nav-text">Pagos</span>
-						</a>
-                        <ul class="mm-collapse mm-show mm-active" aria-expanded="false">
-                            <li><a class="mm-active" href="realizarPagosCli.php">Registrar</a></li>
-                            
-                            </li>
-							<a href="consultarPagosCli.php">Consultar</a>
-                            </li>
-                        </ul>
-                    </li>
-					<li><a href="consultarAgendaCli.php?NumeroIdentificacion=<?php echo $id?>"  href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-search-1"></i>
-							<span class="nav-text">Consultar Agenda</span>
-						</a>
-                    </li>
-                    <li><a href="AgendarCli.php" href="javascript:void()" aria-expanded="false">
-						<i class="flaticon-381-calendar-7"></i>
-							<span class="nav-text">Agendar Programación</span>
-						</a>
-                    </li>
-                    <li><a href="registrarAsistenciasCli.php?NumeroIdentificacion=<?php echo $id?>"  href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-notepad"></i>
-							<span class="nav-text">Registrar Asistencias</span>
-						</a>
-                    </li>
-                    <li><a href="consultarSerie.php" href="javascript:void()" aria-expanded="false">
-						<i class="flaticon-381-list-1"></i>
-							<span class="nav-text">Series De Ejercicio </span>
-						</a>
-                    </li>                    
-					<div class="copyright">
-						<p><strong>TrainGym</strong> © 2021 </p>
-						<!-- <p>Made with <span class="heart"></span> by DexignZone</p> -->
-					</div>
-				</div>
-			</div>
+        <?php require_once('menuCliente.php')?>
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -242,42 +193,7 @@ $fcha = date("Y-m-d");
 											<textarea class="form-control" id="descPago" placeholder="*Realice una descripción del pago a realizar*" name="descPago" value="N/A" rows="5" ></textarea>
                                             </div>
                                         </div>										
-                                        <!-- <fieldset class="form-group">
-                                            <div class="row">
-                                                <label class="col-form-label col-sm-3 pt-0">Radios</label>
-                                                <div class="col-sm-9">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked>
-                                                        <label class="form-check-label">
-                                                            First radio
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="gridRadios" value="option2">
-                                                        <label class="form-check-label">
-                                                            Second radio
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check disabled">
-                                                        <input class="form-check-input" type="radio" name="gridRadios" value="option3" disabled>
-                                                        <label class="form-check-label">
-                                                            Third disabled radio
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                        <div class="form-group row">
-                                            <div class="col-sm-3">Checkbox</div>
-                                            <div class="col-sm-9">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox">
-                                                    <label class="form-check-label">
-                                                        Example checkbox
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>-->
+                                       
                                         <div class="form-group row">
                                             <div class="col-sm-10">
                                                 <button type="submit" id="Registrar" name="btnf" class="btn btn-primary">Realizar Pagos</button>

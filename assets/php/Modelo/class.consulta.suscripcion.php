@@ -30,6 +30,21 @@ class ConsultasSuscripcion{
 	 return $rows;
 
  }
+ public function ConsultarSuscripcion($numeroIdentificacion)
+		{
+			$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql = "SELECT s.idSuscripcion FROM suscripciones as s JOIN usuarios as u join Clientes as c on c.idCliente=s.idClienteFK 
+			and c.idUsuarioFK=u.idUsuario where u.NumeroIdentificacion='".$numeroIdentificacion."'";
+			$statement=$conexion->prepare($sql);			
+	 $statement->execute();
+	 while ($result=$statement->fetch()) {
+		$rows[]=$result;
+	}
+	 return $rows;
+
+ }
 	public function ConsultarPorcentajePagosCli()
 		{
 			$rows=null;

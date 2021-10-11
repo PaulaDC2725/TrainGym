@@ -17,16 +17,16 @@ $nombreMetodologia='Disminuir de peso';
 }
 
 
-$idParteDelCuerpo1FK='6';
-$idParteDelCuerpo2FK='7';
-$idParteDelCuerpo3FK='8';
-$idParteDelCuerpo4FK='9';
-$idParteDelCuerpo5FK='10';
-$idParteDelCuerpo6FK='11';
-$idParteDelCuerpo7FK='12';
-$idParteDelCuerpo8FK='13';
-$idParteDelCuerpo9FK='14';
-$idParteDelCuerpo10FK='15';
+$idParteDelCuerpo1FK='1';
+$idParteDelCuerpo2FK='2';
+$idParteDelCuerpo3FK='3';
+$idParteDelCuerpo4FK='4';
+$idParteDelCuerpo5FK='5';
+$idParteDelCuerpo6FK='6';
+$idParteDelCuerpo7FK='7';
+$idParteDelCuerpo8FK='8';
+$idParteDelCuerpo9FK='9';
+$idParteDelCuerpo10FK='10';
 $medida1 = $_POST['perCraneo'];
 $medida2 = $_POST['perBic1'];
 $medida3 = $_POST['perBic2'];

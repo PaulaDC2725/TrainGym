@@ -228,7 +228,7 @@ $fcha = date("Y-m-d");?>
 								<div class="col-md-12">	
 									<label for="text" class="form-label">Descripción Médica: </label>
 									<div class="form-group last mb-12">																				
-										<textarea class="form-control" id="descMedic" placeholder="*En caso de no tener alguna recomendación ingrese N/A*" name="descMedic" value="N/A" rows="12" ></textarea>
+										<textarea class="form-control" id="descMedic" placeholder="*En caso de no tener alguna recomendación ingrese N/A*" name="descMedic" value="N/A" rows="12" >N/A</textarea>
 									</div>										
 								</div>
 								<!-- <pre style="color: blue;font-size:18px"></pre> -->

@@ -31,6 +31,18 @@ if(isset($_POST['Nom'])&&isset($_POST['Ape'])
     }else if($tipoDocumento =="4"){
         $nombreDocumento="Pasaporte";
     }
+    $opcionTipoDoc = '<option selected value="" disabled>'.$nombreDocumento.'</option>
+    <option selected value="'.$tipoDocumento.'" hidden>'.$nombreDocumento.'</option>
+    <option value="1">Cédula de ciudadania</option>
+    <option value="2">Tarjeta de identidad</option>
+    <option value="3">Cédula de extranjeria</option>
+    <option value="4">Pasaporte</option>';
+}else{
+    $opcionTipoDoc= '  <option selected value="" disabled>--Seleccione el tipo de documento--</option>
+    <option value="1">Cédula de ciudadania</option>
+    <option value="2">Tarjeta de identidad</option>
+    <option value="3">Cédula de extranjeria</option>
+    <option value="4">Pasaporte</option>';
 }
  ?>
 <!DOCTYPE html>
@@ -123,13 +135,8 @@ https://www.tooplate.com/view/2119-gymso-fitness
                                 <div class="col-md-6">												
                                     <label for="TipoDoc" class="form-label">Tipo de documento: </label>
                                     <select class="form-control" id="tipoDocumentoCli" name="tipoDocumentoCli" >
-											<option selected value="" disabled><?php echo $nombreDocumento?></option>
-											<option selected value="<?php echo $tipoDocumento?>" hidden><?php echo $nombreDocumento?></option>
-											<option value="1">Cédula de ciudadania</option>
-											<option value="2">Tarjeta de identidad</option>
-											<option value="3">Cédula de extranjeria</option>
-											<option value="4">Pasaporte</option>
-                                        </select>
+                                        <?php echo $opcionTipoDoc ?>                                            
+                                    </select>
                                 </div>	
                                 <br>
                                 <div class="col-md-6">

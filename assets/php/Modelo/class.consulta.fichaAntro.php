@@ -16,6 +16,22 @@
      }
 
 }
+public function registrarFichaAntroNueva($fechaFicha, $EstaturaCliente, $pesoCliente,$descripcionFicha,$idSuscripcion)
+    {
+        $rows=null;
+        $modelo = new Conexion();
+        $conexion = $modelo->getConection();					
+        $sql = "INSERT INTO ficha_antropometrica(idFicha, fechaFicha, EstaturaCliente, pesoCliente, descripcionFicha, idSuscripcionFK) SELECT MAX(idFicha) + 1,'".$fechaFicha."','".$EstaturaCliente."','".$pesoCliente."','".$descripcionFicha."','".$idSuscripcion."' FROM ficha_antropometrica";
+        $statement=$conexion->prepare($sql);
+
+    if (!$statement) {
+         return "error al crear registro";			 	
+     }else{
+         $statement->execute();	
+         return $sql;
+     }
+
+}
 public function registrarParteCuerpo($nombreParteCuerpo)
     {
         $rows=null;
@@ -42,7 +58,7 @@ public function registrarParteCuerpo($nombreParteCuerpo)
         while ($result=$statement->fetch()) {
             $rows[]=$result;
         }
-        return $rows;
+        return $sql;
 
     }
     public function consultarFichaAntro1($filtro)
