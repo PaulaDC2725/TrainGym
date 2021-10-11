@@ -256,16 +256,6 @@ INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
 VALUES (9,9,'Press a una pierna dr');
 INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
 VALUES (10,10,'Press a una pierna dr');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
-VALUES (11,11,'Low plank');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
-VALUES (12,12,'Press de hombro dr');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
-VALUES (13,13,'Press de hombros dr');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
-VALUES (14,14,'Inchworms');
-INSERT INTO EJERCICIOS (idEjercicio,idParteDelCuerpoFK,nombreEjercicio)
-VALUES (15,15,'Pesas');
 
 SELECT * FROM EJERCICIOS;
 
