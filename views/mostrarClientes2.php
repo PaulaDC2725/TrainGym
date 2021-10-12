@@ -40,9 +40,36 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 	 
  }
 require_once('../assets/php/Modelo/class.consulta.cliente.php');
-$consultasCli = new ConsultasClientes();
+require_once('../assets/php/Modelo/class.consulta.usuario.php');
 
-  $filas = $consultasCli->consultarClientesHab();
+$consultasCliente = new ConsultasClientes();
+$consultasUsuario = new ConsultasUsuario();
+$estadoCliente=null;
+$estadoUsuario = null;
+$idUsuarioFK = null;
+if (isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
+{
+    $num=$_GET['NumeroIdentificacion'];
+    $filtro=$num;
+    $id = $_GET['id'];
+
+    $filas = $consultasCliente->cargarClientesFiltroId($filtro);
+    if (is_array($filas) || is_object($filas))
+    {  
+      foreach ($filas as $fila) 
+      {
+        $estadoCliente=$fila['estadoCliente'];
+        $estadoUsuario=$fila['estadoUsuario'];
+        $idUsuarioFK = $fila['idUsuarioFK'];
+      }
+      
+    } 
+    
+	$mensaje5 = $consultasUsuario ->cambiarEstadoUsuario("1", $idUsuarioFK);
+    $mensaje4 = $consultasCliente->cambiarEstadoCliente("1", $id);
+}
+
+  $filas = $consultasCliente ->consultarClientesHab();
  
 
 $tabla="";
@@ -63,7 +90,7 @@ if (isset($filas)) {
 	  $tabla.='<td>'.$fila['fechaNacimientoCliente'].'</td>';
 	  $tabla.='<td>'.$fila['correoCliente'].'</td>';
 	  $tabla.='<td>'.$fila['telefonoCliente'].'</td>';
-	  $botonhab='<a href="../assets/php/Controlador/habCli.php?NumeroIdentificacion='.$fila['NumeroIdentificacion'].'&id='.$fila['idCliente'].'" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check"></i></a>';
+	  $botonhab='<a href="mostrarClientes2.php?NumeroIdentificacion='.$fila['NumeroIdentificacion'].'&id='.$fila['idCliente'].'" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check"></i></a>';
 	  $tabla.='<td>
 	  				<div class="d-flex">
 					  '.$botonhab.'
@@ -88,7 +115,8 @@ if (isset($filas)) {
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
     <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Custom Stylesheet -->
     <link href="../vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
@@ -96,6 +124,29 @@ if (isset($filas)) {
 </head>
 
 <body>
+<?php
+	  if(isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
+	  {
+		echo('<script> window.addEventListener("load", init, false);
+		function init () {
+			Swal.fire({
+				title: "Excelente",
+				text: "Usuario habilitado con éxito",
+				icon: "success",
+				buttons: true,
+				dangerMode: true,
+			  }).then((willDelete) => {
+			if (willDelete) {
+				location.href = "mostrarClientes2.php";
+			} else {
+				location.href = "mostrarClientes2.php";
+			}
+		  });
+		}
+		
+		  </script>');
+	  }
+	?>
 
 
    <!--*******************

@@ -40,8 +40,37 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 	 
  }
 require_once('../assets/php/Modelo/class.consulta.cliente.php');
-  $consultasCli = new ConsultasClientes();
-    $filas = $consultasCli->consultarClientes();
+require_once('../assets/php/Modelo/class.consulta.usuario.php');
+
+$consultasCliente = new ConsultasClientes();
+$consultasUsuario = new ConsultasUsuario();
+$estadoCliente=null;
+$estadoUsuario = null;
+$idUsuarioFK = null;
+if (isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
+{
+    $num=$_GET['NumeroIdentificacion'];
+    $filtro=$num;
+    $id = $_GET['id'];
+
+    $filas = $consultasCliente->cargarClientesFiltroId($filtro);
+    if (is_array($filas) || is_object($filas))
+    {  
+      foreach ($filas as $fila) 
+      {
+        $estadoCliente=$fila['estadoCliente'];
+        $estadoUsuario=$fila['estadoUsuario'];
+        $idUsuarioFK = $fila['idUsuarioFK'];
+      }
+      
+    } 
+    
+    $mensaje5 = $consultasUsuario ->cambiarEstadoUsuario("0", $idUsuarioFK);
+    $mensaje4 = $consultasCliente->cambiarEstadoCliente("0", $id);
+    // echo $mensaje4;/**/
+    /*header("location: ../../../views/mostrarClientes.php");*/ 
+}
+    $filas = $consultasCliente->consultarClientes();
   
    
   
@@ -53,7 +82,7 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
   if (isset($filas)) {    
 
     foreach ($filas as $fila){      
-      $boton='<a href="../assets/php/Controlador/inhaCli.php?id='.$fila['idCliente'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'" class="btn btn-danger shadow btn-xs sharp" style="background-color: red;"><i class="fa fa-trash"></i></a>';
+      $boton='<a href="mostrarClientes.php?id='.$fila['idCliente'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'" class="btn btn-danger shadow btn-xs sharp" style="background-color: red;"><i class="fa fa-trash"></i></a>';
       $botonEditar='<a href="actualizarCliente.php?id='.$fila['NumeroIdentificacion'].'" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>';
       $tabla.='<tr class="limitada" scope="row">';
         $tabla.='<td><strong>'.$fila['NumeroIdentificacion'].'</strong></td>';
@@ -82,7 +111,8 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
     <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Custom Stylesheet -->
     <link href="../vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
@@ -90,6 +120,29 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
 </head>
 
 <body>
+<?php
+	  if(isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
+	  {
+		echo('<script> window.addEventListener("load", init, false);
+		function init () {
+			Swal.fire({
+				title: "Excelente",
+				text: "Usuario Inhabilitado con éxito",
+				icon: "success",
+				buttons: true,
+				dangerMode: true,
+			  }).then((willDelete) => {
+			if (willDelete) {
+				location.href = "mostrarClientes.php";
+			} else {
+				location.href = "mostrarClientes.php";
+			}
+		  });
+		}
+		
+		  </script>');
+	  }
+	?>
 
 
    <!--*******************

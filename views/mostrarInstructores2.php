@@ -67,6 +67,7 @@ if (isset($_GET['NumeroIdentificacion']))
     
 	$mensaje5 = $consultasUsuario ->cambiarEstadoUsuario("1", $idUsuarioFK);
     $mensaje4 = $consultasInstructor->cambiarEstadoInstructor("1", $id);
+	
 }
   $filas = $consultasInstructor->consultarInstructorHab();
 
@@ -114,7 +115,8 @@ if (isset($filas)) {
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="../vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
@@ -123,6 +125,31 @@ if (isset($filas)) {
 </head>
 
 <body>
+<?php
+	  if(isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
+	  {
+		echo('<script> window.addEventListener("load", init, false);
+		function init () {
+			Swal.fire({
+				title: "Excelente",
+				text: "Usuario Inhabilitado con éxito",
+				icon: "success",
+				buttons: true,
+				dangerMode: true,
+			  }).then((willDelete) => {
+			if (willDelete) {
+				location.href = "mostrarInstructores2.php";
+			} else {
+				location.href = "mostrarInstructores2.php";
+			}
+		  });
+		}
+		
+		  </script>');
+	  }
+	?>
+	
+	
 
 
    <!--*******************
