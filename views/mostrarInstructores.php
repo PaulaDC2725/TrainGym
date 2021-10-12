@@ -40,26 +40,49 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 	 
  }
 require_once('../assets/php/Modelo/class.consulta.instructor.php');
-$consultasIns = new ConsultasInstructor();
+require_once('../assets/php/Modelo/class.consulta.usuario.php');
 
-  $filas = $consultasIns->consultarInstructor();
+$consultasInstructor = new consultasInstructor();
+$consultasUsuario = new ConsultasUsuario();
+$estadoInstructor=null;
+$estadoUsuario = null;
+$idUsuarioFK = null;
+if (isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
+{
+    $num=$_GET['NumeroIdentificacion'];
+    $filtro=$num;
+    $id = $_GET['id'];
 
+    $filas = $consultasInstructor->cargarInstructorFiltroId($filtro);
+    if (is_array($filas) || is_object($filas))
+    {  
+      foreach ($filas as $fila) 
+      {
+        $estadoCliente=$fila['estadoInstructor'];
+        $estadoUsuario=$fila['estadoUsuario'];
+        $idUsuarioFK = $fila['idUsuarioFK'];
+      }
+      
+    } 
+    
+    $mensaje5 = $consultasUsuario ->cambiarEstadoUsuario("0", $idUsuarioFK);
+    $mensaje4 = $consultasInstructor->cambiarEstadoInstructor("0", $id);
+}
+
+  $filas = $consultasInstructor->consultarInstructor();
  
+
 
 $tabla="";
 $estado='';
 $boton='';
-/*$rutaActivaInactiva="";*/
-/*$botonEditar='';/*
-$botonBorrar='';*/
 
 if (isset($filas)) {    
 
   foreach ($filas as $fila){
-	$boton='<a href="../assets/php/Controlador/inhaInst.php?id='.$fila['idInstructor'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'" class="btn btn-danger shadow btn-xs sharp" style="background-color: red;"><i class="fa fa-trash"></i></a>';
+	$boton='<a href="mostrarInstructores.php?id='.$fila['idInstructor'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'" class="btn btn-danger shadow btn-xs sharp" style="background-color: red;"><i class="fa fa-trash"></i></a>';
 	$botonEditar='<a href="actualizarInstructor.php?id='.$fila['NumeroIdentificacion'].'" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>';
-	// 	$boton='<a href="../assets/php/Controlador/inhaInst.php?id='.$fila['idInstructor'].'&NumeroIdentificacion='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-danger" value="Inhabilitar"></a>';
-	// $botonEditar='<a href="actualizarInstructor.php?id='.$fila['NumeroIdentificacion'].'"><input type="button" class="btn btn-warning" value="Actualizar"></a>';
+	
 	$tabla.='<tr class="limitada" scope="row">';
 	$tabla.='<td><strong>'.$fila['NumeroIdentificacion'].'</strong></td>';
 	  $tabla.='<td>'.$fila['nombreInstructor'].'</td>';
