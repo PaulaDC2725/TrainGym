@@ -132,7 +132,7 @@ if (isset($filas)) {
 		function init () {
 			Swal.fire({
 				title: "Excelente",
-				text: "Usuario Inhabilitado con éxito",
+				text: "Usuario habilitado con éxito",
 				icon: "success",
 				buttons: true,
 				dangerMode: true,
