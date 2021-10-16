@@ -77,12 +77,7 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
       foreach ($filas1 as $fila) 
       {
         $numeroIdentificacion=$fila['NumeroIdentificacion']; 
-          $nombreCliente = $fila['nombreCliente'];   
-        $tabla='<tr style="text-align: center">';
-        $tabla.='<td colspan="9" style="color: black; font-size: 20px">';
-          $tabla.='No se encuentran resultados para la busqueda';
-        $tabla.='</td>';
-        $tabla.='</tr>';
+          $nombreCliente = $fila['nombreCliente']; 
       }
     }
       if (is_array($filas) || is_object($filas))
