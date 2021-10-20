@@ -92,21 +92,7 @@
                 return $rows;
             }
 */
-public function validarUsuario($numeroIdentificacion){
-			$rows=null;
-			$estado=1;
-			$modelo = new Conexion();
-			$conexion = $modelo->getConection();					
-			$sql="SELECT COUNT(*) AS RESULTADO 
-			FROM USUARIOS 
-			WHERE NumeroIdentificacion='".$numeroIdentificacion."'";
-			$statement=$conexion->prepare($sql);			
-			$statement->execute();
-			while ($result=$statement->fetch()) {
-				$rows[]=$result;
-			}
-			return $rows;
-		}
+
 			public function validarLoginUsuario($numeroIdentificacion,
 			$passwordUsuario,$rolFK,$estado){
 			$rows=null;
@@ -141,6 +127,38 @@ public function validarUsuario($numeroIdentificacion){
 		// 	}
 		// 	return $rows;
 		// }
+		
+		public function validarDatosCorrectos($numeroIdentificacion,$passwordUsuario){
+			$rows=null;
+			$estado=1;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql="SELECT COUNT(*) AS Correcto 
+			FROM USUARIOS 
+			WHERE NumeroIdentificacion='".$numeroIdentificacion."'
+			AND passwordUsuario='".$passwordUsuario."'";
+			$statement=$conexion->prepare($sql);			
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
+		public function validarExistencia($numeroIdentificacion){
+			$rows=null;
+			$estado=1;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql="SELECT COUNT(*) AS Cantidad 
+			FROM USUARIOS 
+			WHERE NumeroIdentificacion='".$numeroIdentificacion."'";
+			$statement=$conexion->prepare($sql);			
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
 		
 		public function validarLogin2($numeroIdentificacion){
 			$rows=null;

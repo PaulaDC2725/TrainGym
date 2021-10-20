@@ -5,10 +5,10 @@ require_once('Modelo/class.consulta.usuario.php');
 $consultasUsuario = new ConsultasUsuario();
 
 $numeroIdentificacion=$_POST['Num'];
-     $filas = $consultasUsuario->validarUsuario($numeroIdentificacion);
+     $filas = $consultasUsuario->validarExistencia($numeroIdentificacion);
  
      foreach ($filas as $fila) {
-         $resultado=$fila['RESULTADO'];
+         $resultado=$fila['Cantidad'];
        } 
        
 ?>

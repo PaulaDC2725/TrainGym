@@ -61,6 +61,22 @@ $contrasenia = $_POST['Contraseña'];
 if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
   echo('<script>swal("Error!", "Datos inválidos","error")</script>');
 }else{
+  $correcciones = $consultasUsuario->validarDatosCorrectos($usuario,$contrasenia);
+  if (is_array($correcciones) || is_object($correcciones))
+  {foreach($correcciones as $correccion) {
+    $datosErroneos=$correccion['Correcto'];
+  }
+  }else{
+    $datosErroneos =="0";
+  }
+  $existencias = $consultasUsuario->validarExistencia($usuario);
+  if (is_array($existencias) || is_object($existencias))
+  {foreach($existencias as $existencia) {
+    $existenciaU=$existencia['Cantidad'];
+  }
+  }else{
+    $existenciaU ="0";
+  }
 $rows = $consultasUsuario->validarLogin2($usuario);
 if (is_array($rows) || is_object($rows))
 {foreach($rows as $row) {
@@ -96,10 +112,12 @@ if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo'){
   echo '<div class="alert alert-warning"><strong>Usuario Incorrecto!</strong> El Usuario que ha intentado ingresar no es un cliente, Por favor intente nuevamente.</div>';
 }else if($usuario=="" || $contrasenia==""){
   echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
-}else if($estadoU=='0'){
-  echo '<div class="alert alert-warning"><strong>Cliente Inhabilitado!</strong> Si cree que se trata de un error, por favor comuníquese con Recepción.</div>';
-}else{
+}else if($existenciaU=='0'){
+  echo('<script>swal("Error!", "Usuario no registrado en el sistema","error")</script>');
+}else if($resultado!= '1' && $datosErroneos=="0"){
   echo('<script>swal("Error!", "Datos ingresados erroneos, intentelo nuevamente","error")</script>');
+}else if($estadoU=='0' && $datosErroneos=="1"){
+  echo '<div class="alert alert-warning"><strong>Cliente Inhabilitado!</strong> Si cree que se trata de un error, por favor comuníquese con Recepción.</div>';
 }
 
 }
