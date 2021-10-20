@@ -49,7 +49,6 @@
                     </li>                     
 					<div class="copyright">
 						<p><strong>TrainGym</strong> © 2021 </p>
-						<!-- <p>Made with <span class="heart"></span> by DexignZone</p> -->
 					</div>
 				</div>
 			</div>

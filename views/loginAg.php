@@ -25,10 +25,6 @@
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/tooplate-gymso-style.css">
      <link rel="icon" type="image/x-icon" href="images/Recurso 1.png" />
-<!--
-Tooplate 2119 Gymso Fitness
-https://www.tooplate.com/view/2119-gymso-fitness
--->
 </head>
 <body>
 <section class="about section" id="Login">
@@ -99,7 +95,6 @@ if (is_array($filas) || is_object($filas))
 {
   foreach($filas as $fila) {
   $resultado=$fila['RESULTADO'];
-  /*$estado = $fila['estadoUsuario'];*/
 }
 }
 if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo'){

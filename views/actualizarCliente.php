@@ -270,21 +270,6 @@
 													<input required type="email" class="form-control" id="corr"value="<?php echo $correoCliente;?>" name="corr"placeholder="(email@example.com)">	
 												</div>
 											</div>
-											<!-- <div class="form-row">
-												
-												<div class="form-group col-md-2">
-													<label>Zip</label>
-													<input required type="text" class="form-control">
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="form-check">
-													<input required class="form-check-input" type="checkbox">
-													<label class="form-check-label">
-														Check me out
-													</label>
-												</div>
-											</div> -->
 											<input type="button" class="btn btn-warning" style="background-color: #FF9900; color: white;text-align:center;"value="Regresar" onclick="location.href='mostrarClientes.php'"/>	
 											<button type="submit"  id="actualizar" name="actualizar"  class="btn btn-primary">Actualizar</button>
 											<?php
@@ -330,14 +315,6 @@
         </div>
         <!--**********************************
             Footer end
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button end
         ***********************************-->
 
         

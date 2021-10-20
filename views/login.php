@@ -25,10 +25,7 @@
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/tooplate-gymso-style.css">
      <link rel="icon" type="image/x-icon" href="images/Recurso 1.png" />
-<!--
-Tooplate 2119 Gymso Fitness
-https://www.tooplate.com/view/2119-gymso-fitness
--->
+
 </head>
 <body>
 <section class="about section" id="Login">

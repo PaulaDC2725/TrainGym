@@ -131,42 +131,6 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
                                             <input required type="date" class="form-control" id="salidapro" name="salidapro">
                                             </div>
                                         </div>
-                                        <!-- <fieldset class="form-group">
-                                            <div class="row">
-                                                <label class="col-form-label col-sm-3 pt-0">Radios</label>
-                                                <div class="col-sm-9">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked>
-                                                        <label class="form-check-label">
-                                                            First radio
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="gridRadios" value="option2">
-                                                        <label class="form-check-label">
-                                                            Second radio
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check disabled">
-                                                        <input class="form-check-input" type="radio" name="gridRadios" value="option3" disabled>
-                                                        <label class="form-check-label">
-                                                            Third disabled radio
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                        <div class="form-group row">
-                                            <div class="col-sm-3">Checkbox</div>
-                                            <div class="col-sm-9">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox">
-                                                    <label class="form-check-label">
-                                                        Example checkbox
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>-->
                                         <div class="form-group row">
                                             <div class="col-sm-10">
                                                 <button type="submit" id="Registrar" name="btnf" class="btn btn-primary">Agendar</button>
@@ -195,14 +159,6 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
         </div>
         <!--**********************************
             Footer end
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button end
         ***********************************-->
 
         

@@ -11,8 +11,6 @@
 	 
  }
   require_once('../assets/php/Modelo/class.consulta.instructor.php');
-  /*require_once('../../assets/php/Controlador/Actu2.php');*/
-// require_once ('<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>');
 
 
 
@@ -82,19 +80,7 @@
 
 <body>
 
-  <!--*******************
-        Preloader start
-    ********************-->
-    <!-- <div id="preloader">
-        <div class="sk-three-bounce">
-            <div class="sk-child sk-bounce1"></div>
-            <div class="sk-child sk-bounce2"></div>
-            <div class="sk-child sk-bounce3"></div>
-        </div>
-    </div> -->
-    <!--*******************
-        Preloader end
-    ********************-->
+
 
     <!--**********************************
         Main wrapper start
@@ -331,14 +317,6 @@
         </div>
         <!--**********************************
             Footer end
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button end
         ***********************************-->
 
         

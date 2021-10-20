@@ -25,54 +25,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
 <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
 
-    <!-- MENU BAR -->
-    
-
-           
-
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-lg-auto">
-                    <li class="nav-item">
-                        <a href="index.php#home" class="nav-link smoothScroll">Inicio</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="index.php#about" class="nav-link smoothScroll">Acerca de TRAINGYM</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="index.php#class" class="nav-link smoothScroll">Módulos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="index.php#schedule" class="nav-link smoothScroll">Funcionalidades</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="index.php#ventajas" class="nav-link smoothScroll">Ventajas</a>
-                    </li>
-
-
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link smoothScroll">Contactanos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="index.php#Login" class="nav-link smoothScroll">Iniciar sesión</a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </nav> -->
-
-
-  
+    <!-- MENU BAR --> 
 <section class="about section" id="Login">
     <div class="content">
         <div class="container">
@@ -179,50 +132,6 @@ https://www.tooplate.com/view/2119-gymso-fitness
       
 </section>
      <!-- FOOTER -->
-    
-                   
-
-
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="membershipForm" tabindex="-1" role="dialog" aria-labelledby="membershipFormLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-
-        <div class="modal-content">
-          <div class="modal-header">
-
-            <h2 class="modal-title" id="membershipFormLabel">Membership Form</h2>
-
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-
-          <div class="modal-body">
-            <form class="membership-form webform" role="form">
-                <input type="text" class="form-control" name="cf-name" placeholder="John Doe">
-
-                <input type="email" class="form-control" name="cf-email" placeholder="Johndoe@gmail.com">
-
-                <input type="tel" class="form-control" name="cf-phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-
-                <textarea class="form-control" rows="3" name="cf-message" placeholder="Additional Message"></textarea>
-
-                <button type="submit" class="form-control" id="submit-button" name="submit">Submit Button</button>
-
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="signup-agree">
-                    <label class="custom-control-label text-small text-muted" for="signup-agree">I agree to the <a href="#">Terms &amp;Conditions</a>
-                    </label>
-                </div>
-            </form>
-          </div>
-
-          <div class="modal-footer"></div>
-
-        </div>
-      </div>
-    </div> -->
-
      <!-- SCRIPTS -->
      <script src="js/jquery.min.js"></script>
      <script src="js/bootstrap.min.js"></script>
