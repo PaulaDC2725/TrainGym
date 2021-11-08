@@ -98,7 +98,7 @@ if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
   }
   }
   $rolRecepcionista = 1;
-  if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo' && $rolRecepcionista = 1){
+  if($Rol == '1' && $resultado == "1" ){
     $_SESSION["rolRecepcionista"] = $rolRecepcionista;
     $_SESSION["NumeroIdentificacion"] = $usuario;
     header('location: inicioRecepcionista.php');

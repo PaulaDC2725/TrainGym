@@ -76,6 +76,17 @@
 			 return $rows;
 		 }
 		}
+		public function consultarUsuario1($numeroIdentificacion){$rows=null;
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();					
+			$sql = "SELECT * FROM usuarios where NumeroIdentificacion='".$numeroIdentificacion."'";
+			$statement=$conexion->prepare($sql);			
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
 		/*public function registrarUsuario($idUsuario,$numeroIdentificacion, $passwordUsuario, $estadoUsuario,$idRolFK,$idTipoDocumentoFK){
 			{
                 $rows=null;
@@ -187,7 +198,34 @@
 			return $rows;
 		}
 		
-	
+		public function actualizarUsuario($numeroIdentificacion, $idUsuario){	
+			$rows=null;		
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql='UPDATE USUARIOS SET NumeroIdentificacion='.$numeroIdentificacion.' WHERE idUsuario="'.$idUsuario.'";';
+			$statement=$conexion->prepare($sql);
+
+			if (!$statement) {
+			 	return "error al actualizar estado";
+			}else{
+			 	$statement->execute();
+				return $rows;
+			}
+
+
+		}
+		public function actualizarContra($passwordUsuario, $idUsuario){	
+			$rows=null;		
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql="UPDATE USUARIOS SET passwordUsuario='".$passwordUsuario."' WHERE idUsuario='".$idUsuario."';";
+			$statement=$conexion->prepare($sql);			
+                $statement->execute();
+                while ($result=$statement->fetch()) {
+                    $rows[]=$result;
+                }
+                return $rows;
+		}
 
 		public function cambiarEstadoUsuario($estadoUsuario, $idUsuario){	
 			$rows=null;		

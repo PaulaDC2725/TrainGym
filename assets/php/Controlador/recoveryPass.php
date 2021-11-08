@@ -41,7 +41,7 @@
               <div class="col-md-12">
             <div class="col-md-12">
               <div class="mb-4">
-              <CENTER><a class="navbar-brand" href="index.php"><img src="../../../views/images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>
+              <CENTER><a class="navbar-brand" href="../../../views/index.php"><img src="../../../views/images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>
               <h3 style="font-family: masque;">Recuperar Contraseña</h3>
               </div>
               <form action="<?php $_PHP_SELF ?>" id="form" method="POST">
