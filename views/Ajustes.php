@@ -223,18 +223,18 @@ if(is_array($filas)|| is_object($filas)){
 									<div class="basic-form">
 										<form method="post" action="../assets/php/Controlador/Ajustes.php?id=<?php echo $id ?>">
 											<div class="form-row">											
-												<div class="form-group col-md-6">
+												<div class="form-group col-md-12">
 													<label>Usuario o Documento</label>
 													<input required type="number" class="form-control" id="Num" name="Num" value="<?php echo $numeroIdentificacion ?>" placeholder="Ingrese  Su Numero  De Identificación">
 													
 												</div>                                                
-												<div class="form-group col-md-6">
+												<!-- <div class="form-group col-md-6">
 													<label>Contraseña</label>
 													<input required type="password" class="form-control" id="passwordShow" name="passwordShow" value="<?php echo $passwordUsuario ?>" placeholder="Contraseña"disabled>
                                                     <input required type="hidden" class="form-control" id="password" name="password" value="<?php echo $passwordUsuario ?>" placeholder="Contraseña">
                                                     <br>
                                                  
-                                                </div>												
+                                                </div>												 -->
 											</div>	
                                             <button type="submit"  id="actualizar" name="actualizar"  class="btn btn-primary">Actualizar</button>	
                                             <input type="button" class="btn btn-warning" style="background-color: #FF9900; color: white;"value="Cambiar Contraseña" onclick="location.href='contraRecep.php'"/>								

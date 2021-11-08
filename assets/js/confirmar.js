@@ -26,6 +26,8 @@ function validarContraActu(){
 	
 	if(validaClave1=="OK" && validaClave2=="OK"){
 		$( "#form" ).submit();
+	}else if(validaClave1=="" && validaClave2==""){
+		swal('Ups!','Debe cumplir los parámetros','warning');
 	}
 	
 };
@@ -44,7 +46,7 @@ function validaContrasenias(){
 	
     else if ( contra1 == contra2 )
 	{
-		$('#error2').text("Correcto! Contraseña lista para actualizar").css("color", "green");
+		$('#error2').text("Correcto! contraseña lista para actualizar").css("color", "green");
 		$("#validaClave").val("OK");
 	}else {
 		$('#error2').text("las contraseñas deben coincidir").css("color", "red");
