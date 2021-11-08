@@ -130,21 +130,21 @@ $fcha = date("Y-m-d");
 								<form method="post" action="../assets/php/Controlador/RegistroPago.php" enctype="multipart/form-data">
 										                      <div class="form-group row">
 											<input required type="number" class="form-control" id="SuscripcionNumero" name="SuscripcionNumero" value="<?php echo $idSuscripcion?>"hidden>
-                                            <label class="col-sm-3 col-form-label">Fecha Suscripción</label>
+                                            <label class="col-sm-3 col-form-label">Fecha Suscripción *</label>
                                             <div class="col-sm-9">
                                             <input required type="date" class="form-control" id="FechaS" name="FechaS" value="<?php echo $fechaSuscripción?>" disabled>
 											<input required type="date" class="form-control" id="FechaS" name="FechaS" value="<?php echo $fechaSuscripción?>" hidden>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Fecha Pago</label>
+                                            <label class="col-sm-3 col-form-label">Fecha Pago *</label>
                                             <div class="col-sm-9">
                                             <input required type="date" class="form-control" id="FechaP" name="FechaP" value="<?php echo $fcha?>" disabled>
 											<input required type="date" class="form-control" id="FechaP" name="FechaP" value="<?php echo $fcha?>" hidden>
                                             </div>
                                         </div>
 										<div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Valor a Pagar: </label>
+                                            <label class="col-sm-3 col-form-label">Valor a Pagar * </label>
                                             <div class="col-sm-9">
                                             <select class="form-control" id="valorS" name="valorS" >
 												<option selected value="<?php echo $valorSuscripcion?>" disabled><?php echo $valorSuscripcion?></option>
@@ -153,13 +153,13 @@ $fcha = date("Y-m-d");
                                             </div>
                                         </div>
 										<div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Imagen: Comprobante de Pago </label>
+                                            <label class="col-sm-3 col-form-label">Imagen <br>(Comprobante de Pago) * </label>
                                             <div class="col-sm-9">
 											<input class="form-control" style="height: 100px;" required type="file" id="ImgPago" name="ImgPago"  multiple>													
                                             </div>
                                         </div>
 										<div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Descripción de pago </label>
+                                            <label class="col-sm-3 col-form-label">Descripción de pago *</label>
                                             <div class="col-sm-9">
 											<textarea class="form-control" id="descPago" placeholder="*Realice una descripción del pago a realizar*" name="descPago" value="N/A" rows="5" ></textarea>
                                             </div>

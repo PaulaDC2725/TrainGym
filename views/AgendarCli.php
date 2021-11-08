@@ -120,13 +120,13 @@ require_once('../assets/php/Modelo/class.consulta.cliente.php');
                                 <div class="basic-form">
                                     <form action="../assets/php/controlador/AgendarPrograCli.php" method="post">
 										                      <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Fecha Inicio Programación</label>
+                                            <label class="col-sm-3 col-form-label">Fecha Inicio Programación *</label>
                                             <div class="col-sm-9">
                                             <input required type="date" class="form-control" id="ingresopro" name="ingresopro">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Fecha Fin Programación</label>
+                                            <label class="col-sm-3 col-form-label">Fecha Fin Programación *</label>
                                             <div class="col-sm-9">
                                             <input required type="date" class="form-control" id="salidapro" name="salidapro">
                                             </div>

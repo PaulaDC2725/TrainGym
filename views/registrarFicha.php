@@ -176,27 +176,27 @@ die();
                                 <div class="basic-form">
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
-                                            <label>Fecha:</label>
+                                            <label>Fecha *</label>
                                             <input required type="date" id="FechaFicha" name="FechaFicha" value="<?php echo $fcha?>" class="form-control" disabled>
                                             <input required type="date" id="FechaFicha" name="FechaFicha" value="<?php echo $fcha?>" class="form-control" hidden>
 
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label>Estatura:</label>
+                                            <label>Estatura *</label>
                                             <div class="input-group mb-3">
                                                 <input step="any" required type="number" class="form-control" id="Estatura" placeholder="Ingrese Su Estatura" name="Estatura">
                                                 <strong><span class="input-group-text" style="height:55px;border-radius: 0px;"aria-describedby="basic-addon2">Metros</span></strong>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label>Peso</label>
+                                            <label>Peso *</label>
                                             <div class="input-group mb-3">
                                                 <input step="any" required type="number" class="form-control" placeholder="Ingrese Su Peso"id="Peso" name="Peso">
                                                     <strong><span class="input-group-text"style="height:55px;border-radius: 0px;"aria-describedby="basic-addon2">Kg</span></strong>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <label>Descripción</label>
+                                            <label>Descripción *</label>
                                             <textarea class="form-control" id="descMedic" placeholder="*En caso de no tener alguna recomendación ingrese N/A*" name="descMedic" rows="8" >N/A</textarea>
                                         </div>
                                     </div>
@@ -204,36 +204,36 @@ die();
                             </div>                  
                             <div class="card-body md-6 sm-6 lg-6">
                             <div class="card-header">
-                                <h4 class="card-title">Medidas del Cuerpo</h4>
+                                <h4 class="card-title">Medidas del Cuerpo *</h4>
                             </div>
                             <br>
                                 <div class="basic-form">                               
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label>Perimetro del cráneo:</label>
+                                            <label>Perimetro del cráneo </label>
                                             <div class="input-group mb-3">
                                                 <input step="any" required type="number"  class="form-control" id="perCraneo"  name="perCraneo">
                                                 <strong><span class="input-group-text"style="height:55px;border-radius: 0px;"aria-describedby="basic-addon2">cm</span></strong>
                                             </div>	
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label>Perímetro de cintura :</label>
+                                            <label>Perímetro de cintura </label>
                                             <div class="input-group mb-3">
                                                 <input step="any" required type="number"  class="form-control" id="perCint" name="perCint">
                                                 <strong><span class="input-group-text"style="height:55px;border-radius: 0px;"aria-describedby="basic-addon2">cm</span></strong>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <strong><label>Perímetro de Bíceps</label></strong>
+                                            <strong><label>Perímetro de Bíceps *</label></strong>
                                             <br>
-                                            <label for="text" class="form-label">Derecho: </label>
+                                            <label for="text" class="form-label">Derecho </label>
 												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
 														<input step="any" required type="number"  class="form-control" id="perBic1" name="perBic1">
 														<strong><span class="input-group-text"style="height:55px;border-radius: 0px;"aria-describedby="basic-addon2">cm</span></strong>
 													</div>
 												</div>
-												<label for="text" class="form-label">Izquierdo: </label>
+												<label for="text" class="form-label">Izquierdo </label>
 												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
 														<input step="any" required type="number"  class="form-control" id="perBic2" name="perBic2">
@@ -242,16 +242,16 @@ die();
 												</div>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <strong><label>Longitud Brazos</label></strong>
+                                            <strong><label>Longitud Brazos *</label></strong>
                                             <br>
-                                            <label for="text" class="form-label">Derecho: </label>
+                                            <label for="text" class="form-label">Derecho </label>
 												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
 														<input step="any" required type="number"  class="form-control" id="longExsup1" name="longExsup1">
 														<strong><span class="input-group-text"style="height:55px;border-radius: 0px;"aria-describedby="basic-addon2">cm</span></strong>
 													</div>
 												</div>
-												<label for="text" class="form-label">Izquierdo: </label>
+												<label for="text" class="form-label">Izquierdo </label>
 												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
 														<input step="any" required type="number"  class="form-control" id="longExsup2" name="longExsup2">
@@ -260,16 +260,16 @@ die();
 												</div>	
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <strong><label>Perímetro de Muslos</label></strong>
+                                            <strong><label>Perímetro de Muslos *</label></strong>
                                             <br>
-                                            <label for="text" class="form-label">Derecho: </label>
+                                            <label for="text" class="form-label">Derecho </label>
 												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
 														<input step="any" required type="number"  class="form-control" id="perMus1" name="perMus1">
 														<strong><span class="input-group-text"style="height:55px;border-radius: 0px;"aria-describedby="basic-addon2">cm</span></strong>
 													</div>
 												</div>
-												<label for="text" class="form-label">Izquierdo: </label>
+												<label for="text" class="form-label">Izquierdo </label>
 												<div class="form-group last md-12">													
 													<div class="input-group mb-3">
 														<input step="any" required type="number"  class="form-control" id="perMus2" name="perMus2">
@@ -278,16 +278,16 @@ die();
 												</div>
                                         </div>
                                         <div class="form-group col-md-6">
-                                        <strong><label>Longitud Piernas</label></strong>
+                                        <strong><label>Longitud Piernas *</label></strong>
                                         <br>
-                                        <label for="text" class="form-label">Derecha: </label>
+                                        <label for="text" class="form-label">Derecha </label>
                                             <div class="form-group last md-12">													
                                                 <div class="input-group mb-3">
                                                     <input step="any" required type="number"  class="form-control" id="longExinf1" name="longExinf1">
                                                     <strong><span class="input-group-text"style="height:55px;border-radius: 0px;"aria-describedby="basic-addon2">cm</span></strong>
                                                 </div>
                                             </div>
-                                            <label for="text" class="form-label">Izquierda: </label>
+                                            <label for="text" class="form-label">Izquierda </label>
                                             <div class="form-group last md-12">													
                                                 <div class="input-group mb-3">
                                                     <input step="any" required type="number"  class="form-control" id="longExinf2" name="longExinf2">

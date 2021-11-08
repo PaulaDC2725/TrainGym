@@ -195,7 +195,7 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 										<form action="../assets/php/Controlador/registroins.php" id="formInst" method="post">
 											<div class="form-row">
 											<div class="form-group col-md-6">
-													<label>Tipo de documento</label>
+													<label>Tipo de documento *</label>
 													<select required id="tipoDocInst" name="tipoDocInst" class="form-control default-select">
 													<option  selected value="" disabled>--Seleccione el tipo de documento--</option>
 														<option value="1">Cedula de ciudadania</option>
@@ -204,23 +204,23 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 													</select>
 												</div>
 												<div class="form-group col-md-6">
-													<label>Número De documento</label>
+													<label>Número de documento *</label>
 													<input required type="number" id="Num" name="Num" class="form-control" placeholder="Ingrese su número de documento">
 												</div>
 												<div class="form-group col-md-6">
-													<label>Nombre</label>
+													<label>Nombre *</label>
 													<input required type="text" id="Nom" name="Nom" class="form-control" placeholder="Ingrese su nombre">
 												</div>
 												<div class="form-group col-md-6">
-													<label>Apellido</label>
+													<label>Apellido *</label>
 													<input required type="text" id="Ape" name="Ape" class="form-control" placeholder="Ingrese su apellido">
 												</div>
 												<div class="form-group col-md-6">
-													<label>Teléfono</label>
+													<label>Teléfono *</label>
 													<input required type="number" id="phone" name="phone" class="form-control" placeholder="Ingrese su número de teléfono">
 												</div>
 												<div class="form-group col-md-6">
-													<label>Correo Electrónico</label>
+													<label>Correo electrónico *</label>
 													<input required type="email"  id="email" name="email" class="form-control" placeholder="email@example.com">
 												</div>
 											</div>

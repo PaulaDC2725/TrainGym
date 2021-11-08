@@ -220,21 +220,21 @@ if ($rol != 2) {
 										<form action="../Assets/php/Controlador/registrarSeries.php?NumeroIdentificacion=<?php echo $numeroIdentificacion; ?>" id="formInst"  enctype="multipart/form-data" method="post">
 											<div class="form-row">
 											<div class="form-group col-md-6">												
-													<label>Tipo de metodología</label>
+													<label>Tipo de metodología *</label>
 													<select class="form-control" id="tipoMetodologia" name="tipoMetodologia"required >
                                   <option selected value="" disabled>--Seleccione el tipo de Metodología--</option>
                                   <?php echo $opcion;?>
                             </select>	
 												</div>
                         <div class="form-group col-md-6">
-													<label>Parte del cuerpo</label>
+													<label>Parte del cuerpo *</label>
                           <select class="form-control" id="ParteCuerpo" name="ParteCuerpo" required>
                                   <option selected value="" disabled>--Seleccione la parte del cuerpo--</option>
                                   <?php echo $opcionParte ?>
                             </select>	
 												</div>
                         <div class="form-group col-md-6">
-													<label>Ejercicio</label>
+													<label>Ejercicio *</label>
                           <select class="form-control" id="NomEj" name="NomEJ"required >
                                   <option selected value="" disabled>--Seleccione el Ejercicio--</option>
                                   <?php echo $opcionEjer;?>
@@ -242,7 +242,7 @@ if ($rol != 2) {
 												</div>
 												
                         <div class="form-group col-md-6">
-													<label>Repeticion del Ejercicio:</label>
+													<label>Repetición del Ejercicio *</label>
 													<select class="form-control" id="Rep" name="Rep"required >
                                   <option selected value="" disabled>--Seleccione la repetición del ejercicio--</option>
                                   <option value="1">1</option>
@@ -268,7 +268,7 @@ if ($rol != 2) {
                             </select>	
 												</div>
                         <div class="form-group col-md-6">
-													<label>Secuencia del ejercicio</label>
+													<label>Secuencia del ejercicio *</label>
 													<select class="form-control" id="Sec" name="Sec"required >
                                   <option selected value="" disabled>--Seleccione las veces que se realizará el ejercicio--</option>
                                   <option value="1">1</option>
@@ -294,27 +294,27 @@ if ($rol != 2) {
                             </select>	
 												</div>
 												<div class="form-group col-md-6">
-													<label>Nombre de la serie</label>
+													<label>Nombre de la serie *</label>
 													<input required type="text" class="form-control" id="Nom" name="Nom"placeholder="Ingrese El Nombre De la Serie">
 												</div>
                         <div class="form-group col-md-6">
-                            <label class="col-form-label">Fecha Inicio </label>
+                            <label class="col-form-label">Fecha Inicio *</label>
                             <div class="col-sm-9">
                             <input required type="date" class="form-control" id="FechaI" name="FechaI">
                             </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="col-form-label">Fecha Fin </label>
+                            <label class="col-form-label">Fecha Fin *</label>
                             <div class="col-sm-9">
                             <input required type="date" class="form-control" id="FechaF" name="FechaF">
                             </div>
                         </div>
 							<div class="form-group col-md-6">
-								<label>Descripción de la serie</label>
+								<label>Descripción de la serie *</label>
 								<textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="5" placeholder="*Ingrese la descripción del ejercicio*"></textarea>
 							</div>
 						<div class="form-group col-md-6 ">
-						<label class="col-form-label">Imagen de apoyo </label>
+						<label class="col-form-label">Imagen de apoyo *</label>
 						<div class="col-sm-9">
 						<input class="form-control" style="height: 110px;" required type="file" id="ImgEjer" name="ImgEjer"  multiple>													
 						</div>

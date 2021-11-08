@@ -211,13 +211,13 @@ $filas1 = $consultas->cargarInstructorFiltroId($filtro);
                                 <div class="basic-form">
                                     <form action="../assets/php/controlador/AgendarPrograIns.php?NumeroIdentificacion=<?php echo $numeroIdentificacion?>" method="post">
 										<div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Fecha Inicio Programación</label>
+                                            <label class="col-sm-3 col-form-label">Fecha inicio programación *</label>
                                             <div class="col-sm-9">
                                             <input required type="date" class="form-control" id="ingresopro" name="ingresopro">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Fecha Fin Programación</label>
+                                            <label class="col-sm-3 col-form-label">Fecha fin programación *</label>
                                             <div class="col-sm-9">
                                             <input required type="date" class="form-control" id="salidapro" name="salidapro">
                                             </div>

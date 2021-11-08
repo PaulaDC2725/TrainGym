@@ -191,19 +191,19 @@ $DateAndTime = date('d-m-Y h:i:s a', time());  ?>
                                 <div class="basic-form">
                                     <form action="../assets/php/Controlador/registroAsistencia.php" method="post">
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Número de Documento</label>
+                                            <label class="col-sm-3 col-form-label">Número de Documento *</label>
                                             <div class="col-sm-9">
                                             <input required type="number" id="Num" name="Num" class="form-control" placeholder="Ingrese su número de documento">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Fecha y hora ingreso</label>
+                                            <label class="col-sm-3 col-form-label">Fecha y hora ingreso *</label>
                                             <div class="col-sm-9">
                                             <input step="any" required type="datetime-local"  value="<?php echo  $DateAndTime; ?>" class="form-control" id="fechaHoraIngreso"  name="fechaHoraIngreso">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Fecha y hora salida</label>
+                                            <label class="col-sm-3 col-form-label">Fecha y hora salida *</label>
                                             <div class="col-sm-9">
                                             <input step="any" required type="datetime-local" class="form-control" id="fechaHoraSalida"  name="fechaHoraSalida">
                                             </div>

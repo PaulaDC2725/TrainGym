@@ -138,20 +138,20 @@ $DateAndTime = date('d-m-Y h:i:s a', time());
                                 <div class="basic-form">
                                     <form action="../assets/php/Controlador/RegistroAsisCli.php" method="post">
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Número de Documento</label>
+                                            <label class="col-sm-3 col-form-label">Número de Documento *</label>
                                             <div class="col-sm-9">
                                             <input type="number" class="form-control" value="<?php echo $id?>" placeholder="Ingrese su número de identificación" id="Num" name="Num"  disabled>
 											<input type="number" class="form-control" value="<?php echo $id?>" placeholder="Ingrese su número de identificación" id="Num" name="Num"  hidden>					
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Fecha y hora ingreso</label>
+                                            <label class="col-sm-3 col-form-label">Fecha y hora ingreso *</label>
                                             <div class="col-sm-9">
 											<input step="any" required type="datetime-local"  value="<?php echo  $DateAndTime; ?>" class="form-control" id="fechaHoraIngreso"  name="fechaHoraIngreso">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Fecha y hora salida</label>
+                                            <label class="col-sm-3 col-form-label">Fecha y hora salida *</label>
                                             <div class="col-sm-9">
                                             <input step="any" required type="datetime-local"  value="" class="form-control" id="fechaHoraSalida"  name="fechaHoraSalida">
                                             </div>
