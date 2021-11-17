@@ -126,18 +126,7 @@ $fcha = date("Y-m-d");?>
 												</center>
 											</div>
 										</div>
-										<br>
-										<label for="Metodo" class="form-label">Metodo de pago: </label>
-										<div class="form-group first col-md-12">
-											<select class="form-control" id="MetPago" name="MetPago" >
-												<option selected value="" disabled>--Seleccione el método de pago--</option>
-												<option>Efectivo</option>
-												<option>Cheque</option>
-												<option>Tarjeta de crédito</option>
-												<option>transferencia electrónica</option>
-												<option>PSE o Pago en linea</option>
-											</select>
-										</div>					
+										<br>					
 										<label for="date" class="form-label">Fecha de suscripción: </label>
 										<div class="form-group first col-md-12">
 											<input required type="date" class="form-control" id="FechaS" name="FechaS" value="<?php echo $fcha?>" disabled>
