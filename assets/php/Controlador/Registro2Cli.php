@@ -105,7 +105,7 @@ $mensaje21 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo7FK, $medi
 $mensaje23 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo8FK, $medida8);
 $mensaje25 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo9FK, $medida9);
 $mensaje27 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo10FK, $medida10);
-echo "<script>location.href=' ../../../views/login.php';</script>";
+echo "<script>location.href=' ../../../views/Alerta.php';</script>";
 die();
 ?>
 	</div>	

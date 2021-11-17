@@ -122,7 +122,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
 							}else if($telefono == 1 && $correo == 1 && $doc == 1 ){
 								echo '<div class="alert alert-warning"><strong>Ups, Lo sentimos!</strong> Datos registrados previamente en el sistema, revisalos e intentalo nuevamente.</div>';
 							}else if($telefono == 0 || $correo == 0 ||$doc == 0){
-								$estadoUsuario="1";
+								$estadoUsuario="0";
 								$idRolFK="3";
 								$mensaje4 = $consultasUsuario->registrarUsuario($NumeroIdentificacion,$contra1, $estadoUsuario,$idRolFK,$tipoDocumento);
 								$mensaje5 = $consultasCliente->registrarCliente($nombreCliente, $apellidoCliente,$fechaNacimiento,$correoCliente,$telefonoCliente,$estadoUsuario);							
