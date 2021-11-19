@@ -135,7 +135,7 @@ if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
                     <input type="password" class="form-control" placeholder="Ingrese la contraseña" id="Contraseña"name="Contraseña"required>
                     <br> 
                     <div class="d-flex mb-5 align-items-center">
-                      <span><a href="registro.php" class="forgot-pass">Regístrate</a></span>
+                      <span><a href="Registro.php" class="forgot-pass">Regístrate</a></span>
                       <div class="control__indicator"></div>
                     <span class="ml-auto"><a href="./recoveryPasswordView.php" class="forgot-pass">¿Olvidaste tu contraseña?</a></span> 
                     </div>

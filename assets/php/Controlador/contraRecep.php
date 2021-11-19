@@ -33,7 +33,7 @@ if ($rolRec != 1 ) {
    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
    crossorigin="anonymous">
    <!--<link rel="stylesheet" href="../assets/css/style.css">-->
-   <link rel="icon" type="image/x-icon" href="../../img/Logotipo.PNG" />
+   <link rel="icon" type="image/png" sizes="16x16" href="../../../images/favicon.png">
 	 <!-- Core theme CSS (includes Bootstrap)-->
    <link href="../assets/css/style.css" rel="stylesheet" />
    <meta name="viewport" content="width=device-width, initial-scale=1">

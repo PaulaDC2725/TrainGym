@@ -126,7 +126,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
 								$idRolFK="3";
 								$mensaje4 = $consultasUsuario->registrarUsuario($NumeroIdentificacion,$contra1, $estadoUsuario,$idRolFK,$tipoDocumento);
 								$mensaje5 = $consultasCliente->registrarCliente($nombreCliente, $apellidoCliente,$fechaNacimiento,$correoCliente,$telefonoCliente,$estadoUsuario);							
-								echo "<script>location.href=' ../assets/php/controlador/registro2.php';</script>";
+								echo "<script>location.href=' ../assets/php/controlador/Registro2.php';</script>";
 								die();
 							}
                         }
