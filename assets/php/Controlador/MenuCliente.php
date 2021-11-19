@@ -6,7 +6,7 @@
 							<span class="nav-text">Inicio</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="../../../viewsinicioCliente.php">Bienvenido</a></li>
+							<li><a href="../../../views/inicioCliente.php">Bienvenido</a></li>
 							
 						</ul>
                     </li>
@@ -15,34 +15,34 @@
 							<span class="nav-text">Pagos</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="../../../viewsrealizarPagosCli.php">Registrar</a></li>
+                            <li><a href="../../../views/realizarPagosCli.php">Registrar</a></li>
                             
                             </li>
-							<a href="../../../viewsconsultarPagosCli.php">Consultar</a>
+							<a href="../../../views/consultarPagosCli.php">Consultar</a>
                             </li>
                         </ul>
                     </li>
-					<li><a href="../../../viewsconsultarAgendaCli.php"  href="javascript:void()" aria-expanded="false">
+					<li><a href="../../../views/consultarAgendaCli.php"  href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-search-1"></i>
 							<span class="nav-text">Consultar Agenda</span>
 						</a>
                     </li>
-                    <li><a href="../../../viewsAgendarCli.php" href="javascript:void()" aria-expanded="false">
+                    <li><a href="../../../views/AgendarCli.php" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-calendar-7"></i>
 							<span class="nav-text">Agendar Programación</span>
 						</a>
                     </li>
-                    <li><a href="../../../viewsregistrarAsistenciasCli.php"  href="javascript:void()" aria-expanded="false">
+                    <li><a href="../../../views/registrarAsistenciasCli.php"  href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-notepad"></i>
 							<span class="nav-text">Registrar Asistencias</span>
 						</a>
                     </li>
-                    <li><a href="../../../viewsconsultarSerie.php" href="javascript:void()" aria-expanded="false">
+                    <li><a href="../../../views/consultarSerie.php" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-list-1"></i>
 							<span class="nav-text">Series De Ejercicio </span>
 						</a>
                     </li>
-                    <li><a href="../../../viewsregistrarFicha.php" href="javascript:void()" aria-expanded="false">
+                    <li><a href="../../../views/registrarFicha.php" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-resume"></i>
 							<span class="nav-text">Ficha Antropométrica </span>
 						</a>

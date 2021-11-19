@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
-include '../assets/php/Modelo/class.conexion.php';
+include '../assets/php/modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rol = $_SESSION["rol"];
@@ -9,7 +9,7 @@ if ($rol != 3) {
   
 } else {
 }
-require_once('../assets/php/Modelo/class.consulta.cliente.php');
+require_once('../assets/php/modelo/class.consulta.cliente.php');
 
   $consultas = new ConsultasClientes();
 

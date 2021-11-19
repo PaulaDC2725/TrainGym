@@ -1,6 +1,6 @@
 <?php 
 error_reporting(E_ERROR | E_PARSE);
-include '../assets/php/Modelo/class.conexion.php';
+include '../assets/php/modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rolRec = $_SESSION["rolRecepcionista"];
@@ -10,7 +10,7 @@ if ( $rolRec != 1 ) {
 } else {
 	
 }
-  require_once('../assets/php/Modelo/class.consulta.cliente.php');
+  require_once('../assets/php/modelo/class.consulta.cliente.php');
 
 
   $consultas = new ConsultasClientes();
@@ -78,7 +78,7 @@ crossorigin="anonymous">
 			color: black; ">Establecer cantidad permitida de personas</h1>
 		</div>
   		<div class="container">
-				<form class="box" method="post" action="../Assets/php/Controlador/actualizarAforo.php?id=<?php echo $idF?>">
+				<form class="box" method="post" action="../assets/php/controlador/actualizarAforo.php?id=<?php echo $idF?>">
   					<div class="form-group">
    					 <label for="exampleFormControlSelect1">Hora inicio</label>
 						<input required type="text" class="form-control" id="horaI" name="horaI" value="<?php echo $horaInicio ?>" disabled >

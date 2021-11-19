@@ -1,9 +1,9 @@
 <?php
-require_once('../Modelo/class.conexion.php');
-require_once('../Modelo/class.consulta.cliente.php');
-require_once('../Modelo/class.consulta.usuario.php');
-require_once('../Modelo/class.consulta.suscripcion.php');
-require_once('../Modelo/class.consulta.fichaAntro.php');
+require_once('../modelo/class.conexion.php');
+require_once('../modelo/class.consulta.cliente.php');
+require_once('../modelo/class.consulta.usuario.php');
+require_once('../modelo/class.consulta.suscripcion.php');
+require_once('../modelo/class.consulta.fichaAntro.php');
 $consultasCliente = new ConsultasClientes();
 $consultasUsuario = new ConsultasUsuario();
 $consultasSuscripcion = new ConsultasSuscripcion();
@@ -29,43 +29,7 @@ if($tipoDocumento =="1"){
 }
 						
 
-// header ('location: ../../../views/login.php');
 
-
-/*echo ($mensaje1);
-echo '<br>';
-echo ($mensaje2);
-echo '<br>';
-echo ($mensaje3);
-echo '<br>';
-echo ($mensaje4);
-echo '<br>';
-/*echo ($mensaje5);
-echo '<br>';*/
-/*echo ($mensaje6);
-echo '<br>';
-echo ($mensaje7);
-echo '<br>';
-echo ($mensaje9);
-echo '<br>';
-echo ($mensaje11);
-echo '<br>';
-echo ($mensaje13);
-echo '<br>';
-echo ($mensaje15);
-echo '<br>';
-echo ($mensaje17);
-echo '<br>';
-echo ($mensaje19);
-echo '<br>';
-echo ($mensaje21);
-echo '<br>';
-echo ($mensaje23);
-echo '<br>';
-echo ($mensaje25);
-echo '<br>';
-echo ($mensaje27);*/
-/**/
  ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -209,7 +173,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
                                     </div>                                                             
                                 </div>                                
                                 <div class="col-md-12">	
-                                    <span><a href="Login.php">¿Ya tienes cuenta?  Inicia sesión</a></span>
+                                    <span><a href="login.php">¿Ya tienes cuenta?  Inicia sesión</a></span>
                                   </div>                                 
                             </div>                           
                             <br>

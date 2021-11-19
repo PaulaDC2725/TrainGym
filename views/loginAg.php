@@ -1,6 +1,6 @@
 <?php
-	require_once('../assets/php/Modelo/class.conexion.php');
-	require_once('../assets/php/Modelo/class.consulta.usuario.php');
+	require_once('../assets/php/modelo/class.conexion.php');
+	require_once('../assets/php/modelo/class.consulta.usuario.php');
 
 	$consultasUsuario = new ConsultasUsuario();
 
@@ -127,7 +127,7 @@ if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo'){
                     <input type="password" class="form-control" placeholder="Ingrese la contraseña" id="Contraseña"name="Contraseña"required>
                     <br> 
                     <div class="d-flex mb-5 align-items-center">
-                      <span><a href="registro.php" class="forgot-pass">Regístrate</a></span>
+                      <span><a href="Registro.php" class="forgot-pass">Regístrate</a></span>
                       <div class="control__indicator"></div>
                     <span class="ml-auto"><a href="./recoveryPasswordView.php" class="forgot-pass">¿Olvidaste tu contraseña?</a></span> 
                     </div>

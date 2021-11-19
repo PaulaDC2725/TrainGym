@@ -1,6 +1,6 @@
 <?php 
 // error_reporting(E_ERROR | E_PARSE);
-include '../assets/php/Modelo/class.conexion.php';
+include '../assets/php/modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rolRec = $_SESSION["rolRecepcionista"];
@@ -8,7 +8,7 @@ if ($rolRec != 1) {
 	header('location: Error.php');
   
 }
-  require_once('../assets/php/Modelo/class.consulta.usuario.php');
+  require_once('../assets/php/modelo/class.consulta.usuario.php');
   /*require_once('../../assets/php/Controlador/Actu2.php');*/
 // require_once ('<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>');
 
@@ -222,7 +222,7 @@ if(is_array($filas)|| is_object($filas)){
 								</div>
 								<div class="card-body">
 									<div class="basic-form">
-										<form method="post" id="form" action="../assets/php/Controlador/contraRecep.php?id=<?php echo $id ?>">
+										<form method="post" id="form" action="../assets/php/controlador/contraRecep.php?id=<?php echo $id ?>">
 											<div class="form-row">
                                                 <div class="form-group col-md-12">
 													<label>Contraseña Antigua</label>

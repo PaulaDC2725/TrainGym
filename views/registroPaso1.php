@@ -1,10 +1,10 @@
 <?php
   error_reporting(E_ERROR | E_PARSE);
-require_once('../assets/php/Modelo/class.conexion.php');
-require_once('../assets/php/Modelo/class.consulta.cliente.php');
-require_once('../assets/php/Modelo/class.consulta.usuario.php');
-require_once('../assets/php/Modelo/class.consulta.suscripcion.php');
-require_once('../assets/php/Modelo/class.consulta.fichaAntro.php');
+require_once('../assets/php/modelo/class.conexion.php');
+require_once('../assets/php/modelo/class.consulta.cliente.php');
+require_once('../assets/php/modelo/class.consulta.usuario.php');
+require_once('../assets/php/modelo/class.consulta.suscripcion.php');
+require_once('../assets/php/modelo/class.consulta.fichaAntro.php');
 $consultasCliente = new ConsultasClientes();
 $consultasUsuario = new ConsultasUsuario();
 $consultasSuscripcion = new ConsultasSuscripcion();
@@ -126,7 +126,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
 								$idRolFK="3";
 								$mensaje4 = $consultasUsuario->registrarUsuario($NumeroIdentificacion,$contra1, $estadoUsuario,$idRolFK,$tipoDocumento);
 								$mensaje5 = $consultasCliente->registrarCliente($nombreCliente, $apellidoCliente,$fechaNacimiento,$correoCliente,$telefonoCliente,$estadoUsuario);							
-								echo "<script>location.href=' ../assets/php/controlador/Registro2.php';</script>";
+								echo "<script>location.href=' ../assets/php/controlador/registro2.php';</script>";
 								die();
 							}
                         }
@@ -188,7 +188,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
                                     </div>                                                             
                                 </div>                                
                                 <div class="col-md-12">	
-                                    <span><a href="Login.php">¿Ya tienes cuenta?  Inicia sesión</a></span>
+                                    <span><a href="login.php">¿Ya tienes cuenta?  Inicia sesión</a></span>
                                   </div>                                 
                             </div>                           
                             <br>

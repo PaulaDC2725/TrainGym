@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
-include '../assets/php/Modelo/class.conexion.php';
+include '../assets/php/modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rol = $_SESSION["rol"];
@@ -8,8 +8,8 @@ if ($rol != 3) {
 	header('location: Error.php');
   
 }else {
-require_once('../Assets/php/Modelo/class.consulta.suscripcion.php');
-require_once('../Assets/php/Modelo/class.consulta.fichaAntro.php');
+require_once('../Assets/php/modelo/class.consulta.suscripcion.php');
+require_once('../Assets/php/modelo/class.consulta.fichaAntro.php');
 $consultasSuscripcion = new ConsultasSuscripcion();
 $consultasFicha = new consultasFicha();
 date_default_timezone_set('America/Bogota'); 
@@ -149,7 +149,7 @@ die();
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <?php require_once('menuCliente.php')?>
+        <?php require_once('MenuCliente.php')?>
         <!--**********************************
             Sidebar end
         ***********************************-->

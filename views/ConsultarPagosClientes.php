@@ -1,6 +1,6 @@
 <?php 
  error_reporting(E_ERROR | E_PARSE);
- include '../assets/php/Modelo/class.conexion.php';
+ include '../assets/php/modelo/class.conexion.php';
  session_start();
  $numDoc = $_SESSION["NumeroIdentificacion"];
  $rolRec = $_SESSION["rolRecepcionista"];
@@ -10,8 +10,8 @@
  } else {
 	 
  }
-  require_once('../assets/php/Modelo/class.consulta.Cliente.php');
-  require_once('../assets/php/Modelo/class.consulta.Suscripcion.php');
+  require_once('../assets/php/modelo/class.consulta.Cliente.php');
+  require_once('../assets/php/modelo/class.consulta.Suscripcion.php');
 
   $consultas = new ConsultasClientes;
   $consultasS = new ConsultasSuscripcion();

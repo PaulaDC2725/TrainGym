@@ -23,11 +23,11 @@ $fcha = date("Y-m-d");?>
  <section class="class section" id="class">
  <div class="container"> 
 		<form method="post" action="Registro2Cli.php">
-			<!--<form class="box" method="post" action="../assets/php/Controlador/Registro1.php">-->
+			
 				<div id="registroPaso2">
 					<div class="container">
 						<center>
-						<CENTER><a class="navbar-brand" href="../../../views/index.php"><img data-aos="fade-up" data-aos-delay="200" src="../../../views/images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>
+						<CENTER><a class="navbar-brand" ><img data-aos="fade-up" data-aos-delay="200" src="../../../views/images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>
 							<h1 data-aos="fade-up" data-aos-delay="200"margin: 0,padding: 0 0 20px, text-align: center, font-size: 22px>
 									Paso 2: Elegir Metodología
 							</h1>
@@ -159,9 +159,7 @@ $fcha = date("Y-m-d");?>
 											<button type="button" value="Continuar" id="registrar3" name="btnf" class="btn btn-block btn-warning col-md-6" style="background-color: #FF9900; color: white;">
 												Continuar
 											</button>
-										<!--<center>
-											<input type="botton" class="btn btn-dark" id="Regresar2" value="Regresar" name="boton1" onclick="location.href='registroPaso3.php'">
-										</center>-->
+										
 										<hr>
 								</div>
 							</div>
@@ -174,7 +172,7 @@ $fcha = date("Y-m-d");?>
 	<div id="registroPaso4"data-aos="fade-up" data-aos-delay="200">
 		<div class="content">
 				<div class="container">
-				<CENTER><a class="navbar-brand" href="../../../views/index.php"><img data-aos="fade-up" data-aos-delay="200" src="../../../views/images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>								
+				<CENTER><a class="navbar-brand" href=""><img data-aos="fade-up" data-aos-delay="200" src="../../../views/images/logoDiseño.png" class="card-img-top"width="100" height="100"/></a></CENTER>								
 					<div class="row">
 					<div class="card col-md-6 col-sm-6 col-lg-6">
                     		<div class="card-body col-md-12">	

@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
-include '../assets/php/Modelo/class.conexion.php';
+include '../assets/php/modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
  $rolRec = $_SESSION["rolRecepcionista"];
@@ -10,7 +10,7 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
  } else {
 	 
  }
-  require_once('../assets/php/Modelo/class.consulta.cliente.php');
+  require_once('../assets/php/modelo/class.consulta.cliente.php');
   $consultasCli = new ConsultasClientes();
   if (isset($_GET['filtroCol']) && isset($_GET['valor'])) {
     $filas = $consultasCli->consultarClientesFiltrados($_GET['filtroCol'],$_GET['valor']);

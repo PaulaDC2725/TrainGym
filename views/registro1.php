@@ -107,7 +107,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
                                     </div>                                                             
                                 </div>                                
                                 <div class="col-md-12">	
-                                    <span><a href="Login.php">¿Ya tienes cuenta?  Inicia sesión</a></span>
+                                    <span><a href="login.php">¿Ya tienes cuenta?  Inicia sesión</a></span>
                                   </div>                                 
                             </div>                           
                             <br>

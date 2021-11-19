@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
-include '../assets/php/Modelo/class.conexion.php';
+include '../assets/php/modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rol = $_SESSION["rol"];
@@ -10,7 +10,7 @@ if ($rol != 2) {
 } else {
 	
 }
- require_once('../assets/php/Modelo/class.consulta.instructor.php');
+ require_once('../assets/php/modelo/class.consulta.instructor.php');
 
 
   $consultas = new ConsultasInstructor();
@@ -176,12 +176,7 @@ if ($rol != 2) {
 							<i class="flaticon-381-search-1"></i>
 							<span class="nav-text">Consultar Horario</span>
 						</a>
-                        <!-- <ul aria-expanded="false">
-                            <li><a >Registrar Instructor</a></li>
-                            <li><a href="mostrarInstructores.php">Mostrar instructores</a></li>
-                            <li><a href="mostrarInstructores2.php">Habilitar instructores</a></li>
-                            
-                        </ul> -->
+                        
                     </li>
                     <li><a href="Metodologias.php" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-search-1"></i>
@@ -217,7 +212,7 @@ if ($rol != 2) {
 								</div>
 								<div class="card-body">
 									<div class="basic-form">
-										<form action="../Assets/php/Controlador/registrarSeries.php?NumeroIdentificacion=<?php echo $numeroIdentificacion; ?>" id="formInst"  enctype="multipart/form-data" method="post">
+										<form action="../assets/php/controlador/registrarSeries.php?NumeroIdentificacion=<?php echo $numeroIdentificacion; ?>" id="formInst"  enctype="multipart/form-data" method="post">
 											<div class="form-row">
 											<div class="form-group col-md-6">												
 													<label>Tipo de metodología *</label>

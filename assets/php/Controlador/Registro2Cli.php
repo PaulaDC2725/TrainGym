@@ -1,8 +1,8 @@
 <?php
-require_once('../Modelo/class.conexion.php');
-require_once('../Modelo/class.consulta.suscripcion.php');
-require_once('../Modelo/class.consulta.fichaAntro.php');
-require_once('../Modelo/class.consulta.metodologia.php');
+require_once('../modelo/class.conexion.php');
+require_once('../modelo/class.consulta.suscripcion.php');
+require_once('../modelo/class.consulta.fichaAntro.php');
+require_once('../modelo/class.consulta.metodologia.php');
 $consultasSuscripcion = new ConsultasSuscripcion();
 $consultasFicha = new consultasFicha();
 $consultasMetodologia = new consultaMetodologia();

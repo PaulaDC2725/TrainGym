@@ -1,6 +1,6 @@
 <?php 
 error_reporting(E_ERROR | E_PARSE);
-include '../assets/php/Modelo/class.conexion.php';
+include '../assets/php/modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
  $rolRec = $_SESSION["rolRecepcionista"];
@@ -189,7 +189,7 @@ $DateAndTime = date('d-m-Y h:i:s a', time());  ?>
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form action="../assets/php/Controlador/registroAsistencia.php" method="post">
+                                    <form action="../assets/php/controlador/registroAsistencia.php" method="post">
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Número de Documento *</label>
                                             <div class="col-sm-9">

@@ -1,6 +1,6 @@
 <?php
  error_reporting(E_ERROR | E_PARSE);
- include '../Modelo/class.conexion.php';
+ include '../modelo/class.conexion.php';
  session_start();
  $numDoc = $_SESSION["NumeroIdentificacion"];
  $rolRec = $_SESSION["rolRecepcionista"];
@@ -8,7 +8,7 @@
     header('location: ../../../Views/Error.php');
      
  } 
-require_once('../Modelo/class.consulta.asistencias.php');
+require_once('../modelo/class.consulta.asistencias.php');
 
 if(isset($_GET['NumeroIdentificacion'])){
 $ConsultasAsistencias = new ConsultasAsistencias();

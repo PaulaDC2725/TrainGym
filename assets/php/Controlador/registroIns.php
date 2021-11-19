@@ -1,15 +1,15 @@
 <?php
    error_reporting(E_ERROR | E_PARSE);
-   include '../Modelo/class.conexion.php';
+   include '../modelo/class.conexion.php';
    session_start();
  $numDoc = $_SESSION["NumeroIdentificacion"];
  $rolRec = $_SESSION["rolRecepcionista"];
  if ($rolRec != 1 ) {
-	header('location: ../../../Views/Error.php');
+	header('location: ../../../views/Error.php');
 	 
  }
-require_once('../Modelo/class.consulta.instructor.php');
-require_once('../Modelo/class.consulta.usuario.php');
+require_once('../modelo/class.consulta.instructor.php');
+require_once('../modelo/class.consulta.usuario.php');
 $consultasInstructor = new ConsultasInstructor();
 $consultasUsuario = new ConsultasUsuario();
 $telefonoInstructor = $_POST['phone'];

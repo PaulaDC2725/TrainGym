@@ -62,7 +62,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="Login.php" class="nav-link smoothScroll" style="color: #ff9900" >Iniciar sesión</a>
+                        <a href="login.php" class="nav-link smoothScroll" style="color: #ff9900" >Iniciar sesión</a>
                     </li>
                 </ul>
             </div>
@@ -86,7 +86,7 @@
 
                                     <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">Gestor para gimnasios</h1>
 
-                                    <a href="Login.php" class="btn custom-btn bordered mt-3" data-aos="fade-up" data-aos-delay="700">Ingresa</a>
+                                    <a href="login.php" class="btn custom-btn bordered mt-3" data-aos="fade-up" data-aos-delay="700">Ingresa</a>
 
                                     
                                    

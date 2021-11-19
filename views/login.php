@@ -1,6 +1,6 @@
 <?php
-	require_once('../assets/php/Modelo/class.conexion.php');
-	require_once('../assets/php/Modelo/class.consulta.usuario.php');
+	require_once('../assets/php/modelo/class.conexion.php');
+	require_once('../assets/php/modelo/class.consulta.usuario.php');
 
 	$consultasUsuario = new ConsultasUsuario();
 

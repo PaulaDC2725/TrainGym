@@ -1,6 +1,14 @@
 <?php
-  include '../Modelo/class.conexion.php';
-  require_once('../Modelo/class.consulta.usuario.php');    
+  error_reporting(E_ERROR | E_PARSE);
+  include '../modelo/class.conexion.php';
+  session_start();
+$numDoc = $_SESSION["NumeroIdentificacion"];
+$rolRec = $_SESSION["rolRecepcionista"];
+if ($rolRec != 1 ) {
+   header('location: ../../../views/Error.php');
+	
+}
+  require_once('../modelo/class.consulta.usuario.php');    
   if (isset($_GET['id'])){
 	 $consultas = new ConsultasUsuario(); 
 	 $id=$_GET['id'];

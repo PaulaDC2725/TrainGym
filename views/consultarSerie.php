@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
-include '../assets/php/Modelo/class.conexion.php';
+include '../assets/php/modelo/class.conexion.php';
 session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
 $rol = $_SESSION["rol"];
@@ -9,8 +9,8 @@ if ($rol != 3) {
   
 } else {
 }
-require_once('../assets/php/Modelo/class.consulta.metodologia.php');  
-  require_once('../assets/php/Modelo/class.consulta.Cliente.php');
+require_once('../assets/php/modelo/class.consulta.metodologia.php');  
+  require_once('../assets/php/modelo/class.consulta.Cliente.php');
   $consultas = new ConsultasClientes();
     
   $consultasM = new consultaMetodologia();
@@ -155,7 +155,7 @@ require_once('../assets/php/Modelo/class.consulta.metodologia.php');
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <?php require_once('menuCliente.php')?>
+        <?php require_once('MenuCliente.php')?>
         <!--**********************************
             Sidebar end
         ***********************************-->
