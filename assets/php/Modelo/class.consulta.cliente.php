@@ -39,7 +39,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql="SELECT count(correoCliente) AS correo from CLIENTES where correoCLiente='".$correoCliente."';";
+			$sql="SELECT count(correoCliente) AS correo from clientes where correoCliente='".$correoCliente."';";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
 			while ($result=$statement->fetch()) {
@@ -51,7 +51,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql="SELECT count(telefonoCliente) AS Telefono from CLIENTEs where telefonoCliente='".$telefonoCliente."';";
+			$sql="SELECT count(telefonoCliente) AS Telefono from clientes where telefonoCliente='".$telefonoCliente."';";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
 			while ($result=$statement->fetch()) {
@@ -66,8 +66,8 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
 			$sql="SELECT C.idCliente,U.NumeroIdentificacion, C.nombreCliente, C.apellidoCliente, C.fechaNacimientoCliente,C.correoCliente,C.estadoCliente,C.telefonoCliente 
-			FROM USUARIOS AS U 
-			JOIN CLIENTES AS C 
+			FROM usuarios AS U 
+			JOIN clientes AS C 
 			ON U.idUsuario=C.idUsuarioFK Where C.estadoCliente = '1'";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
@@ -82,8 +82,8 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
 			$sql="SELECT C.idCliente,U.NumeroIdentificacion, C.nombreCliente, C.apellidoCliente, C.fechaNacimientoCliente,C.correoCliente,C.estadoCliente,C.telefonoCliente 
-			FROM USUARIOS AS U 
-			JOIN CLIENTES AS C 
+			FROM usuarios AS U 
+			JOIN clientes AS C 
 			ON U.idUsuario=C.idUsuarioFK Where C.estadoCliente = '0'";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
@@ -97,8 +97,8 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
 			$sql="SELECT C.idCliente,U.NumeroIdentificacion, C.nombreCliente, C.apellidoCliente, C.fechaNacimientoCliente,C.correoCliente, C.telefonoCliente 
-			FROM USUARIOS AS U 
-			JOIN CLIENTES AS C 
+			FROM usuarios AS U 
+			JOIN clientes AS C 
 			ON U.idUsuario=C.idUsuarioFK
 			WHERE ".$filtroCol." LIKE '%".$valor."%'AND estadoUsuario=1";
 			$statement=$conexion->prepare($sql);
@@ -113,8 +113,8 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
 			$sql="SELECT C.idCliente,U.NumeroIdentificacion, C.nombreCliente, C.apellidoCliente, C.fechaNacimientoCliente,C.correoCliente, C.telefonoCliente 
-			FROM USUARIOS AS U 
-			JOIN CLIENTES AS C 
+			FROM usuarios AS U 
+			JOIN clientes AS C 
 			ON U.idUsuario=C.idUsuarioFK
 			WHERE ".$filtroCol." LIKE '%".$valor."%'AND estadoUsuario=0";
 			$statement=$conexion->prepare($sql);
@@ -129,7 +129,7 @@
 			$rows=null;		
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql='UPDATE CLIENTES SET estadoCliente='.$estadoCliente.' WHERE idCliente="'.$idCliente.'";';
+			$sql='UPDATE clientes SET estadoCliente='.$estadoCliente.' WHERE idCliente="'.$idCliente.'";';
 			$statement=$conexion->prepare($sql);
 
 			if (!$statement) {
@@ -162,7 +162,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql="SELECT sm.idMetodologiaFK From Suscripcion_Metodologia as sm 
+			$sql="SELECT sm.idMetodologiaFK From suscripcion_metodologia as sm 
 			JOIN clientes as c 
 			JOIN usuarios as u 
 			JOIN suscripciones as s 
@@ -191,62 +191,8 @@
 		 	return $rows;
 
 		 }
-		public function borrarCliente($idCliente){
-			$rows=null;
-                /*$estado=1;*/
-                $modelo = new Conexion();
-                $conexion = $modelo->getConection();					
-                $sql="CALL borrarClientes('".$idCliente."')";
-                $statement=$conexion->prepare($sql);			
-                $statement->execute();
-                while ($result=$statement->fetch()) {
-                    $rows[]=$result;
-                }
-                return $rows;
-
-		}
 		
-		public function mostrarAforos(){
-			$rows=null;
-                /*$estado=1;*/
-                $modelo = new Conexion();
-                $conexion = $modelo->getConection();					
-                $sql="SELECT * FROM Aforos";
-                $statement=$conexion->prepare($sql);			
-                $statement->execute();
-                while ($result=$statement->fetch()) {
-                    $rows[]=$result;
-                }
-                return $rows;
-
-		}
-		public function mostrarAforosId($idHorario){
-			$rows=null;
-                /*$estado=1;*/
-                $modelo = new Conexion();
-                $conexion = $modelo->getConection();					
-                $sql="SELECT * FROM Aforos WHERE idHorario = '".$idHorario."'";
-                $statement=$conexion->prepare($sql);			
-                $statement->execute();
-                while ($result=$statement->fetch()) {
-                    $rows[]=$result;
-                }
-                return $rows;
-
-		}
-		public function establecerAforos($aforo, $idHorario){
-			$rows=null;
-                $modelo = new Conexion();
-                $conexion = $modelo->getConection();					
-                $sql="UPDATE Horarios set aforoHorario='".$aforo."' where idHorario = '".$idHorario."'";
-                $statement=$conexion->prepare($sql);			
-                $statement->execute();
-                while ($result=$statement->fetch()) {
-                    $rows[]=$result;
-                }
-                return $rows;
-
-		}
+		
 
 	}
 ?>

@@ -7,7 +7,7 @@
 			$rows=null;
                 $modelo = new Conexion();
                 $conexion = $modelo->getConection();					
-                $sql = "INSERT INTO ROL(idRol, nombreRol) VALUES ('".$idRol."','".$nombreRol."')";		
+                $sql = "INSERT INTO rol(idRol, nombreRol) VALUES ('".$idRol."','".$nombreRol."')";		
 
 				$statement=$conexion->prepare($sql);
 
@@ -22,7 +22,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql="SELECT count(NumeroIdentificacion) AS Doc from USUARIOS where NumeroIdentificacion='".$numeroIdentificacion."';";
+			$sql="SELECT count(NumeroIdentificacion) AS Doc from usuarios where NumeroIdentificacion='".$numeroIdentificacion."';";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
 			while ($result=$statement->fetch()) {
@@ -35,7 +35,7 @@
 			$rows=null;
                 $modelo = new Conexion();
                 $conexion = $modelo->getConection();					
-                $sql = "INSERT INTO TIPO_IDENTIFICACION(idTipoDocumento, nombreDocumento) VALUES ('".$idTipoDocumento."','".$nombreDocumento."')";		
+                $sql = "INSERT INTO tipo_identificacion(idTipoDocumento, nombreDocumento) VALUES ('".$idTipoDocumento."','".$nombreDocumento."')";		
 
 				$statement=$conexion->prepare($sql);
 
@@ -111,7 +111,7 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
 			$sql="SELECT COUNT(*) AS RESULTADO 
-			FROM USUARIOS 
+			FROM usuarios 
 			WHERE NumeroIdentificacion='".$numeroIdentificacion."' 
 			AND passwordUsuario='".$passwordUsuario."' 
 			AND idRolFK='".$rolFK."' 
@@ -145,7 +145,7 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
 			$sql="SELECT COUNT(*) AS Correcto 
-			FROM USUARIOS 
+			FROM usuarios 
 			WHERE NumeroIdentificacion='".$numeroIdentificacion."'
 			AND passwordUsuario='".$passwordUsuario."'";
 			$statement=$conexion->prepare($sql);			
@@ -161,7 +161,7 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
 			$sql="SELECT COUNT(*) AS Cantidad 
-			FROM USUARIOS 
+			FROM usuarios 
 			WHERE NumeroIdentificacion='".$numeroIdentificacion."'";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
@@ -202,7 +202,7 @@
 			$rows=null;		
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql='UPDATE USUARIOS SET NumeroIdentificacion='.$numeroIdentificacion.' WHERE idUsuario="'.$idUsuario.'";';
+			$sql='UPDATE usuarios SET NumeroIdentificacion='.$numeroIdentificacion.' WHERE idUsuario="'.$idUsuario.'";';
 			$statement=$conexion->prepare($sql);
 
 			if (!$statement) {
@@ -218,7 +218,7 @@
 			$rows=null;		
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql="UPDATE USUARIOS SET passwordUsuario='".$passwordUsuario."' WHERE idUsuario='".$idUsuario."';";
+			$sql="UPDATE usuarios SET passwordUsuario='".$passwordUsuario."' WHERE idUsuario='".$idUsuario."';";
 			$statement=$conexion->prepare($sql);			
                 $statement->execute();
                 while ($result=$statement->fetch()) {
@@ -231,7 +231,7 @@
 			$rows=null;		
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql='UPDATE USUARIOS SET estadoUsuario='.$estadoUsuario.' WHERE idUsuario="'.$idUsuario.'";';
+			$sql='UPDATE usuarios SET estadoUsuario='.$estadoUsuario.' WHERE idUsuario="'.$idUsuario.'";';
 			$statement=$conexion->prepare($sql);
 
 			if (!$statement) {
@@ -243,21 +243,7 @@
 
 
 		}
-		public function borrarUsuario($idUsuario){
-			$rows=null;
-                /*$estado=1;*/
-                $modelo = new Conexion();
-                $conexion = $modelo->getConection();					
-                $sql="CALL borrarUsuario('".$idUsuario."','".$numeroIdentificacion."',
-                '".$passwordUsuario."',".$estado.",'".$rolFK."','.$idTipoDocumentoFK')";
-                $statement=$conexion->prepare($sql);			
-                $statement->execute();
-                while ($result=$statement->fetch()) {
-                    $rows[]=$result;
-                }
-                return $rows;
-
-		}
+		
 
 	}
 ?>

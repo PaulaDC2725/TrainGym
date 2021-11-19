@@ -69,7 +69,7 @@ class consultaMetodologia{
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();
 		$sql="SELECT U.NumeroIdentificacion, C.nombreCliente, C.apellidoCliente,C.correoCliente, C.telefonoCliente, M.nombreMetodologia 
-		FROM Clientes C 
+		FROM clientes C 
 		JOIN usuarios U JOIN metodologia m JOIN suscripciones s 
 		on C.idUsuarioFK = U.idUsuario and s.idClienteFK = C.idCliente and s.idMetodologiaFK=m.idMetodologia
 		WHERE ".$filtroCol." LIKE '%".$valor."%'";
@@ -86,8 +86,8 @@ class consultaMetodologia{
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="INSERT INTO EJERCICIOS
-		SELECT MAX(idEjercicio) + 1,'".$idParteDelCuerpoFK."', '".$Ejercicio."' FROM EJERCICIOS";
+		$sql="INSERT INTO ejercicios
+		SELECT MAX(idEjercicio) + 1,'".$idParteDelCuerpoFK."', '".$Ejercicio."' FROM ejercicios";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -103,8 +103,8 @@ class consultaMetodologia{
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="INSERT INTO SERIE_DE_EJERCICIO 
-		SELECT MAX(idSerie) + 1,'".$nombreSerie."','".$descripcionSerie."','".$repeticion."','".$Secuencia."','".$imgEjercicio."','".$idMetodologia."' FROM SERIE_DE_EJERCICIO;";
+		$sql="INSERT INTO serie_de_ejercicio 
+		SELECT MAX(idSerie) + 1,'".$nombreSerie."','".$descripcionSerie."','".$repeticion."','".$Secuencia."','".$imgEjercicio."','".$idMetodologia."' FROM serie_de_ejercicio;";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -147,7 +147,7 @@ class consultaMetodologia{
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="SELECT s.urlImagen, m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN metodologia as m JOIN USUARIOS U JOIN INSTRUCTORES I ON I.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."'";
+		$sql="SELECT s.urlImagen, m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN metodologia as m JOIN usuarios U JOIN instructores I ON I.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."'";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -161,7 +161,7 @@ class consultaMetodologia{
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="SELECT s.urlImagen,m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,C.nombreCliente From serie_de_ejercicio S JOIN metodologia as m JOIN USUARIOS U JOIN Clientes C ON C.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."' and m.idMetodologia='".$idMetodologia."'";
+		$sql="SELECT s.urlImagen,m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,C.nombreCliente From serie_de_ejercicio S JOIN metodologia as m JOIN usuarios U JOIN clientes C ON C.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."' and m.idMetodologia='".$idMetodologia."'";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -173,7 +173,7 @@ class consultaMetodologia{
 		$rows=null;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();
-		$sql="SELECT m.nombreMetodologia, U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN metodologia as m JOIN USUARIOS U JOIN INSTRUCTORES I ON I.idUsuarioFK=U.idUsuario and s.idMetodologiaFK=m.idMetodologia WHERE ".$filtroCol." LIKE '%".$valor."%' AND U.NumeroIDentificacion= '".$numeroIdentificacion."'";
+		$sql="SELECT m.nombreMetodologia, U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN metodologia as m JOIN usuarios U JOIN instructores I ON I.idUsuarioFK=U.idUsuario and s.idMetodologiaFK=m.idMetodologia WHERE ".$filtroCol." LIKE '%".$valor."%' AND U.NumeroIDentificacion= '".$numeroIdentificacion."'";
 		$statement=$conexion->prepare($sql);
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -186,7 +186,7 @@ class consultaMetodologia{
 	$rows=null;
 	$modelo = new Conexion();
 	$conexion = $modelo->getConection();
-	$sql="SELECT m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,C.nombreCliente From serie_de_ejercicio S JOIN metodologia as m JOIN USUARIOS U JOIN Clientes C ON C.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK WHERE ".$filtroCol." LIKE '%".$valor."%' AND U.NumeroIDentificacion= '".$numeroIdentificacion."' AND m.idMetodologia='".$idMetodologia."' ";
+	$sql="SELECT m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,C.nombreCliente From serie_de_ejercicio S JOIN metodologia as m JOIN usuarios U JOIN clientes C ON C.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK WHERE ".$filtroCol." LIKE '%".$valor."%' AND U.NumeroIDentificacion= '".$numeroIdentificacion."' AND m.idMetodologia='".$idMetodologia."' ";
 	$statement=$conexion->prepare($sql);
 	$statement->execute();
 	while ($result=$statement->fetch()) {

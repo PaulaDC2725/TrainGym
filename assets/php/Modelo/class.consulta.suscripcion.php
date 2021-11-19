@@ -6,7 +6,7 @@ class ConsultasSuscripcion{
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "INSERT INTO SUSCRIPCIONES(idSuscripcion, valorSuscripcion, fechaSuscripcion, estadoSuscripcion, idClienteFK) SELECT MAX(idSuscripcion) + 1,'".$valorSuscripcion."','".$fechaSuscripcion."','".$estadoSuscripcion."',(SELECT MAX(idCliente)FROM CLIENTES) FROM SUSCRIPCIONES";
+			$sql = "INSERT INTO suscripciones(idSuscripcion, valorSuscripcion, fechaSuscripcion, estadoSuscripcion, idClienteFK) SELECT MAX(idSuscripcion) + 1,'".$valorSuscripcion."','".$fechaSuscripcion."','".$estadoSuscripcion."',(SELECT MAX(idCliente)FROM CLIENTES) FROM SUSCRIPCIONES";
 			$statement=$conexion->prepare($sql);
 
 		if (!$statement) {
@@ -21,7 +21,7 @@ class ConsultasSuscripcion{
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "SELECT CantidadPagosCliente() as 'Cantidad de los clientes que han pagado'";
+			$sql = "SELECT cantidadPagosCliente() as 'Cantidad de los clientes que han pagado'";
 			$statement=$conexion->prepare($sql);			
 	 $statement->execute();
 	 while ($result=$statement->fetch()) {
@@ -35,7 +35,7 @@ class ConsultasSuscripcion{
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "SELECT s.idSuscripcion FROM suscripciones as s JOIN usuarios as u join Clientes as c on c.idCliente=s.idClienteFK 
+			$sql = "SELECT s.idSuscripcion FROM suscripciones as s JOIN usuarios as u join clientes as c on c.idCliente=s.idClienteFK 
 			and c.idUsuarioFK=u.idUsuario where u.NumeroIdentificacion='".$numeroIdentificacion."'";
 			$statement=$conexion->prepare($sql);			
 	 $statement->execute();
@@ -50,7 +50,7 @@ class ConsultasSuscripcion{
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "SELECT PorcentajePagosCliente() AS 'Porcentaje de los pagos'";
+			$sql = "SELECT porcentajePagosCliente() AS 'Porcentaje de los pagos'";
 			$statement=$conexion->prepare($sql);			
 	 $statement->execute();
 	 while ($result=$statement->fetch()) {
@@ -80,15 +80,15 @@ public function cargarPagoCliFiltroId($filtro){
 	$conexion = $modelo->getConection();
 	$sql="SELECT U.NumeroIdentificacion,CONCAT(C.nombreCliente ,' ', C.apellidoCliente) AS 'Nombre Completo',
 	M.nombreMetodologia,p.urlSoportePago, p.fechaPago,p.valorPago,p.descripcionPago,SM.fechaMetodologiaInicio, SM.fechaMetodologiaFin FROM USUARIOS AS U
-   JOIN CLIENTES AS C 
+   JOIN clientes AS C 
    ON U.idUsuario=C.idUsuarioFK
-   JOIN SUSCRIPCIONES AS S 
-   JOIN PAGOS AS p
+   JOIN suscripciones AS S 
+   JOIN pagos AS p
    ON S.idSuscripcion=p.idSuscripcionFK
    ON C.idCliente=S.idClienteFK
-   JOIN SUSCRIPCION_METODOLOGIA AS SM
+   JOIN suscripcion_metodologia AS SM
    ON S.idSuscripcion=SM.idSuscripcionFK
-   JOIN METODOLOGIA AS M
+   JOIN metodologia AS M
    ON SM.idMetodologiaFK=M.idMetodologia
     WHERE u.NumeroIdentificacion='".$filtro."'";
 	 $statement=$conexion->prepare($sql);			

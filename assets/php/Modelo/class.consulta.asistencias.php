@@ -24,7 +24,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "select * From ConsultarAsistenciaCliente;";
+			$sql = "select * From consultarAsistenciaCliente;";
 			$statement=$conexion->prepare($sql);		
         $statement->execute();
         while ($result=$statement->fetch()) {
@@ -36,11 +36,11 @@
 		$rows=null;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();
-		$sql="SELECT u.numeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
-		FROM ASISTENCIAS AS a
-		JOIN PROGRAMACION AS p
-		JOIN USUARIOS AS  u 
-		JOIN CLIENTES AS c 
+		$sql="SELECT u.NumeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
+		FROM asistencias AS a
+		JOIN programacion AS p
+		JOIN usuarios AS  u 
+		JOIN clientes AS c 
 		ON  p.idProgramacion=a.idProgramacionFK
 		AND u.idUsuario=p.idUsuarioFK 
 		AND u.idUsuario=c.idUsuarioFK 
@@ -68,11 +68,11 @@ public function consultarAsistenciasFiltradasIns($filtroCol, $valor){
 	$rows=null;
 	$modelo = new Conexion();
 	$conexion = $modelo->getConection();
-	$sql="SELECT u.numeroIdentificacion, CONCAT(i.nombreInstructor ,' ', i.apellidoInstructor) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
-	FROM ASISTENCIAS AS a
-	JOIN PROGRAMACION AS p
-	JOIN USUARIOS AS  u 
-	JOIN INSTRUCTORES AS i 
+	$sql="SELECT u.NumeroIdentificacion, CONCAT(i.nombreInstructor ,' ', i.apellidoInstructor) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
+	FROM asistencias AS a
+	JOIN programacion AS p
+	JOIN usuarios AS  u 
+	JOIN instructores AS i 
 	ON  p.idProgramacion=a.idProgramacionFK
 	AND u.idUsuario=p.idUsuarioFK 
 	AND u.idUsuario=i.idUsuarioFK 
@@ -126,7 +126,7 @@ public function consultarAsistenciasFiltradasIns($filtroCol, $valor){
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "INSERT INTO ASISTENCIAS(idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK) 
+			$sql = "INSERT INTO asistencias(idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK) 
 			values ('".$idAsistencia."','".$fechaHoraIngreso."','".$fechaHoraSalida."','".$idProgramacion."');";
 			$statement=$conexion->prepare($sql);
 			$statement->execute();

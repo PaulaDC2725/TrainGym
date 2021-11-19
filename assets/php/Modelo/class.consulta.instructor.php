@@ -38,7 +38,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql="SELECT count(correoinstructor) AS correo from INSTRUCTORES where correoinstructor='".$correoInstructor."';";
+			$sql="SELECT count(correoinstructor) AS correo from instructores where correoinstructor='".$correoInstructor."';";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
 			while ($result=$statement->fetch()) {
@@ -50,7 +50,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql="SELECT count(telefonoInstructor) AS Telefono from INSTRUCTORES where telefonoInstructor='".$telefonoInstructor."';";
+			$sql="SELECT count(telefonoInstructor) AS Telefono from instructores where telefonoInstructor='".$telefonoInstructor."';";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
 			while ($result=$statement->fetch()) {
@@ -79,8 +79,8 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
 			$sql="SELECT I.idInstructor, U.NumeroIdentificacion, I.nombreInstructor, I.apellidoInstructor, I.correoInstructor, I.telefonoInstructor 
-			FROM USUARIOS AS U 
-			JOIN INSTRUCTORES AS I 
+			FROM usuarios AS U 
+			JOIN instructores AS I 
 			ON U.idUsuario=I.idUsuarioFK  Where U.estadoUsuario = '0'";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
@@ -95,8 +95,8 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
 			$sql="SELECT I.idInstructor,U.NumeroIdentificacion, I.nombreInstructor, I.apellidoInstructor, I.correoInstructor, I.telefonoInstructor
-			FROM USUARIOS AS U 
-			JOIN INSTRUCTORES AS I
+			FROM usuarios AS U 
+			JOIN instructores AS I
 			ON U.idUsuario=I.idUsuarioFK
 			WHERE ".$filtroCol." LIKE '%".$valor."%' AND estadoUsuario=1";
 			$statement=$conexion->prepare($sql);
@@ -111,8 +111,8 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
 			$sql="SELECT I.idInstructor,U.NumeroIdentificacion, I.nombreInstructor, I.apellidoInstructor, I.correoInstructor, I.telefonoInstructor
-			FROM USUARIOS AS U 
-			JOIN INSTRUCTORES AS I
+			FROM usuarios AS U 
+			JOIN instructores AS I
 			ON U.idUsuario=I.idUsuarioFK
 			WHERE ".$filtroCol." LIKE '%".$valor."%' AND estadoUsuario=0";
 			$statement=$conexion->prepare($sql);
@@ -128,7 +128,7 @@
 			$rows=null;			
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql='UPDATE INSTRUCTORES SET estadoInstructor='.$estadoInstructor.' WHERE idInstructor="'.$idInstructor.'";';
+			$sql='UPDATE instructores SET estadoInstructor='.$estadoInstructor.' WHERE idInstructor="'.$idInstructor.'";';
 			$statement=$conexion->prepare($sql);
 
 			if (!$statement) {
@@ -140,28 +140,15 @@
 
 
 		}
-		public function borrarInstructor($idInstructor){
-			$rows=null;
-                /*$estado=1;*/
-                $modelo = new Conexion();
-                $conexion = $modelo->getConection();					
-                $sql="CALL borrarInstructor('".$idInstructor."')";
-                $statement=$conexion->prepare($sql);			
-                $statement->execute();
-                while ($result=$statement->fetch()) {
-                    $rows[]=$result;
-                }
-                return $rows;
-
-		}
+		
 		
 		public function cargarInstructorFiltroId($filtro){
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
 			$sql="SELECT I.idInstructor,U.NumeroIdentificacion, I.nombreInstructor, I.apellidoInstructor, I.correoInstructor, I.telefonoInstructor,I.estadoInstructor,I.idUsuarioFK, U.estadoUsuario 
-			FROM USUARIOS AS U 
-			JOIN INSTRUCTORES AS I 
+			FROM usuarios AS U 
+			JOIN instructores AS I 
 			ON U.idUsuario=I.idUsuarioFK 
 			WHERE U.NumeroIdentificacion = '".$filtro."'";
 			$statement=$conexion->prepare($sql);			
@@ -178,9 +165,9 @@
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
 			$sql="SELECT U.NumeroIdentificacion, i.nombreInstructor, i.apellidoInstructor,p.fechaInicioPro, p.fechaFinPro, p.idProgramacion 
-			FROM Programacion p 
+			FROM programacion p 
 			JOIN usuarios U 
-			JOIN Instructores I
+			JOIN instructores I
 			on p.idUsuarioFK = U.idUsuario 
 			and I.idUsuarioFK=u.idUsuario
 			where NumeroIdentificacion='".$filtro."' ;";
@@ -209,7 +196,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql="SELECT * FROM Parte_Del_cuerpo Where idParteDelCuerpo>=6";
+			$sql="SELECT * FROM parte_del_cuerpo Where idParteDelCuerpo>=6";
 		 	$statement=$conexion->prepare($sql);			
 		 	$statement->execute();
 		 	while ($result=$statement->fetch()) {
@@ -222,7 +209,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql="SELECT idEjercicio, nombreEjercicio FROM Ejercicios";
+			$sql="SELECT idEjercicio, nombreEjercicio FROM ejercicios";
 		 	$statement=$conexion->prepare($sql);			
 		 	$statement->execute();
 		 	while ($result=$statement->fetch()) {
