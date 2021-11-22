@@ -1,4 +1,5 @@
 <?php
+  session_start();
 	require_once('../assets/php/modelo/class.conexion.php');
 	require_once('../assets/php/modelo/class.consulta.usuario.php');
 
@@ -51,7 +52,7 @@
                 <br>
                 <?php 
 if(isset($_POST['Num'])&&isset($_POST['Contraseña'])){
-  session_start();
+
 $usuario = $_POST['Num'];
 $contrasenia = $_POST['Contraseña'];
 if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){

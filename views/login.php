@@ -1,4 +1,5 @@
 <?php
+session_start();
 	require_once('../assets/php/modelo/class.conexion.php');
 	require_once('../assets/php/modelo/class.consulta.usuario.php');
 
@@ -51,7 +52,7 @@
 <?php 
 if(isset($_POST['Num']) && isset($_POST['Contraseña'])){
   
-session_start();
+
 $usuario = $_POST['Num'];
 $contrasenia = $_POST['Contraseña'];
 if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
@@ -101,17 +102,23 @@ if($usuario=="'' or '1'='1'" || $contrasenia=="'' or '1'='1'"){
   if($Rol == '1' && $resultado == "1" ){
     $_SESSION["rolRecepcionista"] = $rolRecepcionista;
     $_SESSION["NumeroIdentificacion"] = $usuario;
-    header('location: inicioRecepcionista.php');
+    echo "<script>location.href=' inicioRecepcionista.php';</script>";
+die();
+    //header('location: inicioRecepcionista.php');
   }
   else if($Rol == '2' && $resultado == "1"){
     $_SESSION["NumeroIdentificacion"] = $usuario;
     $_SESSION['rol'] = $Rol;
-    header('location: inicioInstructor.php');
+    echo "<script>location.href=' inicioInstructor.php';</script>";
+    die();
+    //header('location: inicioInstructor.php');
   }
   else if($Rol == '3' && $resultado == "1"){
     $_SESSION["NumeroIdentificacion"] = $usuario;
     $_SESSION['rol'] = $Rol;
-    header('location: inicioCliente.php');
+    echo "<script>location.href=' inicioCliente.php';</script>";
+    die();
+   // header('location: inicioCliente.php');
   }else if($usuario=="" || $contrasenia==""){
     echo('<script>swal("Error!", "Debe ingresar datos al formulario para iniciar sesión","error")</script>');
   }else if($existenciaU=='0'){
