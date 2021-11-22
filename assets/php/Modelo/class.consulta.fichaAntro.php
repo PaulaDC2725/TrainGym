@@ -5,7 +5,7 @@
         $rows=null;
         $modelo = new Conexion();
         $conexion = $modelo->getConection();					
-        $sql = "INSERT INTO ficha_antropometrica(idFicha, fechaFicha, EstaturaCliente, pesoCliente, descripcionFicha, idSuscripcionFK) SELECT MAX(idFicha) + 1,'".$fechaFicha."','".$EstaturaCliente."','".$pesoCliente."','".$descripcionFicha."',(SELECT MAX(idSuscripcion)FROM SUSCRIPCIONES) FROM ficha_antropometrica";
+        $sql = "INSERT INTO ficha_antropometrica(idFicha, fechaFicha, EstaturaCliente, pesoCliente, descripcionFicha, idSuscripcionFK) SELECT MAX(idFicha) + 1,'".$fechaFicha."','".$EstaturaCliente."','".$pesoCliente."','".$descripcionFicha."',(SELECT MAX(idSuscripcion)FROM suscripciones) FROM ficha_antropometrica";
         $statement=$conexion->prepare($sql);
 
     if (!$statement) {
