@@ -1,8 +1,8 @@
 /*Vistas*/
-CREATE VIEW ConsultarMetodologia
+CREATE VIEW consultarMetodologia
 AS
 SELECT U.NumeroIdentificacion, C.nombreCliente, C.apellidoCliente,C.correoCliente, C.telefonoCliente, M.nombreMetodologia 
-FROM Clientes C 
+FROM clientes C 
 JOIN usuarios U 
 JOIN metodologia m 
 JOIN suscripcion_Metodologia sm 
@@ -12,7 +12,18 @@ and s.idClienteFK = C.idCliente
 and sm.idMetodologiaFK=m.idMetodologia 
 and sm.idSuscripcionFK=s.idSuscripcion;
 
-
+Create view consultarAsistenciaCliente
+as
+SELECT u.numeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
+	FROM asistencias AS a
+    JOIN programacion AS p
+	JOIN usuarios AS  u 
+	JOIN clientes AS c 
+	ON  p.idProgramacion=a.idProgramacionFK
+    AND u.idUsuario=p.idUsuarioFK 
+	AND u.idUsuario=c.idUsuarioFK 
+    WHERE c.idUsuarioFK=p.idUsuarioFK;
+    Select * from consultarAsistenciaCliente;
 /*PROCEDIMIENTOS ALMACENADOS*/
 
 
@@ -29,7 +40,7 @@ CREATE PROCEDURE `validar_login` (	in `usuario` int(12),
                                     in `estado` INT(1))
 BEGIN
 	SELECT COUNT(*) AS RESULTADO 
-	FROM USUARIOS 
+	FROM usuarios 
 	WHERE NumeroIdentificacion=usuario 
 	AND passwordUsuario=password 
 	AND idRolFK=rol 
@@ -51,10 +62,11 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `validar_login2` (in NumiD VARCHAR(15))
 BEGIN
 	SELECT idRolFK 
-	FROM USUARIOS 
+	FROM usuarios
 	WHERE NumeroIdentificacion=Numid;
 END$$
 DELIMITER ;
+
 
 /*---------------SP PARA REGISTRAR UN USUARIO------------------------------*/
 
@@ -69,9 +81,9 @@ CREATE PROCEDURE `registrarUsuario`  (	in numeroiu VARCHAR(35),
                                         in rolu INT(1),
                                         in iddocu INT(1))
 BEGIN
-	INSERT INTO USUARIOS
+	INSERT INTO usuarios
 	SELECT MAX(idUsuario) + 1,numeroiu,passwordu,estadou,rolu,iddocu 
-	FROM USUARIOS;
+	FROM usuarios;
 END$$
 DELIMITER ;
 
@@ -85,7 +97,7 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `consultarUsuario` ()
 BEGIN
 	SELECT MAX(idUsuario) AS idUsuario 
-	FROM USUARIOS;
+	FROM usuarios;
 END$$
 DELIMITER ;
 
@@ -103,9 +115,9 @@ CREATE PROCEDURE `registrarCliente`  (	in nombrec VARCHAR(35),
                                         in telefonoc VARCHAR(11),
                                         in estadoc INT)
 BEGIN
-	INSERT INTO CLIENTES 
-	SELECT MAX(idCliente) + 1,nombrec,apellidoc,fnacimientoc,correoc,telefonoc,estadoc,(SELECT MAX(idUsuario)FROM USUARIOS)
-	FROM CLIENTES;
+	INSERT INTO clientes
+	SELECT MAX(idCliente) + 1,nombrec,apellidoc,fnacimientoc,correoc,telefonoc,estadoc,(SELECT MAX(idUsuario)FROM usuarios)
+	FROM clientes;
 END$$
 DELIMITER ;
 
@@ -120,7 +132,7 @@ CREATE PROCEDURE `actualizarCliente` (	in id int(10),
 										in correo VARCHAR(50), 
                                         in tel VARCHAR(12))
 BEGIN
-	UPDATE CLIENTES 
+	UPDATE clientes 
 	SET correoCliente=correo , telefonoCliente = tel 
 	WHERE idCliente = id;  
 END$$
@@ -139,15 +151,15 @@ CREATE PROCEDURE `registrarInstructor`  (in nombrei VARCHAR(35),
                                         in telefonoi VARCHAR(11),
                                         in estadoi INT)
 BEGIN
-	INSERT INTO INSTRUCTORES 
-	SELECT MAX(idInstructor) + 1,nombrei,appellidoi,correoi,telefonoi,estadoi,(SELECT MAX(idUsuario)FROM USUARIOS)
-	FROM INSTRUCTORES;
+	INSERT INTO Iinstructores 
+	SELECT MAX(idInstructor) + 1,nombrei,appellidoi,correoi,telefonoi,estadoi,(SELECT MAX(idUsuario)FROM usuarios)
+	FROM instructores;
 END$$
 DELIMITER ;
 
 /*---------------SP PARA CONSULTAR UN INSTRUCTOR------------------------------*/
 
-USE `gimnasiobd`;
+USE `gimnasio`;
 DROP PROCEDURE IF EXISTS `consultarInstructor`;
 
 DELIMITER $$
@@ -155,8 +167,8 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `consultarInstructor` ()
 BEGIN
 	SELECT I.idInstructor,U.NumeroIdentificacion,I.nombreInstructor,I.apellidoInstructor,I.correoInstructor,I.telefonoInstructor 
-	FROM USUARIOS AS U 
-	JOIN INSTRUCTORES AS I 
+	FROM usuarios AS U 
+	JOIN instructores AS I 
 	ON U.idUsuario=I.idUsuarioFK 
     WHERE U.estadoUsuario='1';
 END$$
@@ -189,13 +201,13 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `consultarSuscripcion` (in NumiD VARCHAR(15))
 BEGIN
 	SELECT c.nombreCliente, m.nombreMetodologia, s.valorSuscripcion, s.fechaSuscripcion 
-	FROM  SUSCRIPCIONES AS s
-    JOIN SUSCRIPCION_METODOLOGIA AS sm
+	FROM  suscripciones AS s
+    JOIN suscripcion_metodologia AS sm
     ON s.idSuscripcion=sm.idSuscripcionFK
-	JOIN METODOLOGIA AS m 
+	JOIN metodologia AS m 
 	ON sm.idMetodologiaFK=m.idMetodologia
-	JOIN USUARIOS AS u 
-	JOIN CLIENTES AS c 
+	JOIN usuarios AS u 
+	JOIN clientes AS c 
 	ON u.idUsuario=c.idUsuarioFK 
 	AND s.idClienteFK=c.idCliente
 	WHERE u.numeroIdentificacion=NumiD;
@@ -218,10 +230,10 @@ CREATE PROCEDURE `registrarProgramacion` (	in fechaInicioPro DATE,
 											in fechaFinPro DATE,
 											in numid VARCHAR(25))
 BEGIN
-	INSERT INTO PROGRAMACION 
+	INSERT INTO programacion 
     SELECT MAX(idProgramacion) + 1 ,fechaInicioPro,fechaFinPro, 
-    (SELECT idUsuario FROM USUARIOS WHERE numeroIdentificacion=numid) 
-    FROM PROGRAMACION;
+    (SELECT idUsuario FROM usuarios WHERE numeroIdentificacion=numid) 
+    FROM programacion;
 END$$
 DELIMITER ;
 
@@ -237,7 +249,7 @@ CREATE PROCEDURE `registrarAsistencia` (in idAsis int,
 										in fechaHoraIngreso DATETIME,
 										in fechaHoraSalida DATETIME)
 BEGIN
-	INSERT INTO ASISTENCIAS(idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK) 
+	INSERT INTO asistencias(idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK) 
     values (idAsis,fechaHoraIngreso,fechaHoraSalida,idPro);
 END$$
 DELIMITER ;
@@ -252,31 +264,16 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `consultarAsistenciaCliente` ()
 BEGIN
 	SELECT u.numeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
-	FROM ASISTENCIAS AS a
-    JOIN PROGRAMACION AS p
-	JOIN USUARIOS AS  u 
-	JOIN CLIENTES AS c 
+	FROM asistencias AS a
+    JOIN programacion AS p
+	JOIN usuarios AS  u 
+	JOIN clientes AS c 
 	ON  p.idProgramacion=a.idProgramacionFK
     AND u.idUsuario=p.idUsuarioFK 
 	AND u.idUsuario=c.idUsuarioFK 
     WHERE c.idUsuarioFK=p.idUsuarioFK;
 END$$
 DELIMITER ;
-
-Create view consultarAsistenciaCliente
-as
-SELECT u.numeroIdentificacion, CONCAT(c.nombreCliente ,' ', c.apellidoCliente) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
-	FROM ASISTENCIAS AS a
-    JOIN PROGRAMACION AS p
-	JOIN USUARIOS AS  u 
-	JOIN CLIENTES AS c 
-	ON  p.idProgramacion=a.idProgramacionFK
-    AND u.idUsuario=p.idUsuarioFK 
-	AND u.idUsuario=c.idUsuarioFK 
-    WHERE c.idUsuarioFK=p.idUsuarioFK;
-    Select * from consultarAsistenciaCliente;
-
-
 
 /*---------------SP PARA REGISTRAR PAGOS ------------------------------*/
 
@@ -293,9 +290,9 @@ CREATE PROCEDURE `registrarPagos` ( in fechaPago DATETIME,
                                     in urlSoportePago VARCHAR(500),
                                     in idSuscripcion int(100))
 BEGIN
-	INSERT INTO PAGOS 
+	INSERT INTO pagos 
     SELECT MAX(idPago) + 1,fechaPago,ValorPago,descripcionPago,urlSoportePago,idSuscripcion
-    FROM PAGOS;
+    FROM pagos;
 END$$
 DELIMITER ;
 
@@ -310,10 +307,10 @@ USE `gimnasiobd`$$
 CREATE PROCEDURE `consultarAsistenciaInstructor` ()
 BEGIN
 	SELECT u.numeroIdentificacion, CONCAT(i.nombreInstructor ,' ', i.apellidoInstructor) AS 'Nombre Completo', a.fechaHoraIngreso, a.fechaHoraSalida 
-	FROM ASISTENCIAS AS a
-    JOIN PROGRAMACION AS p
-	JOIN USUARIOS AS  u 
-	JOIN INSTRUCTORES AS i
+	FROM asistencias AS a
+    JOIN programacion AS p
+	JOIN usuarios AS  u 
+	JOIN instructores AS i
 	ON  p.idProgramacion=a.idProgramacionFK
     AND u.idUsuario=p.idUsuarioFK 
 	AND u.idUsuario=i.idUsuarioFK 
@@ -335,17 +332,18 @@ CREATE PROCEDURE `registrarSerie` (	in nombreSerieEjercicio varchar(60),
 									in secuenciaEjercicio INT,
                                     in idMetodologiaFK INT)
 BEGIN
-	INSERT INTO SERIE_DE_EJERCICIO 
+	INSERT INTO serie_de_ejercicio 
 	SELECT MAX(idSerie) + 1,nombreSerieEjercicio,descripcionSerieEjercicio, repeticionEjercicio, secuenciaEjercicio, idMetodologiaFK 
-	FROM SERIE_DE_EJERCICIO;
+	FROM serie_de_ejercicio;
 END$$
 DELIMITER ;
 
+
 /*Funciones Escalares*/
 
-DROP FUNCTION IF EXISTS CantidadPagosCliente; 
+DROP FUNCTION IF EXISTS cantidadPagosCliente; 
 DELIMITER $$ 
-CREATE FUNCTION CantidadPagosCliente() 
+CREATE FUNCTION cantidadPagosCliente() 
 RETURNS tinyint 
 BEGIN 
 DECLARE cantidadClientes int; 
@@ -355,18 +353,18 @@ RETURN @cantidadClientes;
 END $$
 
 /*PorcentajePagosCliente*/
-DROP FUNCTION IF EXISTS PorcentajePagosCliente; 
+DROP FUNCTION IF EXISTS porcentajePagosCliente; 
 DELIMITER $$ 
-CREATE FUNCTION PorcentajePagosCliente() 
+CREATE FUNCTION porcentajePagosCliente() 
 RETURNS float
 BEGIN 
 DECLARE cantidadClientes int; 
 set @cantidadClientes= (SELECT COUNT(DISTINCT idSuscripcionFK) From pagos); 
-set @Porcentaje=(@cantidadClientes*100/(Select count(*) From Clientes));
+set @Porcentaje=(@cantidadClientes*100/(Select count(*) From clientes));
 /*Select @Porcentaje;*/
 /*Select @cantidadClientes;*/
 RETURN @Porcentaje; 
 END $$
-Select PorcentajePagosCliente() AS 'Porcentaje de los pagos';
-Select CantidadPagosCliente();
-select CantidadPagosCliente() as 'Cantidad de los clientes que han pagado';
+Select porcentajePagosCliente() AS 'Porcentaje de los pagos';
+Select cantidadPagosCliente();
+select cantidadPagosCliente() as 'Cantidad de los clientes que han pagado';

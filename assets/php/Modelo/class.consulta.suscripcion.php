@@ -6,7 +6,7 @@ class ConsultasSuscripcion{
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "INSERT INTO suscripciones(idSuscripcion, valorSuscripcion, fechaSuscripcion, estadoSuscripcion, idClienteFK) SELECT MAX(idSuscripcion) + 1,'".$valorSuscripcion."','".$fechaSuscripcion."','".$estadoSuscripcion."',(SELECT MAX(idCliente)FROM CLIENTES) FROM SUSCRIPCIONES";
+			$sql = "INSERT INTO suscripciones(idSuscripcion, valorSuscripcion, fechaSuscripcion, estadoSuscripcion, idClienteFK) SELECT MAX(idSuscripcion) + 1,'".$valorSuscripcion."','".$fechaSuscripcion."','".$estadoSuscripcion."',(SELECT MAX(idCliente)FROM clientes) FROM suscripciones";
 			$statement=$conexion->prepare($sql);
 
 		if (!$statement) {
