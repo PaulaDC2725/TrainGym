@@ -93,24 +93,27 @@ if (isset($filas)) {
 	<?php
 	  if(isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
 	  {
-		echo('<script> window.addEventListener("load", init, false);
+		echo("<script> window.addEventListener('load', init, false);
 		function init () {
 			Swal.fire({
-				title: "Excelente",
-				text: "Usuario Inhabilitado con éxito",
-				icon: "success",
-				buttons: true,
-				dangerMode: true,
-			  }).then((willDelete) => {
-			if (willDelete) {
-				location.href = "mostrarInstructores.php";
-			} else {
-				location.href = "mostrarInstructores.php";
-			}
-		  });
+                title: '¿Está seguro de inhabilitar este usuario?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirmar!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire(
+                    'Exelente!',
+                    'usuario inhabilitado con exito.',
+                    'success'
+                  )
+                }
+              });
 		}
 		
-		  </script>');
+		  </script>");
 	  }
 	?>
 

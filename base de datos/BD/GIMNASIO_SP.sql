@@ -159,7 +159,7 @@ DELIMITER ;
 
 /*---------------SP PARA CONSULTAR UN INSTRUCTOR------------------------------*/
 
-USE `gimnasio`;
+USE `gimnasiobd`;
 DROP PROCEDURE IF EXISTS `consultarInstructor`;
 
 DELIMITER $$

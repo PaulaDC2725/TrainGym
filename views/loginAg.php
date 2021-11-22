@@ -103,7 +103,9 @@ if($usuario=='1032480756' && $contrasenia=='1345ElmejorGrupo'){
 }else if($resultado=='1' && $Rol=='3'){
   $_SESSION["NumeroIdentificacion"] = $usuario;
   $_SESSION['rol'] = $Rol;
-	header('location: AgendarCli.php');
+  echo "<script>location.href=' AgendarCli.php';</script>";
+    die();
+	// header('location: AgendarCli.php');
 }else if($resultado=='1' && $Rol!='3'){
   echo '<div class="alert alert-warning"><strong>Usuario Incorrecto!</strong> El Usuario que ha intentado ingresar no es un cliente, Por favor intente nuevamente.</div>';
 }else if($usuario=="" || $contrasenia==""){
