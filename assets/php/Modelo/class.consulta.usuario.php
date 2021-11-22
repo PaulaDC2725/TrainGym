@@ -176,7 +176,7 @@
 			$estado=1;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql="CALL validar_Login2('".$numeroIdentificacion."')";
+			$sql="CALL validar_login2('".$numeroIdentificacion."')";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
 			while ($result=$statement->fetch()) {
