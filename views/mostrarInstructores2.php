@@ -18,28 +18,7 @@ $consultasUsuario = new ConsultasUsuario();
 $estadoInstructor=null;
 $estadoUsuario = null;
 $idUsuarioFK = null;
-if (isset($_GET['NumeroIdentificacion'])) 
-{
-    $num=$_GET['NumeroIdentificacion'];
-    $filtro=$num;
-    $id = $_GET['id'];
 
-    $filas = $consultasInstructor->cargarInstructorFiltroId($filtro);
-    if (is_array($filas) || is_object($filas))
-    {  
-      foreach ($filas as $fila) 
-      {
-        $estadoCliente=$fila['estadoInstructor'];
-        $estadoUsuario=$fila['estadoUsuario'];
-        $idUsuarioFK = $fila['idUsuarioFK'];
-      }
-      
-    } 
-    
-	$mensaje5 = $consultasUsuario ->cambiarEstadoUsuario("1", $idUsuarioFK);
-    $mensaje4 = $consultasInstructor->cambiarEstadoInstructor("1", $id);
-	
-}
   $filas = $consultasInstructor->consultarInstructorHab();
 
  
@@ -96,24 +75,28 @@ if (isset($filas)) {
 <?php
 	  if(isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
 	  {
-		echo('<script> window.addEventListener("load", init, false);
+		echo("<script> window.addEventListener('load', init, false);
 		function init () {
-			Swal.fire({
-				title: "Excelente",
-				text: "Usuario habilitado con éxito",
-				icon: "success",
-				buttons: true,
-				dangerMode: true,
-			  }).then((willDelete) => {
-			if (willDelete) {
-				location.href = "mostrarInstructores2.php";
-			} else {
-				location.href = "mostrarInstructores2.php";
-			}
-		  });
+            Swal.fire({
+                title: '¿Está seguro de inhabilitar este usuario?',
+                icon: 'warning',
+                denyButtonColor: '#2c2c2c',
+                confirmButtonColor: '#FF9900',
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: 'Confirmar',
+                denyButtonText: `Cancelar`,
+              }).then((result) => {
+                if (result.isConfirmed) {
+                      location.href = 'habilitarInstructor.php?id=".$fila['idInstructor']."&NumeroIdentificacion=".$fila['NumeroIdentificacion']."';
+                } else if (result.isDenied) {
+                    
+                }
+              });
+			
 		}
 		
-		  </script>');
+		  </script>");
 	  }
 	?>
 

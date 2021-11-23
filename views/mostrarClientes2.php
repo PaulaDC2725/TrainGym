@@ -18,27 +18,7 @@ $consultasUsuario = new ConsultasUsuario();
 $estadoCliente=null;
 $estadoUsuario = null;
 $idUsuarioFK = null;
-if (isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
-{
-    $num=$_GET['NumeroIdentificacion'];
-    $filtro=$num;
-    $id = $_GET['id'];
 
-    $filas = $consultasCliente->cargarClientesFiltroId($filtro);
-    if (is_array($filas) || is_object($filas))
-    {  
-      foreach ($filas as $fila) 
-      {
-        $estadoCliente=$fila['estadoCliente'];
-        $estadoUsuario=$fila['estadoUsuario'];
-        $idUsuarioFK = $fila['idUsuarioFK'];
-      }
-      
-    } 
-    
-	$mensaje5 = $consultasUsuario ->cambiarEstadoUsuario("1", $idUsuarioFK);
-    $mensaje4 = $consultasCliente->cambiarEstadoCliente("1", $id);
-}
 
   $filas = $consultasCliente ->consultarClientesHab();
  
@@ -94,24 +74,28 @@ if (isset($filas)) {
 <?php
 	  if(isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
 	  {
-		echo('<script> window.addEventListener("load", init, false);
+		echo("<script> window.addEventListener('load', init, false);
 		function init () {
-			Swal.fire({
-				title: "Excelente",
-				text: "Usuario habilitado con éxito",
-				icon: "success",
-				buttons: true,
-				dangerMode: true,
-			  }).then((willDelete) => {
-			if (willDelete) {
-				location.href = "mostrarClientes2.php";
-			} else {
-				location.href = "mostrarClientes2.php";
-			}
-		  });
+            Swal.fire({
+                title: '¿Está seguro de habilitar este usuario?',
+                icon: 'warning',
+                denyButtonColor: '#2c2c2c',
+                confirmButtonColor: '#FF9900',
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: 'Confirmar',
+                denyButtonText: `Cancelar`,
+              }).then((result) => {
+                if (result.isConfirmed) {
+                      location.href = 'habilitar.php?id=".$fila['idCliente']."&NumeroIdentificacion=".$fila['NumeroIdentificacion']."';
+                } else if (result.isDenied) {
+                   
+                }
+              });
+			
 		}
 		
-		  </script>');
+		  </script>");
 	  }
 	?>
     <!--**********************************

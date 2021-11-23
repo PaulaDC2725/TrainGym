@@ -14,7 +14,7 @@ $consultasInstructor = new ConsultasInstructor();
 $consultasUsuario = new ConsultasUsuario();
 $telefonoInstructor = $_POST['phone'];
 $numeroIdentificacion = $_POST['Num'];
-$correoInstructor = $_POST['email'];
+$correoInstructor = $_POST['email2'];
 $nombreDocumento = '';
 $tipoDocumento=$_POST['tipoDocInst'];
 if($tipoDocumento =="1"){
@@ -34,6 +34,8 @@ $idRolFK = "2";
 $nombreRol = "Instructor";
 $nombreInstructor=$_POST['Nom'];
 $apellidoInstructor = $_POST['Ape'];
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -263,9 +265,17 @@ $apellidoInstructor = $_POST['Ape'];
 													<input required type="number" class="form-control" id="phone" name="phone"placeholder="Ingrese Su Numero De Telefono" value="<?php echo $telefonoInstructor?>">
 												</div>
 												<div class="form-group col-md-6">
-													<label>Correo Electrónico</label>
-													<input required type="email" class="form-control" id="email" name="email"placeholder="(email@example.com)"value="<?php echo $correoInstructor?>">
-												</div>
+													<label>Correo electrónico *</label>
+													<input required type="email"  id="email" name="email" class="form-control" value="<?php echo $correoInstructor?>" placeholder="email@example.com">
+                                                    <div id="error1"></div>
+                									<input type="hidden" id="validaCorreo1" value="">
+                                                </div>
+                                                <div class="form-group col-md-6">
+													<label>Confirmar Correo electrónico *</label>
+													<input required type="email2"  id="email2" name="email" class="form-control" value="<?php echo $correoInstructor?>"placeholder="email@example.com">
+                                                    <span id="error2"></span>
+                      								<input type="hidden" id="validaCorreo" value="">
+                                                </div>
 											</div>
 											<!-- <div class="form-row">
 												
@@ -298,8 +308,9 @@ $apellidoInstructor = $_POST['Ape'];
 													}
 													if($telefono == 0 && $correo == 0 && $doc == 0){
 													$mensaje4 = $consultasUsuario->registrarUsuario($numeroIdentificacion, $contra1, $estadoInstructor,$idRolFK,$tipoDocumento);
-													$mensaje5= $consultasInstructor-> registrarInstructor($nombreInstructor, $apellidoInstructor, $correoInstructor,$telefonoInstructor,$estadoInstructor);
-													echo "<script>location.href=' ../../../views/mostrarInstructores.php';</script>";
+                                                    $mensaje5= $consultasInstructor-> registrarInstructor($nombreInstructor, $apellidoInstructor, $correoInstructor,$telefonoInstructor,$estadoInstructor);
+													
+                                                    echo "<script>location.href=' ../../../views/mostrarInstructores.php';</script>";
 														die();
 												}else if($telefono == 1 && $correo == 1 && $doc == 1){
 												echo ('<script>swal("ERROR!","Datos registrados anteriormente", "error")</script>');
@@ -372,5 +383,5 @@ $apellidoInstructor = $_POST['Ape'];
 	<script src="../../../assets/js/RegistroInstructor.js"></script>
 
 </body>	
-
+<script src="../../../assets/js/confirmarInst.js"></script>
 </html>

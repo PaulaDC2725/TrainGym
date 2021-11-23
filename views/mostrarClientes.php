@@ -18,29 +18,7 @@ $consultasUsuario = new ConsultasUsuario();
 $estadoCliente=null;
 $estadoUsuario = null;
 $idUsuarioFK = null;
-if (isset($_GET['NumeroIdentificacion'])  && isset($_GET['id'])) 
-{
-    $num=$_GET['NumeroIdentificacion'];
-    $filtro=$num;
-    $id = $_GET['id'];
 
-    $filas = $consultasCliente->cargarClientesFiltroId($filtro);
-    if (is_array($filas) || is_object($filas))
-    {  
-      foreach ($filas as $fila) 
-      {
-        $estadoCliente=$fila['estadoCliente'];
-        $estadoUsuario=$fila['estadoUsuario'];
-        $idUsuarioFK = $fila['idUsuarioFK'];
-      }
-      
-    } 
-    
-    $mensaje5 = $consultasUsuario ->cambiarEstadoUsuario("0", $idUsuarioFK);
-    $mensaje4 = $consultasCliente->cambiarEstadoCliente("0", $id);
-    // echo $mensaje4;/**/
-    /*header("location: ../../../views/mostrarClientes.php");*/ 
-}
     $filas = $consultasCliente->consultarClientes();
   
    
@@ -91,22 +69,23 @@ if (isset($_GET['NumeroIdentificacion'])  && isset($_GET['id']))
 	  {
 		echo("<script> window.addEventListener('load', init, false);
 		function init () {
-			Swal.fire({
+            Swal.fire({
                 title: '¿Está seguro de inhabilitar este usuario?',
                 icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Confirmar!'
+                denyButtonColor: '#2c2c2c',
+                confirmButtonColor: '#FF9900',
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: 'Confirmar',
+                denyButtonText: `Cancelar`,
               }).then((result) => {
                 if (result.isConfirmed) {
-                  Swal.fire(
-                    'Exelente!',
-                    'usuario inhabilitado con exito.',
-                    'success'
-                  )
+                      location.href = 'inhabilitar.php?id=".$fila['idCliente']."&NumeroIdentificacion=".$fila['NumeroIdentificacion']."';
+                } else if (result.isDenied) {
+                   
                 }
               });
+			
 		}
 		
 		  </script>");

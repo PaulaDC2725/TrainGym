@@ -151,7 +151,7 @@ CREATE PROCEDURE `registrarInstructor`  (in nombrei VARCHAR(35),
                                         in telefonoi VARCHAR(11),
                                         in estadoi INT)
 BEGIN
-	INSERT INTO Iinstructores 
+	INSERT INTO instructores 
 	SELECT MAX(idInstructor) + 1,nombrei,appellidoi,correoi,telefonoi,estadoi,(SELECT MAX(idUsuario)FROM usuarios)
 	FROM instructores;
 END$$

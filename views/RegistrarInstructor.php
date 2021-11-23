@@ -8,7 +8,46 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 	header('location: Error.php');
    
  } else {
-	 
+	 if(isset($_POST['Nom'])&& isset($_POST['Ape'])&& isset($_POST['phone'])&& isset($_POST['Num'])&& isset($_POST['email2'])&& isset($_POST['email'])&& isset($_POST['tipoDocInst']))
+     {
+        require_once('../assets/php/modelo/class.consulta.instructor.php');
+        require_once('../assets/php/modelo/class.consulta.usuario.php');
+        $consultasInstructor = new ConsultasInstructor();
+        $consultasUsuario = new ConsultasUsuario();
+        $telefonoInstructor = $_POST['phone'];
+        $numeroIdentificacion = $_POST['Num'];
+        $correoInstructor = $_POST['email2'];
+        $nombreDocumento = '';
+        $tipoDocumento=$_POST['tipoDocInst'];
+        if($tipoDocumento =="1"){
+            $nombreDocumento="Cedula de ciudadania";
+        }else if($tipoDocumento =="3"){
+            $nombreDocumento="Cedula de extranjeria";
+        }else if($tipoDocumento =="4"){
+            $nombreDocumento="Pasaporte";
+        }
+        $contra1="";
+        $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+        for($i=0;$i<14;$i++){
+            $contra1 .= substr($str,rand(0,62),1);
+        }
+        $estadoInstructor ="0";
+        $idRolFK = "2";
+        $nombreRol = "Instructor";
+        $nombreInstructor=$_POST['Nom'];
+        $apellidoInstructor = $_POST['Ape'];
+        $opciones ='<option selected value="'.$tipoDocumento.'" disabled style="color: #ff9900">'.$nombreDocumento.'</option>
+        <option selected value="'.$tipoDocumento.'" hidden>'.$nombreDocumento.'</option>
+        <option value="1">Cedula de ciudadania</option>
+        <option value="3">Cedula de extranjeria</option>
+        <option value="4">Pasaporte</option>';
+    	   
+     }else{
+        $opciones ="<option  selected value='' disabled>--Seleccione el tipo de documento--</option>
+        <option value='1'>Cedula de ciudadania</option>
+        <option value='3'>Cedula de extranjeria</option>
+        <option value='4'>Pasaporte</option>";
+     }
  }
 ?>
 <!DOCTYPE html>
@@ -192,40 +231,81 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 								</div>
 								<div class="card-body">
 									<div class="basic-form">
-										<form action="../assets/php/controlador/registroins.php" id="formInst" method="post">
+                                    <form action="RegistrarInstructor.php" id="formInst" method="post">
 											<div class="form-row">
 											<div class="form-group col-md-6">
 													<label>Tipo de documento *</label>
 													<select required id="tipoDocInst" name="tipoDocInst" class="form-control default-select">
-													<option  selected value="" disabled>--Seleccione el tipo de documento--</option>
-														<option value="1">Cedula de ciudadania</option>
-														<option value="3">Cedula de extranjeria</option>
-														<option value="4">Pasaporte</option>
+													<?php  
+                                                    echo $opciones;
+                                                    ?>
 													</select>
 												</div>
 												<div class="form-group col-md-6">
 													<label>Número de documento *</label>
-													<input required type="number" id="Num" name="Num" class="form-control" placeholder="Ingrese su número de documento">
+													<input required type="number" class="form-control" id="Num" name="Num"placeholder="Ingrese  Su Numero  De Identificación" value="<?php echo $numeroIdentificacion?>">
 												</div>
 												<div class="form-group col-md-6">
 													<label>Nombre *</label>
-													<input required type="text" id="Nom" name="Nom" class="form-control" placeholder="Ingrese su nombre">
+                                                    <input required type="text" class="form-control" id="Nom" name="Nom"placeholder="Ingrese Su Nombre Completo"value="<?php echo $nombreInstructor?>">
 												</div>
 												<div class="form-group col-md-6">
 													<label>Apellido *</label>
-													<input required type="text" id="Ape" name="Ape" class="form-control" placeholder="Ingrese su apellido">
+													<input required type="text" class="form-control" id="Ape" name="Ape"placeholder="Ingrese  Su Apellido Completo"value="<?php echo $apellidoInstructor?>">
 												</div>
 												<div class="form-group col-md-6">
 													<label>Teléfono *</label>
-													<input required type="number" id="phone" name="phone" class="form-control" placeholder="Ingrese su número de teléfono">
+													<input required type="number" class="form-control" id="phone" name="phone"placeholder="Ingrese Su Numero De Telefono" value="<?php echo $telefonoInstructor?>">
 												</div>
 												<div class="form-group col-md-6">
 													<label>Correo electrónico *</label>
-													<input required type="email"  id="email" name="email" class="form-control" placeholder="email@example.com">
-												</div>
+													<input required type="email"  id="email" name="email" class="form-control" value="<?php echo $correoInstructor?>" placeholder="email@example.com">
+                                                    <div id="error1"></div>
+                									<input type="hidden" id="validaCorreo1" value="">
+                                                </div>
+                                                <div class="form-group col-md-6">
+													<label>Confirmar Correo electrónico *</label>
+													<input required type="email2"  id="email2" name="email2" class="form-control" value="<?php echo $correoInstructor?>"placeholder="email@example.com">
+                                                    <span id="error2"></span>
+                      								<input type="hidden" id="validaCorreo" value="">
+                                                </div>
 											</div>
 											<button type="button"  id="registrar" name="registrar"onclick=validarForm1() class="btn btn-primary">Registrar</button>
-										</form>
+										<?php
+                                        if(isset($_POST['Nom'])&& isset($_POST['Ape'])&& isset($_POST['phone'])&& isset($_POST['Num'])&& isset($_POST['email2'])&& isset($_POST['email'])&& isset($_POST['tipoDocInst']))
+                                        {
+                                        $mensajes1=$consultasInstructor->DuplicidadCorr($correoInstructor);
+                                        foreach ($mensajes1 as $mensaje1) {
+                                            $correo=$mensaje1['correo'];    
+                                        } 
+                                        $mensajes2=$consultasInstructor->DuplicidadTel($telefonoInstructor);
+                                        foreach ($mensajes2 as $mensaje2) {
+                                            $telefono=$mensaje2['Telefono'];    
+                                        }
+                                        $mensajes3=$consultasUsuario->DuplicidadDoc($numeroIdentificacion);
+                                        foreach ($mensajes3 as $mensaje3) {
+                                            $doc=$mensaje3['Doc'];    
+                                        }
+                                        if($telefono == 0 && $correo == 0 && $doc == 0){
+                                        $mensaje4 = $consultasUsuario->registrarUsuario($numeroIdentificacion, $contra1, $estadoInstructor,$idRolFK,$tipoDocumento);
+                                        $mensaje5= $consultasInstructor-> registrarInstructor($nombreInstructor, $apellidoInstructor, $correoInstructor,$telefonoInstructor,$estadoInstructor);
+                                        $_SESSION['email']= $correoInstructor ;
+                                        $_SESSION['numeroDocumento']= $numeroIdentificacion ;
+                                        echo "<script>location.href=' mailConfirmInst.php';</script>";
+                                            die();
+                                    }else if($telefono == 1 && $correo == 1 && $doc == 1){
+                                    echo ('<script>swal("ERROR!","Datos registrados anteriormente", "error")</script>');
+                                    
+                                }else if($telefono == 1){
+                                        echo ('<script>swal("ERROR!","Telefono registrado anteriormente", "error")</script>');
+                                    }else if($correo == 1){
+                                        echo ('<script>swal("ERROR!","Correo registrado anteriormente", "error")</script>');
+                                    }else if($doc == 1){
+                                        echo ('<script>swal("ERROR!","Numero de documento registrado anteriormente", "error")</script>');
+                                    }  
+                                }   
+                                        ?>
+                                        </form>
 									</div>
 								</div>
 							</div>
@@ -277,5 +357,5 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 	<script src="../assets/js/RegistroInstructor.js"></script>
 
 </body>	
-
+<script src="../assets/js/confirmarInst.js"></script>
 </html>

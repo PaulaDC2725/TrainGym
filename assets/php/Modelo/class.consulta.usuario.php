@@ -59,7 +59,7 @@
 			 	return "error al crear registro";			 	
 			 }else{
 			 	$statement->execute();	
-			 	return $rows;
+			 	return $sql;
 			 }
 		}
 		public function consultarUsuario(){$rows=null;

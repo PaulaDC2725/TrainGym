@@ -1,10 +1,17 @@
 <?php
-require_once('modelo/class.conexion.php');
-require_once('modelo/class.consulta.usuario.php');
+session_start();
+$numDoc = $_SESSION["NumeroIdentificacion"];
+ $rolRec = $_SESSION["rolRecepcionista"];
+ if ($rolRec != 1) {
+	header('location: Error.php');
+   
+}
+require_once('../assets/php/modelo/class.conexion.php');
+require_once('../assets/php/modelo/class.consulta.usuario.php');
 
 $consultasUsuario = new ConsultasUsuario();
 
-$numeroIdentificacion=$_POST['Num'];
+$numeroIdentificacion=$_SESSION['numeroDocumento'];
      $filas = $consultasUsuario->validarExistencia($numeroIdentificacion);
  
      foreach ($filas as $fila) {
@@ -56,15 +63,15 @@ if($resultado == 0){
             function init () {
                 Swal.fire({
                      title: '¡ERROR!',
-                     text: 'Los datos ingresados no coinciden con nuestros registros',
+                     text: 'Por alguna razón no ha sido posible encontrar el usuario',
                      icon: 'error',
                      buttons: true,
                      dangerMode: true,
                    }).then((willDelete) => {
                  if (willDelete) {
-                     location.href = '../../views/recoveryPasswordView.php';
+                     location.href = 'inicioRecepcionista.php';
                  } else {
-                     location.href = '../../views/recoveryPasswordView.php';
+                     location.href = 'inicioRecepcionista.php';
                  }
                });
              }
@@ -76,13 +83,13 @@ if($resultado == 0){
    }
 ?>
 <?php 
-session_start();
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require './PHPMailer/src/Exception.php';
-require './PHPMailer/src/PHPMailer.php';
-require './PHPMailer/src/SMTP.php';
+require '../assets/php/PHPMailer/src/Exception.php';
+require '../assets/php/PHPMailer/src/PHPMailer.php';
+require '../assets/php/PHPMailer/src/SMTP.php';
 
 $server = 'localhost';
 $username = 'root'; 
@@ -93,9 +100,9 @@ $emailRec = mysqli_connect("localhost", "root", "", "gimnasiobd") or die($emailR
 
 $message = '';
 
-if (!empty($_POST['Num'])&& $resultado == 1){
-    $numDoc = $_POST['Num'];
-    $email = $_POST['email'];
+if (!empty($_SESSION['numeroDocumento'])&& !empty($_SESSION['email']) && $resultado=='1'){
+    $numDoc = $_SESSION['numeroDocumento'];
+    $email = $_SESSION['email'];
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
@@ -111,7 +118,7 @@ if (!empty($_POST['Num'])&& $resultado == 1){
      
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
-        $mail->Subject = 'Recupera tu contraseña!';  
+        $mail->Subject = 'Activa tu cuenta!';  
         $mail->Body = '
         
         <!DOCTYPE html>
@@ -442,8 +449,8 @@ ul.social li{
             	<tr>
             		<td>
             			<div class="text" style="padding: 0 2.5em; text-align: center;">
-            				<h2>¡Por favor, verifica tu cuenta! </h2>
-            				<a href="http://localhost/trainGym/assets/php/Controlador/recoveryPass.php?email='.$email.'&doc='.$numDoc.'"><button type="button" class="btn btn-warning"style="background-color: #FF9900;color:white ;">Haz clic aqui</button></a>
+            				<h2>¡Por favor, activa tu cuenta! </h2>
+            				<a href="http://localhost/trainGym/assets/php/Controlador/activarCuenta1.php?email='.$email.'&doc='.$numDoc.'"><button type="button" class="btn btn-warning"style="background-color: #FF9900;color:white ;">Haciendo clic aqui</button></a>
 
 
 
@@ -502,7 +509,7 @@ ul.social li{
         $stmt = $emailRec->query($usuarioPass);
     if($stmt){
         $mail->send();
-        $exito = "Revisa tu correo electronico $email para recuperar tu contraseña.";
+        $exito = "Revisar el correo electronico $email para activar correctamente la cuenta.";
         echo "<script> window.addEventListener('load', init, false);
         function init () {
             Swal.fire({
@@ -513,9 +520,9 @@ ul.social li{
                 dangerMode: true,
               }).then((willDelete) => {
             if (willDelete) {
-                location.href = '../../views/recoveryPasswordView.php';
+                location.href = 'mostrarInstructores2.php';
             } else {
-                location.href = '../../views/recoveryPasswordView.php';
+                location.href = 'mostrarInstructores2.php';
             }
           });
         }
