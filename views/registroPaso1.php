@@ -11,8 +11,8 @@ $consultasSuscripcion = new ConsultasSuscripcion();
 $consultasFicha = new consultasFicha();
 if(isset($_POST['Nom'])&&isset($_POST['Ape'])
 &&isset($_POST['Tel'])&&isset($_POST['FechaN'])
-&&isset($_POST['Num'])&&isset($_POST['corr'])
-&&isset($_POST['Contraseña'])&&isset($_POST['tipoDocumentoCli'])){
+&&isset($_POST['Num'])&&isset($_POST['corr'])&&isset($_POST['corr2'])
+&&isset($_POST['Contraseña'])&&isset($_POST['Contraseña2'])&&isset($_POST['tipoDocumentoCli'])){
     $nombreCliente=$_POST['Nom'];
     $apellidoCliente = $_POST['Ape'];
     $telefonoCliente = $_POST['Tel'];
@@ -98,8 +98,8 @@ https://www.tooplate.com/view/2119-gymso-fitness
                         <?php 
                         if(isset($_POST['Nom'])&&isset($_POST['Ape'])
                         &&isset($_POST['Tel'])&&isset($_POST['FechaN'])
-                        &&isset($_POST['Num'])&&isset($_POST['corr'])
-                        &&isset($_POST['Contraseña'])&&isset($_POST['tipoDocumentoCli'])){ 
+                        &&isset($_POST['Num'])&&isset($_POST['corr'])&&isset($_POST['corr2'])
+                        &&isset($_POST['Contraseña'])&&isset($_POST['Contraseña2'])&&isset($_POST['tipoDocumentoCli'])){ 
 							$mensajes1=$consultasCliente->DuplicidadCorr($correoCliente);
 							foreach ($mensajes1 as $mensaje1) {
 								$correo=$mensaje1['correo'];    
@@ -133,14 +133,14 @@ https://www.tooplate.com/view/2119-gymso-fitness
                         ?>    
                             <div class="row">
                                 <div class="col-md-6">												
-                                    <label for="TipoDoc" class="form-label">Tipo de documento: </label>
+                                    <label for="TipoDoc" class="form-label">Tipo de documento: *</label>
                                     <select class="form-control" id="tipoDocumentoCli" name="tipoDocumentoCli" >
                                         <?php echo $opcionTipoDoc ?>                                            
                                     </select>
                                 </div>	
                                 <br>
                                 <div class="col-md-6">
-                                    <label for="Num" class="form-label">Número de documento: </label>
+                                    <label for="Num" class="form-label">Número de documento: *</label>
                                     <div class="form-group last mb-12">
 									<input required type="number" class="form-control" id="Num" name="Num"placeholder="Ingrese Numero De Identificación" value="<?php echo $NumeroIdentificacion?>">
                                     </div>
@@ -148,13 +148,13 @@ https://www.tooplate.com/view/2119-gymso-fitness
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="Num" class="form-label">Nombre: </label>
+                                    <label for="Num" class="form-label">Nombre: *</label>
                                     <div class="form-group last mb-12">
 									<input required type="text" class="form-control" id="Nom" name="Nom"placeholder="Ingrese Nombre Completo"value="<?php echo $nombreCliente?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">	
-                                    <label for="Num" class="form-label">Apellido: </label>
+                                    <label for="Num" class="form-label">Apellido: *</label>
                                     <div class="form-group last mb-12">
 									<input required type="text" class="form-control" id="Ape" name="Ape"placeholder="Ingrese Apellido Completo"value="<?php echo $apellidoCliente?>">
                                     </div>
@@ -162,13 +162,13 @@ https://www.tooplate.com/view/2119-gymso-fitness
                             </div>
                             <div class="row">
                                 <div class="col-md-6">	
-                                    <label for="Num" class="form-label">Fecha de nacimiento: </label>
+                                    <label for="Num" class="form-label">Fecha de nacimiento: *</label>
                                     <div class="form-group last mb-12">
 									<input required type="date" class="form-control" id="FechaN" name="FechaN" value="<?php echo $fechaNacimiento?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">    
-                                    <label for="Num" class="form-label">Teléfono: </label>
+                                    <label for="Num" class="form-label">Teléfono: *</label>
                                     <div class="form-group last mb-12">
 									<input required type="number" class="form-control" id="Tel" name="Tel"placeholder="Ingrese Numero De Telefono"value="<?php echo $telefonoCliente?>">
                                     </div>
@@ -176,16 +176,36 @@ https://www.tooplate.com/view/2119-gymso-fitness
                             </div>	
                             <div class="row">
                                 <div class="col-md-6">   
-                                    <label for="Num" class="form-label">Correo Electrónico: </label>
+                                    <label for="Num" class="form-label">Correo Electrónico: *</label>
                                     <div class="form-group last mb-12">
-									<input required type="email" class="form-control" id="corr" name="corr"placeholder="(email@example.com)"value="<?php echo $correoCliente?>">			
+									    <input required type="email" class="form-control" id="corr" name="corr"placeholder="(email@example.com)"value="<?php echo $correoCliente?>">			
+                                        <div id="error1"></div>
+                					    <input type="hidden" id="validaCorreo1" value="">    
                                     </div>                                 
-                                </div> 
-                                <div class="col-md-6"> 
-                                    <label for="Num" class="form-label">Contraseña: </label>
+                                </div>
+                                <div class="col-md-6">   
+                                    <label for="Num" class="form-label">Confirmar el Correo: * </label>
                                     <div class="form-group last mb-12">
-									<input required type="password" class="form-control" id="Contraseña" name="Contraseña"placeholder="Ingrese contraseña (MINIMO 10 CARACTERES)"value="<?php echo $contra1?>">
-                                    </div>                                                             
+                                        <input required type="email"  id="corr2" name="corr2" class="form-control" value="<?php echo $correoCliente?>"placeholder="Confirmar correo electrónico">
+                                        <span id="error2"></span>
+                                        <input type="hidden" id="validaCorreo" value="">    
+                                    </div>                                 
+                                </div>
+                                <div class="col-md-6">                                    
+                                    <label for="password">Crear Contraseña: *</label>              
+                                    <div class="form-group last mb-12">
+                                        <input min-width="10" max-width="18" type="password" class="form-control" placeholder="Ingrese la contraseña" id="Contraseña"name="Contraseña"required value="<?php echo $contra1?>">
+                                        <div id="error4"></div>
+                                        <input type="hidden" id="validaClave1" value="">
+                                    </div>
+                                </div> 
+                                <div class="col-md-6">                                    
+                                    <label for="password">Confirmar contraseña: *</label>              
+                                    <div class="form-group last mb-12">
+                                        <input min-width="10" max-width="18" type="password" class="form-control" placeholder="Ingrese la contraseña" id="Contraseña2"name="Contraseña2"required>
+                                        <div id="error3"></div>
+                                        <input type="hidden" id="validaClave" value="">
+                                    </div>
                                 </div>                                
                                 <div class="col-md-12">	
                                     <span><a href="login.php">¿Ya tienes cuenta?  Inicia sesión</a></span>
@@ -223,4 +243,5 @@ https://www.tooplate.com/view/2119-gymso-fitness
 	</script>
 
 </body>
+<script src="../assets/js/confirmarCli.js"></script>
 </html>
