@@ -56,7 +56,7 @@ class consultaMetodologia{
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="SELECT * FROM consultarMetodologia";
+		$sql="SELECT * FROM consultarmetodologia";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {

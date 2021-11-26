@@ -24,7 +24,7 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "select * From consultarAsistenciaCliente;";
+			$sql = "select * From consultarasistenciacliente;";
 			$statement=$conexion->prepare($sql);		
         $statement->execute();
         while ($result=$statement->fetch()) {
