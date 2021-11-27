@@ -13,7 +13,7 @@
    crossorigin="anonymous">
    <!--<link rel="stylesheet" href="../assets/css/style.css">-->
    
-   <link rel="icon" type="image/x-icon" href="images/Recurso 1.png" />
+   <link rel="icon" type="image/x-icon" href="../../../views/images/Recurso 1.png" />
 	 <!-- Core theme CSS (includes Bootstrap)-->
    <link href="../assets/css/style.css" rel="stylesheet" />
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,16 +26,16 @@
     window.addEventListener("load", init, false);
 		function init () {
 			Swal.fire({
-				title: "¡IMPORTANTE!",
-				text: "Debe contactar a la recepción para validar el pago de la suscripción y así poder ingresar al sistema!",
-				icon: "warning",
+				title: "BIENVENIDO A TRAINGYM",
+				text: "Su registro ha sido exitoso, recuerde validar su pago con la recepción",
+				icon: "success",
 				buttons: true,
 				dangerMode: true,
 			  }).then((willDelete) => {
 			if (willDelete) {
-				location.href = "index.php";
+				location.href = "../../../views/login.php";
 			} else {
-				location.href = "index.php";
+				location.href = "../../../views/login.php";
 			}
 		  });
 		}

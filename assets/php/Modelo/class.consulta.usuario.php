@@ -240,8 +240,33 @@
 			 	$statement->execute();
 				return $rows;
 			}
+		}
 
+		public function consultarUltimoUsuario(){	
+			$rows=null;		
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql='SELECT MAX(NumeroIdentificacion) AS "Ultimo"  FROM usuarios ;';
+			$statement=$conexion->prepare($sql);
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
+		}
 
+		public function consultarUltimoCorreo($Ultimo){	
+			$rows=null;		
+			$modelo = new Conexion();
+			$conexion = $modelo->getConection();
+			$sql='SELECT C.correoCliente  FROM clientes AS C JOIN usuarios AS U ON U.idUsuario=C.idUsuarioFK WHERE U.NumeroIdentificacion="'.$Ultimo.'" ;';
+			$statement=$conexion->prepare($sql);
+
+			$statement->execute();
+			while ($result=$statement->fetch()) {
+				$rows[]=$result;
+			}
+			return $rows;
 		}
 		
 

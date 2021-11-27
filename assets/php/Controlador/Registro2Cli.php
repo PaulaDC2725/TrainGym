@@ -1,11 +1,14 @@
 <?php
+session_start();
 require_once('../modelo/class.conexion.php');
 require_once('../modelo/class.consulta.suscripcion.php');
 require_once('../modelo/class.consulta.fichaAntro.php');
 require_once('../modelo/class.consulta.metodologia.php');
+require_once('../modelo/class.consulta.usuario.php');
 $consultasSuscripcion = new ConsultasSuscripcion();
 $consultasFicha = new consultasFicha();
 $consultasMetodologia = new consultaMetodologia();
+$ConsultasUsuario = new ConsultasUsuario();
 $metodologia=$_POST['metodologia'];
 $nombreMetodologia='';
 if($metodologia=='1'){
@@ -105,7 +108,30 @@ $mensaje21 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo7FK, $medi
 $mensaje23 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo8FK, $medida8);
 $mensaje25 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo9FK, $medida9);
 $mensaje27 = $consultasFicha -> registrarFichaMedida($idParteDelCuerpo10FK, $medida10);
-echo "<script>location.href=' ../../../views/Alerta.php';</script>";
+$mensaje28 = $ConsultasUsuario -> consultarUltimoUsuario();
+
+if(is_array($mensaje28) || is_object($mensaje28)) {
+
+  foreach ($mensaje28 as $recorrido) {
+    $ultimo = $recorrido["Ultimo"];
+  }
+}
+
+$mensaje29 = $ConsultasUsuario -> consultarUltimoCorreo($ultimo);
+
+if(is_array($mensaje29) || is_object($mensaje29)) {
+
+  foreach ($mensaje29 as $recorrido2) {
+    $correo = $recorrido2["correoCliente"];
+  }
+}
+
+$_SESSION['numeroDocumento'] = $ultimo;
+$_SESSION['email'] = $correo;
+
+
+
+echo "<script>location.href=' ../../../views/mailConfirmCli.php';</script>";
 die();
 ?>
 	</div>	
