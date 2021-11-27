@@ -15,6 +15,8 @@ function validarForm1() {
       swal("Ups!","Debe completar todos los campos","warning");
     }else if (contraseñaCliente.length < 10 ) {
       swal("ERROR!","La contraseña ingresada no es válida","error");
+    }else if (telefonoCliente.length != 10 ) {
+      swal("ERROR!","La longitud del teléfono no es válida","error");
     }else if (Confcontra.length < 10 ) {
       swal("ERROR!","La confirmación de contraseña no es válida","error");
     }else if (Confcontra != contraseñaCliente) {
