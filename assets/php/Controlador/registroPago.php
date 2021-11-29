@@ -186,7 +186,7 @@ $Prueba = $_POST['ImgPago'];
 										<div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Imagen: Comprobante de pago</label>
                                             <div class="col-sm-9">
-											<input class="form-control" style="height: 100px;" required type="file" id="ImgPago" name="ImgPago"  multiple>													
+											<input class="form-control" style="height: 100px;" required type="file" id="ImgPago" name="ImgPago" accept="image/png, image/jpeg, image/jpg" multiple>													
                                             </div>
                                         </div>
 										<div class="form-group row">

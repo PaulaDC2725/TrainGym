@@ -53,6 +53,7 @@ require_once('../assets/php/modelo/class.consulta.metodologia.php');
                 $tabla.='<td>'.$row['nombreSerieEjercicio'].'</td>';
                 $tabla.='<td>'.$row['descripcionSerieEjercicio'].'</td>';
 				$tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/controlador/images/'.$row['urlImagen'].'" alt="imagen serie"/></td>';
+                $tabla.='<td><a download="'.$row['urlImagen'].'" href="../assets/php/controlador/images/'.$row['urlImagen'].'" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check"></i></a></td>';
               $tabla.='</tr>';
               $metodologia=$row['nombreMetodologia'];            
             }  
@@ -184,6 +185,7 @@ require_once('../assets/php/modelo/class.consulta.metodologia.php');
                                             <th scope="col">Nombre del ejercicio</th>
                                             <th scope="col">Descripcion del ejercicio</th>
 											<th scope="col">Imagen</th>
+                                            <th scope="col">Descargar</th>
                                             </tr>
                                         </thead>
                                         <tbody>      

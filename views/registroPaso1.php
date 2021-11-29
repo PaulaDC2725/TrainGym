@@ -208,7 +208,17 @@ https://www.tooplate.com/view/2119-gymso-fitness
                                         <div id="error3"></div>
                                         <input type="hidden" id="validaClave" value="">
                                     </div>
-                                </div>                                
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="form-control" id="privacidad" name="privacidad" >
+                                    <option selected value="" disabled>--Seleccione--</option>
+                                    <option value="1">Si</option>                                            
+                                    </select><br>
+                                    </div > 
+                                <div class="col-md-9">
+                                     <p data-aos="fade-up" data-aos-delay="500">Acepta las <a rel="nofollow" href="documents/Politicas de Privacidad.pdf" target="_blank">politicas de privacidad*</a></p>
+                                </div>
+                                                            
                                 <div class="col-md-12">	
                                     <span><a href="login.php">¿Ya tienes cuenta?  Inicia sesión</a></span>
                                   </div>                                 

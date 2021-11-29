@@ -45,6 +45,7 @@ $consultasM = new consultaMetodologia();
               $tabla.='<td>'.$fila['descripcionSerieEjercicio'].'</td>';
               $tabla.='<td>'.$fila['nombreMetodologia'].'</td>';
 			  $tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/controlador/images/'.$fila['urlImagen'].'" alt="imagen serie"/></td>';
+              $tabla.='<td><a download="'.$fila['urlImagen'].'" href="../assets/php/controlador/images/'.$fila['urlImagen'].'" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check"></i></a></td>';
             $tabla.='</tr>';
           
           }  
@@ -223,6 +224,7 @@ $consultasM = new consultaMetodologia();
                                               <th scope="col">Descripcion del ejercicio</th>
                                               <th scope="col">Metodología</th>
 											  <th scope="col">Imagen</th>
+                                              <th scope="col">Descargar</th>
                                             </tr>
                                         </thead>
                                         <tbody>      

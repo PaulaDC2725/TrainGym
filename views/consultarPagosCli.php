@@ -42,6 +42,7 @@ if ($rol != 3) {
 		$tabla.='<td>'.$fila['descripcionPago'].'</td>';
 		$tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/controlador/images/'.$fila['urlSoportePago'].'" alt="imagen soporte"/></td>';
 		$tabla.='<td>'.$fila['nombreMetodologia'].'</td>';
+        $tabla.='<td><a download="'.$fila['urlSoportePago'].'" href="../assets/php/controlador/images/'.$fila['urlSoportePago'].'" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-check"></i></a></td>';
 		$numeroIdentificacion=$id;
 		$descripcion=$fila['descripcionPago'];
 		$comprobante=$fila['urlSoportePago'];  
@@ -240,6 +241,7 @@ if ($rol != 3) {
 											<th scope="col">Descripción del pago</th>
 											<th scope="col">Comprobante pago</th>
 											<th scope="col">Metodología</th>
+                                            <th scope="col">Descargar</th>
                                             </tr>
                                         </thead>
                                         <tbody>

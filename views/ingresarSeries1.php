@@ -313,7 +313,7 @@ if ($rol != 2) {
 						<div class="form-group col-md-6 ">
 						<label class="col-form-label">Imagen de apoyo *</label>
 						<div class="col-sm-9">
-						<input class="form-control" style="height: 110px;" required type="file" id="ImgEjer" name="ImgEjer"  multiple>													
+						<input class="form-control" style="height: 110px;" required type="file" id="ImgEjer" name="ImgEjer" accept="image/png, image/jpeg, image/jpg" multiple>													
 						</div>
 					</div>
 											<button type="submit"  id="registrar" name="registrar"onclick=validarForm1() class="btn btn-primary">Registrar</button>
