@@ -15,7 +15,7 @@
 			return "error al crear registro";			 	
 		}else{
 			$statement->execute();	
-			return $sql;
+			return $rows;
 		}
 	}
 		
@@ -164,12 +164,12 @@
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql="SELECT U.NumeroIdentificacion, i.nombreInstructor, i.apellidoInstructor,p.fechaInicioPro, p.fechaFinPro, p.idProgramacion 
+			$sql="SELECT U.NumeroIdentificacion, I.nombreInstructor, I.apellidoInstructor,p.fechaInicioPro, p.fechaFinPro, p.idProgramacion 
 			FROM programacion p 
 			JOIN usuarios U 
 			JOIN instructores I
 			on p.idUsuarioFK = U.idUsuario 
-			and I.idUsuarioFK=u.idUsuario
+			and I.idUsuarioFK=U.idUsuario
 			where NumeroIdentificacion='".$filtro."' ;";
 		 	$statement=$conexion->prepare($sql);			
 		 	$statement->execute();

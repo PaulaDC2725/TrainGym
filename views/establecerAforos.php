@@ -49,6 +49,8 @@ href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.
 rel="stylesheet"
 integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
 <!--<link rel="stylesheet" href="../assets/css/style.css">-->
 <link rel="icon" type="image/x-icon" href="../assets/img/Logotipo.PNG" />
 	<!-- Core theme CSS (includes Bootstrap)-->

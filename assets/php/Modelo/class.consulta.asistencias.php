@@ -95,7 +95,7 @@ public function consultarAsistenciasFiltradasIns($filtroCol, $valor){
         while ($result=$statement->fetch()) {
             $rows[]=$result;
         }
-        return $rows;
+        return $sql;
 	}
 	public function consultaridAsistencia($numid){
 		$rows=null;
@@ -122,18 +122,17 @@ public function consultarAsistenciasFiltradasIns($filtroCol, $valor){
 		}
 		return $rows;
 	}
-	public function registrarAsistencia($idAsistencia,$idProgramacion,$fechaHoraIngreso,$fechaHoraSalida,$numid){
+	public function registrarAsistencia($idProgramacion,$fechaHoraIngreso,$fechaHoraSalida,$numid){
 			$rows=null;
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();					
-			$sql = "INSERT INTO asistencias(idAsistencia,fechaHoraIngreso,fechaHoraSalida,idProgramacionFK) 
-			values ('".$idAsistencia."','".$fechaHoraIngreso."','".$fechaHoraSalida."','".$idProgramacion."');";
+			$sql = "INSERT INTO asistencias SELECT MAX(idAsistencia) + 1,'".$fechaHoraIngreso."','".$fechaHoraSalida."','".$idProgramacion."' FROM asistencias";
 			$statement=$conexion->prepare($sql);
 			$statement->execute();
 			while ($result=$statement->fetch()) {
 				$rows[]=$result;
 			}
-			return $rows;
+			return $sql;
 		}
 
 	}

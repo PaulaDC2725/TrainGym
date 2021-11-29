@@ -5,7 +5,7 @@
  $numDoc = $_SESSION["NumeroIdentificacion"];
  $rolRec = $_SESSION["rolRecepcionista"];
  if ($rolRec != 1 ) {
-    header('location: ../../../Views/Error.php');
+    header('location: ../../../views/Error.php');
      
  } 
 require_once('../modelo/class.consulta.asistencias.php');
@@ -16,7 +16,8 @@ $numid=$_GET['NumeroIdentificacion'];
 $fechaInicioPro=$_POST['ingresopro'];
 $fechaFinPro=$_POST['salidapro'];
 
-$ConsultasAsistencias->registrarProgramacion($fechaInicioPro,$fechaFinPro,$numid); 
-header('location: ../../../views/inicioRecepcionista.php');
+$registro=$ConsultasAsistencias->registrarProgramacion($fechaInicioPro,$fechaFinPro,$numid); 
+echo "<script>location.href=' ../../../views/inicioRecepcionista.php';</script>";
+die();
 }
 

@@ -10,7 +10,7 @@ if ($rol != 3) {
 } else {
 }
 require_once('../assets/php/modelo/class.consulta.metodologia.php');  
-  require_once('../assets/php/modelo/class.consulta.Cliente.php');
+  require_once('../assets/php/modelo/class.consulta.cliente.php');
   $consultas = new ConsultasClientes();
     
   $consultasM = new consultaMetodologia();
@@ -18,7 +18,7 @@ require_once('../assets/php/modelo/class.consulta.metodologia.php');
   $numeroIdentificacion=null;
   $nombreInstructor=null;
 
-  if (isset($numDoc) || $rol == 3) {
+  if (isset($numDoc)) {
     $numeroIdentificacion=$numDoc; 
 
     $filtro=$numeroIdentificacion;
@@ -38,7 +38,7 @@ require_once('../assets/php/modelo/class.consulta.metodologia.php');
         $idMetodologia=$cliente['idMetodologiaFK'];
       } 
       }
-        $filas = $consultasM->consultarSeriesCli($numeroIdentificacion,$idMetodologia);
+        $rows = $consultasM->consultarSeriesCli($numeroIdentificacion,$idMetodologia);
 
    
   
@@ -46,22 +46,17 @@ require_once('../assets/php/modelo/class.consulta.metodologia.php');
   
 
 
-          if (isset($filas)) {    
+          if (isset($rows)) {    
 
-            foreach ($filas as $fila){      
+            foreach ($rows as $row){      
               $tabla.='<tr class="limitada" scope="row">';
-                $tabla.='<td>'.$fila['nombreSerieEjercicio'].'</td>';
-                $tabla.='<td>'.$fila['descripcionSerieEjercicio'].'</td>';
-				$tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/Controlador/images/'.$fila['urlImagen'].'" alt="imagen soporte"/></td>';
+                $tabla.='<td>'.$row['nombreSerieEjercicio'].'</td>';
+                $tabla.='<td>'.$row['descripcionSerieEjercicio'].'</td>';
+				$tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/controlador/images/'.$row['urlImagen'].'" alt="imagen serie"/></td>';
               $tabla.='</tr>';
-              $metodologia=$fila['nombreMetodologia'];            
+              $metodologia=$row['nombreMetodologia'];            
             }  
         }else{
-          $tabla='<tr style="text-align: center">';
-                $tabla.='<td colspan="9" style="color: black; font-size: 20px">';
-                  $tabla.='No se encuentran resultados para la busqueda';
-                $tabla.='</td>';
-              $tabla.='</tr>';
               $metodologia=" Indefinida";
         }
 }
@@ -75,6 +70,8 @@ require_once('../assets/php/modelo/class.consulta.metodologia.php');
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Series de ejercicio</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
     <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">

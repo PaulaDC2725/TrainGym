@@ -44,6 +44,8 @@ if(is_array($filas)|| is_object($filas)){
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Configuración</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
 	<link href="../vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">

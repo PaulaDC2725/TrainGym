@@ -1,6 +1,5 @@
 <?php
  error_reporting(E_ERROR | E_PARSE);
- error_reporting(E_ERROR | E_PARSE);
  require_once('../modelo/class.conexion.php');
  session_start();
  $numDoc = $_SESSION["NumeroIdentificacion"];
@@ -11,12 +10,12 @@
  } else {
    
  }
-require_once('../modelo/class.consulta.Suscripcion.php');
+require_once('../modelo/class.consulta.suscripcion.php');
 
 
 //$ConsultasClientes = new ConsultasClientes();
 $ConsultasS = new ConsultasSuscripcion();
-if (isset($numDoc) & $rol == 3) {
+if (isset($numDoc)) {
 	$numeroIdentificacion=$numDoc;
     $filtro=$numeroIdentificacion;
     $idSuscripcion = $_POST['SuscripcionNumero'];
@@ -59,6 +58,8 @@ $Prueba = $_POST['ImgPago'];
     <title>Realizar pagos</title>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../../../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../../../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../../../images/favicon.png">
     <link rel="stylesheet" href="../../../vendor/select2/css/select2.min.css">
     <link href="../../../css/style.css" rel="stylesheet">
@@ -92,7 +93,7 @@ $Prueba = $_POST['ImgPago'];
         <div class="nav-header">
             <a href="inicioCliente.php" class="brand-logo">
                 <img class="logo-abbr" src="../../../images/logo.png" alt="">
-                <img class="logo-compact" src="../../../images/logo.jpeg" alt="">
+                <img class="logo-compact" src="../../../images/Logo.jpeg" alt="">
                  <img class="brand-title" width="200" height="30" src="../../../images/logo-text.png" alt="">
             </a>
             <div class="nav-control">
@@ -134,7 +135,7 @@ $Prueba = $_POST['ImgPago'];
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <?php require_once('menuCliente.php')?>
+        <?php require_once('MenuCliente.php')?>
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -263,9 +264,7 @@ $Prueba = $_POST['ImgPago'];
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Developed by TrainGym 2021 	<?php
-										echo $numeroIdentificacion;
-										echo $Prueba;?></p>
+                <p>Copyright © Developed by TrainGym 2021</p>
             </div>
         </div>
         <!--**********************************

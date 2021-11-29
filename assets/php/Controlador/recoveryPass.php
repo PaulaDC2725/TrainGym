@@ -7,7 +7,8 @@
      <meta name="keywords" content="">
      <meta name="author" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+	<link rel="stylesheet" type="text/css" href="../../../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../../../css/font-awesome-old/css/font-awesome.min.css" >
      <link rel="stylesheet" href="../../../views/css/bootstrap.min.css">
      <link rel="stylesheet" href="../../../views/css/font-awesome.min.css">
      <link rel="stylesheet" href="../../../views/css/aos.css">
@@ -101,18 +102,18 @@
 <?php
 
 $server = 'localhost';
-$username = 'root'; 
-$password = ''; 
-$database = 'gimnasiobd'; 
+$username = 'id17957462_elmejorgrupo'; 
+$password = 'A@TkHlYL@xe6#Q~r'; 
+$database = 'id17957462_traingym'; 
 
-$emailRec = mysqli_connect("localhost", "root", "", "gimnasiobd") or die($emailRec);
+$emailRec = mysqli_connect("localhost", "id17957462_elmejorgrupo", "A@TkHlYL@xe6#Q~r", "id17957462_traingym") or die($emailRec);
 
 
 if(isset($_GET['doc']) && !empty($_GET['doc']) && isset($_POST['Contraseña']) && !empty($_POST['Contraseña'])){
     $numDoc = mysqli_escape_string($emailRec, $_GET['doc']); 
     $password = mysqli_escape_string($emailRec, $_POST['Contraseña']); 
     
-    $recuperar = "UPDATE USUARIOS SET passwordUsuario = '".$password."' WHERE NumeroIdentificacion='".$numDoc."'";
+    $recuperar = "UPDATE usuarios SET passwordUsuario = '".$password."' WHERE NumeroIdentificacion='".$numDoc."'";
     $stmt = $emailRec->query($recuperar);
     
         $mensajeExito = "Se ha modificacdo su cuenta correctamente"; 

@@ -68,6 +68,8 @@ $fechaMetFin = $_POST['FechFinMet'];
   <!--<link rel="stylesheet" href="../assets/css/style.css">-->
   <link rel="icon" type="image/x-icon" href="../../../assets/img/Logotipo.PNG" />
         <!-- Core theme CSS (includes Bootstrap)-->
+        	<link rel="stylesheet" type="text/css" href="../../../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../../../css/font-awesome-old/css/font-awesome.min.css" >
   <link href="../../../assets/css/styles.css" rel="stylesheet" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">

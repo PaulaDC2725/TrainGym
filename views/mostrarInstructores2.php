@@ -59,6 +59,8 @@ if (isset($filas)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Instructores inhabilitados</title>
+		<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
@@ -78,7 +80,7 @@ if (isset($filas)) {
 		echo("<script> window.addEventListener('load', init, false);
 		function init () {
             Swal.fire({
-                title: '¿Está seguro de inhabilitar este usuario?',
+                title: '¿Está seguro de habilitar este usuario?',
                 icon: 'warning',
                 denyButtonColor: '#2c2c2c',
                 confirmButtonColor: '#FF9900',

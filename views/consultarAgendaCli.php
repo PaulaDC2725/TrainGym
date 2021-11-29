@@ -19,7 +19,7 @@ require_once('../assets/php/modelo/class.consulta.cliente.php');
   $horaFinHorario=null;  
   $horaInicioHorario=null;
 
-  if (isset($numDoc) && $rol == 3) {
+  if (isset($numDoc)) {
     $id=$numDoc;
     
       $tabla="";
@@ -49,17 +49,7 @@ require_once('../assets/php/modelo/class.consulta.cliente.php');
           $nombreCliente = $fila['nombreCliente'];          
       }
     }
-      if (is_array($filas) || is_object($filas))
-      {  
-        foreach ($filas as $fila) 
-        {
-          $numeroIdentificacion=$fila['NumeroIdentificacion']; 
-          $nombreCliente = $fila['nombreCliente'];
-          $idProgramacion=$fila['idProgramacion'];
-          $fechaInicioPro=$fila['fechaInicioPro'];
-          $fechaFinPro =$fila['fechaFinPro'];
-        }
-      }
+      
   }
 
 ?>
@@ -72,6 +62,8 @@ require_once('../assets/php/modelo/class.consulta.cliente.php');
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Agenda</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
     <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -96,7 +88,7 @@ require_once('../assets/php/modelo/class.consulta.cliente.php');
         <div class="nav-header">
             <a href="inicioCliente.php" class="brand-logo">
                 <img class="logo-abbr" src="../images/logo.png" alt="">
-                <img class="logo-compact" src="../images/logo.jpeg" alt="">
+                <img class="logo-compact" src="../images/Logo.jpeg" alt="">
                  <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
             </a>
             <div class="nav-control">
@@ -132,7 +124,7 @@ require_once('../assets/php/modelo/class.consulta.cliente.php');
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <?php require_once('menuCliente.php')?>
+        <?php require_once('MenuCliente.php')?>
         <!--**********************************
             Sidebar end
         ***********************************-->

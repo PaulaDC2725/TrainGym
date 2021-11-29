@@ -7,7 +7,8 @@
      <meta name="keywords" content="">
      <meta name="author" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+	<link rel="stylesheet" type="text/css" href="../../../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../../../css/font-awesome-old/css/font-awesome.min.css" >
      <link rel="stylesheet" href="../../../views/css/bootstrap.min.css">
      <link rel="stylesheet" href="../../../views/css/font-awesome.min.css">
      <link rel="stylesheet" href="../../../views/css/aos.css">
@@ -105,7 +106,7 @@ $username = 'root';
 $password = ''; 
 $database = 'gimnasiobd'; 
 
-$emailRec = mysqli_connect("localhost", "root", "", "gimnasiobd") or die($emailRec);
+$emailRec = mysqli_connect("localhost", "id17957462_elmejorgrupo", "A@TkHlYL@xe6#Q~r", "id17957462_traingym") or die($emailRec);
 
 
 if(isset($_GET['doc']) && !empty($_GET['doc']) && isset($_POST['Contraseña']) && !empty($_POST['Contraseña'])&& isset($_POST['Estado'])&& !empty($_POST['Estado'])){

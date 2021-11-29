@@ -41,6 +41,8 @@ echo '<!DOCTYPE html>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Bienvenido</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
 	<link rel="stylesheet" href="../vendor/chartist/css/chartist.min.css">
     <link href="../vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">

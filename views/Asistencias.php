@@ -21,6 +21,8 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Asistencias</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Nestable -->
     <link href="../vendor/nestable2/css/jquery.nestable.min.css" rel="stylesheet">

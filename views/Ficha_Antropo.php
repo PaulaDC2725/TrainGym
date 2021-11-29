@@ -54,6 +54,8 @@ require_once('../assets/php/modelo/class.consulta.cliente.php');
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Ficha Antropométrica</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
     <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">

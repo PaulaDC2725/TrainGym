@@ -21,13 +21,13 @@ $DateAndTime = date('d-m-Y h:i:s a', time());
 $fechaHoraIngreso=$_POST['fechaHoraIngreso'];
 $fechaHoraSalida=$_POST['fechaHoraSalida'];
 $numeroIdentificacion=$_POST['Num'];
-$filas= $ConsultasAsistencias->consultaridAsistencia($numeroIdentificacion);
-if (is_array($filas) || is_object($filas))
-    {  
-        foreach($filas as $fila){
-            $idAsistencia=$fila['idAsistencia'];
-        }
-    } 
+// $filas= $ConsultasAsistencias->consultaridAsistencia($numeroIdentificacion);
+// if (is_array($filas) || is_object($filas))
+//     {  
+//         foreach($filas as $fila){
+//             $idAsistencia=$fila['idAsistencia'];
+//         }
+//     } 
 $rows=$ConsultasAsistencias-> consultaridProgramacion($numeroIdentificacion);
 if (is_array($rows) || is_object($rows))
     {  
@@ -50,6 +50,8 @@ if (is_array($rows) || is_object($rows))
     <title>Registro Asistencias</title>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../../../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../../../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../../../images/favicon.png">
     <link rel="stylesheet" href="../../../vendor/select2/css/select2.min.css">
     <link href="../../../css/style.css" rel="stylesheet">
@@ -141,7 +143,7 @@ if (is_array($rows) || is_object($rows))
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <?php require_once('menuCliente.php')?>
+        <?php require_once('MenuCliente.php')?>
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -227,8 +229,8 @@ if (is_array($rows) || is_object($rows))
                                         </div>
                                     </form>
 									<?php
-										if(isset($idAsistencia) && isset($idProgramacion)){
-											$mensaje2 = $ConsultasAsistencias->registrarAsistencia($idAsistencia,$idProgramacion,$fechaHoraIngreso,$fechaHoraSalida,$numeroIdentificacion);
+										if(isset($idProgramacion)){
+											$mensaje2 = $ConsultasAsistencias->registrarAsistencia($idProgramacion,$fechaHoraIngreso,$fechaHoraSalida,$numeroIdentificacion);
 											echo "<script>location.href=' ../../../views/inicioCliente.php';</script>";
 											die();
 										} else{

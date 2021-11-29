@@ -5,6 +5,11 @@ $(document).ready(function() {
 		validaCorreo1();
 
 	});
+	$('#phone').keyup(function() {
+
+		validaTel1();
+
+	});
 	$('#email2').keyup(function() {
 
 		validaCorreo();
@@ -22,9 +27,10 @@ function validarCorreo(){
 
     var validaCorreo1 = $("#validaCorreo1").val();		
 	var validaCorreo2 = $("#validaCorreo").val();
+	var validaTel1 = $("#validaTel1").val();
 	
 	
-	if(validaCorreo1=="OK" && validaCorreo2=="OK"){
+	if(validaCorreo1=="OK" && validaCorreo2=="OK" && validaTel1=="OK"){
 		$( "#form" ).submit();
 	}
 	
@@ -66,6 +72,26 @@ function validaCorreo1(){
     }else{
 		$('#error1').text("El correo es válido").css("color", "green"); 
 		$("#validaCorreo1").val("OK");
+	}
+	
+};
+function validaTel1(){
+	var tel = $('#phone').val();
+	var formTel= /^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/;
+	
+    if (tel==""){
+        $('#error3').text("no dejar en blanco").css("color", "red"); 
+		$("#validaTel1").val("");
+		
+	}else if(tel.length<10) {
+        $('#error3').text("La longitud del telefono no es válida").css("color", "red"); 
+		$("#validaTel1").val("");
+    }else if(formTel.test(tel)==false){
+		$('#error3').text("El formato de teléfono es inválido").css("color", "red"); 
+		$("#validaTel1").val("OK");
+	}else{
+		$('#error3').text("El teléfono es válido").css("color", "green"); 
+		$("#validaTel1").val("OK");
 	}
 	
 };

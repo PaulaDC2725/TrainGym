@@ -20,6 +20,8 @@ $numeroIdentificacion=$_SESSION['numeroDocumento'];
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="description" content="" />
                 <meta name="author" content="" />
+                	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -95,16 +97,16 @@ $emailRec = mysqli_connect("localhost", "root", "", "gimnasiobd") or die($emailR
 
 $message = '';
 
-if (!empty($_SESSION['numeroDocumento'])&& !empty($_SESSION['email']) && $resultado=='1'){
-    $numDoc = $_SESSION['numeroDocumento'];
-    $email = $_SESSION['email'];
+if (!empty($_POST['Num'])&& $resultado == 1){
+    $numDoc = $_POST['Num'];
+    $email = $_POST['email'];
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';  
         $mail->SMTPAuth = true;
         $mail->Username = 'traingymsoftware@gmail.com';               
-        $mail->Password = '1345ElmejorGrupoOsi';                           
+        $mail->Password = '';                           
         $mail->SMTPSecure = 'tls';                        
         $mail->Port = 587;                                    
     
@@ -443,12 +445,13 @@ ul.social li{
             <table>
             	<tr>
             		<td>
+            			<pre style="color: #2c2c2c">En caso de estar el correo de activación en la carpeta SPAM, seleccionar la opción *NO ES SPAM*</pre>
             			<div class="text" style="padding: 0 2.5em; text-align: center;">
             				<h2>Por favor confirma tu registro  </h2>
                             <p>*Debe contactar a la recepción para validar el pago de la suscripción y así poder ingresar al sistema!*</p>
-            				<a href="http://localhost/trainGym/assets/php/Controlador/confirmarCuentaCli.php?email='.$email.'&doc='.$numDoc.'"><button type="button" class="btn btn-warning"style="background-color: #FF9900;color:white ;">Haciendo clic aqui</button></a>
-
-
+            				<a href="http://localhost/trainGym/assets/php/controlador/confirmarCuentaCli.php?email='.$email.'&doc='.$numDoc.'"><button type="button" class="btn btn-warning"style="background-color: #FF9900;color:white ;">Haciendo clic aqui</button></a>
+            				 <pre style="color: #2c2c2c">En caso de no funcionar el botón copie y pegue este link en su navegador:</pre>
+            				  <pre style="color: #ff9900">"http://localhost/trainGym/assets/php/controlador/confirmarCuentaCli.php?email='.$email.'&doc='.$numDoc.'</pre>
             			</div>
             		</td>
             	</tr>
@@ -503,7 +506,7 @@ ul.social li{
         $stmt = $emailRec->query($usuarioPass);
     if($stmt){
         $mail->send();
-        $exito = "Revisar el correo electronico $email para completar su registro.";
+        $exito = "Revisar el correo electronico $email para completar su registro. ¡RECUERDE REVISAR LA CARPETA SPAM!";
         echo "<script> window.addEventListener('load', init, false);
         function init () {
             Swal.fire({

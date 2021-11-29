@@ -18,7 +18,8 @@ $fechaInicioPro=$_POST['ingresopro'];
 $fechaFinPro=$_POST['salidapro'];
 
 $ConsultasAsistencias->registrarProgramacion($fechaInicioPro,$fechaFinPro,$numid); 
-header('location: ../../../views/inicioCliente.php');
+echo "<script>location.href=' ../../../views/inicioCliente.php';</script>";
+die();
 }
 ?>
 

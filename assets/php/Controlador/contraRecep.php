@@ -1,5 +1,5 @@
 <?php
-  error_reporting(E_ERROR | E_PARSE);
+
   include '../modelo/class.conexion.php';
   session_start();
 $numDoc = $_SESSION["NumeroIdentificacion"];
@@ -35,6 +35,8 @@ if ($rolRec != 1 ) {
    <!--<link rel="stylesheet" href="../assets/css/style.css">-->
    <link rel="icon" type="image/png" sizes="16x16" href="../../../images/favicon.png">
 	 <!-- Core theme CSS (includes Bootstrap)-->
+	 	<link rel="stylesheet" type="text/css" href="../../../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../../../css/font-awesome-old/css/font-awesome.min.css" >
    <link href="../assets/css/style.css" rel="stylesheet" />
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>

@@ -44,7 +44,7 @@ $consultasM = new consultaMetodologia();
               $tabla.='<td>'.$fila['nombreSerieEjercicio'].'</td>';
               $tabla.='<td>'.$fila['descripcionSerieEjercicio'].'</td>';
               $tabla.='<td>'.$fila['nombreMetodologia'].'</td>';
-			  $tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/Controlador/images/'.$fila['urlImagen'].'" alt="imagen soporte"/></td>';
+			  $tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/controlador/images/'.$fila['urlImagen'].'" alt="imagen serie"/></td>';
             $tabla.='</tr>';
           
           }  
@@ -67,6 +67,8 @@ $consultasM = new consultaMetodologia();
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Series de ejercicio</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
     <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -88,9 +90,9 @@ $consultasM = new consultaMetodologia();
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="inicioinstructor.php" class="brand-logo">
+            <a href="inicioInstructor.php" class="brand-logo">
                 <img class="logo-abbr" src="../images/logo.png" alt="">
-                <img class="logo-compact" src="../images/logo.jpeg" alt="">
+                <img class="logo-compact" src="../images/Logo.jpeg" alt="">
                  <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
             </a>
             <div class="nav-control">
@@ -156,7 +158,7 @@ $consultasM = new consultaMetodologia();
 							<span class="nav-text">Inicio</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="inicioinstructor.php">Bienvenido</a></li>
+							<li><a href="inicioInstructor.php">Bienvenido</a></li>
 							
 						</ul>
                     </li>

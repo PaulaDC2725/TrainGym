@@ -8,8 +8,8 @@ if ($rol != 3) {
 	header('location: Error.php');
   
 }else {
-require_once('../Assets/php/modelo/class.consulta.suscripcion.php');
-require_once('../Assets/php/modelo/class.consulta.fichaAntro.php');
+require_once('../assets/php/modelo/class.consulta.suscripcion.php');
+require_once('../assets/php/modelo/class.consulta.fichaAntro.php');
 $consultasSuscripcion = new ConsultasSuscripcion();
 $consultasFicha = new consultasFicha();
 date_default_timezone_set('America/Bogota'); 
@@ -74,6 +74,8 @@ die();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Registrar Ficha</title>
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <!-- Favicon icon -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">

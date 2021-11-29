@@ -46,6 +46,8 @@ $idUsuarioFK = null;
 	 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	 <meta name="description" content="" />
 	 <meta name="author" content="" />
+	 	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
    <link
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
    rel="stylesheet"

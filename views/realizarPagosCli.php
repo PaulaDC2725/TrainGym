@@ -9,7 +9,7 @@ if ($rol != 3) {
   
 } else {
 }
-require_once('../assets/php/modelo/class.consulta.Suscripcion.php');
+require_once('../assets/php/modelo/class.consulta.suscripcion.php');
 date_default_timezone_set('America/Bogota');
 $fcha = date("Y-m-d");
 
@@ -49,6 +49,8 @@ $fcha = date("Y-m-d");
     <title>Realizar Pagos</title>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <link rel="stylesheet" href="../vendor/select2/css/select2.min.css">
     <link href="../css/style.css" rel="stylesheet">
@@ -127,7 +129,7 @@ $fcha = date("Y-m-d");
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-								<form method="post" action="../assets/php/Controlador/RegistroPago.php" enctype="multipart/form-data">
+								<form method="post" action="../assets/php/controlador/RegistroPago.php" enctype="multipart/form-data">
 										                      <div class="form-group row">
 											<input required type="number" class="form-control" id="SuscripcionNumero" name="SuscripcionNumero" value="<?php echo $idSuscripcion?>"hidden>
                                             <label class="col-sm-3 col-form-label">Fecha Suscripción *</label>

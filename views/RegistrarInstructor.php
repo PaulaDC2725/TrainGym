@@ -59,6 +59,8 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Registrar Instructor</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
 	<link href="../vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
@@ -256,6 +258,8 @@ $numDoc = $_SESSION["NumeroIdentificacion"];
 												<div class="form-group col-md-6">
 													<label>Teléfono *</label>
 													<input required type="number" class="form-control" id="phone" name="phone"placeholder="Ingrese Su Numero De Telefono" value="<?php echo $telefonoInstructor?>">
+													<div id="error3"></div>
+                									<input type="hidden" id="validaTel1" value="">
 												</div>
 												<div class="form-group col-md-6">
 													<label>Correo electrónico *</label>

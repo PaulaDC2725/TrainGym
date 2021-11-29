@@ -169,7 +169,7 @@
 			on sm.idsuscripcionFK=s.idSuscripcion 
 			and s.idClienteFK=c.idCliente 
 			and c.idUsuarioFK=u.idUsuario 
-			WHERE U.NumeroIdentificacion =  '".$filtro."'";
+			WHERE u.NumeroIdentificacion =  '".$filtro."'";
 			$statement=$conexion->prepare($sql);			
 			$statement->execute();
 			while ($result=$statement->fetch()) {

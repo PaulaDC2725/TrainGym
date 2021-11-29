@@ -54,6 +54,8 @@ if (isset($filas)) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Instructores </title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

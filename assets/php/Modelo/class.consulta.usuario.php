@@ -59,7 +59,7 @@
 			 	return "error al crear registro";			 	
 			 }else{
 			 	$statement->execute();	
-			 	return $sql;
+			 	return $rows;
 			 }
 		}
 		public function consultarUsuario(){$rows=null;
@@ -246,7 +246,7 @@
 			$rows=null;		
 			$modelo = new Conexion();
 			$conexion = $modelo->getConection();
-			$sql='SELECT MAX(NumeroIdentificacion) AS "Ultimo"  FROM usuarios ;';
+			$sql='SELECT NumeroIdentificacion AS "Ultimo" FROM usuarios where idUsuario=(SELECT MAX(idUsuario) from usuarios)';
 			$statement=$conexion->prepare($sql);
 			$statement->execute();
 			while ($result=$statement->fetch()) {

@@ -71,6 +71,8 @@ if ($rol != 2) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Registrar Series</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
 	<link href="../vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
@@ -90,7 +92,7 @@ if ($rol != 2) {
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="inicioinstructor.php" class="brand-logo">
+            <a href="inicioInstructor.php" class="brand-logo">
                 <img class="logo-abbr" src="../images/logo.png" alt="">
                 <img class="logo-compact" src="../images/logo.jpeg" alt="">
                  <img class="brand-title" width="200" height="30" src="../images/logo-text.png" alt="">
@@ -156,7 +158,7 @@ if ($rol != 2) {
 							<span class="nav-text">Inicio</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="inicioinstructor.php">Bienvenido</a></li>
+							<li><a href="inicioInstructor.php">Bienvenido</a></li>
 							
 						</ul>
                     </li>

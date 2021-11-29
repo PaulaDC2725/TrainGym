@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('modelo/class.conexion.php');
 require_once('modelo/class.consulta.usuario.php');
 
@@ -76,7 +77,7 @@ if($resultado == 0){
    }
 ?>
 <?php 
-session_start();
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -102,7 +103,7 @@ if (!empty($_POST['Num'])&& $resultado == 1){
         $mail->Host = 'smtp.gmail.com';  
         $mail->SMTPAuth = true;
         $mail->Username = 'traingymsoftware@gmail.com';               
-        $mail->Password = '1345ElmejorGrupoOsi';                           
+        $mail->Password = '';                           
         $mail->SMTPSecure = 'tls';                        
         $mail->Port = 587;                                    
     
@@ -443,7 +444,7 @@ ul.social li{
             		<td>
             			<div class="text" style="padding: 0 2.5em; text-align: center;">
             				<h2>¡Por favor, verifica tu cuenta! </h2>
-            				<a href="http://localhost/trainGym/assets/php/Controlador/recoveryPass.php?email='.$email.'&doc='.$numDoc.'"><button type="button" class="btn btn-warning"style="background-color: #FF9900;color:white ;">Haz clic aqui</button></a>
+            				<a href="http://localhost/trainGym/assets/php/controlador/recoveryPass.php?email='.$email.'&doc='.$numDoc.'"><button type="button" class="btn btn-warning"style="background-color: #FF9900;color:white ;">Haz clic aqui</button></a>
 
 
 

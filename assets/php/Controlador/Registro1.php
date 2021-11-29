@@ -31,6 +31,7 @@ if($tipoDocumento =="1"){
 
 
  ?>
+ 
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +49,8 @@ if($tipoDocumento =="1"){
      <link rel="stylesheet" href="../../../views/css/font-awesome.min.css">
      <link rel="stylesheet" href="../../../views/css/aos.css">
      <!-- MAIN CSS -->
+     	<link rel="stylesheet" type="text/css" href="../../../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../../../css/font-awesome-old/css/font-awesome.min.css" >
      <link rel="stylesheet" href="../../../views/css/tooplate-gymso-style.css">
      <link rel="icon" type="image/x-icon" href="../../../views/images/Recurso 1.png" />
 <!--

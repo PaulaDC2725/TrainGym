@@ -79,7 +79,7 @@ public function cargarPagoCliFiltroId($filtro){
 	$modelo = new Conexion();
 	$conexion = $modelo->getConection();
 	$sql="SELECT U.NumeroIdentificacion,CONCAT(C.nombreCliente ,' ', C.apellidoCliente) AS 'Nombre Completo',
-	M.nombreMetodologia,p.urlSoportePago, p.fechaPago,p.valorPago,p.descripcionPago,SM.fechaMetodologiaInicio, SM.fechaMetodologiaFin FROM USUARIOS AS U
+	M.nombreMetodologia,p.urlSoportePago, p.fechaPago,p.valorPago,p.descripcionPago,SM.fechaMetodologiaInicio, SM.fechaMetodologiaFin FROM usuarios AS U
    JOIN clientes AS C 
    ON U.idUsuario=C.idUsuarioFK
    JOIN suscripciones AS S 
@@ -90,7 +90,7 @@ public function cargarPagoCliFiltroId($filtro){
    ON S.idSuscripcion=SM.idSuscripcionFK
    JOIN metodologia AS M
    ON SM.idMetodologiaFK=M.idMetodologia
-    WHERE u.NumeroIdentificacion='".$filtro."'";
+    WHERE U.NumeroIdentificacion='".$filtro."'";
 	 $statement=$conexion->prepare($sql);			
 	 $statement->execute();
 	 while ($result=$statement->fetch()) {

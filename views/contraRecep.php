@@ -43,6 +43,8 @@ if(is_array($filas)|| is_object($filas)){
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Actualizar Contraseña</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">

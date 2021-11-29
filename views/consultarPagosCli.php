@@ -1,5 +1,5 @@
 <?php 
-  error_reporting(E_ERROR | E_PARSE);
+     
   include '../assets/php/modelo/class.conexion.php';
   session_start();
   $numDoc = $_SESSION["NumeroIdentificacion"];
@@ -9,8 +9,8 @@ if ($rol != 3) {
   
 } else {
 }
-  require_once('../assets/php/modelo/class.consulta.Cliente.php');
-  require_once('../assets/php/modelo/class.consulta.Suscripcion.php');
+  require_once('../assets/php/modelo/class.consulta.cliente.php');
+  require_once('../assets/php/modelo/class.consulta.suscripcion.php');
 
   $consultas = new ConsultasClientes;
   $consultasS = new ConsultasSuscripcion();
@@ -40,7 +40,7 @@ if ($rol != 3) {
 		$tabla.='<td>'.$fila['valorPago'].'</td>';
 		$tabla.='<td>'.$fila['fechaPago'].'</td>';
 		$tabla.='<td>'.$fila['descripcionPago'].'</td>';
-		$tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/Controlador/images/'.$fila['urlSoportePago'].'" alt="imagen soporte"/></td>';
+		$tabla.='<td><img style="height: 125px;" class="img-fluid" src="../assets/php/controlador/images/'.$fila['urlSoportePago'].'" alt="imagen soporte"/></td>';
 		$tabla.='<td>'.$fila['nombreMetodologia'].'</td>';
 		$numeroIdentificacion=$id;
 		$descripcion=$fila['descripcionPago'];
@@ -70,6 +70,8 @@ if ($rol != 3) {
     <meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Pagos</title>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
     <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -150,7 +152,60 @@ if ($rol != 3) {
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <?php require_once('menuCliente.php')?>
+        <div class="deznav">
+            <div class="deznav-scroll">
+				<ul class="metismenu" id="menu">
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-news"></i>
+							<span class="nav-text">Inicio</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="inicioCliente.php">Bienvenido</a></li>
+							
+						</ul>
+                    </li>
+                    <li class="mm-active"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="true">
+						<i class="fa fa-money"></i>
+							<span class="nav-text">Pagos</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="realizarPagosCli.php">Registrar</a></li>
+                            
+                            </li>
+							<a href="consultarPagosCli.php" class="mm-active">Consultar</a>
+                            </li>
+                        </ul>
+                    </li>
+					<li><a href="consultarAgendaCli.php"  href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-search-1"></i>
+							<span class="nav-text">Consultar Agenda</span>
+						</a>
+                    </li>
+                    <li><a href="AgendarCli.php" href="javascript:void()" aria-expanded="false">
+						<i class="flaticon-381-calendar-7"></i>
+							<span class="nav-text">Agendar Programación</span>
+						</a>
+                    </li>
+                    <li><a href="registrarAsistenciasCli.php"  href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-notepad"></i>
+							<span class="nav-text">Registrar Asistencias</span>
+						</a>
+                    </li>
+                    <li><a href="consultarSerie.php" href="javascript:void()" aria-expanded="false">
+						<i class="flaticon-381-list-1"></i>
+							<span class="nav-text">Series De Ejercicio </span>
+						</a>
+                    </li>
+                    <li><a href="registrarFicha.php" href="javascript:void()" aria-expanded="false">
+						<i class="flaticon-381-resume"></i>
+							<span class="nav-text">Ficha Antropométrica </span>
+						</a>
+                    </li>                     
+					<div class="copyright">
+						<p><strong>TrainGym</strong> © 2021 </p>
+					</div>
+				</div>
+			</div>
         <!--**********************************
             Sidebar end
         ***********************************-->

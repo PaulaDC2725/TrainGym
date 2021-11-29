@@ -147,7 +147,7 @@ class consultaMetodologia{
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="SELECT s.urlImagen, m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN metodologia as m JOIN usuarios U JOIN instructores I ON I.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."'";
+		$sql="SELECT S.urlImagen, m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,I.nombreInstructor From serie_de_ejercicio S JOIN metodologia as m JOIN usuarios U JOIN instructores I ON I.idUsuarioFK=U.idUsuario and m.idMetodologia=S.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."'";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {
@@ -161,7 +161,11 @@ class consultaMetodologia{
 		$estado=1;
 		$modelo = new Conexion();
 		$conexion = $modelo->getConection();					
-		$sql="SELECT s.urlImagen,m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,C.nombreCliente From serie_de_ejercicio S JOIN metodologia as m JOIN usuarios U JOIN clientes C ON C.idUsuarioFK=U.idUsuario and m.idMetodologia=s.idMetodologiaFK where U.NumeroIDentificacion= '".$numeroIdentificacion."' and m.idMetodologia='".$idMetodologia."'";
+		$sql="SELECT S.urlImagen,m.nombreMetodologia,U.NumeroIdentificacion, S.nombreSerieEjercicio,S.descripcionSerieEjercicio,C.nombreCliente From serie_de_ejercicio S JOIN metodologia as m 
+		JOIN usuarios U 
+		JOIN clientes C 
+		ON C.idUsuarioFK=U.idUsuario and m.idMetodologia=S.idMetodologiaFK 
+		where U.NumeroIDentificacion= '".$numeroIdentificacion."' and m.idMetodologia='".$idMetodologia."'";
 		$statement=$conexion->prepare($sql);			
 		$statement->execute();
 		while ($result=$statement->fetch()) {

@@ -56,6 +56,8 @@ if(isset($_POST['Nom'])&&isset($_POST['Ape'])
      <meta name="description" content="">
      <meta name="keywords" content="">
      <meta name="author" content="">
+     	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
      <link rel="stylesheet" href="css/bootstrap.min.css">

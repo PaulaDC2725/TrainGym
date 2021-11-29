@@ -38,6 +38,8 @@ require_once('../assets/php/modelo/class.consulta.cliente.php');
     <title>Agendar</title>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Favicon icon -->
+    	<link rel="stylesheet" type="text/css" href="../css/flaticon.css" >
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome-old/css/font-awesome.min.css" >
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <link rel="stylesheet" href="../vendor/select2/css/select2.min.css">
     <link href="../css/style.css" rel="stylesheet">
